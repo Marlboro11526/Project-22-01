@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d egunez</item>
+        <item quantity="one">egun %d-ez</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d orduz</item>
+        <item quantity="one">ordubetez</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d minutuz</item>
+        <item quantity="one">minutu %d-ez</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d hilabetez</item>
+        <item quantity="one">hilabetez</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d segundoz</item>
+        <item quantity="one">segundo %d-ez</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d astez</item>
+        <item quantity="one">astebetez</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d urtez</item>
+        <item quantity="one">urtebetez</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d egun</item>
+        <item quantity="one">egun %d</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d egun lehenago</item>
+        <item quantity="one">egun %d lehenago</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d kontaktu</item>
+        <item quantity="one">kontaktu %d</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d elementu</item>
+        <item quantity="one">elementu %d</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">ABISUA: %d karpeta ezabatuko dituzu</item>
+        <item quantity="one">ABISUA: Karpeta %d ezabatuko duzu</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">%d elementu ezabatzen</item>
+        <item quantity="one">Elementu %d ezabatzen</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d ordu</item>
+        <item quantity="one">ordubete</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d ordu lehenago</item>
+        <item quantity="one">ordubete lehenago</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d egun barru</item>
+        <item quantity="one">egun %d barru</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d hours</item>
+        <item quantity="one">ordubete barru</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d minutu barru</item>
+        <item quantity="one">minutu %d barru</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d hilabete barru</item>
+        <item quantity="one">hilabete barru</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d segundo barru</item>
+        <item quantity="one">segundo %d barru</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d aste barru</item>
+        <item quantity="one">astebete barru</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d urte barru</item>
+        <item quantity="one">urtebete barru</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d elementu</item>
+        <item quantity="one">Elementu %d</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d minutu</item>
+        <item quantity="one">minutu %d</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d minutu lehenago</item>
+        <item quantity="one">minutu %d lehenago</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d hilabete</item>
+        <item quantity="one">hilabete</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d hilabete lehenago</item>
+        <item quantity="one">hilabete lehenago</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">%d elementu zakarrontzira mugitzen</item>
+        <item quantity="one">elementu %d zakarrontzira mugitzen</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d jakinarazpen berri</item>
+        <item quantity="one">%d jakinarazpen berri</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d segundo</item>
+        <item quantity="one">segundo %d</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d segundo lehenago</item>
+        <item quantity="one">segundo %d lehenago</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d aste</item>
+        <item quantity="one">astebete</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d aste lehenago</item>
+        <item quantity="one">astebete lehenago</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d urte</item>
+        <item quantity="one">urtebete</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d urte lehenago</item>
+        <item quantity="one">urtebete lehenago</item>
+    </plurals>
+</resources>

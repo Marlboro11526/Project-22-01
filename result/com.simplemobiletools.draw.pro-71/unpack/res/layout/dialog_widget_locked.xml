@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/widget_locked_holder" android:padding="@dimen/activity_margin" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/widget_locked_image" android:layout_width="@dimen/min_row_height" android:layout_height="@dimen/min_row_height" android:src="@drawable/ic_lock_vector" android:layout_centerHorizontal="true" />
+    <com.simplemobiletools.commons.views.MyTextView android:textSize="@dimen/bigger_text_size" android:gravity="center" android:id="@id/widget_locked_description" android:paddingTop="@dimen/normal_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/widget_locked_image" android:lineSpacingExtra="1.0sp" />
+</RelativeLayout>

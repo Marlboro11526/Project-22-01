@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fingerprint_acquired_imager_dirty">ເຊັນ​ເຊີ​ລາຍ​ນີ້ວ​ມື​ເປື້ອນ. ກະ​ລຸ​ນາ​ທຳ​ຄວາມ​ສະ​ອາດ ແລະ​ລອງ​ໃໝ່​ອີກ.</string>
+    <string name="fingerprint_acquired_insufficient">ບໍ່​ສາ​ມາດ​ດຳ​ເນີນ​ການ​ລາຍ​ນີ້ວ​ມື​ໄດ້. ກະ​ລຸ​ນາ​ລອງ​ໃໝ່​ອີກ.</string>
+    <string name="fingerprint_acquired_partial">ກວດ​ພົບ​ລາຍ​ນີ້ວ​ມື​ບາງ​ສ່ວນ​ແລ້ວ. ກະ​ລຸ​ນາ​ລອງ​ໃໝ່​ອີກ.</string>
+    <string name="fingerprint_acquired_too_fast">ຍ້າຍ​ນີ້ວ​ມື​ໄປ​ໄວ​ເກີນ​ໄປ. ກະ​ລຸ​ນາ​ລອງ​ໃໝ່​ອີກ.</string>
+    <string name="fingerprint_acquired_too_slow">ຍ້າຍ​ນີ້ວ​ມື​ໄປຊ້າ​ເກີນ​ໄປ. ກະ​ລຸ​ນາ​ລອງ​ໃໝ່​ອີກ.</string>
+    <string name="fingerprint_error_canceled">ຍົກ​ເລີກ​ການ​ດຳ​ເນີນ​ການ​ລາຍ​ນີ້ວ​ມື​ແລ້ວ.</string>
+    <string name="fingerprint_error_hw_not_available">ບໍ່​ມີ​ຮາດ​ແວລາຍ​ນີ້ວ​ມື​ໃຫ້​ຢູ່.</string>
+    <string name="fingerprint_error_lockout">ມີ​ຄວາມ​ພະ​ຍາ​ຍາມ​ຫຼາຍ​ຄັ້ງ​ເກີນ​ໄປ. ລອງ​ໃໝ່​ພາຍ​ຫຼັງ.</string>
+    <string name="fingerprint_error_no_space">ບໍ່​ສາ​ມາດ​ເກັບ​ຮັກ​ສາ​ລາຍ​ນີ້ວ​ມື​ໄວ້​ໄດ້. ກະ​ລຸ​ນາ​ເອົາ​ລາຍ​ນີ້ວ​ມື​ທີ່​ມີ​ຢູ່​ອອກ​ໄປ.</string>
+    <string name="fingerprint_error_timeout">ເວ​ລາ​ລາຍ​ນີ້ວ​ມື​ບໍ່​ເຂົ້າ​ເຖິງ​ໄດ້. ລອງ​ໃໝ່​ອີກ.</string>
+    <string name="fingerprint_error_unable_to_process">ລອງໃໝ່ອີກຄັ້ງ.</string>
+    <string name="fingerprint_not_recognized">ບໍ່​ຈົດ​ຈຳ​ໄດ້</string>
+    <string name="fingerprints">ລາຍນິ້ວມື:</string>
+</resources>

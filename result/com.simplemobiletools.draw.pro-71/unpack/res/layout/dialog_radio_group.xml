@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/dialog_radio_holder" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:id="@id/dialog_radio_group" android:paddingLeft="@dimen/activity_margin" android:paddingTop="@dimen/normal_margin" android:paddingRight="@dimen/activity_margin" android:paddingBottom="@dimen/normal_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</ScrollView>

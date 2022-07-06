@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d ημέρες</item>
+        <item quantity="one">%d ημέρα</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">αναβολή %d ώρ.</item>
+        <item quantity="one">αναβολή %d ώρ.</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">αναβολή %d λεπτ.</item>
+        <item quantity="one">αναβολή %d λεπτ.</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d μήνες</item>
+        <item quantity="one">%d μήνα</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">αναβολή %d δευτ.</item>
+        <item quantity="one">αναβολή %d δευτ.</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d εβδομάδες</item>
+        <item quantity="one">%d εβδομάδα</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d έτη</item>
+        <item quantity="one">%d έτος</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d ημερ.</item>
+        <item quantity="one">%d ημερ.</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">πρίν %d ημερ.</item>
+        <item quantity="one">πρίν %d ημερ.</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d επαφές</item>
+        <item quantity="one">%d επαφή</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d στοιχεία</item>
+        <item quantity="one">%d στοιχείο</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">Προειδοποίηση: Διαγράφετε %d φακέλους</item>
+        <item quantity="one">Προειδοποίηση: Διαγράφετε %d φάκελο</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">Διαγραφή %d στοιχεία</item>
+        <item quantity="one">Διαγραφή %d στοιχείο</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d ώρ.</item>
+        <item quantity="one">%d ώρ.</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">πρίν %d ώρ.</item>
+        <item quantity="one">πρίν %d ώρ.</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d ημέρες</item>
+        <item quantity="one">%d ημέρα</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">σε %d ώρ.</item>
+        <item quantity="one">σε %d ώρ.</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">σε %d λεπτ.</item>
+        <item quantity="one">σε %d λεπτ.</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d μήνες</item>
+        <item quantity="one">%d μήνας</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">σε %d δευτ.</item>
+        <item quantity="one">σε %d δευτ.</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d εβδομάδες</item>
+        <item quantity="one">%d εβδομάδα</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d έτη</item>
+        <item quantity="one">%d έτος</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d στοιχεία</item>
+        <item quantity="one">%d στοιχείο</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d λεπτ.</item>
+        <item quantity="one">%d λεπτ.</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">πρίν %d λεπτ.</item>
+        <item quantity="one">πρίν %d λεπτ.</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d μήνες</item>
+        <item quantity="one">%d μήνα</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">πρίν %d μήνες</item>
+        <item quantity="one">πρίν %d μήνα</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">Μετακινήθηκαν %d στοιχεία στον Κάδο</item>
+        <item quantity="one">Μετακινήθηκε %d στοιχείο στον Κάδο</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d νέες ειδοποιήσεις</item>
+        <item quantity="one">%d νέα ειδοποίηση</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d δευτ.</item>
+        <item quantity="one">%d δευτ.</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">πρίν %d δευτ.</item>
+        <item quantity="one">πρίν %d δευτ.</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d εβδομ.</item>
+        <item quantity="one">%d εβδομ.</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">πρίν %d εβδομάδες</item>
+        <item quantity="one">πρίν %d εβδομάδα</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d χρόνια</item>
+        <item quantity="one">%d χρόνο</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">πρίν %d έτη</item>
+        <item quantity="one">πρίν %d έτος</item>
+    </plurals>
+</resources>

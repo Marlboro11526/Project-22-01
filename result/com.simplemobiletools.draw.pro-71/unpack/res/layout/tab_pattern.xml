@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.simplemobiletools.commons.views.PatternTab android:id="@id/pattern_lock_holder" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.simplemobiletools.commons.views.MyTextView android:id="@id/pattern_lock_title" android:padding="@dimen/activity_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/insert_pattern" />
+    <com.andrognito.patternlockview.PatternLockView android:id="@id/pattern_lock_view" android:layout_width="280.0dip" android:layout_height="280.0dip" android:layout_below="@id/pattern_lock_title" android:layout_centerInParent="true" />
+</com.simplemobiletools.commons.views.PatternTab>

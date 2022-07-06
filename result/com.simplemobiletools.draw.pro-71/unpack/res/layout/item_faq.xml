@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/faq_layout" android:background="@drawable/section_holder_stroke" android:paddingTop="@dimen/medium_margin" android:paddingBottom="@dimen/activity_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/activity_margin" android:paddingEnd="@dimen/activity_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.simplemobiletools.commons.views.MyTextView android:textSize="@dimen/normal_text_size" android:id="@id/faq_title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.simplemobiletools.commons.views.MyTextView android:textSize="@dimen/normal_text_size" android:id="@id/faq_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>
