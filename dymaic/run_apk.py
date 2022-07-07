@@ -5,6 +5,7 @@ from tools import getshot
 from structure import screen
 from structure import mywidget
 from tools import eigenvector
+from dymaic import startact
 
 
 # 开启动态探索
@@ -47,8 +48,6 @@ def run(project, device):
                     break
 
             if not b"Error" in result:
-
-
                 # 初始滑建立Screnn对象
                 dxml = device.uiauto.dump_hierarchy(compressed=True)
                 # 临时写入布局文件信息
@@ -61,7 +60,7 @@ def run(project, device):
                 widget_stack = []
                 # 构建初始Widget Stack
                 for widget in device.uiauto(clickable="true"):
-                    #print(widget.info)
+                    # print(widget.info)
                     new_widwget = mywidget.mywidget(widget)
                     widget_stack.append(new_widwget)
                 # 生成特征向量
@@ -73,14 +72,16 @@ def run(project, device):
                     continue
                 shot_dir = getshot.shot(device.uiauto, project, screenvector)
                 dshot = shot_dir
-                new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack)
-
-
-
+                act = activity.split(project.used_name)[1]
+                # 建立新的场景对象
+                new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act)
+                # 开始深度探索
+                startact.run(project, device, new_screen)
             else:
                 print("[-] Error Start ", component, action, category)
                 continue
 
 
-
-
+    print("[+] all task kill: ", project.p_id)
+    cmd = "adb uninstall " + project.used_name
+    result = subprocess.check_output(cmd, shell=True)

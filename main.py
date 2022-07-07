@@ -1,4 +1,6 @@
 import os
+import subprocess
+
 from pret import aapt
 from pret import apktool
 from structure import project
@@ -121,4 +123,6 @@ if __name__ == '__main__':
     # start dynamic
     for p in project_list:
         run_apk.run(p, phone_list[0])
+
+
 

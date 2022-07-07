@@ -5,6 +5,7 @@ from structure import phone
 phone_list = []
 remote_list = ["47.93.184.92"]
 
+
 def remote_connect():
     global remote_list, succe_list
     if remote_list:
@@ -20,6 +21,11 @@ def remote_connect():
                 phone_list.append(newphone)
             else:
                 print("[-] false to connect: ", ip)
+            # 注册监听器
+            d.watcher("允许").when(xpath="拒绝").when("允许").click()
+            d.watcher.when("允许").click()
+            # 开始后台监控
+            d.watcher.start()
 
     cmd = "python3 -m uiautomator2 init"
     result = subprocess.check_output(cmd, shell=True)
@@ -29,6 +35,11 @@ def remote_connect():
         print("[-] Fault init atx-agent!")
         exit(0)
     return phone_list
+
+
+
+
+
 
 '''
 def scan_devices():
