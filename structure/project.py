@@ -31,10 +31,17 @@ class project:
         self.screenshot_dir = os.path.join(self.res_dir, "screenshot")
         # 整个项目存在的场景列表，以特征向量形式保存
         self.screenlist = []
+        # 整个项目存在的场景对象列表
+        self.screenobject = []
         # 整个项目的STG图
         self.stg = ""
         # 临时文本文件
         self.tmptxt = os.path.join(self.res_dir, "tmp.txt")
+        # 整个项目的Acitivy列表
+        self.activity = []
+
+    def setAct(self, actlist):
+        self.activity = actlist
 
     # 设置项目的Apktools解APK包后的结果路径
     def setUnpack(self, path):
@@ -65,6 +72,8 @@ class project:
         print("[~]used_name: ", self.used_name)
         print("[~]apk_path: ", self.apk_path)
         print("[~]unpack_path: ", self.unpack_path)
+        print("[~]activity: ", self.activity)
+        print("[~]screenlist: ", self.screenlist)
         print("###################################")
 
     def isAliveScreen(self, vector):
@@ -80,3 +89,6 @@ class project:
             print("[-] This Screen is New: ", vector)
             return True
 
+    def printscreen(self):
+        for screen in self.screenobject:
+            screen.printAll()

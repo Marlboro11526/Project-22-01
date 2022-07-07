@@ -36,25 +36,6 @@ def remote_connect():
         exit(0)
     return phone_list
 
-
-
-
-
-
-'''
-def scan_devices():
-    remote_connect()
-    devices_list = []
-    cmd = "adb devices"
-    result = subprocess.check_output(cmd, shell=True)
-    print(result)
-    line = result.split(b'\n')
-    for index in range(1, len(line) - 1):
-        tmp = line[index].split(b'	')[0].decode('utf-8')
-        if tmp != "":
-            devices_list.append(tmp)
-    return devices_list'''
-
 if __name__ == '__main__':
     result = remote_connect()
     print(result)

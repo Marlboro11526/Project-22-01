@@ -7,6 +7,7 @@ from structure import project
 from parseManifest import parseM
 from devices_list import scan
 from dymaic import run_apk
+
 # config
 result_folder = "./result"
 apks_folder = "./apks"
@@ -92,17 +93,22 @@ if __name__ == '__main__':
         else:
             print("[-] don't get parseManifest!")
             exit(0)
+
         # show parse result
         p.setParse(parse_result)
         parseStr = []
+        # 初始化Activiy列表
+        actlist = []
         for act in parse_result:
             parseStr.append("==")
-
             parseStr.append("Activity: " + act)
+            if parse_result[act]:
+                actlist.append(act.split(p.used_name)[1])
             for intent in parse_result[act]:
                 parseStr.append("[Action]: " + intent[0])
                 parseStr.append("[Category]: " + intent[1])
-
+        p.setAct(actlist)
+        p.printAll()
         parseManifest_path = os.path.join(p.res_dir, "parseManifest.txt")
         # clear parseManifest
         with open(parseManifest_path, 'w') as f:
@@ -122,7 +128,12 @@ if __name__ == '__main__':
 
     # start dynamic
     for p in project_list:
-        run_apk.run(p, phone_list[0])
-
-
-
+        count = 2
+        while True:
+            if count == 0:
+                break
+            try:
+                run_apk.run(p, phone_list[0])
+                count = 0
+            except:
+                count = count - 1

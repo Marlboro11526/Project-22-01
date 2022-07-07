@@ -16,13 +16,13 @@ def run(project, device):
     result = subprocess.check_output(cmd, shell=True)
     if b"Success" in result:
         print("[+] Success install apk: ", apk_path)
-
     pairs = project.parseMain
     for activity, other in pairs.items():
         # This is the defined format of uiautomator
         component = project.used_name + '/' + activity
+        flag = False
+        dcommnd = []
         for s in other:
-            dcommnd = []
             action = s[0]
             category = s[1]
             print("[component]: ", component)
@@ -37,8 +37,12 @@ def run(project, device):
             print("[cmd]: ", cmd)
             dcommnd.append(cmd)
             # 检查是否正确进入我们设定的Activity内
+            num = 0
             while True:
-                time.sleep(1)
+                if num == 5:
+                    flag = True
+                    break
+                time.sleep(0.5)
                 cmd = "adb shell dumpsys activity activities | grep mResumedActivity"
                 result = subprocess.check_output(cmd, shell=True)
                 texactivity = activity.split(project.used_name)[1]
@@ -46,16 +50,20 @@ def run(project, device):
                 if check_name in result.decode("utf8"):
                     print("[+] start Act !")
                     break
+                num = num + 1
 
-            if not b"Error" in result:
+            if flag:
+                continue
+
+            if not b"Error" in result and not flag:
+                project.activity.append(activity.split(project.used_name)[1])
                 # 初始滑建立Screnn对象
                 dxml = device.uiauto.dump_hierarchy(compressed=True)
                 # 临时写入布局文件信息
-                f = open(project.tmptxt, 'w')
-                f.write(dxml)
-                f.close()
+                # f = open(project.tmptxt, 'w')
+                # f.write(dxml)
+                # f.close()
                 dtype = True
-                dcommnd = dcommnd
                 dparentScreen = ""
                 widget_stack = []
                 # 构建初始Widget Stack
@@ -74,14 +82,21 @@ def run(project, device):
                 dshot = shot_dir
                 act = activity.split(project.used_name)[1]
                 # 建立新的场景对象
-                new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act)
+                new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act, act)
+                project.screenobject.append(new_screen)
                 # 开始深度探索
                 startact.run(project, device, new_screen)
             else:
-                print("[-] Error Start ", component, action, category)
+                print("[-] Error Start ")
                 continue
-
-
     print("[+] all task kill: ", project.p_id)
+    project.printAll()
+    # 卸载并清理环境
+    device.uiauto.app_clear(project.used_name)
     cmd = "adb uninstall " + project.used_name
     result = subprocess.check_output(cmd, shell=True)
+    if "Success" in result.decode("utf8"):
+        print("[+] Success uninstall :", project.p_id)
+    else:
+        print("[-] Don't uninstall :", project.p_id)
+    project.printscreen()

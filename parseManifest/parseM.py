@@ -58,5 +58,5 @@ def parseManifest(p):
 if __name__ == '__main__':
     test = "com.simplemobiletools.draw.pro"
     path = "../testfile/AndroidManifest.xml"
-    p = extract_activity_action(path,test)
+    p = extract_activity_action(path, test)
     print(p)
