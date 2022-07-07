@@ -2,6 +2,10 @@ import subprocess
 import time
 import hashlib
 from tools import getshot
+from structure import screen
+from structure import mywidget
+from tools import eigenvector
+
 
 # 开启动态探索
 def run(project, device):
@@ -17,6 +21,7 @@ def run(project, device):
         # This is the defined format of uiautomator
         component = project.used_name + '/' + activity
         for s in other:
+            dcommnd = []
             action = s[0]
             category = s[1]
             print("[component]: ", component)
@@ -29,7 +34,7 @@ def run(project, device):
                 cmd = cmd + ' -c ' + category
             result = subprocess.check_output(cmd, shell=True)
             print("[cmd]: ", cmd)
-
+            dcommnd.append(cmd)
             # 检查是否正确进入我们设定的Activity内
             while True:
                 time.sleep(1)
@@ -42,11 +47,39 @@ def run(project, device):
                     break
 
             if not b"Error" in result:
-                md5 = hashlib.md5()
-                md5.update((component+action+category).encode("utf8"))
-                name = str(md5.hexdigest())
-                getshot.shot(device.uiauto, project, name)
 
+
+                # 初始滑建立Screnn对象
+                dxml = device.uiauto.dump_hierarchy(compressed=True)
+                # 临时写入布局文件信息
+                f = open(project.tmptxt, 'w')
+                f.write(dxml)
+                f.close()
+                dtype = True
+                dcommnd = dcommnd
+                dparentScreen = ""
+                widget_stack = []
+                # 构建初始Widget Stack
+                for widget in device.uiauto(clickable="true"):
+                    #print(widget.info)
+                    new_widwget = mywidget.mywidget(widget)
+                    widget_stack.append(new_widwget)
+                # 生成特征向量
+                screenvector = eigenvector.getVector(widget_stack)
+                # 判断是否为新出现的场景特征
+                if project.isAliveScreen(screenvector):
+                    project.screenlist.append(screenvector)
+                else:
+                    continue
+                shot_dir = getshot.shot(device.uiauto, project, screenvector)
+                dshot = shot_dir
+                new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack)
+
+
+
+            else:
+                print("[-] Error Start ", component, action, category)
+                continue
 
 
 

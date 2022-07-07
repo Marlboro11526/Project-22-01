@@ -22,7 +22,7 @@ def shot(devices, project, name):
         if flag == 1:
             print("[+] PC get shoot: ", name + ".png")
             break
-
+    return pc_dir
 
 '''
 def shot(project, name):

@@ -13,16 +13,28 @@ class project:
         :param used_name: APK使用的包名
         :param apk_path: APK所存储的路径
         """
+        # 整个项目的ID
         self.p_id = p_id
+        # 整个项目的整体工作目录
         self.res_dir = res_dir
+        # 整个项目的APK版本号
         self.version = version
+        # 整个项目所用的包名
         self.used_name = used_name
+        # 整个项目的APK安装包所在路径
         self.apk_path = apk_path
+        # 整个项目的APK解包结果路径
         self.unpack_path = ""
+        # 整个项目Mainfest文件解析结果
         self.parseMain = {}
+        # 整个项目所有截图的所在目录
         self.screenshot_dir = os.path.join(self.res_dir, "screenshot")
+        # 整个项目存在的场景列表，以特征向量形式保存
         self.screenlist = []
+        # 整个项目的STG图
         self.stg = ""
+        # 临时文本文件
+        self.tmptxt = os.path.join(self.res_dir, "tmp.txt")
 
     # 设置项目的Apktools解APK包后的结果路径
     def setUnpack(self, path):
@@ -55,5 +67,16 @@ class project:
         print("[~]unpack_path: ", self.unpack_path)
         print("###################################")
 
-
+    def isAliveScreen(self, vector):
+        """
+        :param vector: 新的场景特征向量值
+        :return: 是否为新的特征向量
+        """
+        for v in self.screenlist:
+            if v == vector:
+                print("[-] This Screen is alive!")
+                return False
+        else:
+            print("[-] This Screen is New: ", vector)
+            return True
 
