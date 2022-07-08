@@ -1,5 +1,6 @@
 import os
 from structure import update_task
+from update import run_task
 
 def run(pkglist, device, update_dir):
     """
@@ -27,4 +28,4 @@ def run(pkglist, device, update_dir):
         if not os.path.exists(task_dir):
             os.makedirs(task_dir)
         new_task = update_task.myupdate(project_1, project_2, task_dir)
-
+        run_task.run(new_task, device)

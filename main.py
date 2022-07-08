@@ -110,7 +110,8 @@ if __name__ == '__main__':
             parseStr.append("==")
             parseStr.append("Activity: " + act)
             if parse_result[act]:
-                actlist.append(act.split(p.used_name)[1])
+                if act.split(p.used_name)[1] not in actlist:
+                    actlist.append(act.split(p.used_name)[1])
             for intent in parse_result[act]:
                 parseStr.append("[Action]: " + intent[0])
                 parseStr.append("[Category]: " + intent[1])
@@ -135,12 +136,13 @@ if __name__ == '__main__':
 
     # start dynamic
     for p in project_list:
-        count = 2
-        while True:
+        count = 3
+        flag = True
+        while flag:
             if count == 0:
                 break
             try:
-                run_apk.run(p, phone_list[0])
+                flag = run_apk.run(p, phone_list[0])
                 count = 0
             except:
                 count = count - 1

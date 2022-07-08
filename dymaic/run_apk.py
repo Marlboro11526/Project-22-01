@@ -56,7 +56,8 @@ def run(project, device):
                 continue
 
             if not b"Error" in result and not flag:
-                project.activity.append(activity.split(project.used_name)[1])
+                if activity.split(project.used_name)[1] not in project.activity:
+                    project.activity.append(activity.split(project.used_name)[1])
                 # 初始滑建立Screnn对象
                 dxml = device.uiauto.dump_hierarchy(compressed=True)
                 # 临时写入布局文件信息
@@ -82,22 +83,28 @@ def run(project, device):
                 dshot = shot_dir
                 act = activity.split(project.used_name)[1]
                 # 建立新的场景对象
-                new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act, act)
+                new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act,
+                                           act)
                 project.screenobject.append(new_screen)
                 # 开始深度探索
                 startact.run(project, device, new_screen)
             else:
                 print("[-] Error Start ")
                 continue
+
     print("[+] all task kill: ", project.p_id)
     project.printAll()
     # 卸载并清理环境
     device.uiauto.app_clear(project.used_name)
     cmd = "adb uninstall " + project.used_name
     result = subprocess.check_output(cmd, shell=True)
+    time.sleep(0.5)
     if "Success" in result.decode("utf8"):
         print("[+] Success uninstall :", project.p_id)
     else:
         print("[-] Don't uninstall :", project.p_id)
     project.printscreen()
     project.printTrans()
+
+    flag = False
+    return flag

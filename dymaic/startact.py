@@ -11,7 +11,7 @@ def restartScreen(project, screen, device):
     :param device:
     :param project: 项目对象
     :param screen: 场景对象
-    :return:
+    :return: True or False 表示是否成功
     """
     # 恢复初始场景
     num = 0
@@ -38,9 +38,11 @@ def restartScreen(project, screen, device):
         num = num + 1
     if screen.widget_command != []:
         for widget in screen.widget_command:
+            time.sleep(0.3)
             print(widget.info)
             widget.click()
             time.sleep(0.3)
+        print("[+] start widget_command !")
 
 
 def isNewActivity(project, oldact):
@@ -80,11 +82,14 @@ def run(project, device, screen):
             restartScreen(project, screen, device)
             continue
         if not widget_stack[index].ui2:
-            print("[-] widget not exists: widgetu2.info")
+            print("[-] widget not exists: ", widgetu2.info)
             continue
         widgetu2 = widget_stack[index].ui2
         print(widgetu2.info)
-        widgetu2.click()
+        try:
+            widgetu2.click()
+        except:
+            print("[-] widget don't click: ", widgetu2.info)
         '''
         time.sleep(0.5)
         screenvector = str(random.randint(1, 500000))

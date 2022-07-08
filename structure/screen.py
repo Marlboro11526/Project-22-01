@@ -46,6 +46,8 @@ class screen:
         print("[Activity] : ", self.act)
         print("[Start Activity] : ", self.start)
         print("======================================")
+        for widget in self.widgetstack:
+            print(widget.ui2.info)
 
 
     def printAll(self):
