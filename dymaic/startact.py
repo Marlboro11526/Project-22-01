@@ -47,7 +47,7 @@ def isNewActivity(project, oldact):
     """
     :param project: 项目对象
     :param oldact: 启动者Activity
-    :return: 是否为新的Activity
+    :return: 是否为新的Activity，否为新的Activity
     """
     time.sleep(0.2)
     cmd = "adb shell dumpsys activity activities | grep mResumedActivity"
@@ -96,6 +96,10 @@ def run(project, device, screen):
         if currentPackageName != project.used_name:
             # 发现进入新的PKG
             print("[+] jmup to another pkg: ", currentPackageName)
+            # 将新的PKG转换关系添加
+            pkgtrans = project.used_name + "->" + currentPackageName
+            if pkgtrans not in project.pkgtrans:
+                project.pkgtrans.append(pkgtrans)
             flag = True
             # 将可以跳转到新PKG更新到widget中
             screen.widgetstack[index].updatePkg(currentPackageName)
@@ -119,6 +123,11 @@ def run(project, device, screen):
         if not isNewActivity(project, screen.act):
             print("A Different Act Name: ", currentACT)
             screen.widgetstack[index].updateAct(currentACT)
+            # 将新的ATG转换关系添加
+            actrans = screen.act + "->" + currentACT
+            if actrans not in project.activitytrans:
+                project.activitytrans.append(actrans)
+            # 判断是否为全新的Activity
             if currentACT not in project.activity:
                 print("A New Act Name: ", currentACT)
                 project.activity.append(currentACT)
@@ -145,6 +154,10 @@ def run(project, device, screen):
         if project.isAliveScreen(screenvector):
             print("[+] find a new screen: ", screenvector)
             project.screenlist.append(screenvector)
+            # 将新的Screen转换关系添加到项目中
+            screentrans = screen.vector + "->" + screenvector
+            if screentrans not in project.screentrans:
+                project.screentrans.append(screentrans)
         else:
             continue
         # 初始化ADB操作信息
@@ -154,14 +167,18 @@ def run(project, device, screen):
         for widget in screen.widget_command:
             dw_commd.append(widget)
         dw_commd.append(widgetu2)
+        # 对新的Screen进行截图
         dshot = getshot.shot(device.uiauto, project, screenvector)
         act = currentACT
         startact = screen.start
         # 建立新的场景对象
         new_screen = myscreen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act, startact)
         new_screen.widget_command = dw_commd
+        # 将新的Screen对象加入
         project.screenobject.append(new_screen)
         time.sleep(0.5)
+        # 进行递归深度探索
         run(project, device, new_screen)
+        # 恢复Screen
         restartScreen(project, screen, device)
 

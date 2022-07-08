@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d dnů</item>
+        <item quantity="one">%d den</item>
+        <item quantity="few">%d dny</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d hodin</item>
+        <item quantity="one">%d hodinu</item>
+        <item quantity="few">%d hodiny</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d minut</item>
+        <item quantity="one">%d minutu</item>
+        <item quantity="few">%d minuty</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d měsíců</item>
+        <item quantity="one">%d měsíc</item>
+        <item quantity="few">%d měsíce</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d sekund</item>
+        <item quantity="one">%d sekundu</item>
+        <item quantity="few">%d sekundy</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d týdnů</item>
+        <item quantity="one">%d týden</item>
+        <item quantity="few">%d týdny</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d roků</item>
+        <item quantity="one">%d rok</item>
+        <item quantity="few">%d roky</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d dní</item>
+        <item quantity="one">%d den</item>
+        <item quantity="few">%d dny</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d dnů před</item>
+        <item quantity="one">%d den před</item>
+        <item quantity="few">%d dny před</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d kontaktů</item>
+        <item quantity="one">%d kontakt</item>
+        <item quantity="few">%d kontakty</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d položek</item>
+        <item quantity="one">%d položku</item>
+        <item quantity="few">%d položky</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">UPOZORNĚNÍ: Chystáte se smazat %d složek</item>
+        <item quantity="one">UPOZORNĚNÍ: Chystáte se smazat %d složku</item>
+        <item quantity="few">UPOZORNĚNÍ: Chystáte se smazat %d složky</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">Odstraňuje se %d položek</item>
+        <item quantity="one">Odstraňuje se %d položka</item>
+        <item quantity="few">Odstraňují se %d položky</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d hodin</item>
+        <item quantity="one">%d hodina</item>
+        <item quantity="few">%d hodiny</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d hodin před</item>
+        <item quantity="one">%d hodinu před</item>
+        <item quantity="few">%d hodiny před</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d dní</item>
+        <item quantity="one">%d den</item>
+        <item quantity="few">%d dny</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d hodin</item>
+        <item quantity="one">%d hodinu</item>
+        <item quantity="few">%d hodiny</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d minut</item>
+        <item quantity="one">%d minutu</item>
+        <item quantity="few">%d minuty</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d měsíců</item>
+        <item quantity="one">%d měsíc</item>
+        <item quantity="few">%d měsíce</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d sekund</item>
+        <item quantity="one">%d sekundu</item>
+        <item quantity="few">%d sekundy</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d týdnů</item>
+        <item quantity="one">%d týden</item>
+        <item quantity="few">%d týdny</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d roků</item>
+        <item quantity="one">%d rok</item>
+        <item quantity="few">%d roky</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d položek</item>
+        <item quantity="one">%d položka</item>
+        <item quantity="few">%d položky</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d minut</item>
+        <item quantity="one">%d minuta</item>
+        <item quantity="few">%d minuty</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d minut před</item>
+        <item quantity="one">%d minutu před</item>
+        <item quantity="few">%d minuty před</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d měsíců</item>
+        <item quantity="one">%d měsíc</item>
+        <item quantity="few">%d měsíce</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d měsíců před</item>
+        <item quantity="one">%d měsíc před</item>
+        <item quantity="few">%d měsíce před</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">%d položek se přesouvá do koše</item>
+        <item quantity="one">%d položka se přesouvá do koše</item>
+        <item quantity="few">%d položky se přesouvají do koše</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d nových oznámení</item>
+        <item quantity="one">%d nové oznámení</item>
+        <item quantity="few">%d nová oznámení</item>
+        <item quantity="many">%d nového oznámení</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d sekund</item>
+        <item quantity="one">%d sekunda</item>
+        <item quantity="few">%d sekundy</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d sekund před</item>
+        <item quantity="one">%d sekundu před</item>
+        <item quantity="few">%d sekundy před</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d týdnů</item>
+        <item quantity="one">%d týden</item>
+        <item quantity="few">%d týdny</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d týdnů před</item>
+        <item quantity="one">%d týden před</item>
+        <item quantity="few">%d týdny před</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d roků</item>
+        <item quantity="one">%d rok</item>
+        <item quantity="few">%d roky</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d roků před</item>
+        <item quantity="one">%d rok před</item>
+        <item quantity="few">%d roky před</item>
+    </plurals>
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d dienų</item>
+        <item quantity="one">%d dienai</item>
+        <item quantity="few">%d dienoms</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d valandų</item>
+        <item quantity="one">%d valandai</item>
+        <item quantity="few">%d valandoms</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d minučių</item>
+        <item quantity="one">%d minutei</item>
+        <item quantity="few">%d minutėms</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d mėnesių</item>
+        <item quantity="one">%d mėnesiui</item>
+        <item quantity="few">%d mėnesiams</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d sekundžių</item>
+        <item quantity="one">%d sekundei</item>
+        <item quantity="few">%d sekundėms</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d savaičių</item>
+        <item quantity="one">%d savaitei</item>
+        <item quantity="few">%d savaitėms</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d metų</item>
+        <item quantity="one">%d metams</item>
+        <item quantity="few">%d metams</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d dienų</item>
+        <item quantity="one">%d diena</item>
+        <item quantity="few">%d dienos</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d dienų prieš įvykį</item>
+        <item quantity="one">%d dieną prieš įvykį</item>
+        <item quantity="few">%d dienas prieš įvykį</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d adresatų</item>
+        <item quantity="one">%d adresatas</item>
+        <item quantity="few">%d adresatai</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d elementų</item>
+        <item quantity="one">%d elementą</item>
+        <item quantity="few">%d elementus</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">ĮSPĖJIMAS: Jūs ištrinate %d aplankų</item>
+        <item quantity="one">ĮSPĖJIMAS: Jūs ištrinate %d aplanką</item>
+        <item quantity="few">ĮSPĖJIMAS: Jūs ištrinate %d aplankus</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">Ištrinama %d elementų</item>
+        <item quantity="one">Ištrinamas %d elementas</item>
+        <item quantity="few">Ištrinami %d elementai</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d valandų</item>
+        <item quantity="one">%d valanda</item>
+        <item quantity="few">%d valandos</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d valandų prieš įvykį</item>
+        <item quantity="one">%d valandą prieš įvykį</item>
+        <item quantity="few">%d valandas prieš įvykį</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d dienų</item>
+        <item quantity="one">%d dienos</item>
+        <item quantity="few">%d dienų</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d valandų</item>
+        <item quantity="one">%d valandos</item>
+        <item quantity="few">%d valandų</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d minučių</item>
+        <item quantity="one">%d minutės</item>
+        <item quantity="few">%d minučių</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d mėnesių</item>
+        <item quantity="one">%d mėnesio</item>
+        <item quantity="few">%d mėnesių</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d sekundžių</item>
+        <item quantity="one">%d sekundės</item>
+        <item quantity="few">%d sekundžių</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d savaičių</item>
+        <item quantity="one">%d savaitės</item>
+        <item quantity="few">%d savaičių</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d metų</item>
+        <item quantity="one">%d metų</item>
+        <item quantity="few">%d metų</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d elementų</item>
+        <item quantity="one">%d elementas</item>
+        <item quantity="few">%d elementai</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d minučių</item>
+        <item quantity="one">%d minutė</item>
+        <item quantity="few">%d minutės</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d minučių prieš įvykį</item>
+        <item quantity="one">%d minutę prieš įvykį</item>
+        <item quantity="few">%d minutes prieš įvykį</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d mėnesių</item>
+        <item quantity="one">%d mėnuo</item>
+        <item quantity="few">%d mėnesiai</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d mėnesių prieš įvykį</item>
+        <item quantity="one">%d mėnesį prieš įvykį</item>
+        <item quantity="few">%d mėnesius prieš įvykį</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">Perkeliama %d elementų į šiukšlinę</item>
+        <item quantity="one">Perkeliamas %d elementas į šiukšlinę</item>
+        <item quantity="few">Perkeliami %d elementai į šiukšlinę</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d naujų pranešimų</item>
+        <item quantity="one">%d naujas pranešimas</item>
+        <item quantity="few">%d nauji pranešimai</item>
+        <item quantity="many">%d naujo pranešimo</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d sekundžių</item>
+        <item quantity="one">%d sekundė</item>
+        <item quantity="few">%d sekundės</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d sekundžių prieš įvykį</item>
+        <item quantity="one">%d sekundę prieš įvykį</item>
+        <item quantity="few">%d sekundes prieš įvykį</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d savaičių</item>
+        <item quantity="one">%d savaitė</item>
+        <item quantity="few">%d savaitės</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d savaičių prieš įvykį</item>
+        <item quantity="one">%d savaitę prieš įvykį</item>
+        <item quantity="few">%d savaites prieš įvykį</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d metų</item>
+        <item quantity="one">%d metai</item>
+        <item quantity="few">%d metai</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d metų prieš įvykį</item>
+        <item quantity="one">%d metus prieš įvykį</item>
+        <item quantity="few">%d metus prieš įvykį</item>
+    </plurals>
+</resources>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d днів</item>
+        <item quantity="one">%d день</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d годин</item>
+        <item quantity="one">%d годину</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d хвилин</item>
+        <item quantity="one">%d хвилину</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d місяців</item>
+        <item quantity="one">%d місяць</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d секунд</item>
+        <item quantity="one">%d секунду</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d тижнів</item>
+        <item quantity="one">%d тиждень</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d років</item>
+        <item quantity="one">%d рік</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d дні</item>
+        <item quantity="one">%d день</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">за %d днів</item>
+        <item quantity="one">за %d день</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d контактів</item>
+        <item quantity="one">%d контакт</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d елементів</item>
+        <item quantity="one">%d елемент</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">УВАГА: Ви видаляєте %d тек</item>
+        <item quantity="one">УВАГА: Ви видаляєте %d теку</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">Видалення %d елементів</item>
+        <item quantity="one">Видалення %d елементу</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d години</item>
+        <item quantity="one">%d година</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">за %d годин</item>
+        <item quantity="one">за %d годину</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d днів</item>
+        <item quantity="one">%d день</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d годин</item>
+        <item quantity="one">%d годину</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d хвилин</item>
+        <item quantity="one">%d хвилину</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d місяців</item>
+        <item quantity="one">%d місяць</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d секунд</item>
+        <item quantity="one">%d секунду</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d тижнів</item>
+        <item quantity="one">%d тиждень</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d років</item>
+        <item quantity="one">%d рік</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d елементів</item>
+        <item quantity="one">%d елемент</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d хвилини</item>
+        <item quantity="one">%d хвилина</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">за %d хвилин</item>
+        <item quantity="one">за %d хвилину</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d місяці</item>
+        <item quantity="one">%d місяць</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">за %d місяців</item>
+        <item quantity="one">за %d місяць</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">Переміщення %d елементів у Кошик</item>
+        <item quantity="one">Переміщення %d елемента в Кошик</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d нового сповіщення</item>
+        <item quantity="one">%d нове сповіщення</item>
+        <item quantity="few">%d нові сповіщення</item>
+        <item quantity="many">%d нових сповіщень</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d секунди</item>
+        <item quantity="one">%d секунда</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">за %d секунд</item>
+        <item quantity="one">за %d секунду</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d тижні</item>
+        <item quantity="one">%d тиждень</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">за %d тижнів</item>
+        <item quantity="one">за %d тиждень</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d роки</item>
+        <item quantity="one">%d рік</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">за %d років</item>
+        <item quantity="one">за %d рік</item>
+    </plurals>
+</resources>

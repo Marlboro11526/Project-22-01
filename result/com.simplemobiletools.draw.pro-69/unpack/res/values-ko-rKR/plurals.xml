@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d일간</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d시간</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d분간</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d달간</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d초간</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d주간</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d년간</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d일</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d일 전</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d contacts</item>
+        <item quantity="one">%d contact</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d개 항목</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">경고 : %d개 폴더를 삭제합니다</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">%d개 항목 삭제중</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d시간</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d시간 전</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d일 내</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d시간 내</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d분 내</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d달 내</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d초 내</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d주 내</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d년 내</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d개 항목</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d분</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d분 전</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d달</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d달 전</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">%d개 항목을 휴지통으로 이동하고 있습니다</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d초</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d초 전</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d주</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d일 전</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d년</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d년 전</item>
+    </plurals>
+</resources>

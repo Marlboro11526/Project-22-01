@@ -7,6 +7,7 @@ from structure import project
 from parseManifest import parseM
 from devices_list import scan
 from dymaic import run_apk
+from update import run_update
 
 # config
 result_folder = "./result"
@@ -77,6 +78,12 @@ if __name__ == '__main__':
         apk_dir = os.path.join(apks_folder, apk)
         project_list.append(init_apk(apk_dir))
 
+    # 初始化包分类
+    pkg_up_list = {}
+    for p in project_list:
+        pkg_up_list[p.used_name] = []
+    print("[+] Build pkg_up_list: ", pkg_up_list)
+
     # apktools unpack apk
     for p in project_list:
         apktool.unpackAPK(p)
@@ -137,3 +144,24 @@ if __name__ == '__main__':
                 count = 0
             except:
                 count = count - 1
+
+    # 更新变化检查
+    # 将同一包名应用打包送入检查
+    for p in project_list:
+        pkg_up_list[p.used_name].append(p)
+    update_dir = os.path.join(result_folder, "update")
+    #os.remove(update_dir)
+    if not os.path.exists(update_dir):
+        os.makedirs(update_dir)
+    for pkg in pkg_up_list:
+        update_pkg_dir = os.path.join(result_folder, "update", pkg)
+        if not os.path.exists(update_pkg_dir):
+            os.makedirs(update_pkg_dir)
+        print("========== ", pkg, " ==========")
+        print("[+] get update dir: ", update_pkg_dir)
+        # 进入更新对比分析模块
+        run_update.run(pkg_up_list[pkg], phone_list[0], update_pkg_dir)
+
+
+
+

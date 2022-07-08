@@ -1,0 +1,142 @@
+.class public Lj/a;
+.super Lj/c;
+.source "SourceFile"
+
+
+# static fields
+.field private static volatile c:Lj/a;
+
+
+# instance fields
+.field private a:Lj/c;
+
+.field private b:Lj/c;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lj/a$a;
+
+    invoke-direct {v0}, Lj/a$a;-><init>()V
+
+    .line 2
+    new-instance v0, Lj/a$b;
+
+    invoke-direct {v0}, Lj/a$b;-><init>()V
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Lj/c;-><init>()V
+
+    .line 2
+    new-instance v0, Lj/b;
+
+    invoke-direct {v0}, Lj/b;-><init>()V
+
+    iput-object v0, p0, Lj/a;->b:Lj/c;
+
+    .line 3
+    iput-object v0, p0, Lj/a;->a:Lj/c;
+
+    return-void
+.end method
+
+.method public static d()Lj/a;
+    .locals 2
+
+    .line 1
+    sget-object v0, Lj/a;->c:Lj/a;
+
+    if-eqz v0, :cond_0
+
+    .line 2
+    sget-object v0, Lj/a;->c:Lj/a;
+
+    return-object v0
+
+    .line 3
+    :cond_0
+    const-class v0, Lj/a;
+
+    monitor-enter v0
+
+    .line 4
+    :try_start_0
+    sget-object v1, Lj/a;->c:Lj/a;
+
+    if-nez v1, :cond_1
+
+    .line 5
+    new-instance v1, Lj/a;
+
+    invoke-direct {v1}, Lj/a;-><init>()V
+
+    sput-object v1, Lj/a;->c:Lj/a;
+
+    .line 6
+    :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 7
+    sget-object v0, Lj/a;->c:Lj/a;
+
+    return-object v0
+
+    :catchall_0
+    move-exception v1
+
+    .line 8
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/Runnable;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lj/a;->a:Lj/c;
+
+    invoke-virtual {v0, p1}, Lj/c;->a(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public b()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lj/a;->a:Lj/c;
+
+    invoke-virtual {v0}, Lj/c;->b()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public c(Ljava/lang/Runnable;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lj/a;->a:Lj/c;
+
+    invoke-virtual {v0, p1}, Lj/c;->c(Ljava/lang/Runnable;)V
+
+    return-void
+.end method

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="abc_action_bar_embed_tabs">true</bool>
+    <bool name="abc_config_actionMenuItemAllCaps">true</bool>
+    <bool name="default_vibrate_on_press">false</bool>
+    <bool name="hide_all_external_links">false</bool>
+    <bool name="hide_google_relations">false</bool>
+    <bool name="mtrl_btn_textappearance_all_caps">true</bool>
+    <bool name="show_donate_in_about">true</bool>
+</resources>

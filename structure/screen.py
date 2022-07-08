@@ -49,10 +49,22 @@ class screen:
 
 
     def printAll(self):
-        print("====== new screen object create ======")
+        print("============ screen object ============")
         print("[vector] : ", self.vector)
         print("[parentScreen] : ", self.parentScreen)
-        print("[command] : ", self.command)
+        #print("[command] : ", self.command)
         print("[Activity] : ", self.act)
         print("[Start Activity] : ", self.start)
-        print("======================================")
+        print("=======================================")
+
+    def printWidget(self):
+        print("============ Widget Stack ============")
+        for mywidget in self.widgetstack:
+            print("[widget info]")
+            print(mywidget.ui2.info)
+            print("[Next Screen]: ", mywidget.nextscreen)
+            print("[Next Pkg]: ", mywidget.nextpkg)
+            print("[Next Activity]: ", mywidget.nextact)
+
+    def saveScreen(self):
+        pass

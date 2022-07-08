@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/dialog_holder" android:paddingLeft="@dimen/activity_margin" android:paddingTop="@dimen/activity_margin" android:paddingRight="@dimen/activity_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.simplemobiletools.commons.views.MyTextView android:textSize="@dimen/normal_text_size" android:id="@id/folder_path" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/small_margin" />
+    <com.simplemobiletools.commons.views.MyEditText android:textSize="@dimen/normal_text_size" android:id="@id/folder_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_margin" android:singleLine="true" android:inputType="textCapSentences" android:textCursorDrawable="@null" />
+</LinearLayout>

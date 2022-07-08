@@ -100,3 +100,4 @@ def run(project, device):
     else:
         print("[-] Don't uninstall :", project.p_id)
     project.printscreen()
+    project.printTrans()

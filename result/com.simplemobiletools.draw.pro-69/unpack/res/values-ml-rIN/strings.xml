@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fingerprint_acquired_imager_dirty">വിരലടയാള സെൻസറിന് വൃത്തിയില്ല. അത് ശുചിയാക്കി വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="fingerprint_acquired_insufficient">വിരലടയാളം പ്രോസസ്സ് ചെയ്യാനായില്ല. വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="fingerprint_acquired_partial">വിരലടയാളം ഭാഗികമായി തിരിച്ചറിഞ്ഞു. വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="fingerprint_acquired_too_fast">വിരൽ വളരെ വേഗത്തിൽ നീക്കി. വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="fingerprint_acquired_too_slow">വിരൽ വളരെ പതുക്കെ നീക്കി. വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="fingerprint_error_canceled">ഫിംഗർപ്രിന്റ് പ്രവർത്തനം റദ്ദാക്കി.</string>
+    <string name="fingerprint_error_hw_not_available">ഫിംഗർപ്രിന്റ് ഹാർഡ്‌വെയർ ലഭ്യമല്ല.</string>
+    <string name="fingerprint_error_lockout">നിരവധി തവണ ശ്രമിച്ചു. പിന്നീട് വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="fingerprint_error_no_space">വിരലടയാളം സംഭരിക്കാനാവില്ല. നിലവിലുള്ള വിരലടയാളം നീക്കംചെയ്യുക.</string>
+    <string name="fingerprint_error_timeout">വിരലടയാളം നൽകേണ്ട സമയം കഴിഞ്ഞു. വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="fingerprint_error_unable_to_process">വീണ്ടും ശ്രമിക്കൂ.</string>
+    <string name="fingerprint_not_recognized">തിരിച്ചറിഞ്ഞില്ല</string>
+    <string name="fingerprints">വിരലടയാളങ്ങൾ:</string>
+</resources>

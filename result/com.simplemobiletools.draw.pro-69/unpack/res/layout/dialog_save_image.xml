@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/save_image_wrapper" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/save_image_holder" android:paddingLeft="@dimen/activity_margin" android:paddingTop="@dimen/activity_margin" android:paddingRight="@dimen/activity_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.simplemobiletools.commons.views.MyTextView android:textSize="@dimen/smaller_text_size" android:id="@id/save_image_path_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/path" android:paddingStart="@dimen/small_margin" />
+        <com.simplemobiletools.commons.views.MyTextView android:id="@id/save_image_path" android:paddingTop="@dimen/small_margin" android:paddingBottom="@dimen/activity_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/small_margin" android:paddingEnd="@dimen/small_margin" />
+        <com.simplemobiletools.commons.views.MyEditText android:textSize="@dimen/normal_text_size" android:id="@id/save_image_filename" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/activity_margin" android:singleLine="true" android:textCursorDrawable="@null" />
+        <RadioGroup android:id="@id/save_image_radio_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkedButton="@id/save_image_radio_png">
+            <com.simplemobiletools.commons.views.MyCompatRadioButton android:id="@id/save_image_radio_png" android:paddingTop="@dimen/medium_margin" android:paddingBottom="@dimen/medium_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=".png" />
+            <com.simplemobiletools.commons.views.MyCompatRadioButton android:id="@id/save_image_radio_svg" android:paddingTop="@dimen/medium_margin" android:paddingBottom="@dimen/medium_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=".svg" />
+            <com.simplemobiletools.commons.views.MyCompatRadioButton android:id="@id/save_image_radio_jpg" android:paddingTop="@dimen/medium_margin" android:paddingBottom="@dimen/medium_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=".jpg" />
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>

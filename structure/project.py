@@ -1,10 +1,6 @@
 import os
 
-
 class project:
-    # Used to process each individual APP
-    # and record the relevant data structure
-    # Set the processing result file price for preprocessing
     def __init__(self, p_id, res_dir, version, used_name, apk_path):
         """
         :param p_id: 单个APK的项目ID
@@ -39,6 +35,12 @@ class project:
         self.tmptxt = os.path.join(self.res_dir, "tmp.txt")
         # 整个项目的Acitivy列表
         self.activity = []
+        # 整个项目的Activity转换关系
+        self.activitytrans = []
+        # 整个项目的Screen转换关系
+        self.screentrans = []
+        # 整个项目的Pkg转换关系
+        self.pkgtrans = []
 
     def setAct(self, actlist):
         self.activity = actlist
@@ -92,3 +94,30 @@ class project:
     def printscreen(self):
         for screen in self.screenobject:
             screen.printAll()
+
+    def printTrans(self):
+        print("========== Project Trans ==========")
+        acttxt = os.path.join(self.res_dir, "activitytrans.txt")
+        with open(acttxt, 'w') as f:
+            pass
+        scrtxt = os.path.join(self.res_dir, "screentrans.txt")
+        with open(scrtxt, 'w') as f:
+            pass
+        pkgxt = os.path.join(self.res_dir, "pkgtrans.txt")
+        with open(pkgxt, 'w') as f:
+            pass
+        print("[Activity]")
+        for act in self.activitytrans:
+            with open(acttxt, 'a') as f:
+                f.writelines(act + "\n")
+            print(act)
+        print("[Screen]")
+        for sce in self.screentrans:
+            with open(scrtxt, 'a') as f:
+                f.writelines(sce + "\n")
+            print(sce)
+        print("[PKG]")
+        for pkg in self.pkgtrans:
+            with open(pkgxt, 'a') as f:
+                f.writelines(pkg + "\n")
+            print(pkg)

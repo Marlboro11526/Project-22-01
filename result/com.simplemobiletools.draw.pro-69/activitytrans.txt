@@ -1,0 +1,4 @@
+.activities.MainActivity->.activities.SettingsActivity
+.activities.SettingsActivity->.activities.MainActivity
+.activities.SettingsActivity->com.simplemobiletools.commons.activities.CustomizationActivity
+com.simplemobiletools.commons.activities.CustomizationActivity->.activities.SettingsActivity

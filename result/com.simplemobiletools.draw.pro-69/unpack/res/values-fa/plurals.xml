@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d روز</item>
+        <item quantity="one">%d روز</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d ساعت</item>
+        <item quantity="one">%d ساعت</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d دقیقه</item>
+        <item quantity="one">%d دقیقه</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d ماه</item>
+        <item quantity="one">%d ماه</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d ثانیه</item>
+        <item quantity="one">%d ثانیه</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d هفته</item>
+        <item quantity="one">%d هفته</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d سال</item>
+        <item quantity="one">%d سال</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d روز</item>
+        <item quantity="one">%d روز</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d روز پیش</item>
+        <item quantity="one">%d روز پیش</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d مخاطب</item>
+        <item quantity="one">%d مخاطب</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d مورد</item>
+        <item quantity="one">%d مورد</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">WARNING: You are deleting %d folders</item>
+        <item quantity="one">WARNING: You are deleting %d folder</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">درحال حذف %d مورد</item>
+        <item quantity="one">درحال حذف %d مورد</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d ساعت</item>
+        <item quantity="one">%d ساعت</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d ساعت پیش</item>
+        <item quantity="one">%d ساعت پیش</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d روز</item>
+        <item quantity="one">%d روز</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d ساعت</item>
+        <item quantity="one">%d ساعت</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d دقیقه</item>
+        <item quantity="one">%d دقیقه</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d ماه</item>
+        <item quantity="one">%d ماه</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d ثانیه</item>
+        <item quantity="one">%d ثانیه</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d هفته</item>
+        <item quantity="one">%d هفته</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d سال</item>
+        <item quantity="one">%d سال</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d مورد</item>
+        <item quantity="one">%d مورد</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d دقیقه</item>
+        <item quantity="one">%d دقیقه</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d دقیقه پیش</item>
+        <item quantity="one">%d دقیقه پیش</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d ماه</item>
+        <item quantity="one">%d ماه</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d ماه پیش</item>
+        <item quantity="one">%d ماه پیش</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">Moving %d items into the Recycle Bin</item>
+        <item quantity="one">Moving %d item into the Recycle Bin</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d اعلان جدید</item>
+        <item quantity="one">%d اعلان جدید</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d ثانیه</item>
+        <item quantity="one">%d ثانیه</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d ثانیه پیش</item>
+        <item quantity="one">%d ثانیه پیش</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d هفته</item>
+        <item quantity="one">%d هفته</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d هفته پیش</item>
+        <item quantity="one">%d هفته پیش</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d سال</item>
+        <item quantity="one">%d سال</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d سال پیش</item>
+        <item quantity="one">%d سال پیش</item>
+    </plurals>
+</resources>

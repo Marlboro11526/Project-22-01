@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d päeva võrra</item>
+        <item quantity="one">%d päeva võrra</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d tunni võrra</item>
+        <item quantity="one">%d tunni võrra</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d minutes</item>
+        <item quantity="one">%d minute</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d kuu võrra</item>
+        <item quantity="one">%d kuu võrra</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d sekundi võrra</item>
+        <item quantity="one">%d sekundi võrra</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d nädala võrra</item>
+        <item quantity="one">%d nädala võrra</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d aasta võrra</item>
+        <item quantity="one">%d aasta võrra</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d päeva</item>
+        <item quantity="one">%d päev</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d päeva varem</item>
+        <item quantity="one">%d päev varem</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d contacts</item>
+        <item quantity="one">%d contact</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d items</item>
+        <item quantity="one">%d item</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">Hoiatus: Oled kustutamas %d kausta</item>
+        <item quantity="one">Hoiatus: Oled kustutamas %d kausta</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">Kustutame %d kirjet</item>
+        <item quantity="one">Kustutame %d kirje</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d tundi</item>
+        <item quantity="one">%d tund</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d tundi varem</item>
+        <item quantity="one">%d tund varem</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d päeva pärast</item>
+        <item quantity="one">%d päeva pärast</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d tunni pärast</item>
+        <item quantity="one">%d tunni pärast</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d minutes</item>
+        <item quantity="one">%d minute</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d kuu pärast</item>
+        <item quantity="one">%d kuu pärast</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d sekundi pärast</item>
+        <item quantity="one">%d sekundi pärast</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d nädala pärast</item>
+        <item quantity="one">%d nädala pärast</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d aasta pärast</item>
+        <item quantity="one">%d aasta pärast</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d items</item>
+        <item quantity="one">%d item</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d minutes</item>
+        <item quantity="one">%d minute</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d minutit varem</item>
+        <item quantity="one">%d minut varem</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d kuud</item>
+        <item quantity="one">%d kuu</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d kuud varem</item>
+        <item quantity="one">%d kuu varem</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">Viskan %d faili prügikasti</item>
+        <item quantity="one">Viskan %d faili prügikasti</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d uut märguannet</item>
+        <item quantity="one">%d uus märguanne</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d sekundit</item>
+        <item quantity="one">%d sekund</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d sekundit varem</item>
+        <item quantity="one">%d sekund varem</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d nädalat</item>
+        <item quantity="one">%d nädal</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d nädalat varem</item>
+        <item quantity="one">%d nädal varem</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d aastat</item>
+        <item quantity="one">%d aasta</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d aastat varem</item>
+        <item quantity="one">%d aasta varem</item>
+    </plurals>
+</resources>

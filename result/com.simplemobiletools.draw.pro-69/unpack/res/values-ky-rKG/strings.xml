@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fingerprint_acquired_imager_dirty">Манжа изинин сенсору кирдеп калган. Тазалап, кайра аракет кылыңыз.</string>
+    <string name="fingerprint_acquired_insufficient">Манжа изи иштелбей койду. Кайра аракет кылыңыз.</string>
+    <string name="fingerprint_acquired_partial">Манжа изи жарым-жартылай аныкталды. Кайра аракет кылыңыз.</string>
+    <string name="fingerprint_acquired_too_fast">Манжа өтө тез жылдырылды. Кайра аракет кылыңыз.</string>
+    <string name="fingerprint_acquired_too_slow">Манжа өтө жай жылды. Кайра аракет кылыңыз.</string>
+    <string name="fingerprint_error_canceled">Манжа изи иш-аракети жокко чыгарылды.</string>
+    <string name="fingerprint_error_hw_not_available">Манжа изинин аппараттык камсыздоосу жеткиликтүү эмес.</string>
+    <string name="fingerprint_error_lockout">Аракеттер өтө көп болду. Кийинчерээк кайра аракет кылыңыз.</string>
+    <string name="fingerprint_error_no_space">Манжа изин сактоо мүмкүн эмес. Учурдагы манжа изин алып салыңыз.</string>
+    <string name="fingerprint_error_timeout">Манжа изин күтүү мөөнөтү бүттү. Кайра аракет кылыңыз.</string>
+    <string name="fingerprint_error_unable_to_process">Кайра бир аракеттениңиз.</string>
+    <string name="fingerprint_not_recognized">Таанылган жок</string>
+    <string name="fingerprints">Манжа издери:</string>
+</resources>

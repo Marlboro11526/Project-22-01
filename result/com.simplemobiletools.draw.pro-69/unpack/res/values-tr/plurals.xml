@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d gün</item>
+        <item quantity="one">%d gün</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d saat</item>
+        <item quantity="one">%d saat</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d dakika</item>
+        <item quantity="one">%d dakika</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d ay</item>
+        <item quantity="one">%d ay</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d saniye</item>
+        <item quantity="one">%d saniye</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d hafta</item>
+        <item quantity="one">%d hafta</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d yıl</item>
+        <item quantity="one">%d yıl</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d gün</item>
+        <item quantity="one">%d gün</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d gün önce</item>
+        <item quantity="one">%d gün önce</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d kişi</item>
+        <item quantity="one">%d kişi</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d öge</item>
+        <item quantity="one">%d öge</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">UYARI: %d klasör siliyorsunuz</item>
+        <item quantity="one">UYARI: %d klasör siliyorsunuz</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">%d öge siliniyor</item>
+        <item quantity="one">%d öge siliniyor</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d saat</item>
+        <item quantity="one">%d saat</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d saat önce</item>
+        <item quantity="one">%d saat önce</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d gün</item>
+        <item quantity="one">%d gün</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d saat</item>
+        <item quantity="one">%d saat</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d dakika</item>
+        <item quantity="one">%d dakika</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d ay</item>
+        <item quantity="one">%d ay</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d saniye</item>
+        <item quantity="one">%d saniye</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d hafta</item>
+        <item quantity="one">%d hafta</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d yıl</item>
+        <item quantity="one">%d yıl</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d öge</item>
+        <item quantity="one">%d öge</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d dakika</item>
+        <item quantity="one">%d dakika</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d dakika önce</item>
+        <item quantity="one">%d dakika önce</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d ay</item>
+        <item quantity="one">%d ay</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d ay önce</item>
+        <item quantity="one">%d ay önce</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">"%d öge Geri Dönüşüm Kutusu'na taşınıyor"</item>
+        <item quantity="one">"%d öge Geri Dönüşüm Kutusu'na taşınıyor"</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d yeni bildirim</item>
+        <item quantity="one">%d yeni bildirim</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d saniye</item>
+        <item quantity="one">%d saniye</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d saniye önce</item>
+        <item quantity="one">%d saniye önce</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d hafta</item>
+        <item quantity="one">%d hafta</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d hafta önce</item>
+        <item quantity="one">%d hafta önce</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d yıl</item>
+        <item quantity="one">%d yıl</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d yıl önce</item>
+        <item quantity="one">%d yıl önce</item>
+    </plurals>
+</resources>

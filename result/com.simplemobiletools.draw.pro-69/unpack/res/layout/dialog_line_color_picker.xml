@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/line_color_picker_holder" android:padding="@dimen/activity_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/line_color_picker_icon" android:visibility="gone" android:layout_width="@dimen/line_color_picker_app_icon_size" android:layout_height="@dimen/line_color_picker_app_icon_size" android:layout_marginBottom="@dimen/medium_margin" android:layout_centerHorizontal="true" />
+    <com.simplemobiletools.commons.views.LineColorPicker android:id="@id/primary_line_color_picker" android:layout_width="fill_parent" android:layout_height="@dimen/line_color_picker_height" android:layout_below="@id/line_color_picker_icon" />
+    <com.simplemobiletools.commons.views.LineColorPicker android:id="@id/secondary_line_color_picker" android:layout_width="fill_parent" android:layout_height="@dimen/line_color_picker_height" android:layout_marginTop="@dimen/big_margin" android:layout_below="@id/primary_line_color_picker" />
+    <com.simplemobiletools.commons.views.MyTextView android:textSize="@dimen/bigger_text_size" android:id="@id/hex_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_below="@id/secondary_line_color_picker" android:layout_centerHorizontal="true" />
+</RelativeLayout>

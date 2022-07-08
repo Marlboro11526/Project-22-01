@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="by_days">
+        <item quantity="other">%d jours</item>
+        <item quantity="one">%d jour</item>
+    </plurals>
+    <plurals name="by_hours">
+        <item quantity="other">%d heures</item>
+        <item quantity="one">%d heure</item>
+    </plurals>
+    <plurals name="by_minutes">
+        <item quantity="other">%d minutes</item>
+        <item quantity="one">%d minute</item>
+    </plurals>
+    <plurals name="by_months">
+        <item quantity="other">%d mois</item>
+        <item quantity="one">%d mois</item>
+    </plurals>
+    <plurals name="by_seconds">
+        <item quantity="other">%d secondes</item>
+        <item quantity="one">%d seconde</item>
+    </plurals>
+    <plurals name="by_weeks">
+        <item quantity="other">%d semaines</item>
+        <item quantity="one">%d semaine</item>
+    </plurals>
+    <plurals name="by_years">
+        <item quantity="other">%d ans</item>
+        <item quantity="one">%d an</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="other">%d jours</item>
+        <item quantity="one">%d jour</item>
+    </plurals>
+    <plurals name="days_before">
+        <item quantity="other">%d jours avant</item>
+        <item quantity="one">%d jour avant</item>
+    </plurals>
+    <plurals name="delete_contacts">
+        <item quantity="other">%d contacts</item>
+        <item quantity="one">%d contact</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d éléments</item>
+        <item quantity="one">%d élément</item>
+    </plurals>
+    <plurals name="delete_warning">
+        <item quantity="other">ATTENTION : Vous supprimez %d dossiers</item>
+        <item quantity="one">ATTENTION : Vous supprimez %d dossier</item>
+    </plurals>
+    <plurals name="deleting_items">
+        <item quantity="other">Suppression de %d éléments en cours</item>
+        <item quantity="one">"Suppression d'%d élément en cours"</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="other">%d heures</item>
+        <item quantity="one">%d heure</item>
+    </plurals>
+    <plurals name="hours_before">
+        <item quantity="other">%d heures avant</item>
+        <item quantity="one">%d heure avant</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="other">%d jours</item>
+        <item quantity="one">%d jour</item>
+    </plurals>
+    <plurals name="in_hours">
+        <item quantity="other">%d heures</item>
+        <item quantity="one">%d heure</item>
+    </plurals>
+    <plurals name="in_minutes">
+        <item quantity="other">%d minutes</item>
+        <item quantity="one">%d minute</item>
+    </plurals>
+    <plurals name="in_months">
+        <item quantity="other">%d mois</item>
+        <item quantity="one">%d mois</item>
+    </plurals>
+    <plurals name="in_seconds">
+        <item quantity="other">%d secondes</item>
+        <item quantity="one">%d seconde</item>
+    </plurals>
+    <plurals name="in_weeks">
+        <item quantity="other">%d semaines</item>
+        <item quantity="one">%d semaine</item>
+    </plurals>
+    <plurals name="in_years">
+        <item quantity="other">%d ans</item>
+        <item quantity="one">%d an</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="other">%d éléments</item>
+        <item quantity="one">%d élément</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="other">%d minutes</item>
+        <item quantity="one">%d minute</item>
+    </plurals>
+    <plurals name="minutes_before">
+        <item quantity="other">%d minutes avant</item>
+        <item quantity="one">%d minute avant</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="other">%d mois</item>
+        <item quantity="one">%d mois</item>
+    </plurals>
+    <plurals name="months_before">
+        <item quantity="other">%d mois avant</item>
+        <item quantity="one">%d mois avant</item>
+    </plurals>
+    <plurals name="moving_items_into_bin">
+        <item quantity="other">Déplacement de %d éléments dans la corbeille</item>
+        <item quantity="one">Déplacement de %d élément dans la corbeille</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d nouvelles notifications</item>
+        <item quantity="one">%d nouvelle notification</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="other">%d secondes</item>
+        <item quantity="one">%d seconde</item>
+    </plurals>
+    <plurals name="seconds_before">
+        <item quantity="other">%d secondes avant</item>
+        <item quantity="one">%d seconde avant</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="other">%d semaines</item>
+        <item quantity="one">%d semaine</item>
+    </plurals>
+    <plurals name="weeks_before">
+        <item quantity="other">%d semaines avant</item>
+        <item quantity="one">%d semaine avant</item>
+    </plurals>
+    <plurals name="years">
+        <item quantity="other">%d ans</item>
+        <item quantity="one">%d an</item>
+    </plurals>
+    <plurals name="years_before">
+        <item quantity="other">%d ans avant</item>
+        <item quantity="one">%d an avant</item>
+    </plurals>
+</resources>
