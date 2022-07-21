@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/fragment_about_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_gravity="center" android:layout_width="80.0dip" android:layout_height="80.0dip" android:src="@mipmap/ic_launcher_round" android:importantForAccessibility="no" />
+    <TextView android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_small" android:text="@string/app_name" />
+    <TextView android:layout_gravity="center" android:id="@id/version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_small" />
+    <TextView android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:text="@string/msg_about_app" />
+    <Button android:id="@id/repo_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:text="@string/title_github_repo" app:icon="@drawable/ic_github" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    <Button android:id="@id/licence_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/title_license" app:icon="@drawable/ic_file" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    <Button android:id="@id/library_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/title_open_source_libraries" app:icon="@drawable/ic_bookmark" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+</LinearLayout>

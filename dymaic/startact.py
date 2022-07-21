@@ -37,11 +37,20 @@ def restartScreen(project, screen, device):
             print("[-] can't start: ", check_name)
         num = num + 1
     if screen.widget_command != []:
-        for widget in screen.widget_command:
-            time.sleep(0.3)
-            print(widget.info)
-            widget.click()
-            time.sleep(0.3)
+        try:
+            for widget in screen.widget_command:
+                try:
+                    time.sleep(0.3)
+                    print(widget.info)
+                    widget.click()
+                    time.sleep(0.3)
+                except:
+                    print("[+] Don't widget_command : ")
+                    print(widget.info)
+                    continue
+                    #exit(0)
+        except:
+            pass
         print("[+] start widget_command !")
 
 
@@ -82,7 +91,7 @@ def run(project, device, screen):
             restartScreen(project, screen, device)
             continue
         if not widget_stack[index].ui2:
-            print("[-] widget not exists: ", widgetu2.info)
+            print("[-] widget not exists: ")
             continue
         widgetu2 = widget_stack[index].ui2
         print(widgetu2.info)

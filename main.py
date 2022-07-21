@@ -1,5 +1,6 @@
 import os
 import subprocess
+import time
 
 from pret import aapt
 from pret import apktool
@@ -8,6 +9,7 @@ from parseManifest import parseM
 from devices_list import scan
 from dymaic import run_apk
 from update import run_update
+from repkg import repkg
 
 # config
 result_folder = "./result"
@@ -92,6 +94,10 @@ if __name__ == '__main__':
     for p in project_list:
         p.printAll()
 
+    # 重打包
+    for p in project_list:
+        pass
+
     # parseManifest
     for p in project_list:
         parse_result = parseM.parseManifest(p)
@@ -107,11 +113,11 @@ if __name__ == '__main__':
         # 初始化Activiy列表
         actlist = []
         for act in parse_result:
+            if act.split(p.used_name)[1] not in actlist:
+                actlist.append(act.split(p.used_name)[1])
+        for act in parse_result:
             parseStr.append("==")
             parseStr.append("Activity: " + act)
-            if parse_result[act]:
-                if act.split(p.used_name)[1] not in actlist:
-                    actlist.append(act.split(p.used_name)[1])
             for intent in parse_result[act]:
                 parseStr.append("[Action]: " + intent[0])
                 parseStr.append("[Category]: " + intent[1])
@@ -134,18 +140,35 @@ if __name__ == '__main__':
         print("[-] None Phone list!")
         exit(0)
 
+    suceess_project = []
+    fault_project = []
     # start dynamic
     for p in project_list:
-        count = 3
-        flag = True
-        while flag:
-            if count == 0:
-                break
+        count = 2
+        while count != 0:
             try:
-                flag = run_apk.run(p, phone_list[0])
-                count = 0
+                run_apk.run(p, phone_list[0])
+                suceess_project.append(project)
+                break
             except:
+                # 卸载并清理环境
+                phone_list[0].uiauto.app_clear(p.used_name)
+                cmd = "adb uninstall " + p.used_name
+                result = subprocess.check_output(cmd, shell=True)
+                time.sleep(0.5)
+                if "Success" in result.decode("utf8"):
+                    print("[+] Success uninstall :", p.p_id)
+                else:
+                    print("[-] Don't uninstall :", p.p_id)
                 count = count - 1
+                time.sleep(2)
+                #exit(0)
+        if count == 0:
+            fault_project.append(project)
+
+    print("[+] Successful Build Project: ", suceess_project)
+    print("[+] Fault Build Project: ", fault_project)
+
 
     # 更新变化检查
     # 将同一包名应用打包送入检查

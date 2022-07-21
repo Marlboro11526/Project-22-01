@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/item_contact_frame" android:background="?selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="@drawable/selector"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/item_contact_holder" android:paddingTop="@dimen/medium_margin" android:paddingBottom="@dimen/medium_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/min_row_height" android:paddingStart="@dimen/tiny_margin" android:paddingEnd="@dimen/activity_margin">
-        <ImageView android:id="@id/item_contact_image" android:padding="@dimen/tiny_margin" android:layout_width="@dimen/normal_icon_size" android:layout_height="@dimen/normal_icon_size" android:src="@drawable/ic_person_vector" android:layout_centerVertical="true" android:layout_marginStart="@dimen/small_margin" />
-        <TextView android:textSize="@dimen/big_text_size" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/item_contact_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_centerVertical="true" android:paddingStart="@dimen/medium_margin" android:paddingEnd="@dimen/activity_margin" android:layout_toStartOf="@id/drag_handle_icon" android:layout_toEndOf="@id/item_contact_image" />
-        <ImageView android:id="@id/drag_handle_icon" android:layout_centerVertical="true" android:layout_alignParentEnd="true" style="@style/DragHandleIconStyle" />
-    </RelativeLayout>
-</FrameLayout>

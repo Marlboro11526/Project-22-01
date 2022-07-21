@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen app:title="@string/title_settings" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference app:fragment="com.gaurav.avnc.ui.prefs.PrefsActivity$Appearance" app:icon="@drawable/ic_palette" app:summary="@string/pref_ui_summary" app:title="@string/pref_ui" />
+    <Preference app:fragment="com.gaurav.avnc.ui.prefs.PrefsActivity$Viewer" app:icon="@drawable/ic_video" app:summary="@string/pref_viewer_summary" app:title="@string/pref_viewer" />
+    <Preference app:fragment="com.gaurav.avnc.ui.prefs.PrefsActivity$Input" app:icon="@drawable/ic_keyboard" app:summary="@string/pref_input_summary" app:title="@string/pref_input" />
+    <Preference app:fragment="com.gaurav.avnc.ui.prefs.PrefsActivity$Server" app:icon="@drawable/ic_computer" app:summary="@string/pref_server_summary" app:title="@string/pref_servers" />
+    <Preference app:fragment="com.gaurav.avnc.ui.prefs.PrefsActivity$Tools" app:icon="@drawable/ic_tools" app:summary="@string/pref_tools_summary" app:title="@string/pref_tools" />
+    <Preference app:fragment="com.gaurav.avnc.ui.prefs.PrefsActivity$Experimental" app:icon="@drawable/ic_experimental" app:summary="@string/pref_experimental_summary" app:title="@string/pref_experimental" />
+</PreferenceScreen>

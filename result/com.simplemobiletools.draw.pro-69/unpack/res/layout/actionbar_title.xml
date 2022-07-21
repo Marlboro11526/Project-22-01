@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="@dimen/actionbar_text_size" android:textColor="@android:color/white" android:gravity="start|center" android:id="@id/actionbar_title" android:background="?selectableItemBackground" android:paddingRight="@dimen/activity_margin" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,6 +1,0 @@
-com.simplemobiletools.draw.pro->com.android.packageinstaller
-com.simplemobiletools.draw.pro->android
-com.simplemobiletools.draw.pro->com.android.documentsui
-com.simplemobiletools.draw.pro->com.android.printspooler
-com.simplemobiletools.draw.pro->com.android.email
-com.simplemobiletools.draw.pro->com.android.launcher3

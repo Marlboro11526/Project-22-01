@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen app:title="@string/pref_servers" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference app:defaultValue="true" app:key="clipboard_sync" app:title="@string/pref_clipboard_sync" />
+    <PreferenceCategory app:icon="@drawable/ic_key" app:title="@string/pref_credential">
+        <SwitchPreference app:defaultValue="true" app:key="cred_autocomplete" app:summary="@string/pref_cred_autocomplete_summary" app:title="@string/pref_cred_autocomplete" />
+    </PreferenceCategory>
+    <PreferenceCategory app:icon="@drawable/ic_search" app:title="@string/pref_discovery">
+        <SwitchPreference app:defaultValue="true" app:key="discovery_autorun" app:summary="@string/pref_discovery_autorun_summary" app:title="@string/pref_discovery_autorun" />
+        <SwitchPreference app:defaultValue="true" app:key="rediscovery_indicator" app:title="@string/pref_rediscovery_indicator" />
+    </PreferenceCategory>
+</PreferenceScreen>

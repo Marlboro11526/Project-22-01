@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/dialog_holder" android:paddingTop="@dimen/activity_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/call_confirm_phone" android:background="?selectableItemBackgroundBorderless" android:padding="@dimen/activity_margin" android:layout_width="@dimen/fingerprint_icon_size" android:layout_height="@dimen/fingerprint_icon_size" android:src="@drawable/ic_phone_vector" android:layout_centerInParent="true" />
-</RelativeLayout>

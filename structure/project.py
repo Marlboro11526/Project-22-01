@@ -17,6 +17,8 @@ class project:
         self.version = version
         # 整个项目所用的包名
         self.used_name = used_name
+        # apk包名
+        self.apk_name = ""
         # 整个项目的APK安装包所在路径
         self.apk_path = apk_path
         # 整个项目的APK解包结果路径

@@ -17,6 +17,7 @@ def run(project, device):
     if b"Success" in result:
         print("[+] Success install apk: ", apk_path)
     pairs = project.parseMain
+    print("[pairs]", pairs)
     for activity, other in pairs.items():
         # This is the defined format of uiautomator
         component = project.used_name + '/' + activity
@@ -26,16 +27,22 @@ def run(project, device):
             action = s[0]
             category = s[1]
             print("[component]: ", component)
-            print("[action]: ", action)
-            print("[category]: ", category)
-            cmd = "adb shell am start -S -n " + component
-            if not action == '':
-                cmd = cmd + ' -a ' + action
-            if not category == '':
-                cmd = cmd + ' -c ' + category
-            result = subprocess.check_output(cmd, shell=True)
-            print("[cmd]: ", cmd)
-            dcommnd.append(cmd)
+            if action != '':
+                print("[action]: ", action)
+            if category != '':
+                print("[category]: ", category)
+            if action != '' or category != '':
+                cmd = "adb shell am start -S -n " + component
+                if not action == '':
+                    cmd = cmd + ' -a ' + action
+                if not category == '':
+                    cmd = cmd + ' -c ' + category
+                print("[cmd]: ", cmd)
+                result = subprocess.check_output(cmd, shell=True)
+                dcommnd.append(cmd)
+            else:
+                device.uiauto.app_start(project.used_name, activity)
+                device.uiauto.app_start(project.used_name)
             # 检查是否正确进入我们设定的Activity内
             num = 0
             while True:
@@ -105,6 +112,3 @@ def run(project, device):
         print("[-] Don't uninstall :", project.p_id)
     project.printscreen()
     project.printTrans()
-
-    flag = False
-    return flag

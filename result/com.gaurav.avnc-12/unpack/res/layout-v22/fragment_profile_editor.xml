@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:tag="layout/fragment_profile_editor_0" android:padding="@dimen/padding_normal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true">
+        <EditText android:tag="binding_1" android:layout_width="fill_parent" android:hint="@string/hint_server_name" android:inputType="text" android:drawableStart="@drawable/ic_bookmark" android:importantForAutofill="no" style="@style/FormField.EditText" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <EditText android:id="@id/host" android:tag="binding_2" android:layout_weight="0.8" android:inputType="textUri" android:importantForAutofill="no" style="@style/FormField.EditText" />
+            <EditText android:id="@id/port" android:tag="binding_3" android:hint="@string/hint_port" android:layout_weight="0.2" android:inputType="number" android:layout_marginStart="0.0dip" android:importantForAutofill="no" style="@style/FormField.EditText" />
+        </LinearLayout>
+        <EditText android:id="@id/username" android:tag="binding_4" android:layout_width="fill_parent" android:hint="@string/hint_username" android:inputType="text" android:drawableStart="@drawable/ic_person" android:autofillHints="username" style="@style/FormField.EditText" />
+        <EditText android:id="@id/password" android:tag="binding_5" android:layout_width="fill_parent" android:hint="@string/hint_password" android:inputType="textPassword" android:drawableStart="@drawable/ic_password" android:autofillHints="password" style="@style/FormField.EditText" />
+    </LinearLayout>
+</ScrollView>

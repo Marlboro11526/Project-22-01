@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen app:title="@string/pref_tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference app:fragment="com.gaurav.avnc.ui.prefs.ImportExportFragment" app:title="@string/pref_import_export" />
+    <PreferenceCategory app:icon="@drawable/ic_bug" app:title="@string/pref_debugging">
+        <Preference app:fragment="com.gaurav.avnc.ui.prefs.LogsFragment" app:title="@string/pref_logs" />
+        <Preference app:fragment="com.gaurav.avnc.ui.prefs.KeyCodeMapFragment" app:title="@string/pref_keycode_map" />
+    </PreferenceCategory>
+</PreferenceScreen>

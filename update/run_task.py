@@ -1,3 +1,5 @@
+from update import change_sc
+from update import add_sc
 
 def survey(task):
     p1 = task.p1
@@ -65,7 +67,7 @@ def survey(task):
     change_screen = [] # 场景内组件发生了变化
     tmp_screen = []
     new_screen = []
-
+    '''
     for del_sce in del_sce_list:
         flag = False
         del_sce_ob = ""
@@ -122,7 +124,7 @@ def survey(task):
 
     print("[change screen]", change_screen)
     print("[new screen]", new_screen)
-
+    '''
 
 
 

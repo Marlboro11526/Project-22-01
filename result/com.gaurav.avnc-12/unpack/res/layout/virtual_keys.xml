@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView android:tag="layout/virtual_keys_0" android:background="?colorSurface" android:layout_width="wrap_content" android:layout_height="wrap_content" android:backgroundTint="#ccffffff" android:backgroundTintMode="multiply"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="Virtual Keys">
+        <ImageButton android:id="@id/hide_btn" android:src="@drawable/ic_clear" android:minWidth="30.0dip" android:contentDescription="Hide Virtual Keys" app:tint="?colorError" style="@style/VirtualKey.Image" />
+        <ToggleButton android:id="@id/shift_btn" android:tag="binding_1" android:textOn="Shift" android:textOff="Shift" style="@style/VirtualKey.Toggle" />
+        <ToggleButton android:id="@id/ctrl_btn" android:tag="binding_2" android:textOn="Ctrl" android:textOff="Ctrl" style="@style/VirtualKey.Toggle" />
+        <ToggleButton android:id="@id/alt_btn" android:tag="binding_3" android:textOn="Alt" android:textOff="Alt" style="@style/VirtualKey.Toggle" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_4" android:text="Tab" style="@style/VirtualKey" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_5" android:text="Esc" style="@style/VirtualKey" />
+        <ImageButton android:tag="binding_6" android:src="@drawable/ic_keyboard_arrow_up" android:contentDescription="Up" style="@style/VirtualKey.Image" />
+        <ImageButton android:tag="binding_7" android:src="@drawable/ic_keyboard_arrow_down" android:contentDescription="Down" style="@style/VirtualKey.Image" />
+        <ImageButton android:tag="binding_8" android:src="@drawable/ic_keyboard_arrow_left" android:contentDescription="Left" style="@style/VirtualKey.Image" />
+        <ImageButton android:tag="binding_9" android:src="@drawable/ic_keyboard_arrow_right" android:contentDescription="Right" style="@style/VirtualKey.Image" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_10" android:text="Home" style="@style/VirtualKey" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_11" android:text="End" style="@style/VirtualKey" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_12" android:text="PgUp" style="@style/VirtualKey" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_13" android:text="PgDn" style="@style/VirtualKey" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_14" android:text="Insert" style="@style/VirtualKey" />
+        <androidx.appcompat.widget.AppCompatButton android:tag="binding_15" android:text="Delete" style="@style/VirtualKey" />
+    </LinearLayout>
+</HorizontalScrollView>
