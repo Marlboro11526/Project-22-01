@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ElementTree, Element
 import hashlib
 
+
 # 签名
 def sign(project):
     # create key
@@ -46,7 +47,7 @@ def sign(project):
     print("[#] sign cmd: ", cmd1)
 
     sign_result = subprocess.check_output(cmd1, shell=True)
-    #print(sign_result)
+    # print(sign_result)
     if not os.path.exists(sign_apk_dir):
         print("[-] find sign apk fault: ", sign_apk_name)
         exit(0)
@@ -58,7 +59,7 @@ def sign(project):
     align_dir = os.path.join(project.unpack_path, "dist", align_name)
     if not os.path.exists(align_dir):
         print("[#] align apk name: ", align_name)
-        cmd = "zipalign -v 4 " + sign_apk_dir + " " + align_dir
+        cmd = "zipalign -p -f 4 " + sign_apk_dir + " " + align_dir
         align_result = subprocess.check_output(cmd, shell=True)
         if not os.path.exists(align_dir):
             print("[-] find align apk fault: ", align_name)
@@ -70,9 +71,10 @@ def sign(project):
     project.apk_path = align_dir
     print("[+] All PKG repkg work kill!")
 
+
 # 重打包
 def repkg(project):
-    cmd = "apktool b " + project.unpack_path
+    cmd = "apktool b " + project.unpack_path + " --use-aapt2"
     print("[#] repkg cmd: ", cmd)
     repkg_result = subprocess.check_output(cmd, shell=True)
     dist_dir = os.path.join(project.unpack_path, "dist")
@@ -81,6 +83,22 @@ def repkg(project):
         exit(0)
     else:
         print("[+] repkg success: ", project.p_id)
+
+
+def indent(elem, level=0):
+    i = "\n" + level * "\t"
+    if len(elem):
+        if not elem.text or not elem.text.strip():
+            elem.text = i + "\t"
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+        for elem in elem:
+            indent(elem, level + 1)
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+    else:
+        if level and (not elem.tail or not elem.tail.strip()):
+            elem.tail = i
 
 
 # 预处理
@@ -120,12 +138,17 @@ def pretreat(project):
                 print("[+] this activity not add action")
                 element = Element('intent-filter')
                 action = Element('action', {'android:name': 'syc'})
+                category = Element('category', {'android:name': 'syc'})
                 element.append(action)  # 将二级目录加到一级目录里
+                element.append(category)
                 node.append(element)
             else:
                 print("[+] this activity add action")
-        # 重新写回xml
-        tree.write(manifestPath, encoding='utf-8', xml_declaration=True)
+    root = tree.getroot()
+    indent(root)
+    # 重新写回xml
+    tree.write(manifestPath, encoding='utf-8', xml_declaration=True)
+
 
 def main(project):
     # 预处理过程

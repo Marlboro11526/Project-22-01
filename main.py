@@ -96,7 +96,7 @@ if __name__ == '__main__':
 
     # 重打包
     for p in project_list:
-        pass
+        repkg.main(p)
 
     # parseManifest
     for p in project_list:

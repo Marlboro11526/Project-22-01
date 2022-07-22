@@ -18,6 +18,7 @@ def run(project, device):
         print("[+] Success install apk: ", apk_path)
     pairs = project.parseMain
     print("[pairs]", pairs)
+    scess_start_activity = []
     for activity, other in pairs.items():
         # This is the defined format of uiautomator
         component = project.used_name + '/' + activity
@@ -95,9 +96,14 @@ def run(project, device):
                 project.screenobject.append(new_screen)
                 # 开始深度探索
                 startact.run(project, device, new_screen)
+                if activity not in scess_start_activity:
+                    scess_start_activity.append(activity)
+                    print("[+] success")
             else:
                 print("[-] Error Start ")
                 continue
+
+    print("[+] successful start Activity: ", scess_start_activity)
 
     print("[+] all task kill: ", project.p_id)
     project.printAll()
