@@ -3,7 +3,7 @@ import subprocess
 import uiautomator2 as u2
 from structure import phone
 phone_list = []
-remote_list = ["47.93.16.59"]
+remote_list = ["101.200.63.42"]
 
 
 def remote_connect():
@@ -26,6 +26,8 @@ def remote_connect():
             d.watcher.when("允许").click()
             # 开始后台监控
             d.watcher.start()
+            # 使用ui2的输入法取代系统输入法
+            d.set_fastinput_ime(True)
 
     cmd = "python3 -m uiautomator2 init"
     result = subprocess.check_output(cmd, shell=True)

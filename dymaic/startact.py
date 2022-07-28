@@ -3,7 +3,7 @@ import subprocess
 import time
 import random
 from structure import mywidget
-from tools import getshot, eigenvector
+from tools import getshot, eigenvector, findres
 from structure import screen as myscreen
 
 def restartScreen(project, screen, device):
@@ -154,6 +154,10 @@ def run(project, device, screen):
             dtype = True
         else:
             dtype = False
+        # 临时写入布局文件信息
+        f = open(project.tmptxt, 'w')
+        f.write(dxml)
+        f.close()
         # 初始化父ScreenID
         dparentScreen = screen.vector
         # 构建初始Widget Stack
@@ -162,6 +166,9 @@ def run(project, device, screen):
             # print(widget.info)
             new_widwget = mywidget.mywidget(widget)
             widget_stack.append(new_widwget)
+            if widget.info['className'] == 'android.widget.EditText':
+                # 检查输入文本框
+                findres.find(project, widget.info, project.tmptxt)
         # 生成特征向量
         screenvector = eigenvector.getVector(widget_stack)
         # 判断是否为新出现的场景特征

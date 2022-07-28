@@ -6,7 +6,7 @@ from structure import screen
 from structure import mywidget
 from tools import eigenvector
 from dymaic import startact
-
+from tools import  findres
 
 # 开启动态探索
 def run(project, device):
@@ -69,9 +69,9 @@ def run(project, device):
                 # 初始滑建立Screnn对象
                 dxml = device.uiauto.dump_hierarchy(compressed=True)
                 # 临时写入布局文件信息
-                # f = open(project.tmptxt, 'w')
-                # f.write(dxml)
-                # f.close()
+                f = open(project.tmptxt, 'w')
+                f.write(dxml)
+                f.close()
                 dtype = True
                 dparentScreen = ""
                 widget_stack = []
@@ -80,6 +80,10 @@ def run(project, device):
                     # print(widget.info)
                     new_widwget = mywidget.mywidget(widget)
                     widget_stack.append(new_widwget)
+                    if widget.info['className'] == 'android.widget.EditText':
+                        # 检查输入文本框
+                        findres.find(project, widget.info, project.tmptxt)
+
                 # 生成特征向量
                 screenvector = eigenvector.getVector(widget_stack)
                 # 判断是否为新出现的场景特征

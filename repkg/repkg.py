@@ -132,13 +132,13 @@ def pretreat(project):
                 if child.tag == 'intent-filter':
                     for item in child.iter():
                         if item.tag == "action":
-                            if item.attrib['{http://schemas.android.com/apk/res/android}name'] == 'syc':
+                            if item.attrib['{http://schemas.android.com/apk/res/android}name'] == 'zxy':
                                 flag = False
             if flag:
                 print("[+] this activity not add action")
                 element = Element('intent-filter')
-                action = Element('action', {'android:name': 'syc'})
-                category = Element('category', {'android:name': 'syc'})
+                action = Element('action', {'android:name': 'zxy'})
+                category = Element('category', {'android:name': 'zxy'})
                 element.append(action)  # 将二级目录加到一级目录里
                 element.append(category)
                 node.append(element)
