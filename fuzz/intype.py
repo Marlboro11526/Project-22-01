@@ -1,4 +1,5 @@
 """
+https://developer.android.com/training/keyboard-input/style
 //文本类型，多为大写、小写和数字符号。
 android:inputType="none"//输入普通字符
 android:inputType="text"//输入普通字符
@@ -31,6 +32,130 @@ android:inputType="datetime"//日期+时间格式
 android:inputType="date"//日期键盘
 android:inputType="time"//时间键盘
 """
+import random
 
 
+test_class = ["none", "text", "textCapCharacters", "textCapWords",
+              "textCapSentences", "textAutoCorrect", "textAutoComplete",
+              "textMultiLine", "textImeMultiLine", "textNoSuggestions",
+              "textUri", "textEmailAddress", "textEmailSubject", "textShortMessage",
+              "textLongMessage", "textPersonName", "textPostalAddress", "textPassword",
+              "textVisiblePassword", "textWebEditText", "textFilter", "textPhonetic",
+              "number", "numberSigned", "numberDecimal", "phone", "datetime", "date",
+              "time"]
+# 生成数值类型
+
+def nonenum():
+    lenstr = random.randint(8, 25)
+    fuzz_str = ""
+    for index in range(lenstr):
+        while True:
+            fuzz_ch = random.randint(0, 9)
+            fuzz_str = fuzz_str + str(fuzz_ch)
+            break
+    print("[+] {nonenum} Success Create Fuzz Strings: ", fuzz_str)
+    return fuzz_str
+
+
+def signednum():
+    lenstr = random.randint(8, 25)
+    fuzz_str = ""
+    for index in range(lenstr):
+        while True:
+            if index == 0:
+                fuzz_ch = random.randint(-1, 1)
+                if fuzz_ch == -1:
+                    fuzz_str = fuzz_str + '-'
+                else:
+                    pass
+                break
+            else:
+                fuzz_ch = random.randint(0, 9)
+                fuzz_str = fuzz_str + str(fuzz_ch)
+                break
+    print("[+] {signednum} Success Create Fuzz Strings: ", fuzz_str)
+    return fuzz_str
+
+
+# 生成字符类型
+
+def nonetype():
+    lenstr = random.randint(8, 25)
+    fuzz_str = ""
+    for index in range(lenstr):
+        while True:
+            fuzz_ch = random.randint(48, 123)
+            if 48 <= fuzz_ch <= 57 or 65 <= fuzz_ch <= 90 or 97 <= fuzz_ch <= 122:
+                fuzz_str = fuzz_str + chr(fuzz_ch)
+                break
+    print("[+] {nonetype} Success Create Fuzz Strings: ", fuzz_str)
+    return fuzz_str
+
+
+def capwords():
+    lenstr = random.randint(8, 25)
+    fuzz_str = ""
+    for index in range(lenstr):
+        while True:
+            if index == 0:
+                fuzz_ch = random.randint(65, 91)
+                fuzz_str = fuzz_str + chr(fuzz_ch)
+                break
+            else:
+                fuzz_ch = random.randint(48, 123)
+                if 48 <= fuzz_ch <= 57 or 65 <= fuzz_ch <= 90 or 97 <= fuzz_ch <= 122:
+                    fuzz_str = fuzz_str + chr(fuzz_ch)
+                    break
+    print("[+] {capwords} Success Create Fuzz Strings: ", fuzz_str)
+    return fuzz_str
+
+
+def emailaddres():
+    lenstr = random.randint(8, 20)
+    fuzz_str = ""
+    for index in range(lenstr):
+        while True:
+            if index == 0:
+                fuzz_ch = random.randint(65, 91)
+                fuzz_str = fuzz_str + chr(fuzz_ch)
+                break
+            else:
+                fuzz_ch = random.randint(48, 123)
+                if 48 <= fuzz_ch <= 57 or 65 <= fuzz_ch <= 90 or 97 <= fuzz_ch <= 122:
+                    fuzz_str = fuzz_str + chr(fuzz_ch)
+                    break
+    fuzz_str = fuzz_str + '@'
+    lenstr = random.randint(3, 6)
+    for index in range(lenstr):
+        while True:
+            fuzz_ch = random.randint(48, 123)
+            if 48 <= fuzz_ch <= 57 or 65 <= fuzz_ch <= 90 or 97 <= fuzz_ch <= 122:
+                fuzz_str = fuzz_str + chr(fuzz_ch)
+                break
+    fuzz_str = fuzz_str + '.com'
+    print("[+] {emailaddres} Success Create Fuzz Strings: ", fuzz_str)
+    return fuzz_str
+
+
+def create(inputType="none"):
+    fuzz_str = ""
+    if inputType == "none" and inputType == "text" and inputType == "text" and inputType == "textNoSuggestions" \
+            and inputType == "textAutoCorrect" and inputType == "textAutoComplete" and inputType == "textMultiLine" \
+            and inputType == "textImeMultiLine" and inputType == "textPassword" and inputType == "textVisiblePassword":
+        fuzz_str = nonetype()
+    elif inputType == "textCapWords":
+        fuzz_str = capwords()
+    elif inputType == "textEmailAddress" and inputType == 'textEmailSubject':
+        fuzz_str = emailaddres()
+    elif inputType == "number" and inputType == "phone":
+        fuzz_str = nonenum()
+    else:
+        fuzz_str = nonetype()
+    return fuzz_str
+
+
+if __name__ == '__main__':
+    while True:
+        classse = random.randint(0, len(test_class)-1)
+        create(test_class[classse])
 

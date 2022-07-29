@@ -2,9 +2,11 @@
 import subprocess
 import time
 import random
+from fuzz import intype
 from structure import mywidget
 from tools import getshot, eigenvector, findres
 from structure import screen as myscreen
+
 
 def restartScreen(project, screen, device):
     """
@@ -16,7 +18,7 @@ def restartScreen(project, screen, device):
     # 恢复初始场景
     num = 0
     while True:
-        #screen.printAll()
+        # screen.printAll()
         # 如果一直重启场景失败，选择强制关闭Activity
         if num == 3:
             device.uiauto.app_stop(project.used_name)
@@ -48,7 +50,7 @@ def restartScreen(project, screen, device):
                     print("[+] Don't widget_command : ")
                     print(widget.info)
                     continue
-                    #exit(0)
+                    # exit(0)
         except:
             pass
         print("[+] start widget_command !")
@@ -83,6 +85,29 @@ def run(project, device, screen):
     for widget in screen.widgetstack:
         widget_stack.append(widget)
     stack_len = len(widget_stack)
+
+    # 设置输入框文本
+    # 动态Fuzz
+    for index in range(stack_len):
+        try:
+            widget_stack[index].ui2
+        except:
+            continue
+        widgetu2 = widget_stack[index].ui2
+        if widgetu2.info['className'] == 'android.widget.EditText':
+            # 检查输入文本框
+            res = findres.find(project, widgetu2.info, project.tmptxt)
+            if res:
+                inputType = res[0]
+            else:
+                inputType = 'none'
+            fuzz_str = intype.create(inputType)
+            print("[+] Screen fuzz_str: ", fuzz_str)
+            try:
+                device.uiauto(bounds=widgetu2.info['bounds']).set_text(fuzz_str)
+            except:
+                continue
+
     for index in range(stack_len):
         time.sleep(0.3)
         try:
@@ -112,6 +137,16 @@ def run(project, device, screen):
             print("[+] jmup to another pkg: ", currentPackageName)
             # 将新的PKG转换关系添加
             pkgtrans = project.used_name + "->" + currentPackageName
+            try:
+                project.pkg_dog.node(project.used_name, project.used_name)
+            except:
+                pass
+            try:
+                project.pkg_dog.node(currentPackageName, currentPackageName)
+                project.pkg_dog.edge(project.used_name, currentPackageName)
+            except:
+                pass
+
             if pkgtrans not in project.pkgtrans:
                 project.pkgtrans.append(pkgtrans)
             flag = True
@@ -141,6 +176,15 @@ def run(project, device, screen):
             actrans = screen.act + "->" + currentACT
             if actrans not in project.activitytrans:
                 project.activitytrans.append(actrans)
+                try:
+                    project.atg_dog.node(screen.act, screen.act)
+                except:
+                    pass
+                try:
+                    project.atg_dog.node(currentACT, currentACT)
+                    project.atg_dog.edge(screen.act, currentACT)
+                except:
+                    pass
             # 判断是否为全新的Activity
             if currentACT not in project.activity:
                 print("A New Act Name: ", currentACT)
@@ -166,9 +210,6 @@ def run(project, device, screen):
             # print(widget.info)
             new_widwget = mywidget.mywidget(widget)
             widget_stack.append(new_widwget)
-            if widget.info['className'] == 'android.widget.EditText':
-                # 检查输入文本框
-                findres.find(project, widget.info, project.tmptxt)
         # 生成特征向量
         screenvector = eigenvector.getVector(widget_stack)
         # 判断是否为新出现的场景特征
@@ -179,6 +220,15 @@ def run(project, device, screen):
             screentrans = screen.vector + "->" + screenvector
             if screentrans not in project.screentrans:
                 project.screentrans.append(screentrans)
+                try:
+                    project.stg_dog.node(screen.vector, screen.vector)
+                except:
+                    pass
+                try:
+                    project.stg_dog.node(screenvector, screenvector)
+                    project.stg_dog.edge(screen.vector, screenvector)
+                except:
+                    pass
         else:
             continue
         # 初始化ADB操作信息
@@ -193,7 +243,8 @@ def run(project, device, screen):
         act = currentACT
         startact = screen.start
         # 建立新的场景对象
-        new_screen = myscreen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act, startact)
+        new_screen = myscreen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act,
+                                     startact)
         new_screen.widget_command = dw_commd
         # 将新的Screen对象加入
         project.screenobject.append(new_screen)
@@ -202,4 +253,3 @@ def run(project, device, screen):
         run(project, device, new_screen)
         # 恢复Screen
         restartScreen(project, screen, device)
-

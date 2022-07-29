@@ -1,4 +1,5 @@
 import os
+from graphviz import Digraph
 
 class project:
     def __init__(self, p_id, res_dir, version, used_name, apk_path):
@@ -43,6 +44,16 @@ class project:
         self.screentrans = []
         # 整个项目的Pkg转换关系
         self.pkgtrans = []
+        # act转换图
+        self.atg_dog = Digraph(comment='Activity Transition Graph')
+        # 输出名称
+        self.atg_gv = os.path.join(res_dir, 'atg.gv')
+        # sct转换图
+        self.stg_dog = Digraph(comment='Screen Transition Graph')
+        self.stg_gv = os.path.join(res_dir, 'stg.gv')
+        # pkg转换图
+        self.pkg_dog = Digraph(comment='PKG Transition Graph')
+        self.pkg_gv = os.path.join(res_dir, 'pkg.gv')
 
     def setAct(self, actlist):
         self.activity = actlist
@@ -123,3 +134,8 @@ class project:
             with open(pkgxt, 'a') as f:
                 f.writelines(pkg + "\n")
             print(pkg)
+
+    def savegv(self):
+        self.atg_dog.render(self.atg_gv, view=True)
+        self.stg_dog.render(self.stg_gv, view=True)
+        self.pkg_dog.render(self.pkg_gv, view=True)

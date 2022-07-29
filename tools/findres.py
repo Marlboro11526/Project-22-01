@@ -26,7 +26,7 @@ def findres_id(wid_info, layout):
     bounds_str = bounds_str + str(bounds['top']) + ']['
     bounds_str = bounds_str + str(bounds['right']) + ','
     bounds_str = bounds_str + str(bounds['bottom']) + ']'
-    print(bounds_str)
+    # print(bounds_str)
     tree = ET.parse(layout)
     ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
     # 逐个修个node
@@ -35,7 +35,7 @@ def findres_id(wid_info, layout):
         # print("attrib: ", node.attrib)
         try:
             if node.attrib['bounds'] == bounds_str:
-                print(node.attrib['resource-id'])
+                # print(node.attrib['resource-id'])
                 return node.attrib['resource-id']
         except:
             pass
@@ -54,7 +54,7 @@ def checkfile(path, w_class, w_res_id=""):
         # print("attrib: ", node.attrib)
         for key in node.attrib:
             if key == '{http://schemas.android.com/apk/res/android}id':
-                print("attrib: ", node.attrib[key])
+                # print("attrib: ", node.attrib[key])
                 if w_class == node.tag:
                     if w_res_id in node.attrib[key]:
                         flag = True
@@ -70,30 +70,48 @@ def get_filelist(wdir, w_class, w_res_id):
             if '.xml' in fullname:
                 #print(fullname)
                 checkfile(fullname, w_class, w_res_id)
+    print("[+] same_widget: ", same_widget)
     same_widget = same_widget[0]
     same_inputType = same_widget.attrib["{http://schemas.android.com/apk/res/android}inputType"]
     same_hint = same_widget.attrib["{http://schemas.android.com/apk/res/android}hint"]
     print("[+] same_inputType: ", same_inputType)
     print("[+] same_hint: ", same_hint)
+    res = []    # 0: inputType, hint
+    res.append(same_inputType)
+    res.append(same_hint)
+    return res
 
 
 # 寻找到解包中存在的更详细的组件信息
 def find(project, wid_info, layout):
     res_layout_dir = os.path.join(project.unpack_path, "res")
-    w_class = wid_info['className']
-    if w_class == "":
-        print("[-] Please input w_class!")
-        return
-    w_res_id = findres_id(wid_info, layout)
-    if w_res_id == "":
-        print("[-] Please input w_res_id!")
-        return
-    w_class = w_class.split('.')[-1]
-    w_res_id = w_res_id.split('/')[-1]
-    print("[+] Start Find Widget: ", w_class, w_res_id)
-    get_filelist(res_layout_dir, w_class, w_res_id)
+    try:
+        w_class = wid_info['className']
+        if w_class == "":
+            print("[-] Please input w_class!")
+            print("[-] Don't Find same Widget info!")
+            return []
+        w_res_id = findres_id(wid_info, layout)
+        if w_res_id == "":
+            print("[-] Please input w_res_id!")
+            print("[-] Don't Find same Widget info!")
+            return []
+        w_class = w_class.split('.')[-1]
+        w_res_id = w_res_id.split('/')[-1]
+        print("[+] Start Find Widget: ", w_class, w_res_id)
+        res = get_filelist(res_layout_dir, w_class, w_res_id)
+        if res:
+            print("[+] res: ", res)
+            return res
+        else:
+            print("[-] Don't Find same Widget info!")
+            return []
+    except:
+        print("[-] Don't Find same Widget info!")
+        return []
 
 
+'''
 if __name__ == '__main__':
     bounds = test_wig['bounds']
     bounds_str = "["
@@ -119,7 +137,6 @@ if __name__ == '__main__':
                 print(node.attrib['resource-id'])
         except:
             pass
-    '''
     classa = "android.widget.EditText"
     print(classa.split('.')[-1])
     classa = classa.split('.')[-1]
@@ -130,4 +147,5 @@ if __name__ == '__main__':
     get_filelist(dir_list, w_class=classa, w_res_id=resource_id)
 
     print(same_widget)
-    print(same_widget[0].attrib)'''
+    print(same_widget[0].attrib)
+'''

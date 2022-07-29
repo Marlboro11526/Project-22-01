@@ -148,6 +148,7 @@ if __name__ == '__main__':
         while count != 0:
             try:
                 run_apk.run(p, phone_list[0])
+                p.savegv()
                 suceess_project.append(project)
                 break
             except:
