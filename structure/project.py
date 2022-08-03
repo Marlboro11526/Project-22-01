@@ -91,14 +91,33 @@ class project:
         print("[~]screenlist: ", self.screenlist)
         print("###################################")
 
-    def isAliveScreen(self, vector):
+    def isAliveScreen(self, vector, command, act, startact, parentsc):
         """
         :param vector: 新的场景特征向量值
+        :param command: 新的场景组件操作路径信息
+        :param act: 新的场景所属的Activity
+        :param startact: 新的场景启动的所属的Activity
+        :param parentsc: 新的场景父Screen节点
         :return: 是否为新的特征向量
         """
         for v in self.screenlist:
             if v == vector:
                 print("[-] This Screen is alive!")
+                print("[V] : ", vector)
+                for obj in self.screenobject:
+                    if obj.vector == vector:
+                        print("[obj vector]: ", obj.vector)
+                        print("[obj command]: ", obj.command)
+                        print("[command]: ", command)
+                        if len(obj.command) > len(command):
+                            obj.command = command
+                            obj.act = act
+                            obj.start = startact
+                            obj.parentScreen = parentsc
+                            print("[+] Find a new Screen Path!")
+                            return False
+                    else:
+                        continue
                 return False
         else:
             print("[-] This Screen is New: ", vector)

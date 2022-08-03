@@ -1,6 +1,7 @@
 from update import change_sc
 from update import add_sc
 
+
 def survey(task):
     p1 = task.p1
     p2 = task.p2
@@ -12,7 +13,7 @@ def survey(task):
     scelist1 = p1.screenlist
     scelist2 = p2.screenlist
     diff_sce = []
-    # 提取Activity转换关系列表
+    # 提取Ac/Users/syc/project/REBUILD/log.txttivity转换关系列表
     actranslist1 = p1.activitytrans
     actranslist2 = p2.activitytrans
     diff_actrans = []
@@ -29,18 +30,54 @@ def survey(task):
     for act2 in actlist2:
         if act2 not in actlist1:
             add_act_list.append(act2)
-    print("[Delete Activity] : ", del_act_list)
-    print("[Add Activity] : ", add_act_list)
+
+    print("[Delete Activity] : ")
+    for act in del_act_list:
+
+        print(act)
+    print("[Add Activity] : ")
+    for act in add_act_list:
+        print(act)
+
     del_sce_list = []
     add_sce_list = []
+    change_sc_list = []
     for sce1 in scelist1:
         if sce1 not in scelist2:
             del_sce_list.append(sce1)
     for sce2 in scelist2:
         if sce2 not in scelist1:
             add_sce_list.append(sce2)
-    print("[Delete Screen] : ", del_sce_list)
-    print("[Add Screen] : ", add_sce_list)
+
+    '''
+    for sec in del_sce_list:
+        new_obj = change_sc.run(sec, p1, p2)
+        if new_obj != "":
+            ch_sc = [sec, new_obj]
+            del_sce_list.remove(sec)
+            #add_sce_list.remove(new_obj)
+            change_sc_list.append(ch_sc)
+        else:
+            pass
+    '''
+    for sec in del_sce_list:
+        change_sc.run(sec, p1, p2)
+
+    print("[Delete Screen] : ")
+    for sec in del_sce_list:
+        #change_sc.run(sec, p1, p2)
+        print(sec)
+
+    print("[Add Screen] : ")
+    for sec in add_sce_list:
+        print(sec)
+
+    print("[Change Screen] : ")
+    for ch_sc in change_sc_list:
+        print(ch_sc[0], " -> ", ch_sc[1])
+
+
+    '''
     del_actrans_list = []
     add_actrans_list = []
     for actrn1 in actranslist1:
@@ -49,8 +86,13 @@ def survey(task):
     for actrn2 in actranslist2:
         if actrn2 not in actranslist1:
             add_actrans_list.append(actrn2)
-    print("[Delete Activity Trans] : ", del_actrans_list)
-    print("[Add Activity Trans] : ", add_actrans_list)
+    print("[Delete Activity Trans] : ")
+    for tran in del_actrans_list:
+        print(tran)
+    print("[Add Activity Trans] : ")
+    for tran in add_actrans_list:
+        print(tran)
+
     del_scerans_list = []
     add_scerans_list = []
     for sctrn1 in scetranslist1:
@@ -59,15 +101,19 @@ def survey(task):
     for sctrn2 in scetranslist2:
         if sctrn2 not in scetranslist1:
             add_scerans_list.append(sctrn2)
-    print("[Delete Screen Trans] : ", del_scerans_list)
-    print("[Add Screen Trans] : ", add_scerans_list)
+
+    print("[Delete Screen Trans] : ")
+    for tran in del_scerans_list:
+        print(tran)
+    print("[Add Screen Trans] : ")
+    for tran in add_scerans_list:
+        print(tran)
 
     # 检查变化的Screen
     # 检查del_sce_list
     change_screen = [] # 场景内组件发生了变化
     tmp_screen = []
     new_screen = []
-    '''
     for del_sce in del_sce_list:
         flag = False
         del_sce_ob = ""
@@ -125,7 +171,6 @@ def survey(task):
     print("[change screen]", change_screen)
     print("[new screen]", new_screen)
     '''
-
 
 
 def run(task, device):

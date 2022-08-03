@@ -24,6 +24,8 @@ class screen:
         self.command = command
         # 组件操作路径信息
         self.widget_command = []
+        # 组件操作路径信息
+        self.widget_info = []
         # 设置截图路径
         self.shot = shot
         # 所属的Activity
@@ -48,15 +50,18 @@ class screen:
         print("======================================")
         for widget in self.widgetstack:
             print(widget.ui2.info)
-
+            self.widget_info.append(widget.ui2.info)
 
     def printAll(self):
         print("============ screen object ============")
         print("[vector] : ", self.vector)
         print("[parentScreen] : ", self.parentScreen)
-        #print("[command] : ", self.command)
         print("[Activity] : ", self.act)
         print("[Start Activity] : ", self.start)
+        print("[command] : ", self.command)
+        print("[widget_command] : ")
+        for widegt in self.widget_command:
+            print(widegt.info)
         print("=======================================")
 
     def printWidget(self):

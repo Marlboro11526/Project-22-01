@@ -3,7 +3,7 @@ import subprocess
 import uiautomator2 as u2
 from structure import phone
 phone_list = []
-remote_list = ["101.200.63.42"]
+remote_list = ["39.106.141.49"]
 
 
 def remote_connect():

@@ -1,3 +1,2 @@
-str1 = "./apks/com.gaurav.avnc_12.apk"
-str2 = str1.split('./apks/')[1]
-print(str2)
+from html_similarity import style_similarity, structural_similarity, similarity
+

@@ -75,6 +75,7 @@ def run(project, device):
                 dtype = True
                 dparentScreen = ""
                 widget_stack = []
+                act = activity.split(project.used_name)[1]
                 # 构建初始Widget Stack
                 for widget in device.uiauto(clickable="true"):
                     # print(widget.info)
@@ -87,13 +88,13 @@ def run(project, device):
                 # 生成特征向量
                 screenvector = eigenvector.getVector(widget_stack)
                 # 判断是否为新出现的场景特征
-                if project.isAliveScreen(screenvector):
+                if project.isAliveScreen(screenvector, dcommnd, act, act, dparentScreen):
                     project.screenlist.append(screenvector)
                 else:
                     continue
                 shot_dir = getshot.shot(device.uiauto, project, screenvector)
                 dshot = shot_dir
-                act = activity.split(project.used_name)[1]
+
                 # 建立新的场景对象
                 new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act,
                                            act)
