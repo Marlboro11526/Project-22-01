@@ -16,6 +16,8 @@ class screen:
         """
         # 对应的布局XML内容
         self.xml = xml
+        # 对应的布局XML保存地址
+        self.xml_dir = ""
         # 场景特征向量
         self.vector = vector
         # 是否为根Activity

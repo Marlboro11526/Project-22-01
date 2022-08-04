@@ -1,4 +1,5 @@
 # 开始以一个ACT为起点进行深度优先探索
+import os
 import subprocess
 import time
 import random
@@ -221,15 +222,25 @@ def run(project, device, screen):
         dw_commd.append(widgetu2)
 
         act = currentACT
+        # 临时截图
+        device.uiauto.screenshot(project.tmppng)
+
         startact = screen.start
 
         # 判断是否为新出现的场景特征
         #if project.isAliveScreen(screenvector):
-        if project.isAliveScreen(screenvector, dw_commd, act, startact, dparentScreen):
+        if project.isAliveScreen(screenvector, dw_commd, act, startact, dparentScreen, project.tmppng):
             print("[+] find a new screen: ", screenvector)
             project.screenlist.append(screenvector)
             # 将新的Screen转换关系添加到项目中
             screentrans = screen.vector + "->" + screenvector
+
+            xml_dir = os.path.join(project.layout_dir, screenvector + ".xml")
+            # 写入布局文件信息
+            f = open(xml_dir, 'w')
+            f.write(dxml)
+            f.close()
+
             if screentrans not in project.screentrans:
                 project.screentrans.append(screentrans)
                 try:
@@ -242,10 +253,11 @@ def run(project, device, screen):
                 except:
                     pass
         else:
+            os.remove(project.tmppng)
             continue
+
         # 对新的Screen进行截图
         dshot = getshot.shot(device.uiauto, project, screenvector)
-
         # 建立新的场景对象
         new_screen = myscreen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act,
                                      startact)

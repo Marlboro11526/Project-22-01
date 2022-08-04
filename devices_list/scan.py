@@ -6,7 +6,7 @@ def scan_devices(flag):
     if flag == 0:
         devices_list = remote_device.remote_connect()
     elif flag == 1:
-        devices_list = local_device.local_connect()
+        devices_list = local_device.scan_devices()
     if not devices_list:
         print("[-] false scanf devices!")
     return devices_list

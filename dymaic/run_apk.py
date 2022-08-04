@@ -1,3 +1,4 @@
+import os
 import subprocess
 import time
 import hashlib
@@ -76,6 +77,8 @@ def run(project, device):
                 dparentScreen = ""
                 widget_stack = []
                 act = activity.split(project.used_name)[1]
+
+
                 # 构建初始Widget Stack
                 for widget in device.uiauto(clickable="true"):
                     # print(widget.info)
@@ -87,11 +90,23 @@ def run(project, device):
 
                 # 生成特征向量
                 screenvector = eigenvector.getVector(widget_stack)
+                # 临时截图
+                device.uiauto.screenshot(project.tmppng)
+
+
+
                 # 判断是否为新出现的场景特征
-                if project.isAliveScreen(screenvector, dcommnd, act, act, dparentScreen):
+                if project.isAliveScreen(screenvector, dcommnd, act, act, dparentScreen, project.tmppng):
                     project.screenlist.append(screenvector)
+                    xml_dir = os.path.join(project.layout_dir, screenvector + ".xml")
+                    # 写入布局文件信息
+                    f = open(xml_dir, 'w')
+                    f.write(dxml)
+                    f.close()
                 else:
+                    os.remove(project.tmppng)
                     continue
+
                 shot_dir = getshot.shot(device.uiauto, project, screenvector)
                 dshot = shot_dir
 

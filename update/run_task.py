@@ -12,7 +12,10 @@ def survey(task):
     # 提取项目的Screen列表
     scelist1 = p1.screenlist
     scelist2 = p2.screenlist
-    diff_sce = []
+    print("[+] OLD Project Sce List")
+    print(scelist1)
+    print("[+] NEW Project Sce List")
+    print(scelist2)
     # 提取Ac/Users/syc/project/REBUILD/log.txttivity转换关系列表
     actranslist1 = p1.activitytrans
     actranslist2 = p2.activitytrans
@@ -33,8 +36,8 @@ def survey(task):
 
     print("[Delete Activity] : ")
     for act in del_act_list:
-
         print(act)
+
     print("[Add Activity] : ")
     for act in add_act_list:
         print(act)
@@ -49,19 +52,26 @@ def survey(task):
         if sce2 not in scelist1:
             add_sce_list.append(sce2)
 
-    '''
+    print("[+] DEL Sce List")
+    print(del_sce_list)
+    print("[+] ADD Sce List")
+    print(add_sce_list)
+
     for sec in del_sce_list:
+        print("[Detect Change Screen]: ", sec)
         new_obj = change_sc.run(sec, p1, p2)
         if new_obj != "":
             ch_sc = [sec, new_obj]
-            del_sce_list.remove(sec)
-            #add_sce_list.remove(new_obj)
+            # del_sce_list.remove(sec)
+            # add_sce_list.remove(new_obj)
             change_sc_list.append(ch_sc)
-        else:
-            pass
-    '''
-    for sec in del_sce_list:
-        change_sc.run(sec, p1, p2)
+
+    for ch_Sc in change_sc_list:
+        del_sce_list.remove(ch_Sc[0])
+        add_sce_list.remove(ch_Sc[1])
+
+    #for sec in del_sce_list:
+        #change_sc.run(sec, p1, p2)
 
     print("[Delete Screen] : ")
     for sec in del_sce_list:
