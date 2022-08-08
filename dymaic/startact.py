@@ -228,7 +228,7 @@ def run(project, device, screen):
         startact = screen.start
 
         # 判断是否为新出现的场景特征
-        #if project.isAliveScreen(screenvector):
+        # if project.isAliveScreen(screenvector):
         if project.isAliveScreen(screenvector, dw_commd, act, startact, dparentScreen, project.tmppng):
             print("[+] find a new screen: ", screenvector)
             project.screenlist.append(screenvector)
@@ -243,10 +243,12 @@ def run(project, device, screen):
 
             if screentrans not in project.screentrans:
                 project.screentrans.append(screentrans)
+
                 try:
                     project.stg_dog.node(screen.vector, screen.vector)
                 except:
                     pass
+
                 try:
                     project.stg_dog.node(screenvector, screenvector)
                     project.stg_dog.edge(screen.vector, screenvector)

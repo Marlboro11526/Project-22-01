@@ -42,6 +42,7 @@ def survey(task):
     for act in add_act_list:
         print(act)
 
+    # 先初始化各类场景列表
     del_sce_list = []
     add_sce_list = []
     change_sc_list = []
@@ -57,6 +58,7 @@ def survey(task):
     print("[+] ADD Sce List")
     print(add_sce_list)
 
+    # 鉴别场景是否为新出现的场景
     for sec in del_sce_list:
         print("[Detect Change Screen]: ", sec)
         new_obj = change_sc.run(sec, p1, p2)
@@ -66,16 +68,17 @@ def survey(task):
             # add_sce_list.remove(new_obj)
             change_sc_list.append(ch_sc)
 
+    # 将不是新出现的场景剔除
     for ch_Sc in change_sc_list:
         del_sce_list.remove(ch_Sc[0])
         add_sce_list.remove(ch_Sc[1])
 
-    #for sec in del_sce_list:
-        #change_sc.run(sec, p1, p2)
+    # for sec in del_sce_list:
+    # change_sc.run(sec, p1, p2)
 
     print("[Delete Screen] : ")
     for sec in del_sce_list:
-        #change_sc.run(sec, p1, p2)
+        # change_sc.run(sec, p1, p2)
         print(sec)
 
     print("[Add Screen] : ")
@@ -85,9 +88,9 @@ def survey(task):
     print("[Change Screen] : ")
     for ch_sc in change_sc_list:
         print(ch_sc[0], " -> ", ch_sc[1])
+        for index in range(len(scetranslist1)):
+            scetranslist1[index].replace(ch_sc[0], ch_sc[1])
 
-
-    '''
     del_actrans_list = []
     add_actrans_list = []
     for actrn1 in actranslist1:
@@ -119,69 +122,10 @@ def survey(task):
     for tran in add_scerans_list:
         print(tran)
 
-    # 检查变化的Screen
-    # 检查del_sce_list
-    change_screen = [] # 场景内组件发生了变化
-    tmp_screen = []
-    new_screen = []
-    for del_sce in del_sce_list:
-        flag = False
-        del_sce_ob = ""
-        for sce_ob in p1.screenobject:
-            if sce_ob.vector == del_sce:
-                del_sce_ob = sce_ob
-        print("del_sce_ob")
-        print(del_sce_ob.command)
-        print(del_sce_ob.start)
-        print(del_sce_ob.act)
-        # 在新的APK中出现了
-        print("===============")
-        change_sce2 = ""
-        for sce_ob in p2.screenobject:
-            print("sce_ob")
-            print(sce_ob.command)
-            print(sce_ob.start)
-            print(sce_ob.act)
-            if del_sce_ob.start == sce_ob.start \
-                    and del_sce_ob.widget_command == sce_ob.widget_command:
-                flag = True
-                change_sce2 = sce_ob
-                break
-        if flag:
-            change_screen.append(change_sce2.vector)
-
-    for add_sce in add_sce_list:
-        flag = False
-        add_sce_ob = ""
-        for sce_ob in p2.screenobject:
-            if sce_ob.vector == add_sce:
-                add_sce_ob = sce_ob
-        print("add_sce_ob")
-        print(add_sce_ob.command)
-        print(add_sce_ob.start)
-        print(add_sce_ob.act)
-        print("==================")
-        # 在旧的APK中出现了
-        for sce_ob in p1.screenobject:
-            print("sce_ob")
-            print(sce_ob.command)
-            print(sce_ob.start)
-            print(sce_ob.act)
-            if add_sce_ob.start == sce_ob.start \
-                    and add_sce_ob.widget_command == sce_ob.widget_command and sce_ob.vector not in tmp_screen:
-                flag = True
-                break
-        if flag:
-            change_screen.append(add_sce)
-
-    for sce in add_sce_list:
-        if sce not in change_screen:
-            new_screen.append(sce)
-
-    print("[change screen]", change_screen)
-    print("[new screen]", new_screen)
-    '''
+    return add_sce_list
 
 
-def run(task, device):
-    survey(task)
+def run(task):
+    addsc = survey(task)
+    # 返回真正新出现的Screen
+    return addsc

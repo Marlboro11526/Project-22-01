@@ -28,25 +28,28 @@ def run(old_screen, project_old, project_new):
 
         if len(old_obj.widget_command) == len(new_obj.widget_command):
             flag = False
-            for index in range(len(old_obj.widget_command)):
-                old_info = old_obj.widget_command[index].info
-                new_info = new_obj.widget_command[index].info
-                print("[#] old info : ", old_info)
-                print("[#] new info : ", new_info)
-                if old_info['childCount'] != new_info['childCount'] or old_info['className'] != new_info['className'] \
-                        or old_info['contentDescription'] != new_info['contentDescription'] \
-                        or old_info['packageName'] != new_info['packageName']\
-                        or old_info['resourceName'] != new_info['resourceName']\
-                        or old_info['text'] != new_info['text']\
-                        or old_info['checkable'] != new_info['checkable']\
-                        or old_info['checked'] != new_info['checked']\
-                        or old_info['clickable'] != new_info['clickable']\
-                        or old_info['enabled'] != new_info['enabled']\
-                        or old_info['enabled'] != new_info['enabled']:
-                #if old_info != new_info:
-                    print("[-] different info !")
-                    flag = True
-                    break
+            try:
+                for index in range(len(old_obj.widget_command)):
+                    old_info = old_obj.widget_command[index].info
+                    new_info = new_obj.widget_command[index].info
+                    print("[#] old info : ", old_info)
+                    print("[#] new info : ", new_info)
+                    if old_info['childCount'] != new_info['childCount'] or old_info['className'] != new_info['className'] \
+                            or old_info['contentDescription'] != new_info['contentDescription'] \
+                            or old_info['packageName'] != new_info['packageName']\
+                            or old_info['resourceName'] != new_info['resourceName']\
+                            or old_info['text'] != new_info['text']\
+                            or old_info['checkable'] != new_info['checkable']\
+                            or old_info['checked'] != new_info['checked']\
+                            or old_info['clickable'] != new_info['clickable']\
+                            or old_info['enabled'] != new_info['enabled']\
+                            or old_info['enabled'] != new_info['enabled']:
+                    #if old_info != new_info:
+                        print("[-] different info !")
+                        flag = True
+                        break
+            except:
+                flag = False
             if flag:
                 print("[-] different info !")
                 continue

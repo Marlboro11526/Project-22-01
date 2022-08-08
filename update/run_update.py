@@ -1,7 +1,7 @@
 import os
 from structure import update_task
 from update import run_task
-
+from fuzz import my_fuzz
 
 def run(pkglist, device, update_dir):
     """
@@ -28,5 +28,14 @@ def run(pkglist, device, update_dir):
         task_dir = os.path.join(update_dir, str(project_1.version) + "-" + str(project_2.version))
         if not os.path.exists(task_dir):
             os.makedirs(task_dir)
-        new_task = update_task.myupdate(project_1, project_2, task_dir)
-        run_task.run(new_task, device)
+        new_task = update_task.myupdate(project_1=project_1, project_2=project_2, work_dir=task_dir)
+
+        # 获取新出现的场景列表
+        addsc = run_task.run(task=new_task)
+
+        print("[+] Get True Add Screen!")
+        for sc in addsc:
+            print(sc)
+
+        # 对新出现的场景进行模糊测试
+        my_fuzz.init(addsc=addsc, project=project_2, device=device)

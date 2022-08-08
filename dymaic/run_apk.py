@@ -129,6 +129,8 @@ def run(project, device):
     project.printAll()
     # 卸载并清理环境
     device.uiauto.app_clear(project.used_name)
+    device.uiauto.app_uninstall(project.used_name)
+    '''
     cmd = "adb uninstall " + project.used_name
     result = subprocess.check_output(cmd, shell=True)
     time.sleep(0.5)
@@ -136,5 +138,6 @@ def run(project, device):
         print("[+] Success uninstall :", project.p_id)
     else:
         print("[-] Don't uninstall :", project.p_id)
+    '''
     project.printscreen()
     project.printTrans()

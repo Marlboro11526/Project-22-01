@@ -1,56 +1,42 @@
 import os
-
+import json
+import subprocess
+from treelib import Tree, Node
+import xml.etree.ElementTree as ET
+from xml.etree.ElementTree import ElementTree, Element
+import hashlib
 
 # Get the parameters to start the activity
 def extract_activity_action(manifestPath, used_pkg_name):
     # {activity1: {actions: action1, category: cate1}}
     # new format: {activity: [[action1, category1],[action2, category2]]}
     d = {}
-    flag = 0
-    for line in open(manifestPath, 'rb').readlines():
-        line = line.strip()
-        # print(line.decode("utf8"))
-        if line.startswith(b'<activity') and not line.startswith(b'<activity-alias'):
-            activity = line.split(b'android:name="')[1].split(b'"')[0]
-            print(activity)
-            if activity.startswith(b'.'):
-                # print("1")
-                activity = used_pkg_name + activity
-            if not activity.decode('utf-8') in d.keys() and used_pkg_name in activity.decode('utf-8'):
-                # d = init_d(activity, d) # some activities may have different actions and categories
-                # print("2")
-                d[activity.decode('utf-8')] = []
-                flag = 1
-            if line.endswith(
-                    b'/>'):  # if activity ends in one line, it has no actions, we only record its activity name.
-                # print("3")
-                flag = 0
-                if used_pkg_name in activity.decode('utf-8'):
-                    d[activity.decode('utf-8')] = []
+    ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
+    # 读取Manifest文件
+    with open(manifestPath, 'rt') as f:
+        tree = ET.parse(f)
+        # 逐个修个node
+    for node in tree.iter():
+        if node.tag == "activity":
+            print("[+] Find a Activity Node!")
+            #print(node.tag)
+            #print(node.attrib)
+            activity = node.attrib['{http://schemas.android.com/apk/res/android}name']
+            #print(activity)
+            d[activity] = []
+            for child in node.iter():
+                if child.tag == 'intent-filter':
                     action_category_pair = ['', '']
-                    d[activity.decode('utf-8')].append(action_category_pair)
-                    #print(d)
-                continue
-        elif line.startswith(b'<intent-filter') and flag == 1:
-            flag = 2
-            action_category_pair = ['', '']
-        elif line.startswith(b'<action') and flag == 2:
-            action = line.split(b'android:name="')[1].split(b'"')[0]
-            print("[action]", action)
-            action_category_pair[0] = action.decode('utf-8')
-        elif line.startswith(b'<category') and flag == 2:
-            category = line.split(b'android:name="')[1].split(b'"')[0]
-            print("[category]", category)
-            action_category_pair[1] = category.decode('utf-8')
-        elif line.startswith(b'</intent-filter>') and flag == 2:
-            flag = 1
-            if not action_category_pair[0] == b'' or not action_category_pair[1] == b'':
-                d[activity.decode('utf-8')].append(action_category_pair)
-        elif line.startswith(b'</activity>'):
-            flag = 0
-        else:
-            continue
-
+                    #print("YES")
+                    for item in child.iter():
+                        #print(item.tag)
+                        #print(item.attrib)
+                        if item.tag == 'action':
+                            action_category_pair[0] = item.attrib['{http://schemas.android.com/apk/res/android}name']
+                        if item.tag == 'category':
+                            action_category_pair[1] = item.attrib['{http://schemas.android.com/apk/res/android}name']
+                    d[activity].append(action_category_pair)
+    #print(d)
     return d
 
 

@@ -1,7 +1,7 @@
 import os
 import subprocess
 import time
-
+import pickle
 from pret import aapt
 from pret import apktool
 from structure import project
@@ -113,8 +113,8 @@ if __name__ == '__main__':
         # 初始化Activiy列表
         actlist = []
         for act in parse_result:
-            if act.split(p.used_name)[1] not in actlist:
-                actlist.append(act.split(p.used_name)[1])
+            if act not in actlist:
+                actlist.append(act)
         for act in parse_result:
             parseStr.append("==")
             parseStr.append("Activity: " + act)
@@ -154,13 +154,7 @@ if __name__ == '__main__':
             except:
                 # 卸载并清理环境
                 phone_list[0].uiauto.app_clear(p.used_name)
-                cmd = "adb uninstall " + p.used_name
-                result = subprocess.check_output(cmd, shell=True)
-                time.sleep(0.5)
-                if "Success" in result.decode("utf8"):
-                    print("[+] Success uninstall :", p.p_id)
-                else:
-                    print("[-] Don't uninstall :", p.p_id)
+                phone_list[0].uiauto.app_uninstall(p.used_name)
                 count = count - 1
                 time.sleep(2)
                 #exit(0)
@@ -169,6 +163,12 @@ if __name__ == '__main__':
 
     print("[+] Successful Build Project: ", suceess_project)
     print("[+] Fault Build Project: ", fault_project)
+
+    '''
+    for p in project_list:
+        with open(p.storge, 'wb') as f:  # 打开文件
+            pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件
+    '''
 
 
     # 更新变化检查

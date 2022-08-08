@@ -66,6 +66,11 @@ class project:
         self.layout_dir = os.path.join(self.res_dir, "layout")
         if not os.path.exists(self.layout_dir):
             os.mkdir(self.layout_dir)
+        # 模糊测试的日志
+        self.fuzzlog = os.path.join(self.res_dir, "fuzzlog.txt")
+        # 持久化目录
+        self.storge = os.path.join(self.res_dir, "project")
+
 
     def setAct(self, actlist):
         self.activity = actlist
