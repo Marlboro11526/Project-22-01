@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView android:tag="layout/server_saved_item_0" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ServerCard"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <include layout="@layout/server_item" />
-    <com.gaurav.avnc.ui.home.IndicatorView android:layout_gravity="end|center" android:id="@id/indicator" android:background="@drawable/indicator" android:visibility="gone" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_margin="@dimen/margin_normal" android:alpha="0.0" />
-</com.google.android.material.card.MaterialCardView>

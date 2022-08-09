@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:tag="layout/server_saved_0" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/servers_rv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:contentDescription="@string/desc_saved_servers_list" style="@style/ServerList" />
-    <TextView android:tag="binding_1" android:visibility="gone" android:text="@string/tip_empty_server_list" style="@style/TipView" />
-    <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_gravity="end|bottom|center" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal" android:src="@drawable/ic_plus" android:contentDescription="@string/desc_add_new_server_btn" style="@style/Widget.MaterialComponents.FloatingActionButton" />
-</FrameLayout>

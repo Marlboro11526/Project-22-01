@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="server_card_elevation">1.0dip</dimen>
-    <dimen name="server_card_stroke_width">1.0dip</dimen>
-</resources>

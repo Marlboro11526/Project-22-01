@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ImageButton android:id="@id/help_btn" android:src="@drawable/ic_help" android:contentDescription="@string/desc_help_btn" app:tint="?colorControlNormal" style="@style/ImageButton"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

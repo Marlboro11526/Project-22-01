@@ -88,7 +88,11 @@ if __name__ == '__main__':
 
     # apktools unpack apk
     for p in project_list:
-        apktool.unpackAPK(p)
+        try:
+            apktool.unpackAPK(p)
+        except:
+            project_list.remove(p)
+
 
     # check unpack info
     for p in project_list:
@@ -96,42 +100,48 @@ if __name__ == '__main__':
 
     # 重打包
     for p in project_list:
-        repkg.main(p)
+        try:
+            repkg.main(p)
+        except:
+            project_list.remove(p)
 
     # parseManifest
     for p in project_list:
-        parse_result = parseM.parseManifest(p)
-        if parse_result != {}:
-            print("[+] get parseManifest!")
-        else:
-            print("[-] don't get parseManifest!")
-            exit(0)
+        try:
+            parse_result = parseM.parseManifest(p)
+            if parse_result != {}:
+                print("[+] get parseManifest!")
+            else:
+                print("[-] don't get parseManifest!")
+                exit(0)
 
-        # show parse result
-        p.setParse(parse_result)
-        parseStr = []
-        # 初始化Activiy列表
-        actlist = []
-        for act in parse_result:
-            if act not in actlist:
-                actlist.append(act)
-        for act in parse_result:
-            parseStr.append("==")
-            parseStr.append("Activity: " + act)
-            for intent in parse_result[act]:
-                parseStr.append("[Action]: " + intent[0])
-                parseStr.append("[Category]: " + intent[1])
-        p.setAct(actlist)
-        p.printAll()
-        parseManifest_path = os.path.join(p.res_dir, "parseManifest.txt")
-        # clear parseManifest
-        with open(parseManifest_path, 'w') as f:
-            pass
-        # write parseManifest
-        with open(parseManifest_path, 'a') as f:
-            for index in parseStr:
-                f.writelines(index + "\n")
-        print("[+] Write to parseManifest.txt: ", parseManifest_path)
+            # show parse result
+            p.setParse(parse_result)
+            parseStr = []
+            # 初始化Activiy列表
+            actlist = []
+            for act in parse_result:
+                if act not in actlist:
+                    actlist.append(act)
+            for act in parse_result:
+                parseStr.append("==")
+                parseStr.append("Activity: " + act)
+                for intent in parse_result[act]:
+                    parseStr.append("[Action]: " + intent[0])
+                    parseStr.append("[Category]: " + intent[1])
+            p.setAct(actlist)
+            p.printAll()
+            parseManifest_path = os.path.join(p.res_dir, "parseManifest.txt")
+            # clear parseManifest
+            with open(parseManifest_path, 'w') as f:
+                pass
+            # write parseManifest
+            with open(parseManifest_path, 'a') as f:
+                for index in parseStr:
+                    f.writelines(index + "\n")
+            print("[+] Write to parseManifest.txt: ", parseManifest_path)
+        except:
+            project_list.remove(p)
 
     phone_list = scan.scan_devices(device_model)
     if phone_list:
@@ -164,12 +174,6 @@ if __name__ == '__main__':
     print("[+] Successful Build Project: ", suceess_project)
     print("[+] Fault Build Project: ", fault_project)
 
-    '''
-    for p in project_list:
-        with open(p.storge, 'wb') as f:  # 打开文件
-            pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件
-    '''
-
 
     # 更新变化检查
     # 将同一包名应用打包送入检查
@@ -187,7 +191,6 @@ if __name__ == '__main__':
         print("[+] get update dir: ", update_pkg_dir)
         # 进入更新对比分析模块
         run_update.run(pkg_up_list[pkg], phone_list[0], update_pkg_dir)
-
 
 
 

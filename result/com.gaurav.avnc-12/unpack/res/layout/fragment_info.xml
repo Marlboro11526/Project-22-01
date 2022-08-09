@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:id="@id/v_scroll" android:tag="layout/fragment_info_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <HorizontalScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="12.0sp" android:typeface="monospace" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal" android:text="@string/msg_loading" />
-    </HorizontalScrollView>
-</ScrollView>

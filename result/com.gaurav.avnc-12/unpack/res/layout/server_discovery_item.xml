@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView android:tag="layout/server_discovery_item_0" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ServerCard"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <include layout="@layout/server_item" />
-    <ImageButton android:layout_gravity="end|center" android:id="@id/save_btn" android:src="@drawable/ic_plus" android:contentDescription="@string/desc_save_discovered_server_btn" style="@style/ImageButton" />
-</com.google.android.material.card.MaterialCardView>
