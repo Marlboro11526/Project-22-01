@@ -1,208 +1,87 @@
 import os
+import json
 import subprocess
-import time
-import pickle
-from pret import aapt
-from pret import apktool
-from structure import project
-from parseManifest import parseM
-from devices_list import scan
-from dymaic import run_apk
-from update import run_update
-from repkg import repkg
+from treelib import Tree, Node
+import xml.etree.ElementTree as ET
+from xml.etree.ElementTree import ElementTree, Element
+import hashlib
 
-# config
-result_folder = "./result"
-apks_folder = "./apks"
-device_model = 0  # 0: remote 1: local
+# Get the parameters to start the activity
+def extract_activity_action(manifestPath, used_pkg_name):
+    # {activity1: {actions: action1, category: cate1}}
+    # new format: {activity: [[action1, category1],[action2, category2]]}
+    d = {}
+    ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
+    # 读取Manifest文件
+    with open(manifestPath, 'rt') as f:
+        tree = ET.parse(f)
+        # 逐个修个node
+    for node in tree.iter():
+        if node.tag == "activity":
+            print("[+] Find a Activity Node!")
+            #print(node.tag)
+            #print(node.attrib)
+            activity = node.attrib['{http://schemas.android.com/apk/res/android}name']
+            #print(activity)
+            if activity not in d:
+                d[activity] = []
+            for child in node.iter():
+                if child.tag == 'intent-filter':
+                    action_category_pair = ['', '']
+                    #print("YES")
+                    for item in child.iter():
+                        #print(item.tag)
+                        #print(item.attrib)
+                        if item.tag == 'action':
+                            action_category_pair[0] = item.attrib['{http://schemas.android.com/apk/res/android}name']
+                        if item.tag == 'category':
+                            action_category_pair[1] = item.attrib['{http://schemas.android.com/apk/res/android}name']
+                    d[activity].append(action_category_pair)
+        if node.tag == "activity-alias":
+            print("[+] Find a Activity alias Node!")
+            #print(node.attrib)
+            target_act = node.attrib['{http://schemas.android.com/apk/res/android}targetActivity']
+            #print(target_act)
+            if target_act not in d:
+                d[target_act] = []
+            for child in node.iter():
+                if child.tag == 'intent-filter':
+                    action_category_pair = ['', '']
+                    #print("YES")
+                    for item in child.iter():
+                        #print(item.tag)
+                        #print(item.attrib)
+                        if item.tag == 'action':
+                            action_category_pair[0] = item.attrib['{http://schemas.android.com/apk/res/android}name']
+                        if item.tag == 'category':
+                            action_category_pair[1] = item.attrib['{http://schemas.android.com/apk/res/android}name']
+                    d[target_act].append(action_category_pair)
+    #print(d)
+    return d
 
 
-def init_apk(apk_dir):
-    print("------------------------------")
-    print("[~] Start Run: ", apk_dir)
-    print("------------------------------")
-
-    # get aapt info
-    aapt_info = aapt.pre_aapt(apk_dir)
-    if aapt_info != {}:
-        print("[+] Get AAPT Info!")
-    else:
-        print("[-] Don't get AAPT Info!")
-        exit(0)
-    # print(aapt_info)
-
-    project_id = aapt_info['used_pkg_name'] + "-" + aapt_info['versionCode']
-    print("[+] set project id: ", project_id)
-    project_result_dir = os.path.join(result_folder, project_id)
-    print("[+] set project result dir: ", project_result_dir)
-
-    p = project.project(project_id, project_result_dir, aapt_info['versionCode'], aapt_info['used_pkg_name'], apk_dir)
-    if p.p_id != "" and p.res_dir != "":
-        print("[+] creat new project: ", project_id)
-    else:
-        print("[-] don't creat new project: ", project_id)
-
-    return p
+def parseManifest(p):
+    print("========== Parsing manifest file of '%s.apk' ==========" % p.p_id)
+    if not os.path.exists(p.unpack_path):
+        print("cannot find the decompiled app: " + p.p_id)
+        return
+    manifestPath = os.path.join(p.unpack_path, "AndroidManifest.xml")
+    print("[+] manifestPath: ", manifestPath)
+    pairs = extract_activity_action(manifestPath, p.used_name)
+    # format of pairs: {activity1: {actions: action1, category: cate1 }} -----discard
+    # new format: {activity: [[action1, category1],[action2, category2]]}
+    ##get all activity and their attributes
+    return pairs
 
 
 if __name__ == '__main__':
-    # 检查APK目录
-    if not os.path.exists(apks_folder):
-        print("[!] Not exists apks folder!")
-        os.makedirs(apks_folder)
-        exit(0)
-    else:
-        print("[+] Get apks folder: ", apks_folder)
-
-    # 建立工作目录
-    if not os.path.exists(result_folder):
-        os.makedirs(result_folder)
-        print("[+] Mkdir new result folder: ", result_folder)
-    else:
-        print("[+] Get result folder: ", result_folder)
-
-    # 获取APK列表
-    apks = []
-    index = 1
-    for apk in os.listdir(apks_folder):
-        apks.append(apk)
-        print("[+] find ", str(index), " : ", apk)
-        index = index + 1
-    if index > 1:
-        print("[+] Total apks: ", str(index - 1))
-    else:
-        print("[-] None apks in ", apks_folder)
-        exit(0)
-
-    # init project list
-    project_list = []
-    for apk in apks:
-        apk_dir = os.path.join(apks_folder, apk)
-        try:
-            project_list.append(init_apk(apk_dir))
-        except:
-            try:
-                os.remove(apk_dir)
-            except:
-                pass
-
-    # 初始化包分类
-    pkg_up_list = {}
-    for p in project_list:
-        pkg_up_list[p.used_name] = []
-    print("[+] Build pkg_up_list: ", pkg_up_list)
-
-    # apktools unpack apk
-    for p in project_list:
-        try:
-            apktool.unpackAPK(p)
-        except:
-            project_list.remove(p)
-
-    # check unpack info
-    for p in project_list:
-        p.printAll()
-
-    # 重打包
-    for p in project_list:
-        try:
-            repkg.main(p)
-        except:
-            project_list.remove(p)
-
-    # parseManifest
-    for p in project_list:
-        try:
-            parse_result = parseM.parseManifest(p)
-            if parse_result != {}:
-                print("[+] get parseManifest!")
-            else:
-                print("[-] don't get parseManifest!")
-                exit(0)
-
-            # show parse result
-            p.setParse(parse_result)
-            parseStr = []
-            # 初始化Activiy列表
-            actlist = []
-            for act in parse_result:
-                if act not in actlist:
-                    actlist.append(act)
-            for act in parse_result:
-                parseStr.append("==")
-                parseStr.append("Activity: " + act)
-                for intent in parse_result[act]:
-                    parseStr.append("[Action]: " + intent[0])
-                    parseStr.append("[Category]: " + intent[1])
-            p.setAct(actlist)
-            p.printAll()
-            parseManifest_path = os.path.join(p.res_dir, "parseManifest.txt")
-            # clear parseManifest
-            with open(parseManifest_path, 'w') as f:
-                pass
-            # write parseManifest
-            with open(parseManifest_path, 'a') as f:
-                for index in parseStr:
-                    f.writelines(index + "\n")
-            print("[+] Write to parseManifest.txt: ", parseManifest_path)
-        except:
-            project_list.remove(p)
-
-    phone_list = scan.scan_devices(device_model)
-    if phone_list:
-        print("[+] get Phone list: ", phone_list)
-    else:
-        print("[-] None Phone list!")
-        exit(0)
-
-    suceess_project = []
-    fault_project = []
-    # start dynamic
-    for p in project_list:
-        count = 2
-        while count != 0:
-            try:
-                run_apk.run(p, phone_list[0])
-                p.savegv()
-                suceess_project.append(project)
-                break
-            except:
-                # 卸载并清理环境
-                phone_list[0].uiauto.app_clear(p.used_name)
-                phone_list[0].uiauto.app_uninstall(p.used_name)
-                count = count - 1
-                time.sleep(2)
-                #exit(0)
-        if count == 0:
-            fault_project.append(project)
-
-    print("[+] Successful Build Project: ", suceess_project)
-    print("[+] Fault Build Project: ", fault_project)
-
-    '''
-    for p in project_list:
-        with open(p.storge, 'wb') as f:  # 打开文件
-            pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件
-    '''
-
-
-    # 更新变化检查
-    # 将同一包名应用打包送入检查
-    for p in project_list:
-        pkg_up_list[p.used_name].append(p)
-    update_dir = os.path.join(result_folder, "update")
-    #os.remove(update_dir)
-    if not os.path.exists(update_dir):
-        os.makedirs(update_dir)
-    for pkg in pkg_up_list:
-        update_pkg_dir = os.path.join(result_folder, "update", pkg)
-        if not os.path.exists(update_pkg_dir):
-            os.makedirs(update_pkg_dir)
-        print("========== ", pkg, " ==========")
-        print("[+] get update dir: ", update_pkg_dir)
-        # 进入更新对比分析模块
-        run_update.run(pkg_up_list[pkg], phone_list[0], update_pkg_dir)
-    
-
-
-
+    test = "com.gaurav.avnc"
+    path = "../testfile/AndroidManifest.xml"
+    parse_result = extract_activity_action(path, test)
+    print(parse_result)
+    # 初始化Activiy列表
+    actlist = []
+    for act in parse_result:
+        if act.split(test)[1] not in actlist:
+            actlist.append(act.split(test)[1])
+    print(actlist)

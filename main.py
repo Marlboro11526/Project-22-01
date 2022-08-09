@@ -46,6 +46,14 @@ def init_apk(apk_dir):
 
 
 if __name__ == '__main__':
+
+    success_list = "./success.txt"
+    fault_list = "./fault.txt"
+    with open(success_list, 'w') as f:
+        f.close()
+    with open(fault_list, 'w') as f:
+        f.close()
+
     # 检查APK目录
     if not os.path.exists(apks_folder):
         print("[!] Not exists apks folder!")
@@ -78,7 +86,13 @@ if __name__ == '__main__':
     project_list = []
     for apk in apks:
         apk_dir = os.path.join(apks_folder, apk)
-        project_list.append(init_apk(apk_dir))
+        try:
+            project_list.append(init_apk(apk_dir))
+        except:
+            try:
+                os.remove(apk_dir)
+            except:
+                pass
 
     # 初始化包分类
     pkg_up_list = {}
@@ -92,7 +106,6 @@ if __name__ == '__main__':
             apktool.unpackAPK(p)
         except:
             project_list.remove(p)
-
 
     # check unpack info
     for p in project_list:
@@ -160,6 +173,9 @@ if __name__ == '__main__':
                 run_apk.run(p, phone_list[0])
                 p.savegv()
                 suceess_project.append(project)
+                with open(success_list, 'w') as f:
+                    f.writelines(p.p_id)
+                    f.close()
                 break
             except:
                 # 卸载并清理环境
@@ -170,9 +186,17 @@ if __name__ == '__main__':
                 #exit(0)
         if count == 0:
             fault_project.append(project)
+            with open(fault_list, 'w') as f:
+                f.writelines(p.p_id)
+                f.close()
 
     print("[+] Successful Build Project: ", suceess_project)
     print("[+] Fault Build Project: ", fault_project)
+
+    '''
+    for p in project_list:
+        with open(p.storge, 'wb') as f:  # 打开文件
+            pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件'''
 
 
     # 更新变化检查
