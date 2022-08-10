@@ -2,6 +2,8 @@ import os
 import subprocess
 import time
 import pickle
+
+from enhance import en_ic3
 from pret import aapt
 from pret import apktool
 from structure import project
@@ -118,6 +120,11 @@ if __name__ == '__main__':
         except:
             project_list.remove(p)
 
+    for p in project_list:
+        en_ic3.init(p)
+
+
+    '''
     # parseManifest
     for p in project_list:
         try:
@@ -155,7 +162,11 @@ if __name__ == '__main__':
             print("[+] Write to parseManifest.txt: ", parseManifest_path)
         except:
             project_list.remove(p)
+    
+    
+    
 
+    
     phone_list = scan.scan_devices(device_model)
     if phone_list:
         print("[+] get Phone list: ", phone_list)
@@ -167,12 +178,16 @@ if __name__ == '__main__':
     fault_project = []
     # start dynamic
     for p in project_list:
-        count = 2
-        while count != 0:
+        time.sleep(3)
+        count = 3
+        while True:
+            if count == 0:
+                break
             try:
                 run_apk.run(p, phone_list[0])
                 p.savegv()
                 suceess_project.append(project)
+                os.remove(p.apk_path)
                 with open(success_list, 'w') as f:
                     f.writelines(p.p_id)
                     f.close()
@@ -186,6 +201,7 @@ if __name__ == '__main__':
                 #exit(0)
         if count == 0:
             fault_project.append(project)
+            os.remove(p.apk_path)
             with open(fault_list, 'w') as f:
                 f.writelines(p.p_id)
                 f.close()
@@ -193,10 +209,10 @@ if __name__ == '__main__':
     print("[+] Successful Build Project: ", suceess_project)
     print("[+] Fault Build Project: ", fault_project)
 
-    '''
+    
     for p in project_list:
         with open(p.storge, 'wb') as f:  # 打开文件
-            pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件'''
+            pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件
 
 
     # 更新变化检查
@@ -215,6 +231,6 @@ if __name__ == '__main__':
         print("[+] get update dir: ", update_pkg_dir)
         # 进入更新对比分析模块
         run_update.run(pkg_up_list[pkg], phone_list[0], update_pkg_dir)
-
+    '''
 
 

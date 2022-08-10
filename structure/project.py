@@ -70,7 +70,12 @@ class project:
         self.fuzzlog = os.path.join(self.res_dir, "fuzzlog.txt")
         # 持久化目录
         self.storge = os.path.join(self.res_dir, "project")
-
+        # soot目录
+        self.sootOutput_dir = ""
+        # activity coverage数据保存
+        self.actcoverage = []
+        # screen coverage数据保存
+        self.scecoverage = []
 
     def setAct(self, actlist):
         self.activity = actlist

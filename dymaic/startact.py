@@ -169,6 +169,10 @@ def run(project, device, screen):
         currentACT = result.decode("utf8").split(project.used_name + "/")[1].split(" ")[0]
         if project.used_name in currentACT:
             currentACT = ".activities" + currentACT.split(".activities")[1]
+
+        if currentACT not in project.actcoverage:
+            project.actcoverage.append(currentACT)
+        
         flag = False
         if not isNewActivity(project, screen.act):
             print("A Different Act Name: ", currentACT)
@@ -257,6 +261,9 @@ def run(project, device, screen):
         else:
             os.remove(project.tmppng)
             continue
+
+        if screenvector not in project.actcoverage:
+            project.scecoverage.append(screenvector)
 
         # 对新的Screen进行截图
         dshot = getshot.shot(device.uiauto, project, screenvector)

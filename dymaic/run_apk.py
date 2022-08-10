@@ -78,6 +78,8 @@ def run(project, device):
                 widget_stack = []
                 act = activity.split(project.used_name)[1]
 
+                if act not in project.actcoverage:
+                    project.actcoverage.append(act)
 
                 # 构建初始Widget Stack
                 for widget in device.uiauto(clickable="true"):
@@ -109,6 +111,9 @@ def run(project, device):
 
                 shot_dir = getshot.shot(device.uiauto, project, screenvector)
                 dshot = shot_dir
+
+                if screenvector not in project.actcoverage:
+                    project.scecoverage.append(screenvector)
 
                 # 建立新的场景对象
                 new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act,
