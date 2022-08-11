@@ -3,6 +3,7 @@ from graphviz import Digraph
 from skimage.metrics import structural_similarity as compare_ssim
 from skimage import io
 
+
 class project:
     def __init__(self, p_id, res_dir, version, used_name, apk_path):
         """
@@ -76,6 +77,12 @@ class project:
         self.actcoverage = []
         # screen coverage数据保存
         self.scecoverage = []
+        # self activity num
+        self.actnum = 0
+        self.apks_folder = ""
+        self.root_dir = ""
+        self.align_name = ""
+        self.act_paras_file = ""
 
     def setAct(self, actlist):
         self.activity = actlist
@@ -145,7 +152,6 @@ class project:
                 print("[-] This Screen is alive!")
                 return False
 
-
         # 检查Picture
         for obj in self.screenobject:
             img1 = io.imread(dshot)
@@ -156,7 +162,6 @@ class project:
                 print("[-] This Screen is alive!")
                 print("[V] : ", obj.vector)
                 return False
-
 
         print("[-] This Screen is New: ", vector)
         return True
@@ -196,3 +201,16 @@ class project:
         self.atg_dog.render(self.atg_gv, view=True)
         self.stg_dog.render(self.stg_gv, view=True)
         self.pkg_dog.render(self.pkg_gv, view=True)
+
+    # 计算并保存覆盖率数据
+    def coverage(self):
+        cover_path = os.path.join(self.res_dir, 'cover.txt')
+        print('Total ACT NUM: ' + str(self.actnum))
+        print('Cover ACT NUM: ' + str(len(self.actcoverage)))
+        print('Cover SCE NUM: ' + str(len(self.scecoverage)))
+        print('Coverage: ' + str(float(float(len(self.actcoverage)) / float(self.actnum))))
+        with open(cover_path, 'a') as f:
+            f.writelines('Total ACT NUM: ' + str(self.actnum) + '\n')
+            f.writelines('Cover ACT NUM: ' + str(len(self.actcoverage)) + '\n')
+            f.writelines('Cover SCE NUM: ' + str(len(self.scecoverage)) + '\n')
+            f.writelines('Coverage: ' + str(float(float(len(self.actcoverage)) / float(self.actnum))) + '\n')

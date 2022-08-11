@@ -22,15 +22,23 @@ def sign(project):
         print("[+] create key success: ", project.p_id)
     '''
     # sign key
-    key_dir = "./watson.keystore"
-    pkg_name = project.apk_path.split('./apks/')[1]
+    key_dir = os.path.join(os.getcwd(), "watson.keystore")
+    #print(project.apk_path)
+    #print(project.apks_folder)
+    pkg_name = project.apk_path.split(project.apks_folder+'/')[1]
+    #print(pkg_name)
+    #print(type(pkg_name))
     if not os.path.exists(key_dir):
         print("[-] find key fault: ", pkg_name)
         exit(0)
     else:
         print("[+] find key success: ", pkg_name)
 
-    repkg_dir = os.path.join(project.unpack_path, "dist", pkg_name)
+    repkg_dir = os.path.join(project.unpack_path, "dist")
+    print(repkg_dir)
+    repkg_dir = os.path.join(repkg_dir, pkg_name)
+    print(project.unpack_path)
+    print(repkg_dir)
     if not os.path.exists(repkg_dir):
         print("[-] find repkg fault: ", pkg_name)
         exit(0)
@@ -69,6 +77,7 @@ def sign(project):
     else:
         pass
     project.apk_path = align_dir
+    project.align_name = align_name
     print("[+] All PKG repkg work kill!")
 
 

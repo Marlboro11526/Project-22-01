@@ -14,8 +14,8 @@ from update import run_update
 from repkg import repkg
 
 # config
-result_folder = "./result"
-apks_folder = "./apks"
+result_folder = ""
+apks_folder = ""
 device_model = 0  # 0: remote 1: local
 
 
@@ -43,14 +43,21 @@ def init_apk(apk_dir):
         print("[+] creat new project: ", project_id)
     else:
         print("[-] don't creat new project: ", project_id)
-
+    p.apks_folder = apks_folder
+    p.root_dir = os.getcwd()
     return p
 
 
 if __name__ == '__main__':
+    pwd_dir = os.getcwd()
+    result_folder = os.path.join(pwd_dir, "result")
+    # apks_folder = "./apks"
+    apks_folder = os.path.join(pwd_dir, "apks")
 
-    success_list = "./success.txt"
-    fault_list = "./fault.txt"
+    success_list = os.path.join(pwd_dir, "success.txt")
+
+    fault_list = os.path.join(pwd_dir, "fault.txt")
+
     with open(success_list, 'w') as f:
         f.close()
     with open(fault_list, 'w') as f:
@@ -120,11 +127,12 @@ if __name__ == '__main__':
         except:
             project_list.remove(p)
 
+    print(project_list)
+
     for p in project_list:
+        print("icenhance: ", p.p_id)
         en_ic3.init(p)
 
-
-    '''
     # parseManifest
     for p in project_list:
         try:
@@ -154,7 +162,7 @@ if __name__ == '__main__':
             parseManifest_path = os.path.join(p.res_dir, "parseManifest.txt")
             # clear parseManifest
             with open(parseManifest_path, 'w') as f:
-                pass
+                f.close()
             # write parseManifest
             with open(parseManifest_path, 'a') as f:
                 for index in parseStr:
@@ -162,11 +170,7 @@ if __name__ == '__main__':
             print("[+] Write to parseManifest.txt: ", parseManifest_path)
         except:
             project_list.remove(p)
-    
-    
-    
 
-    
     phone_list = scan.scan_devices(device_model)
     if phone_list:
         print("[+] get Phone list: ", phone_list)
@@ -185,10 +189,13 @@ if __name__ == '__main__':
                 break
             try:
                 run_apk.run(p, phone_list[0])
-                p.savegv()
+                try:
+                    p.savegv()
+                except:
+                    pass
                 suceess_project.append(project)
                 os.remove(p.apk_path)
-                with open(success_list, 'w') as f:
+                with open(success_list, 'a') as f:
                     f.writelines(p.p_id)
                     f.close()
                 break
@@ -198,29 +205,31 @@ if __name__ == '__main__':
                 phone_list[0].uiauto.app_uninstall(p.used_name)
                 count = count - 1
                 time.sleep(2)
-                #exit(0)
+                # exit(0)
         if count == 0:
             fault_project.append(project)
             os.remove(p.apk_path)
-            with open(fault_list, 'w') as f:
+            with open(fault_list, 'a') as f:
                 f.writelines(p.p_id)
                 f.close()
 
     print("[+] Successful Build Project: ", suceess_project)
     print("[+] Fault Build Project: ", fault_project)
+    '''
 
     
-    for p in project_list:
-        with open(p.storge, 'wb') as f:  # 打开文件
-            pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件
+    # for p in project_list:
+        # with open(p.storge, 'wb') as f:  # 打开文件
+            # pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件
 
+    '''
 
     # 更新变化检查
     # 将同一包名应用打包送入检查
     for p in project_list:
         pkg_up_list[p.used_name].append(p)
     update_dir = os.path.join(result_folder, "update")
-    #os.remove(update_dir)
+    # os.remove(update_dir)
     if not os.path.exists(update_dir):
         os.makedirs(update_dir)
     for pkg in pkg_up_list:
@@ -231,6 +240,3 @@ if __name__ == '__main__':
         print("[+] get update dir: ", update_pkg_dir)
         # 进入更新对比分析模块
         run_update.run(pkg_up_list[pkg], phone_list[0], update_pkg_dir)
-    '''
-
-

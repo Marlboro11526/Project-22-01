@@ -172,7 +172,7 @@ def run(project, device, screen):
 
         if currentACT not in project.actcoverage:
             project.actcoverage.append(currentACT)
-        
+
         flag = False
         if not isNewActivity(project, screen.act):
             print("A Different Act Name: ", currentACT)

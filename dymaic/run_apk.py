@@ -8,7 +8,7 @@ from structure import mywidget
 from tools import eigenvector
 from dymaic import startact
 from tools import  findres
-
+from enhance import extras
 # 开启动态探索
 def run(project, device):
     # install apk
@@ -33,6 +33,13 @@ def run(project, device):
                 print("[action]: ", action)
             if category != '':
                 print("[category]: ", category)
+
+            myextras = extras.get_act_extra_paras(activity, project.act_paras_file)
+            if myextras != '':
+                print("[+] GET EXTRAS: ", myextras)
+            else:
+                print("[-] DON'T GET EXTRAS")
+
             if action != '' or category != '':
                 cmd = "adb shell am start -S -n " + component
                 if not action == '':
@@ -40,6 +47,10 @@ def run(project, device):
                 if not category == '':
                     cmd = cmd + ' -c ' + category
                 print("[cmd]: ", cmd)
+                # 补充参数
+                if myextras != '':
+                    cmd = cmd + ' ' + myextras
+
                 result = subprocess.check_output(cmd, shell=True)
                 dcommnd.append(cmd)
             else:
@@ -146,3 +157,4 @@ def run(project, device):
     '''
     project.printscreen()
     project.printTrans()
+    project.coverage()
