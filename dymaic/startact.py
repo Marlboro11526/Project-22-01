@@ -29,7 +29,7 @@ def restartScreen(project, screen, device):
         result = subprocess.check_output(cmd, shell=True)
         print(result)
         time.sleep(0.5)
-        cmd = "adb shell dumpsys activity activities | grep mResumedActivity"
+        cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
         result = subprocess.check_output(cmd, shell=True)
         texactivity = screen.start
         check_name = project.used_name + '/' + texactivity
@@ -57,14 +57,14 @@ def restartScreen(project, screen, device):
         print("[+] start widget_command !")
 
 
-def isNewActivity(project, oldact):
+def isNewActivity(project, oldact, device):
     """
     :param project: 项目对象
     :param oldact: 启动者Activity
     :return: 是否为新的Activity，否为新的Activity
     """
     time.sleep(0.2)
-    cmd = "adb shell dumpsys activity activities | grep mResumedActivity"
+    cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
     result = subprocess.check_output(cmd, shell=True)
     check_name = project.used_name + '/' + oldact
     if check_name in result.decode("utf8"):
@@ -109,12 +109,17 @@ def run(project, device, screen):
             except:
                 continue
 
+    #   逐个组件点击
     for index in range(stack_len):
+        restartScreen(project, screen, device)
         time.sleep(0.3)
+        # 组件丢失的情况
         try:
             widget_stack[index].ui2
         except:
-            restartScreen(project, screen, device)
+            # 重启场景
+            print("[-] This widget break")
+            # 测下一个组件
             continue
         if not widget_stack[index].ui2:
             print("[-] widget not exists: ")
@@ -125,6 +130,7 @@ def run(project, device, screen):
             widgetu2.click()
         except:
             print("[-] widget don't click: ", widgetu2.info)
+            continue
         '''
         time.sleep(0.5)
         screenvector = str(random.randint(1, 500000))
@@ -154,7 +160,6 @@ def run(project, device, screen):
             # 将可以跳转到新PKG更新到widget中
             screen.widgetstack[index].updatePkg(currentPackageName)
             device.uiauto.app_stop(currentPackageName)
-            restartScreen(project, screen, device)
             continue
         else:
             print("Alive Package")
@@ -162,7 +167,7 @@ def run(project, device, screen):
         # 获取当前的Activity
         # 判断是否进入了与启动Activity不同的Activity
         # 这里上面已经判断包名，故这里的Activity一定是我们运行的APK包名
-        cmd = "adb shell dumpsys activity activities | grep mResumedActivity"
+        cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
         result = subprocess.check_output(cmd, shell=True)
         # print(result.decode("utf8"))
         # 获取当前Activity的名称
@@ -174,7 +179,7 @@ def run(project, device, screen):
             project.actcoverage.append(currentACT)
 
         flag = False
-        if not isNewActivity(project, screen.act):
+        if not isNewActivity(project, screen.act, device):
             print("A Different Act Name: ", currentACT)
             screen.widgetstack[index].updateAct(currentACT)
             # 将新的ATG转换关系添加
@@ -196,7 +201,7 @@ def run(project, device, screen):
                 project.activity.append(currentACT)
                 flag = True
             else:
-                restartScreen(project, screen, device)
+                pass
         # 判断当前是否出现了新的Screen
         dxml = device.uiauto.dump_hierarchy(compressed=True)
         if flag:
@@ -228,9 +233,7 @@ def run(project, device, screen):
         act = currentACT
         # 临时截图
         device.uiauto.screenshot(project.tmppng)
-
         startact = screen.start
-
         # 判断是否为新出现的场景特征
         # if project.isAliveScreen(screenvector):
         if project.isAliveScreen(screenvector, dw_commd, act, startact, dparentScreen, project.tmppng):
@@ -238,21 +241,18 @@ def run(project, device, screen):
             project.screenlist.append(screenvector)
             # 将新的Screen转换关系添加到项目中
             screentrans = screen.vector + "->" + screenvector
-
             xml_dir = os.path.join(project.layout_dir, screenvector + ".xml")
             # 写入布局文件信息
             f = open(xml_dir, 'w')
             f.write(dxml)
             f.close()
-
+            # 判断是否新出现的场景转换关系
             if screentrans not in project.screentrans:
                 project.screentrans.append(screentrans)
-
                 try:
                     project.stg_dog.node(screen.vector, screen.vector)
                 except:
                     pass
-
                 try:
                     project.stg_dog.node(screenvector, screenvector)
                     project.stg_dog.edge(screen.vector, screenvector)
@@ -261,8 +261,8 @@ def run(project, device, screen):
         else:
             os.remove(project.tmppng)
             continue
-
-        if screenvector not in project.actcoverage:
+        #   场景覆盖率统计
+        if screenvector not in project.scecoverage:
             project.scecoverage.append(screenvector)
 
         # 对新的Screen进行截图

@@ -128,11 +128,12 @@ if __name__ == '__main__':
             project_list.remove(p)
 
     print(project_list)
-
+    '''
     for p in project_list:
         print("icenhance: ", p.p_id)
         en_ic3.init(p)
-
+    '''
+    
     # parseManifest
     for p in project_list:
         try:
@@ -183,46 +184,15 @@ if __name__ == '__main__':
     # start dynamic
     for p in project_list:
         time.sleep(3)
-        count = 3
-        while True:
-            if count == 0:
-                break
-            try:
-                run_apk.run(p, phone_list[0])
-                try:
-                    p.savegv()
-                except:
-                    pass
-                suceess_project.append(project)
-                os.remove(p.apk_path)
-                with open(success_list, 'a') as f:
-                    f.writelines(p.p_id)
-                    f.close()
-                break
-            except:
-                # 卸载并清理环境
-                phone_list[0].uiauto.app_clear(p.used_name)
-                phone_list[0].uiauto.app_uninstall(p.used_name)
-                count = count - 1
-                time.sleep(2)
-                # exit(0)
-        if count == 0:
-            fault_project.append(project)
-            os.remove(p.apk_path)
-            with open(fault_list, 'a') as f:
-                f.writelines(p.p_id)
-                f.close()
-
-    print("[+] Successful Build Project: ", suceess_project)
-    print("[+] Fault Build Project: ", fault_project)
-    '''
-
-    
-    # for p in project_list:
-        # with open(p.storge, 'wb') as f:  # 打开文件
-            # pickle.dump(p, f)  # 用 dump 函数将 Python 对象转成二进制对象文件
-
-    '''
+        run_apk.run(p, phone_list[0])
+        try:
+            p.savegv()
+        except:
+            pass
+        os.remove(p.apk_path)
+        # 卸载并清理环境
+        phone_list[0].uiauto.app_clear(p.used_name)
+        phone_list[0].uiauto.app_uninstall(p.used_name)
 
     # 更新变化检查
     # 将同一包名应用打包送入检查

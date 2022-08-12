@@ -59,6 +59,7 @@ def run_soot(output, apk_path, pkg_name):
 def init(project):
     global output, apk_name, java_home_path, pwd_dir, sdk_platform_path, lib_home_path, callbacks_path
     if os.path.exists(os.path.join(project.res_dir, 'outputs', project.align_name, 'activity_paras.txt')):
+        print('[+] ENHANCE EXISTS activity_paras.txt')
         return
     pwd_dir = project.root_dir
     sdk_platform_path = os.path.join(pwd_dir, 'enhance', 'config', 'libs', 'android-platforms')

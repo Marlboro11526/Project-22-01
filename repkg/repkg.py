@@ -160,6 +160,9 @@ def pretreat(project):
 
 
 def main(project):
+    align_name = project.used_name.split('.apk')[0] + "_aligned.apk"
+    if os.path.exists(os.path.join(project.unpack_path, "dist", align_name)):
+        return
     # 预处理过程
     pretreat(project)
     # 重打包过程
