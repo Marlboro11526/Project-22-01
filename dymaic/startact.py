@@ -82,6 +82,7 @@ def run(project, device, screen):
     :param screen: 场景对象
     :return:
     """
+    print("[TST-NODE]")
     widget_stack = []
     for widget in screen.widgetstack:
         widget_stack.append(widget)
@@ -172,11 +173,15 @@ def run(project, device, screen):
         # print(result.decode("utf8"))
         # 获取当前Activity的名称
         currentACT = result.decode("utf8").split(project.used_name + "/")[1].split(" ")[0]
+
+        print("[CURRENT ACT]: ", currentACT)
+
         if project.used_name in currentACT:
             currentACT = ".activities" + currentACT.split(".activities")[1]
 
-        if currentACT not in project.actcoverage:
-            project.actcoverage.append(currentACT)
+        coveract = project.used_name + currentACT
+        if coveract not in project.actcoverage:
+            project.actcoverage.append(coveract)
 
         flag = False
         if not isNewActivity(project, screen.act, device):
@@ -196,9 +201,10 @@ def run(project, device, screen):
                 except:
                     pass
             # 判断是否为全新的Activity
-            if currentACT not in project.activity:
-                print("A New Act Name: ", currentACT)
-                project.activity.append(currentACT)
+            coveract = project.used_name + currentACT
+            if coveract not in project.activity:
+                print("A New Act Name: ", coveract)
+                project.activity.append(coveract)
                 flag = True
             else:
                 pass

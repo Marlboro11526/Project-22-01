@@ -12,6 +12,7 @@ from enhance import extras
 
 
 def start(project, device, other_s, activity, component, dcommnd, scess_start_activity):
+    print("[START ACTIVITY]: ", activity)
     flag = False
     s = other_s
     action = s[0]
@@ -35,11 +36,12 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         # 补充参数
         if myextras != '':
             cmd = cmd + ' ' + myextras
+        cmd = cmd + ' -W'
         result = subprocess.check_output(cmd, shell=True)
         print("[cmd]: ", cmd)
         dcommnd.append(cmd)
 
-        if not b"Error" in result:
+        if not b"Status: ok" in result:
             if activity not in project.actcoverage:
                 project.actcoverage.append(activity)
 
@@ -69,8 +71,8 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         return
 
     if not b"Error" in result and not flag:
-        if activity.split(project.used_name)[1] not in project.activity:
-            project.activity.append(activity.split(project.used_name)[1])
+        if activity not in project.activity:
+            project.activity.append(activity)
         # 初始滑建立Screnn对象
         dxml = device.uiauto.dump_hierarchy(compressed=True)
         # 临时写入布局文件信息
@@ -82,8 +84,8 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         widget_stack = []
         act = activity.split(project.used_name)[1]
 
-        if act not in project.actcoverage:
-            project.actcoverage.append(act)
+        if activity not in project.actcoverage:
+            project.actcoverage.append(activity)
 
         # 构建初始Widget Stack
         for widget in device.uiauto(clickable="true"):
@@ -114,7 +116,7 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         shot_dir = getshot.shot(device.uiauto, project, screenvector)
         dshot = shot_dir
 
-        if screenvector not in project.actcoverage:
+        if screenvector not in project.scecoverage:
             project.scecoverage.append(screenvector)
 
         # 建立新的场景对象
@@ -161,9 +163,7 @@ def run(project, device):
     # 卸载并清理环境
     device.uiauto.app_clear(project.used_name)
     device.uiauto.app_uninstall(project.used_name)
-    try:
-        project.printscreen()
-        project.printTrans()
-        project.coverage()
-    except:
-        pass
+    project.printscreen()
+    project.printTrans()
+    project.coverage()
+
