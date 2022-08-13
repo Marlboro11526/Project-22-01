@@ -38,6 +38,11 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         result = subprocess.check_output(cmd, shell=True)
         print("[cmd]: ", cmd)
         dcommnd.append(cmd)
+
+        if not b"Error" in result:
+            if activity not in project.actcoverage:
+                project.actcoverage.append(activity)
+
     else:
         device.uiauto.app_start(project.used_name, activity)
         device.uiauto.app_start(project.used_name)
@@ -144,21 +149,12 @@ def run(project, device):
         # This is the defined format of uiautomator
         component = project.used_name + '/' + activity
         dcommnd = []
+        other.append(['', ''])
         for s in other:
             try:
                 start(project, device, s, activity, component, dcommnd, scess_start_activity)
             except:
-                pass
-        if len(other) == 1:
-            if ['zxy', 'zxy'] in other:
-                print("!!!TEST!!!")
-                action = ''
-                category = ''
-                s = [action, category]
-                try:
-                    start(project, device, s, activity, component, dcommnd, scess_start_activity)
-                except:
-                    pass
+                continue
     print("[+] successful start Activity: ", scess_start_activity)
     print("[+] all task kill: ", project.p_id)
     project.printAll()
