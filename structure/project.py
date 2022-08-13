@@ -197,7 +197,42 @@ class project:
                 f.writelines(pkg + "\n")
             print(pkg)
 
+    # 从Screen关系增强Activiy 转换关系
+    def stg_enhance_atg(self):
+        print("[+] Start Enhance ATG!")
+        for sc_tran in self.screentrans:
+            caller_sc = sc_tran.split('->')[0]
+            callee_sc = sc_tran.split('->')[1]
+            caller_act = ""
+            callee_act = ""
+            for obj in self.screenobject:
+                if obj.vector == caller_sc:
+                    caller_act = obj.act
+                    #caller_act = caller_act.split(self.used_name)[1]
+                if obj.vector == callee_sc:
+                    callee_act = obj.act
+                    #callee_act = callee_act.split(self.used_name)[1]
+                    # 将新的ATG转换关系添加
+            actrans = caller_act + "->" + callee_act
+            if actrans not in self.activitytrans:
+                self.activitytrans.append(actrans)
+                try:
+                    self.atg_dog.node(caller_act, caller_act)
+                except:
+                    pass
+                try:
+                    self.atg_dog.node(callee_act, callee_act)
+                    self.atg_dog.edge(caller_act, callee_act)
+                except:
+                    pass
+        print("[+] Successful Enhance ATG!")
+
+    # 保存转换关系图
     def savegv(self):
+        try:
+            self.stg_enhance_atg()
+        except:
+            pass
         self.atg_dog.render(self.atg_gv, view=True)
         self.stg_dog.render(self.stg_gv, view=True)
         self.pkg_dog.render(self.pkg_gv, view=True)
