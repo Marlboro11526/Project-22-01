@@ -48,6 +48,8 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
             if short_act in result:
                 print("[+] short act in Run result!")
                 if activity not in project.actcoverage:
+                    print("[+] successful append new coverage activity: ", activity)
+                    print("[+] Now act coverage :", project.actcoverage)
                     project.actcoverage.append(activity)
 
     else:
