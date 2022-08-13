@@ -1,9 +1,3 @@
-import hashlib
-import json
-from treelib import Tree, Node
-import xml.etree.ElementTree as ET
-
-
 class screen:
     def __init__(self, xml, vector, typeAct: bool, command: list, parentScreen, shot, widgetstack, act, startact):
         """
@@ -51,8 +45,11 @@ class screen:
         print("[Start Activity] : ", self.start)
         print("======================================")
         for widget in self.widgetstack:
-            print(widget.ui2.info)
-            self.widget_info.append(widget.ui2.info)
+            try:
+                print(widget.ui2.info)
+                self.widget_info.append(widget.ui2.info)
+            except:
+                pass
 
     def printAll(self):
         print("============ screen object ============")
@@ -62,18 +59,21 @@ class screen:
         print("[Start Activity] : ", self.start)
         print("[command] : ", self.command)
         print("[widget_command] : ")
-        for widegt in self.widget_command:
-            print(widegt.info)
+        try:
+            for widegt in self.widget_command:
+                print(widegt.info)
+        except:
+            pass
         print("=======================================")
 
     def printWidget(self):
         print("============ Widget Stack ============")
-        for mywidget in self.widgetstack:
-            print("[widget info]")
-            print(mywidget.ui2.info)
-            print("[Next Screen]: ", mywidget.nextscreen)
-            print("[Next Pkg]: ", mywidget.nextpkg)
-            print("[Next Activity]: ", mywidget.nextact)
-
-    def saveScreen(self):
-        pass
+        try:
+            for mywidget in self.widgetstack:
+                print("[widget info]")
+                print(mywidget.ui2.info)
+                print("[Next Screen]: ", mywidget.nextscreen)
+                print("[Next Pkg]: ", mywidget.nextpkg)
+                print("[Next Activity]: ", mywidget.nextact)
+        except:
+            pass

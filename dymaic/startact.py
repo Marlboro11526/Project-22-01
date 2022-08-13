@@ -2,7 +2,6 @@
 import os
 import subprocess
 import time
-import random
 from fuzz import intype
 from structure import mywidget
 from tools import getshot, eigenvector, findres

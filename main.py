@@ -129,11 +129,11 @@ if __name__ == '__main__':
 
     print(project_list)
 
-    '''
+
     for p in project_list:
         print("icenhance: ", p.p_id)
         en_ic3.init(p)
-    '''
+
     
     # parseManifest
     for p in project_list:

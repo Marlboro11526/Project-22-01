@@ -36,18 +36,34 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         # 补充参数
         if myextras != '':
             cmd = cmd + ' ' + myextras
-        cmd = cmd + ' -W'
-        result = subprocess.check_output(cmd, shell=True)
+        # cmd = cmd + ' -W'
         print("[cmd]: ", cmd)
+        result = subprocess.check_output(cmd, shell=True)
         dcommnd.append(cmd)
-
-        if not b"Status: ok" in result:
-            if activity not in project.actcoverage:
-                project.actcoverage.append(activity)
+        if not b"Error" in result:
+            cmd = "adb -s " + device.dev_id + " shell dumpsys activity activities | grep Run #"
+            result = subprocess.check_output(cmd, shell=True).decode('utf8')
+            short_act = activity.split(project.used_name)[1]
+            print("[short_act]: ", short_act)
+            if short_act in result:
+                print("[+] short act in Run result!")
+                if activity not in project.actcoverage:
+                    project.actcoverage.append(activity)
 
     else:
         device.uiauto.app_start(project.used_name, activity)
         device.uiauto.app_start(project.used_name)
+
+        cmd = "adb -s " + device.dev_id + " shell dumpsys activity activities | grep Run #"
+        result = subprocess.check_output(cmd, shell=True)
+        short_act = activity.split(project.used_name)[1]
+        print("[short_act]: ", short_act)
+        if short_act in result:
+            if activity not in project.actcoverage:
+                print("[+] successful append new coverage activity: ", activity)
+                print("[+] Now act coverage :", project.actcoverage)
+                project.actcoverage.append(activity)
+
     # 检查是否正确进入我们设定的Activity内
     num = 0
     while True:
@@ -163,7 +179,16 @@ def run(project, device):
     # 卸载并清理环境
     device.uiauto.app_clear(project.used_name)
     device.uiauto.app_uninstall(project.used_name)
-    project.printscreen()
-    project.printTrans()
-    project.coverage()
+    try:
+        project.printscreen()
+    except:
+        pass
+    try:
+        project.printTrans()
+    except:
+        pass
+    try:
+        project.coverage()
+    except:
+        pass
 
