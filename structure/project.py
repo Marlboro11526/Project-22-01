@@ -85,7 +85,7 @@ class project:
         self.root_dir = ""
         self.align_name = ""
         self.act_paras_file = ""
-
+        self.static_enhance = ""
     def setAct(self, actlist):
         self.activity = actlist
 
@@ -230,7 +230,7 @@ class project:
         print("[+] Successful STG Enhance ATG!")
 
     def ic3_enhance_atg(self):
-        if not os.path.exists(self.parsed_ic3):
+        if not os.path.exists(self.static_enhance):
             return
         with open(self.parsed_ic3, 'r') as f:
             for line in f:

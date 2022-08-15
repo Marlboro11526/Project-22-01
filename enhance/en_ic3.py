@@ -51,7 +51,7 @@ def run_IC3(project):
     IC3_jar = os.path.join(IC3_home, 'ic3-0.2.0-full.jar')
     IC3_android_jar = os.path.join(IC3_home, 'android.jar')
     os.chdir(IC3_home)
-    os.system('timeout 10m java -Xmx4g -jar %s -apkormanifest %s -in %s -cp %s -protobuf %s | grep "PATH: "' %
+    os.system('timeout 5m java -Xmx4g -jar %s -apkormanifest %s -in %s -cp %s -protobuf %s | grep "PATH: "' %
               (IC3_jar, project.apk_path, project.sootOutput_dir, IC3_android_jar, results_IC3_dir))
     # if os.path.exists(results_IC3):
     # rename the ic3 result file, because the pkg and real pkg are inconsistant.
@@ -61,18 +61,18 @@ def run_IC3(project):
     return results_IC3
 
 
-def run_soot(output, apk_path, pkg_name):
+def run_soot(output, apk_path, pkg_name, project):
     global apk_name, java_home_path, pwd_dir, sdk_platform_path, lib_home_path, callbacks_path
 
     if not os.path.exists(os.path.join(output, 'storydroid_atgs')):
         os.makedirs(os.path.join(output, 'storydroid_atgs'))
-    if not os.path.exists(os.path.join(output, 'outputs/', pkg_name)):
-        os.makedirs(os.path.join(output, 'outputs/', pkg_name))
+    if not os.path.exists(os.path.join(output, 'outputs', pkg_name)):
+        os.makedirs(os.path.join(output, 'outputs', pkg_name))
 
     results_enhancedIC3 = os.path.join(output, 'storydroid_atgs', pkg_name + '.txt')
     if not os.path.exists(results_enhancedIC3):
         open(results_enhancedIC3, 'wb').write(b'')
-    results_enhancedIC3_label = os.path.join(output, 'outputs/', pkg_name, 'activity_paras.txt')
+    results_enhancedIC3_label = os.path.join(output, 'outputs', pkg_name, 'activity_paras.txt')
     if not os.path.exists(results_enhancedIC3_label):
         open(results_enhancedIC3_label, 'wb').write(b'')
     '''
@@ -85,7 +85,7 @@ def run_soot(output, apk_path, pkg_name):
     soot_binary = 'run_soot.run'
     os.chdir(config_path)
     os.system('./%s %s %s %s %s %s %s' % (
-        soot_binary, output, apk_path, pkg_name, java_home_path, sdk_platform_path, lib_home_path))
+        soot_binary, output, apk_path, project.used_name, java_home_path, sdk_platform_path, lib_home_path))
 
 
 '''
@@ -259,6 +259,7 @@ def init(project):
     if not os.path.exists(outputs):
         os.makedirs(outputs)
     # Create sootOutput folder
+
     sootOutput_dir = os.path.join(output, 'sootOutput')
     if not os.path.exists(sootOutput_dir):
         os.makedirs(sootOutput_dir)
@@ -283,7 +284,7 @@ def init(project):
     CG_path = os.path.join(project.res_dir, 'soot_cgs')
     if not os.path.exists(CG_path):
         os.makedirs(CG_path)
-    used_pkg_name = project.used_name + "_" + str(project.version) + "_aligned"
+    used_pkg_name = project.align_name.split('.apk')[0]
 
     results_CG = os.path.join(CG_path, used_pkg_name + '.txt')
     if not os.path.exists(results_CG):
@@ -301,10 +302,24 @@ def init(project):
     print("[#] [ENHANCE -06] - Get JIMPLE", apk_name)
     shutil.rmtree(sootOutput_dir)  # Delete sootOutput
 
+    used_pkg_name = project.align_name.split('.apk')[0]
     print("[#] [ENHANCE -07] - Start to get ATG", apk_name)
-    print('soot pkg: ' + project.used_name)
-    run_soot(output, project.apk_path, project.used_name)
-    project.act_paras_file = os.path.join(project.res_dir, 'outputs', project.align_name, 'activity_paras.txt')
+    print('soot pkg: ' + used_pkg_name)
+    run_soot(output, project.apk_path, used_pkg_name, project)
+    project.act_paras_file = os.path.join(project.res_dir, 'outputs', used_pkg_name, 'activity_paras.txt')
+    results_enhancedIC3 = os.path.join(output, 'storydroid_atgs', used_pkg_name + '.txt')
+    results_visulization_ICCs = os.path.join(project.res_dir, apk_name + '_static_atgs.txt')
+    file_parseIC3 = open(project.parsed_ic3, 'r')
+    ICCs = set()
+    for line in file_parseIC3.readlines():
+        ICCs.add(line)
+    file_enhancedIC3 = open(results_enhancedIC3, 'r')
+    for line in file_enhancedIC3.readlines():
+        ICCs.add(line)
+    file_ICCs_visulization = open(results_visulization_ICCs, 'w')
+    for ICC in ICCs:
+        file_ICCs_visulization.write(ICC)
+    project.static_enhance = results_visulization_ICCs
 
     print("######################## ENHANCE IC3 && SOOT ENHANCE ########################")
     print("DONE! DONE! DONE! DONE! DONE! DONE! DONE! DONE! DONE! DONE! DONE! DONE! DONE!")
@@ -312,6 +327,10 @@ def init(project):
 
     print("[+] parsed_ic3: ", project.parsed_ic3)
     print("[+] activity_paras: ", project.act_paras_file)
+    print("[+] results_enhancedIC3: ", results_enhancedIC3)
+    print("[+] results_visulization_ICCs: ", results_visulization_ICCs)
+
+
 
 def main():
     pass

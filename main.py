@@ -131,8 +131,11 @@ if __name__ == '__main__':
 
 
     for p in project_list:
-        print("icenhance: ", p.p_id)
-        en_ic3.init(p)
+        if not os.path.exists(p.parsed_ic3):
+            print("icenhance: ", p.p_id)
+            en_ic3.init(p)
+        else:
+            pass
 
     # parseManifest
     for p in project_list:
