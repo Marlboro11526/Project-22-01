@@ -1,4 +1,4 @@
-    # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import subprocess
 import uiautomator2 as u2
 from structure import phone

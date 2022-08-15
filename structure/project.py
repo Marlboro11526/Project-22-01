@@ -19,6 +19,8 @@ class project:
         self.res_dir = res_dir
         if not os.path.exists(self.res_dir):
             os.mkdir(self.res_dir)
+        # parse_ic3 result
+        self.parsed_ic3 = ""
         # 整个项目的APK版本号
         self.version = version
         # 整个项目所用的包名
@@ -225,12 +227,47 @@ class project:
                     self.atg_dog.edge(caller_act, callee_act)
                 except:
                     pass
-        print("[+] Successful Enhance ATG!")
+        print("[+] Successful STG Enhance ATG!")
+
+    def ic3_enhance_atg(self):
+        if not os.path.exists(self.parsed_ic3):
+            return
+        with open(self.parsed_ic3, 'r') as f:
+            for line in f:
+                line = line.split('\n')[0]
+                caller_act = line.split('-->')[0]
+                callee_act = line.split('-->')[1]
+
+                if caller_act not in self.actcoverage:
+                    self.actcoverage.append(caller_act)
+                if callee_act not in self.actcoverage:
+                    self.actcoverage.append(callee_act)
+
+                caller_act = caller_act.split(self.used_name)[1]
+                callee_act = callee_act.split(self.used_name)[1]
+                actrans = caller_act + "->" + callee_act
+                if actrans not in self.activitytrans:
+                    self.activitytrans.append(actrans)
+                    try:
+                        self.atg_dog.node(caller_act, caller_act)
+                    except:
+                        pass
+                    try:
+                        self.atg_dog.node(callee_act, callee_act)
+                        self.atg_dog.edge(caller_act, callee_act)
+                    except:
+                        pass
+        print("[+] Successful IC3 Enhance ATG!")
+
 
     # 保存转换关系图
     def savegv(self):
         try:
             self.stg_enhance_atg()
+        except:
+            pass
+        try:
+            self.ic3_enhance_atg()
         except:
             pass
         self.atg_dog.render(self.atg_gv, view=True)

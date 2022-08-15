@@ -18,7 +18,7 @@ def unpackAPK(project):
 
     project.setUnpack(unpack_dir)
 
-    cmd = "apktool d -f -o " + unpack_dir + " " + project.apk_path
+    cmd = "apktool empty-framework-dir d -f -o " + unpack_dir + " " + project.apk_path
 
     apkt_result = subprocess.check_output(cmd, shell=True)
     apkt_result = str(apkt_result)

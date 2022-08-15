@@ -134,7 +134,6 @@ if __name__ == '__main__':
         print("icenhance: ", p.p_id)
         en_ic3.init(p)
 
-    
     # parseManifest
     for p in project_list:
         try:

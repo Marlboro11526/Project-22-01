@@ -186,11 +186,11 @@ def run(project, device):
     except:
         pass
     try:
-        project.printTrans()
+        project.coverage()
     except:
         pass
     try:
-        project.coverage()
+        project.printTrans()
     except:
         pass
 
