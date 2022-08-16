@@ -34,7 +34,7 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         if not category == '':
             cmd = cmd + ' -c ' + category
         # 补充参数
-        if myextras != '':
+        if myextras is not None:
             cmd = cmd + ' ' + myextras
         # cmd = cmd + ' -W'
         print("[cmd]: ", cmd)
