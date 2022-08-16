@@ -187,6 +187,8 @@ def run(project, device, screen):
             print("A Different Act Name: ", currentACT)
             screen.widgetstack[index].updateAct(currentACT)
             # 将新的ATG转换关系添加
+            print("[screen.act] : ", screen.act)
+            print("[currentACT] : ", currentACT)
             actrans = screen.act + "->" + currentACT
             if actrans not in project.activitytrans:
                 project.activitytrans.append(actrans)

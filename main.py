@@ -192,7 +192,7 @@ if __name__ == '__main__':
             p.savegv()
         except:
             pass
-        os.remove(p.apk_path)
+        #os.remove(p.apk_path)
         # 卸载并清理环境
         phone_list[0].uiauto.app_clear(p.used_name)
         phone_list[0].uiauto.app_uninstall(p.used_name)

@@ -22,8 +22,11 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         print("[action]: ", action)
     if category != '':
         print("[category]: ", category)
-    myextras = extras.get_act_extra_paras(activity, project.act_paras_file)
-    if myextras != '':
+    try:
+        myextras = extras.get_act_extra_paras(activity, project.act_paras_file)
+    except:
+        myextras = ''
+    if myextras != '' and not None:
         print("[+] GET EXTRAS: ", myextras)
     else:
         print("[-] DON'T GET EXTRAS")
@@ -36,14 +39,19 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         # 补充参数
         if myextras is not None:
             if myextras != 'None':
-                cmd = cmd + ' ' + myextras
+                if myextras != '':
+                    cmd = cmd + ' ' + myextras
         # cmd = cmd + ' -W'
-        print("[cmd]: ", cmd)
         result = subprocess.check_output(cmd, shell=True)
         dcommnd.append(cmd)
+        print("[cmd]: ", cmd)
+        time.sleep(0.5)
         if not b"Error" in result:
             cmd = "adb -s " + device.dev_id + " shell dumpsys activity activities | grep Run #"
+            #print("[cmd]: ", cmd)
             result = subprocess.check_output(cmd, shell=True).decode('utf8')
+            #print(result)
+            #print("project.used_name", project.used_name)
             short_act = activity.split(project.used_name)[1]
             print("[short_act]: ", short_act)
             if short_act in result:
@@ -52,11 +60,11 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
                     print("[+] successful append new coverage activity: ", activity)
                     print("[+] Now act coverage :", project.actcoverage)
                     project.actcoverage.append(activity)
-
     else:
+        print("[+] Use uiauto!")
         device.uiauto.app_start(project.used_name, activity)
-        device.uiauto.app_start(project.used_name)
-
+        #device.uiauto.app_start(project.used_name)
+        time.sleep(0.5)
         cmd = "adb -s " + device.dev_id + " shell dumpsys activity activities | grep Run #"
         result = subprocess.check_output(cmd, shell=True)
         short_act = activity.split(project.used_name)[1]
@@ -102,7 +110,7 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         dparentScreen = ""
         widget_stack = []
         act = activity.split(project.used_name)[1]
-
+        print("[act]: ", act)
         if activity not in project.actcoverage:
             project.actcoverage.append(activity)
 

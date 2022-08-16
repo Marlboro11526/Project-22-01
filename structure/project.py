@@ -201,7 +201,7 @@ class project:
 
     # 从Screen关系增强Activiy 转换关系
     def stg_enhance_atg(self):
-        print("[+] Start Enhance ATG!")
+        print("[+] Start STG Enhance ATG!")
         for sc_tran in self.screentrans:
             caller_sc = sc_tran.split('->')[0]
             callee_sc = sc_tran.split('->')[1]
@@ -216,6 +216,7 @@ class project:
                     #callee_act = callee_act.split(self.used_name)[1]
                     # 将新的ATG转换关系添加
             actrans = caller_act + "->" + callee_act
+            print("[ENHACNE STG -> ATG] : ", actrans)
             if actrans not in self.activitytrans:
                 self.activitytrans.append(actrans)
                 try:
@@ -232,7 +233,8 @@ class project:
     def ic3_enhance_atg(self):
         if not os.path.exists(self.static_enhance):
             return
-        with open(self.parsed_ic3, 'r') as f:
+        with open(self.static_enhance, 'r') as f:
+            print("[+] Start IC3 Enhance ATG!")
             for line in f:
                 line = line.split('\n')[0]
                 caller_act = line.split('-->')[0]
@@ -246,6 +248,7 @@ class project:
                 caller_act = caller_act.split(self.used_name)[1]
                 callee_act = callee_act.split(self.used_name)[1]
                 actrans = caller_act + "->" + callee_act
+                print("[ENHACNE IC3 ATG] : ", actrans)
                 if actrans not in self.activitytrans:
                     self.activitytrans.append(actrans)
                     try:
