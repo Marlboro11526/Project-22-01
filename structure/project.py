@@ -276,6 +276,14 @@ class project:
 
     # 计算并保存覆盖率数据
     def coverage(self):
+        try:
+            self.stg_enhance_atg()
+        except:
+            pass
+        try:
+            self.ic3_enhance_atg()
+        except:
+            pass
         cover_path = os.path.join(self.res_dir, 'cover.txt')
         print('Total ACT NUM: ' + str(self.actnum))
         print('Cover ACT NUM: ' + str(len(self.actcoverage)))
