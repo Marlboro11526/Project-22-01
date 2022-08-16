@@ -300,7 +300,10 @@ def init(project):
     print(used_pkg_name)
 
     print("[#] [ENHANCE -06] - Get JIMPLE", apk_name)
-    shutil.rmtree(sootOutput_dir)  # Delete sootOutput
+    try:
+        shutil.rmtree(sootOutput_dir)  # Delete sootOutput
+    except:
+        pass
 
     used_pkg_name = project.align_name.split('.apk')[0]
     print("[#] [ENHANCE -07] - Start to get ATG", apk_name)

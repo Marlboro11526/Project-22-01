@@ -35,7 +35,8 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
             cmd = cmd + ' -c ' + category
         # 补充参数
         if myextras is not None:
-            cmd = cmd + ' ' + myextras
+            if myextras != 'None':
+                cmd = cmd + ' ' + myextras
         # cmd = cmd + ' -W'
         print("[cmd]: ", cmd)
         result = subprocess.check_output(cmd, shell=True)
