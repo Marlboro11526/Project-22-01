@@ -215,7 +215,7 @@ def parse_CG(cg_file, pkg_name, project):
             flag = 0
         if flag == 0:
             try:
-                line = line.decode('ANSI')
+                line = line.decode('gb2312')
                 flag = 1
             except:
                 flag = 0
