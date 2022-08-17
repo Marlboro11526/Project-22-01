@@ -206,7 +206,16 @@ def parse_CG(cg_file, pkg_name, project):
     f = open(cg_file, 'rb')
     line = f.readline()
     while line:
-        line = line.decode('utf8')
+        try:
+            line = line.decode('utf8')
+        except:
+            try:
+                line = line.decode('ANSI')
+            except:
+                try:
+                    line = line.decode('ascii')
+                except:
+                    continue
         print(line)
         key = line.split(' in <')[1].split('> ==> <')[0]
         value = line.split('> ==> <')[1][0:-1]
