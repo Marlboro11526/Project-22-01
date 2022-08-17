@@ -227,14 +227,17 @@ def parse_CG(cg_file, pkg_name, project):
                 flag = 0
         if flag == 0:
             print("[-] Paese CG Fault")
-            continue
-        print(line)
-        key = line.split(' in <')[1].split('> ==> <')[0]
-        value = line.split('> ==> <')[1][0:-1]
-        if project.used_name in key and project.used_name in value and not 'EmmaInstrument' in key \
-                and not 'EmmaInstrument' in value:
-            dict[key].add(value[:-1])
-        line = f.readline()
+            line = f.readline()
+        if flag == 1:
+            print(line)
+            key = line.split(' in <')[1].split('> ==> <')[0]
+            value = line.split('> ==> <')[1][0:-1]
+            if project.used_name in key and project.used_name in value and not 'EmmaInstrument' in key \
+                    and not 'EmmaInstrument' in value:
+                dict[key].add(value[:-1])
+            line = f.readline()
+        else:
+            pass
     # print '[6] Parse CG: DONE'
     return dict
 
