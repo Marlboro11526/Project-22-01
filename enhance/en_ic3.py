@@ -179,6 +179,7 @@ def save_parsed_IC3(dict, project):
 
     return os.path.join(results_parseIC3_dir, apk_name + '.txt')
 
+
 '''
 Get call graphs of the app
 '''
@@ -206,16 +207,27 @@ def parse_CG(cg_file, pkg_name, project):
     f = open(cg_file, 'rb')
     line = f.readline()
     while line:
+        flag = 0
         try:
             line = line.decode('utf8')
+            flag = 1
         except:
+            flag = 0
+        if flag == 0:
             try:
                 line = line.decode('ANSI')
+                flag = 1
             except:
-                try:
-                    line = line.decode('ascii')
-                except:
-                    continue
+                flag = 0
+        if flag == 0:
+            try:
+                line = line.decode('ascii')
+                flag = 1
+            except:
+                flag = 0
+        if flag == 0:
+            print("[-] Paese CG Fault")
+            continue
         print(line)
         key = line.split(' in <')[1].split('> ==> <')[0]
         value = line.split('> ==> <')[1][0:-1]
@@ -341,7 +353,6 @@ def init(project):
     print("[+] activity_paras: ", project.act_paras_file)
     print("[+] results_enhancedIC3: ", results_enhancedIC3)
     print("[+] results_visulization_ICCs: ", results_visulization_ICCs)
-
 
 
 def main():
