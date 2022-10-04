@@ -2,11 +2,12 @@
 import os
 import subprocess
 import time
+from dymaic import target
 from fuzz import intype
 from structure import mywidget
 from tools import getshot, eigenvector, findres
 from structure import screen as myscreen
-
+from dymaic import currFrag
 
 def restartScreen(project, screen, device):
     """
@@ -74,7 +75,7 @@ def isNewActivity(project, oldact, device):
         return False
 
 
-def run(project, device, screen):
+def run(project, device, screen, fragment):
     """
     :param project: 项目对象
     :param device: 设备对象
@@ -190,6 +191,10 @@ def run(project, device, screen):
             print("[screen.act] : ", screen.act)
             print("[currentACT] : ", currentACT)
             actrans = screen.act + "->" + currentACT
+
+            if actrans not in project.inittrans:
+                project.inittrans.append(actrans)
+
             if actrans not in project.activitytrans:
                 project.activitytrans.append(actrans)
                 try:
@@ -209,6 +214,24 @@ def run(project, device, screen):
                 flag = True
             else:
                 pass
+
+        # Is new Fragment?
+        currentFra = currFrag.getcurfrag(device, project)
+        print("[Current Fragment] : ", currentFra.name)
+        '''
+        if fragment.id == "":
+            tmptrans = screen.act + "->" + currentFra.name
+            if tmptrans not in project.inittrans:
+                print("[NEW Trans] : ", tmptrans)
+                project.inittrans.append(tmptrans)
+        '''
+        if fragment.name != currentFra.name:
+            tmptrans = fragment.name + "->" + currentFra.name
+            print("[NEW Trans] : ", tmptrans)
+            if tmptrans not in project.inittrans:
+                print("[Real NEW Trans] : ", tmptrans)
+                project.inittrans.append(tmptrans)
+
         # 判断当前是否出现了新的Screen
         dxml = device.uiauto.dump_hierarchy(compressed=True)
         if flag:
@@ -221,6 +244,16 @@ def run(project, device, screen):
         f.close()
         # 初始化父ScreenID
         dparentScreen = screen.vector
+
+        # Find Target Widget
+        all_widget = device.uiauto()
+        coveract = project.used_name + currentACT
+        target_widget = target.getarget(project, coveract, all_widget)
+        for widget in target_widget:
+            new_widwget = mywidget.mywidget(widget)
+            widget_stack.append(new_widwget)
+
+
         # 构建初始Widget Stack
         widget_stack = []
         for widget in device.uiauto(clickable="true"):
@@ -282,6 +315,6 @@ def run(project, device, screen):
         project.screenobject.append(new_screen)
         time.sleep(0.5)
         # 进行递归深度探索
-        run(project, device, new_screen)
+        run(project, device, new_screen, currentFra)
         # 恢复Screen
         restartScreen(project, screen, device)

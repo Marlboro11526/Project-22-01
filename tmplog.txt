@@ -1,0 +1,162 @@
+[+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+[+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+[+] Mkdir new result folder: /home/syc/Downloads/DEV/rebuild/result
+[+] find 1 : myNav.apk
+[+] Total apks: 1
+------------------------------
+[~] Start Run:  /home/syc/Downloads/DEV/rebuild/apks/myNav.apk
+------------------------------
+[+] get defined pkg name:  com.example.mynav
+[+] get version Code:  1
+[-] don't get launcher
+[+] Get AAPT Info!
+[+] set project id:  com.example.mynav-1
+[+] set project result dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
+[+] creat new project:  com.example.mynav-1
+[+] Build pkg_up_list:  {'com.example.mynav': []}
+b'I: Removing 1.apk framework file...\nI: Using Apktool 2.6.1 on myNav.apk\nI: Loading resource table...\nI: Decoding AndroidManifest.xml with resources...\nI: Loading resource table from file: /home/syc/.local/share/apktool/framework/1.apk\nI: Regular manifest package...\nI: Decoding file-resources...\nI: Decoding values */* XMLs...\nI: Baksmaling classes.dex...\nI: Baksmaling classes6.dex...\nI: Baksmaling classes7.dex...\nI: Baksmaling classes4.dex...\nI: Baksmaling classes5.dex...\nI: Baksmaling classes3.dex...\nI: Baksmaling classes2.dex...\nI: Copying assets and libs...\nI: Copying unknown files...\nI: Copying original files...\n'
+[+] Apktools unpack successful
+========== Repack apk file of 'com.example.mynav-1.apk' ==========
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/AndroidManifest.xml
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[#] repkg cmd:  apktool b /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack --use-aapt2
+[+] repkg success:  com.example.mynav-1
+[+] find key success:  myNav.apk
+/home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist
+/home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
+/home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
+[+] find repkg success:  myNav.apk
+[#] sign apk name:  myNav_sign.apk
+[#] sign cmd:  echo 'sigh987yu' | jarsigner -verbose -keystore  watson.keystore -signedjar /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav_sign.apk /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk  watson.keystore  
+[+] find sign apk success:  myNav_sign.apk
+[#] align apk name:  myNav.apk
+[+] find align apk success:  myNav.apk
+[+] All PKG repkg work kill!
+###################################
+[~]p_id:  com.example.mynav-1
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
+[~]version:  1
+[~]apk_name:  myNav.apk
+[~]used_name:  com.example.mynav
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot
+[~]activity:  []
+[~]screenlist:  []
+###################################
+[new_icc_res]:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+[iccbot_dir] :  /home/syc/Downloads/DEV/rebuild/enhance/icc
+[apks_dir] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist
+[apk_name] :  myNav.apk
+[iccjar_path] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+[androidJar] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+[outputDir] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot
+java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
+b'Analyzing myNav.apk\nusing client CTGClient\nSoot Analysis finish.\nSuccessfully analyze with ManifestClient.\nCall Graph Construction finish.\nCall Graph has 1140 edges.\nCall Graph Enhancing finish.\nSuccessfully analyze with CallGraphClient.\nStaticValueAnalyzer finish.\nDynamicIntentFilterAnalyzer finish\n\nSuccessfully analyze with FragmentClient.\nThis is the method #200/341\nSuccessfully analyze with CTGClient.\nwriteComponentModel\nwriteMethodSummaryModel\nwritePathSummaryModel\nwriteIntentSummaryModel\nwriteAtgModeTxtFile\nwriteDotFile\nwriteATGModel\nwriteAtgModeTxtFile2\nwriteDotFile2\nwriteATGModel2\n---------------------------------------\nAnalyzing myNav.apk Finish...\n\nCTGClient time = 19 seconds\nICC Resolution Finish...\n\n'
+java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
+b'Analyzing myNav.apk\nusing client IROutputClient\nSoot Analysis finish.\nSuccessfully analyze with IROutputClient.\n---------------------------------------\nAnalyzing myNav.apk Finish...\n\nIROutputClient time = 8 seconds\nICC Resolution Finish...\n\n'
+[root] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+[CallGraphInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CallGraphInfo
+[CTGResult] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CTGResult
+[FragmentInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/FragmentInfo
+[ICCSpecification] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/ICCSpecification
+[ManifestInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/ManifestInfo
+[SootIRInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/SootIRInfo
+[-] ICCSpecification dir is not exists
+###################################
+[~]p_id:  com.example.mynav-1
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
+[~]version:  1
+[~]apk_name:  myNav.apk
+[~]used_name:  com.example.mynav
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+[~]activity:  []
+[~]screenlist:  []
+###################################
+[+] CTG res is exists:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CTGResult
+[+] Soot ir is exists:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/SootIRInfo
+[+] CTG xml is exists:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CTGResult/CTGwithFragment.xml
+[init trans]
+[source] :  com.example.mynav.MainActivity
+{'com.example.mynav.MainActivity': []}
+{'com.example.mynav.MainActivity': []}
+========== Parsing manifest file of 'com.example.mynav-1.apk' ==========
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/AndroidManifest.xml
+[+] Find a Activity Node!
+[+] get parseManifest!
+###################################
+[~]p_id:  com.example.mynav-1
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
+[~]version:  1
+[~]apk_name:  myNav.apk
+[~]used_name:  com.example.mynav
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+[~]activity:  ['com.example.mynav.MainActivity']
+[~]screenlist:  []
+###################################
+[+] Write to parseManifest.txt:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/parseManifest.txt
+b'List of devices attached\n192.168.56.101:5555\tdevice\n\n'
+[+] Local:  192.168.56.101:5555
+[+] connected to:  192.168.56.101:5555
+[+] Local:  
+[+] Successfully init atx-agent!
+[<structure.phone.usephone object at 0x7f6e5f6911c0>]
+[+] get Phone list:  [<structure.phone.usephone object at 0x7f6e5f6911c0>]
+[+] Success install apk:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
+[pairs] {'com.example.mynav.MainActivity': [['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['zxy', 'zxy']]}
+[OTHER]: 
+[['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['zxy', 'zxy']]
+[START ACTIVITY]:  com.example.mynav.MainActivity
+[component]:  com.example.mynav/com.example.mynav.MainActivity
+[action]:  android.intent.action.MAIN
+[category]:  android.intent.category.LAUNCHER
+[-] DON'T GET EXTRAS
+[cmd]:  adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+[cmd]:  adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+[short_act]:  .MainActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.example.mynav.MainActivity
+[+] Now act coverage : []
+[+] start Act !
+[act]:  .MainActivity
+[PARSE TARGET]
+[ACTIVITY] :  com.example.mynav.MainActivity
+[+] PC get shoot:  5baf73a9714596439a5f5044e8c4bdec.png
+====== new screen object create ======
+[vector] :  5baf73a9714596439a5f5044e8c4bdec
+[parentScreen] :  self
+[command] :  ['adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER']
+[Activity] :  .MainActivity
+[Start Activity] :  .MainActivity
+======================================
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': 'Open navigation drawer', 'packageName': 'com.example.mynav', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': 'More options', 'packageName': 'com.example.mynav', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1872, 'left': 864, 'right': 1032, 'top': 1704}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '', 'packageName': 'com.example.mynav', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1872, 'left': 864, 'right': 1032, 'top': 1704}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[get current frag]
+[CMD] :  adb -s 192.168.56.101:5555 shell dumpsys activity top
+HomeFragment
+0x7f08009c
+[NEW Trans] :  com.example.mynav.MainActivity->com.example.mynav.HomeFragment
+[REAL NEW Trans] :  com.example.mynav.MainActivity->com.example.mynav.HomeFragment
+[TST-NODE]
+adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+b'Stopping: com.example.mynav\nStarting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.mynav/.MainActivity }\n'
+[+] start Act !
+[START ACTIVITY]:  com.example.mynav.MainActivity
+[component]:  com.example.mynav/com.example.mynav.MainActivity
+[action]:  zxy
+[category]:  zxy
+[-] DON'T GET EXTRAS
+[cmd]:  adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a zxy -c zxy
+[START ACTIVITY]:  com.example.mynav.MainActivity
+[component]:  com.example.mynav/com.example.mynav.MainActivity
+[-] DON'T GET EXTRAS
+[+] Use uiauto!
+[+] successful start Activity:  []
+[+] all task kill:  com.example.mynav-1

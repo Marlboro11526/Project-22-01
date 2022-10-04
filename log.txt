@@ -1,0 +1,26 @@
+2022-10-04 07:53:16 022199 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+2022-10-04 07:53:16 022483 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+2022-10-04 07:53:16 022581 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+2022-10-04 07:53:16 022682 [+] find 1 : myNav.apk
+2022-10-04 07:53:16 022781 [+] find 2 : ICCBotBench.apk
+2022-10-04 07:53:16 022928 [+] Total apks: 2
+2022-10-04 07:53:34 711173 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+2022-10-04 07:53:34 711420 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
+2022-10-04 07:53:34 711502 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist
+2022-10-04 07:53:34 711607 [apk_name] : myNav.apk
+2022-10-04 07:53:34 711677 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+2022-10-04 07:53:34 711775 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+2022-10-04 07:53:34 711884 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot
+2022-10-04 07:53:34 712052 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
+2022-10-04 07:54:03 288081 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
+2022-10-04 07:54:19 842637 [-] ICCSpecification dir is not exists
+2022-10-04 07:54:19 843002 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.iccbot-1/iccbot/ICCBotBench
+2022-10-04 07:54:19 843163 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
+2022-10-04 07:54:19 843296 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.iccbot-1/unpack/dist
+2022-10-04 07:54:19 843425 [apk_name] : ICCBotBench.apk
+2022-10-04 07:54:19 843512 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+2022-10-04 07:54:19 843597 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+2022-10-04 07:54:19 843714 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.iccbot-1/iccbot
+2022-10-04 07:54:19 843927 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.iccbot-1/unpack/dist  -name ICCBotBench.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.iccbot-1/iccbot 
+2022-10-04 07:54:36 285288 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.iccbot-1/unpack/dist  -name ICCBotBench.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.iccbot-1/iccbot 
+2022-10-04 07:54:46 247807 [-] ICCSpecification dir is not exists
