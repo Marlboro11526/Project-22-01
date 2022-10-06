@@ -261,8 +261,17 @@ def run(project, device, screen, fragment):
         widget_stack = []
         for widget in device.uiauto(clickable="true"):
             # print(widget.info)
-            new_widwget = mywidget.mywidget(widget)
-            widget_stack.append(new_widwget)
+            flag = True
+            for twidget in widget_stack:
+                if twidget.ui2.info['bounds'] == widget.info['bounds']:
+                    flag = False
+                    break
+            if flag:
+                new_widwget = mywidget.mywidget(widget)
+                widget_stack.append(new_widwget)
+            else:
+                continue
+
         # 生成特征向量
         screenvector = eigenvector.getVector(dxml, project)
         # 初始化ADB操作信息

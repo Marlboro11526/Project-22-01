@@ -54,6 +54,11 @@ def onOptionsItem(tree, entrance, widgets, target):
         except:
             pass
 
+def onPreferenceClick(tree, entrance, widgets, target):
+    pass
+
+
+
 def getarget(project, activity, widgets):
     target = []
     print("[PARSE TARGET]")

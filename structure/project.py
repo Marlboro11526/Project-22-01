@@ -100,6 +100,10 @@ class project:
         if not os.path.exists(self.icc_res):
             os.mkdir(self.icc_res)
         self.entrances = []
+        self.jadx_res = os.path.join(self.res_dir, "jadx")
+        if not os.path.exists(self.jadx_res):
+            os.mkdir(self.jadx_res)
+        self.rjava_res = ""
 
 
     def setAct(self, actlist):

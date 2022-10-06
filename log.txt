@@ -1,15 +1,15 @@
-2022-10-05 10:38:08 651071 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
-2022-10-05 10:38:08 651464 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
-2022-10-05 10:38:08 651558 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
-2022-10-05 10:38:08 651714 [+] find 1 : v2rayNG_1.2.0.apk
-2022-10-05 10:38:08 651814 [+] Total apks: 1
-2022-10-05 10:38:38 883316 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-278/iccbot/v2rayNG_1.2.0
-2022-10-05 10:38:38 883465 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
-2022-10-05 10:38:38 883515 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-278/unpack/dist
-2022-10-05 10:38:38 883553 [apk_name] : v2rayNG_1.2.0.apk
-2022-10-05 10:38:38 883618 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
-2022-10-05 10:38:38 883688 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
-2022-10-05 10:38:38 883727 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-278/iccbot
-2022-10-05 10:38:38 883821 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-278/unpack/dist  -name v2rayNG_1.2.0.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-278/iccbot 
-2022-10-05 10:42:19 058049 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-278/unpack/dist  -name v2rayNG_1.2.0.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-278/iccbot 
-2022-10-05 10:42:44 762507 [-] ICCSpecification dir is not exists
+2022-10-06 07:11:38 616603 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+2022-10-06 07:11:38 616919 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+2022-10-06 07:11:38 617005 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+2022-10-06 07:11:38 617099 [+] find 1 : myNav.apk
+2022-10-06 07:11:38 617181 [+] Total apks: 1
+2022-10-06 07:11:44 115654 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+2022-10-06 07:11:44 115794 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
+2022-10-06 07:11:44 115841 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist
+2022-10-06 07:11:44 115879 [apk_name] : myNav.apk
+2022-10-06 07:11:44 115938 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+2022-10-06 07:11:44 115989 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+2022-10-06 07:11:44 116025 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot
+2022-10-06 07:11:44 116121 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
+2022-10-06 07:12:13 035533 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
+2022-10-06 07:12:26 449578 [-] ICCSpecification dir is not exists

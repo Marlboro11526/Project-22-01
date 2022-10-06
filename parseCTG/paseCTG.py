@@ -31,7 +31,7 @@ class Destination:
         print("[sootir] : ", self.sootir)
         print("[fun] : ", self.fun)
         if self.rid != "":
-            print("[rid] : ", self.rid)
+            print("[rid] : ", hex(int(self.rid)))
         if self.viewid != "":
             print("[viewid] : ", self.viewid)
 
@@ -58,7 +58,7 @@ def parse(CTG_xml):
                     entrance[node.attrib["name"]].append(child.attrib)
 
 
-def parseSootIR_self(source, destination):
+def parseSootIR_self(source, destination, project):
     global entrance
     desobj = []
     for icc in destination:
@@ -70,12 +70,12 @@ def parseSootIR_self(source, destination):
             print("[-] jimple is not exists")
         else:
             print("[+] jimple is exists: ", jimple)
-        parseSootIR(jimple, newobj)
+        parseSootIR(jimple, newobj, project)
         desobj.append(newobj)
     return desobj
 
 
-def parseSootIR(jimple, obj):
+def parseSootIR(jimple, obj, project):
     '''
 
     :param jimple:
@@ -111,25 +111,25 @@ def parseSootIR(jimple, obj):
     else:
         pass
     # obj.putinfo()
-    findViewId(obj, Soot_ir, used_name)
+    findViewId(obj, Soot_ir, used_name, project)
 
 
-def findViewId(obj, Soot_ir, used_name):
+def findViewId(obj, Soot_ir, used_name, project):
     global entrance
     viewid = ""
-    Ridjimple = os.path.join(Soot_ir, used_name + ".R$id.jimple")
-    if not os.path.exists(Ridjimple):
-        print("[-] Rid jimple is not exists")
+    rjava_res = project.rjava_res
+    if not os.path.exists(rjava_res):
+        print("[-] R Java is not exists")
     else:
-        print("[+] Rid jimple is exists: ", Ridjimple)
-    with open(Ridjimple, 'r') as f:
+        print("[+] R Java is exists: ", rjava_res)
+    with open(rjava_res, 'r') as f:
         ridlines = f.readlines()
         # print(len(ridlines))
         for index in range(len(ridlines)):
-            if obj.rid in ridlines[index].strip():
-                # print(ridlines[index].strip())
-                viewid = ridlines[index].strip().split("int ")[-1].split(">")[0]
-                # print(viewid)
+            if hex(int(obj.rid)) in ridlines[index].strip():
+                print(ridlines[index].strip())
+                viewid = ridlines[index].strip().split("public static final int ")[-1].split(" = ")[0]
+                print(viewid)
                 break
     if viewid != "":
         obj.viewid = viewid
@@ -186,7 +186,7 @@ def parseCTG(project):
     inittrans(project, CTG_xml)
     print(entrance)
     for key in entrance.keys():
-        desobj = parseSootIR_self(key, entrance[key])
+        desobj = parseSootIR_self(key, entrance[key], project)
         if desobj == "":
             continue
         else:

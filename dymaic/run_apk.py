@@ -128,14 +128,14 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
             # print(widget.info)
             flag = True
             for twidget in widget_stack:
-                if twidget == widget:
+                if twidget.ui2.info['bounds'] == widget.info['bounds']:
                     flag = False
                     break
             if flag:
                 new_widwget = mywidget.mywidget(widget)
+                widget_stack.append(new_widwget)
             else:
                 continue
-            widget_stack.append(new_widwget)
             if widget.info['className'] == 'android.widget.EditText':
                 # 检查输入文本框
                 findres.find(project, widget.info, project.tmptxt)

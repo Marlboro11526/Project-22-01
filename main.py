@@ -10,8 +10,8 @@ from pret import aapt
 from structure import project
 from pret import apktool
 from repkg import repkg
-from enhance import iccbot
-
+from enhance import iccbot, myjadx
+from fuzz import fuzzscreen
 # config
 result_folder = ""
 apks_folder = ""
@@ -183,6 +183,13 @@ if __name__ == '__main__':
     for p in project_list:
         p.printAll()
 
+    for p in project_list:
+        try:
+            myjadx.parse(p, pwd_dir)
+        except:
+            project_list.remove(p)
+
+
     # get widget id
     for p in project_list:
         try:
@@ -191,7 +198,8 @@ if __name__ == '__main__':
         except:
             project_list.remove(p)
 
-        # parseManifest
+
+    # parseManifest
     for p in project_list:
         try:
             parse_result = parseM.parseManifest(p)
@@ -239,12 +247,20 @@ if __name__ == '__main__':
     fault_project = []
     # start dynamic
     for p in project_list:
-        time.sleep(3)
+        time.sleep(1)
+        #run_apk.run(p, phone_list[0])
         try:
             run_apk.run(p, phone_list[0])
         except:
-            pass
+            continue
         # os.remove(p.apk_path)
         # 卸载并清理环境
+
+
+    for p in project_list:
+        try:
+            fuzzscreen.init(p)
+        except:
+            pass
         phone_list[0].uiauto.app_clear(p.used_name)
         phone_list[0].uiauto.app_uninstall(p.used_name)
