@@ -1,6 +1,6 @@
 import os
 import time
-
+from multiprocessing import Process
 from devices_list import scan
 from dymaic import run_apk
 from mylog import wlog
@@ -16,7 +16,7 @@ from enhance import iccbot
 result_folder = ""
 apks_folder = ""
 iccbot_dir = ""
-device_model = 1  # 0: remote 1: local
+device_model = 0  # 0: remote 1: local
 
 
 def init_apk(apk_dir, apkname):
@@ -47,6 +47,8 @@ def init_apk(apk_dir, apkname):
     p.root_dir = os.getcwd()
     p.apk_name = apkname
     return p
+
+
 
 
 if __name__ == '__main__':
@@ -144,35 +146,38 @@ if __name__ == '__main__':
     # init iccbot
     for p in project_list:
         # pass
-        iccbot.init(p, iccbot_dir, pwd_dir)
-        if not os.path.exists(p.iccobj.root_dir):
-            print("[-] root dir is not exists")
-            wlog.wlog("[-] root dir is not exists")
-            continue
-        if not os.path.exists(p.iccobj.callgraph):
-            print("[-] CallGraphInfo dir is not exists")
-            wlog.wlog("[-] CallGraphInfo dir is not exists")
-            continue
-        if not os.path.exists(p.iccobj.ctg):
-            print("[-] CTGResult dir is not exists")
-            wlog.wlog("[-] CTGResult dir is not exists")
-            continue
-        if not os.path.exists(p.iccobj.fragment):
-            print("[-] FragmentInfo dir is not exists")
-            wlog.wlog("[-] FragmentInfo dir is not exists")
-            continue
-        if not os.path.exists(p.iccobj.iccsep):
-            print("[-] ICCSpecification dir is not exists")
-            wlog.wlog("[-] ICCSpecification dir is not exists")
-            continue
-        if not os.path.exists(p.iccobj.manifest):
-            print("[-] ManifestInfo dir is not exists")
-            wlog.wlog("[-] ManifestInfo dir is not exists")
-            continue
-        if not os.path.exists(p.iccobj.soot):
-            print("[-] SootIRInfo dir is not exists")
-            wlog.wlog("[-] SootIRInfo dir is not exists")
-            continue
+        try:
+            iccbot.init(p, iccbot_dir, pwd_dir)
+            if not os.path.exists(p.iccobj.root_dir):
+                print("[-] root dir is not exists")
+                wlog.wlog("[-] root dir is not exists")
+                continue
+            if not os.path.exists(p.iccobj.callgraph):
+                print("[-] CallGraphInfo dir is not exists")
+                wlog.wlog("[-] CallGraphInfo dir is not exists")
+                continue
+            if not os.path.exists(p.iccobj.ctg):
+                print("[-] CTGResult dir is not exists")
+                wlog.wlog("[-] CTGResult dir is not exists")
+                continue
+            if not os.path.exists(p.iccobj.fragment):
+                print("[-] FragmentInfo dir is not exists")
+                wlog.wlog("[-] FragmentInfo dir is not exists")
+                continue
+            if not os.path.exists(p.iccobj.iccsep):
+                print("[-] ICCSpecification dir is not exists")
+                wlog.wlog("[-] ICCSpecification dir is not exists")
+                continue
+            if not os.path.exists(p.iccobj.manifest):
+                print("[-] ManifestInfo dir is not exists")
+                wlog.wlog("[-] ManifestInfo dir is not exists")
+                continue
+            if not os.path.exists(p.iccobj.soot):
+                print("[-] SootIRInfo dir is not exists")
+                wlog.wlog("[-] SootIRInfo dir is not exists")
+                continue
+        except:
+            project_list.remove(p)
 
     # check unpack info
     for p in project_list:
@@ -180,8 +185,11 @@ if __name__ == '__main__':
 
     # get widget id
     for p in project_list:
-        p.entrances = paseCTG.parseCTG(p)
-        print(p.entrances)
+        try:
+            p.entrances = paseCTG.parseCTG(p)
+            print(p.entrances)
+        except:
+            project_list.remove(p)
 
         # parseManifest
     for p in project_list:
@@ -232,7 +240,10 @@ if __name__ == '__main__':
     # start dynamic
     for p in project_list:
         time.sleep(3)
-        run_apk.run(p, phone_list[0])
+        try:
+            run_apk.run(p, phone_list[0])
+        except:
+            pass
         # os.remove(p.apk_path)
         # 卸载并清理环境
         phone_list[0].uiauto.app_clear(p.used_name)

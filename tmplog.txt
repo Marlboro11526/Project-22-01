@@ -1,162 +1,162 @@
 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
-[+] Mkdir new result folder: /home/syc/Downloads/DEV/rebuild/result
-[+] find 1 : myNav.apk
+[+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+[+] find 1 : v2rayNG_1.2.0_armeabi-v7a.apk
 [+] Total apks: 1
 ------------------------------
-[~] Start Run:  /home/syc/Downloads/DEV/rebuild/apks/myNav.apk
+[~] Start Run:  /home/syc/Downloads/DEV/rebuild/apks/v2rayNG_1.2.0_armeabi-v7a.apk
 ------------------------------
-[+] get defined pkg name:  com.example.mynav
-[+] get version Code:  1
+[+] get defined pkg name:  com.v2ray.ang
+[+] get version Code:  1000278
 [-] don't get launcher
 [+] Get AAPT Info!
-[+] set project id:  com.example.mynav-1
-[+] set project result dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
-[+] creat new project:  com.example.mynav-1
-[+] Build pkg_up_list:  {'com.example.mynav': []}
-b'I: Removing 1.apk framework file...\nI: Using Apktool 2.6.1 on myNav.apk\nI: Loading resource table...\nI: Decoding AndroidManifest.xml with resources...\nI: Loading resource table from file: /home/syc/.local/share/apktool/framework/1.apk\nI: Regular manifest package...\nI: Decoding file-resources...\nI: Decoding values */* XMLs...\nI: Baksmaling classes.dex...\nI: Baksmaling classes6.dex...\nI: Baksmaling classes7.dex...\nI: Baksmaling classes4.dex...\nI: Baksmaling classes5.dex...\nI: Baksmaling classes3.dex...\nI: Baksmaling classes2.dex...\nI: Copying assets and libs...\nI: Copying unknown files...\nI: Copying original files...\n'
+[+] set project id:  com.v2ray.ang-1000278
+[+] set project result dir:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278
+[+] creat new project:  com.v2ray.ang-1000278
+[+] Build pkg_up_list:  {'com.v2ray.ang': []}
+b'I: Removing 1.apk framework file...\nI: Using Apktool 2.6.1 on v2rayNG_1.2.0_armeabi-v7a.apk\nI: Loading resource table...\nI: Decoding AndroidManifest.xml with resources...\nI: Loading resource table from file: /home/syc/.local/share/apktool/framework/1.apk\nI: Regular manifest package...\nI: Decoding file-resources...\nI: Decoding values */* XMLs...\nI: Baksmaling classes.dex...\nI: Baksmaling classes2.dex...\nI: Copying assets and libs...\nI: Copying unknown files...\nI: Copying original files...\nI: Copying META-INF/services directory\n'
 [+] Apktools unpack successful
-========== Repack apk file of 'com.example.mynav-1.apk' ==========
-[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/AndroidManifest.xml
+========== Repack apk file of 'com.v2ray.ang-1000278.apk' ==========
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/AndroidManifest.xml
 [+] Find a Activity Node!
-[+] This act have attr exported
+[-] This act don't have attr exported
 [+] this activity not add action
-[#] repkg cmd:  apktool b /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack --use-aapt2
-[+] repkg success:  com.example.mynav-1
-[+] find key success:  myNav.apk
-/home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist
-/home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
-/home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
-[+] find repkg success:  myNav.apk
-[#] sign apk name:  myNav_sign.apk
-[#] sign cmd:  echo 'sigh987yu' | jarsigner -verbose -keystore  watson.keystore -signedjar /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav_sign.apk /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk  watson.keystore  
-[+] find sign apk success:  myNav_sign.apk
-[#] align apk name:  myNav.apk
-[+] find align apk success:  myNav.apk
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[-] This act don't have attr exported
+[+] this activity not add action
+[#] repkg cmd:  apktool b /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack --use-aapt2
+[+] repkg success:  com.v2ray.ang-1000278
+[+] find key success:  v2rayNG_1.2.0_armeabi-v7a.apk
+/home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist
+/home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack
+/home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist/v2rayNG_1.2.0_armeabi-v7a.apk
+[+] find repkg success:  v2rayNG_1.2.0_armeabi-v7a.apk
+[#] sign apk name:  v2rayNG_1.2.0_armeabi-v7a_sign.apk
+[#] sign cmd:  echo 'sigh987yu' | jarsigner -verbose -keystore  watson.keystore -signedjar /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist/v2rayNG_1.2.0_armeabi-v7a_sign.apk /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist/v2rayNG_1.2.0_armeabi-v7a.apk  watson.keystore  
+[+] find sign apk success:  v2rayNG_1.2.0_armeabi-v7a_sign.apk
+[#] align apk name:  v2rayNG_1.2.0_armeabi-v7a.apk
+[+] find align apk success:  v2rayNG_1.2.0_armeabi-v7a.apk
 [+] All PKG repkg work kill!
 ###################################
-[~]p_id:  com.example.mynav-1
-[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
-[~]version:  1
-[~]apk_name:  myNav.apk
-[~]used_name:  com.example.mynav
-[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
-[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
-[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot
+[~]p_id:  com.v2ray.ang-1000278
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278
+[~]version:  1000278
+[~]apk_name:  v2rayNG_1.2.0_armeabi-v7a.apk
+[~]used_name:  com.v2ray.ang
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist/v2rayNG_1.2.0_armeabi-v7a.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot
 [~]activity:  []
 [~]screenlist:  []
 ###################################
-[new_icc_res]:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+[new_icc_res]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a
 [iccbot_dir] :  /home/syc/Downloads/DEV/rebuild/enhance/icc
-[apks_dir] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist
-[apk_name] :  myNav.apk
+[apks_dir] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist
+[apk_name] :  v2rayNG_1.2.0_armeabi-v7a.apk
 [iccjar_path] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
 [androidJar] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
-[outputDir] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot
-java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
-b'Analyzing myNav.apk\nusing client CTGClient\nSoot Analysis finish.\nSuccessfully analyze with ManifestClient.\nCall Graph Construction finish.\nCall Graph has 1140 edges.\nCall Graph Enhancing finish.\nSuccessfully analyze with CallGraphClient.\nStaticValueAnalyzer finish.\nDynamicIntentFilterAnalyzer finish\n\nSuccessfully analyze with FragmentClient.\nThis is the method #200/341\nSuccessfully analyze with CTGClient.\nwriteComponentModel\nwriteMethodSummaryModel\nwritePathSummaryModel\nwriteIntentSummaryModel\nwriteAtgModeTxtFile\nwriteDotFile\nwriteATGModel\nwriteAtgModeTxtFile2\nwriteDotFile2\nwriteATGModel2\n---------------------------------------\nAnalyzing myNav.apk Finish...\n\nCTGClient time = 19 seconds\nICC Resolution Finish...\n\n'
-java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
-b'Analyzing myNav.apk\nusing client IROutputClient\nSoot Analysis finish.\nSuccessfully analyze with IROutputClient.\n---------------------------------------\nAnalyzing myNav.apk Finish...\n\nIROutputClient time = 8 seconds\nICC Resolution Finish...\n\n'
-[root] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
-[CallGraphInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CallGraphInfo
-[CTGResult] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CTGResult
-[FragmentInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/FragmentInfo
-[ICCSpecification] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/ICCSpecification
-[ManifestInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/ManifestInfo
-[SootIRInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/SootIRInfo
+[outputDir] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot
+java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist  -name v2rayNG_1.2.0_armeabi-v7a.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot 
+b'Analyzing v2rayNG_1.2.0_armeabi-v7a.apk\nusing client CTGClient\nSoot Analysis finish.\nSuccessfully analyze with ManifestClient.\nCall Graph Construction finish.\nCall Graph has 47271 edges.\nCall Graph Enhancing finish.\nSuccessfully analyze with CallGraphClient.\nStaticValueAnalyzer finish.\nDynamicIntentFilterAnalyzer finish\n\nSuccessfully analyze with FragmentClient.\nThis is the method #200/14604\nThis is the method #400/14604\nThis is the method #600/14604\nThis is the method #800/14604\nThis is the method #1000/14604\nThis is the method #1200/14604\nThis is the method #1400/14604\nThis is the method #1600/14604\nThis is the method #1800/14604\nThis is the method #2000/14604\nThis is the method #2200/14604\nThis is the method #2400/14604\nThis is the method #2600/14604\nThis is the method #2800/14604\nThis is the method #3000/14604\nThis is the method #3200/14604\nThis is the method #3400/14604\nThis is the method #3600/14604\nThis is the method #3800/14604\nThis is the method #4000/14604\nThis is the method #4200/14604\nThis is the method #4400/14604\nThis is the method #4600/14604\nThis is the method #4800/14604\nThis is the method #5000/14604\nThis is the method #5200/14604\nThis is the method #5400/14604\nThis is the method #5600/14604\nThis is the method #5800/14604\nThis is the method #6000/14604\nThis is the method #6200/14604\nThis is the method #6400/14604\nThis is the method #6600/14604\nThis is the method #6800/14604\nThis is the method #7000/14604\nThis is the method #7200/14604\nThis is the method #7400/14604\nThis is the method #7600/14604\nThis is the method #7800/14604\nThis is the method #8000/14604\nThis is the method #8200/14604\nThis is the method #8400/14604\nThis is the method #8600/14604\nThis is the method #8800/14604\nThis is the method #9000/14604\nThis is the method #9200/14604\nThis is the method #9400/14604\nThis is the method #9600/14604\nThis is the method #9800/14604\nThis is the method #10000/14604\nThis is the method #10200/14604\nThis is the method #10400/14604\nThis is the method #10600/14604\nThis is the method #10800/14604\nThis is the method #11000/14604\nThis is the method #11200/14604\nThis is the method #11400/14604\nThis is the method #11600/14604\nThis is the method #11800/14604\nThis is the method #12000/14604\nThis is the method #12200/14604\nThis is the method #12400/14604\nThis is the method #12600/14604\nThis is the method #12800/14604\nThis is the method #13000/14604\nThis is the method #13200/14604\nThis is the method #13400/14604\nThis is the method #13600/14604\nThis is the method #13800/14604\nThis is the method #14000/14604\nThis is the method #14200/14604\nThis is the method #14400/14604\nThis is the method #14600/14604\nSuccessfully analyze with CTGClient.\nwriteComponentModel\nwriteMethodSummaryModel\nwritePathSummaryModel\nwriteIntentSummaryModel\nwriteAtgModeTxtFile\nwriteDotFile\nwriteATGModel\nwriteAtgModeTxtFile2\nwriteDotFile2\nwriteATGModel2\n---------------------------------------\nAnalyzing v2rayNG_1.2.0_armeabi-v7a.apk Finish...\n\nCTGClient time = 190 seconds\nICC Resolution Finish...\n\n'
+java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist  -name v2rayNG_1.2.0_armeabi-v7a.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot 
+b'Analyzing v2rayNG_1.2.0_armeabi-v7a.apk\nusing client IROutputClient\nSoot Analysis finish.\nSuccessfully analyze with IROutputClient.\n---------------------------------------\nAnalyzing v2rayNG_1.2.0_armeabi-v7a.apk Finish...\n\nIROutputClient time = 19 seconds\nICC Resolution Finish...\n\n'
+[root] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a
+[CallGraphInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/CallGraphInfo
+[CTGResult] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/CTGResult
+[FragmentInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/FragmentInfo
+[ICCSpecification] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/ICCSpecification
+[ManifestInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/ManifestInfo
+[SootIRInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo
 [-] ICCSpecification dir is not exists
 ###################################
-[~]p_id:  com.example.mynav-1
-[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
-[~]version:  1
-[~]apk_name:  myNav.apk
-[~]used_name:  com.example.mynav
-[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
-[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
-[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
+[~]p_id:  com.v2ray.ang-1000278
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278
+[~]version:  1000278
+[~]apk_name:  v2rayNG_1.2.0_armeabi-v7a.apk
+[~]used_name:  com.v2ray.ang
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack/dist/v2rayNG_1.2.0_armeabi-v7a.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a
 [~]activity:  []
 [~]screenlist:  []
 ###################################
-[+] CTG res is exists:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CTGResult
-[+] Soot ir is exists:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/SootIRInfo
-[+] CTG xml is exists:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav/CTGResult/CTGwithFragment.xml
+[+] CTG res is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/CTGResult
+[+] Soot ir is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo
+[+] CTG xml is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/CTGResult/CTGwithFragment.xml
 [init trans]
-[source] :  com.example.mynav.MainActivity
-{'com.example.mynav.MainActivity': []}
-{'com.example.mynav.MainActivity': []}
-========== Parsing manifest file of 'com.example.mynav-1.apk' ==========
-[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/AndroidManifest.xml
-[+] Find a Activity Node!
-[+] get parseManifest!
-###################################
-[~]p_id:  com.example.mynav-1
-[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
-[~]version:  1
-[~]apk_name:  myNav.apk
-[~]used_name:  com.example.mynav
-[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
-[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack
-[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot/myNav
-[~]activity:  ['com.example.mynav.MainActivity']
-[~]screenlist:  []
-###################################
-[+] Write to parseManifest.txt:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/parseManifest.txt
-b'List of devices attached\n192.168.56.101:5555\tdevice\n\n'
-[+] Local:  192.168.56.101:5555
-[+] connected to:  192.168.56.101:5555
-[+] Local:  
-[+] Successfully init atx-agent!
-[<structure.phone.usephone object at 0x7f6e5f6911c0>]
-[+] get Phone list:  [<structure.phone.usephone object at 0x7f6e5f6911c0>]
-[+] Success install apk:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist/myNav.apk
-[pairs] {'com.example.mynav.MainActivity': [['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['zxy', 'zxy']]}
-[OTHER]: 
-[['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['zxy', 'zxy']]
-[START ACTIVITY]:  com.example.mynav.MainActivity
-[component]:  com.example.mynav/com.example.mynav.MainActivity
-[action]:  android.intent.action.MAIN
-[category]:  android.intent.category.LAUNCHER
-[-] DON'T GET EXTRAS
-[cmd]:  adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
-[cmd]:  adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
-[short_act]:  .MainActivity
-[+] short act in Run result!
-[+] successful append new coverage activity:  com.example.mynav.MainActivity
-[+] Now act coverage : []
-[+] start Act !
-[act]:  .MainActivity
-[PARSE TARGET]
-[ACTIVITY] :  com.example.mynav.MainActivity
-[+] PC get shoot:  5baf73a9714596439a5f5044e8c4bdec.png
-====== new screen object create ======
-[vector] :  5baf73a9714596439a5f5044e8c4bdec
-[parentScreen] :  self
-[command] :  ['adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER']
-[Activity] :  .MainActivity
-[Start Activity] :  .MainActivity
-======================================
-{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': 'Open navigation drawer', 'packageName': 'com.example.mynav', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
-{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': 'More options', 'packageName': 'com.example.mynav', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
-{'bounds': {'bottom': 1872, 'left': 864, 'right': 1032, 'top': 1704}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '', 'packageName': 'com.example.mynav', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1872, 'left': 864, 'right': 1032, 'top': 1704}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
-[get current frag]
-[CMD] :  adb -s 192.168.56.101:5555 shell dumpsys activity top
-HomeFragment
-0x7f08009c
-[NEW Trans] :  com.example.mynav.MainActivity->com.example.mynav.HomeFragment
-[REAL NEW Trans] :  com.example.mynav.MainActivity->com.example.mynav.HomeFragment
-[TST-NODE]
-adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
-b'Stopping: com.example.mynav\nStarting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.mynav/.MainActivity }\n'
-[+] start Act !
-[START ACTIVITY]:  com.example.mynav.MainActivity
-[component]:  com.example.mynav/com.example.mynav.MainActivity
-[action]:  zxy
-[category]:  zxy
-[-] DON'T GET EXTRAS
-[cmd]:  adb -s 192.168.56.101:5555 shell am start -S -n com.example.mynav/com.example.mynav.MainActivity -a zxy -c zxy
-[START ACTIVITY]:  com.example.mynav.MainActivity
-[component]:  com.example.mynav/com.example.mynav.MainActivity
-[-] DON'T GET EXTRAS
-[+] Use uiauto!
-[+] successful start Activity:  []
-[+] all task kill:  com.example.mynav-1
+[source] :  com.v2ray.ang.ui.Server3Activity
+[source] :  com.v2ray.ang.ui.RoutingSettingsActivity
+[source] :  com.v2ray.ang.ui.ScannerActivity
+[source] :  com.v2ray.ang.ui.Server2Activity
+[source] :  com.v2ray.ang.InappBuyActivity
+[source] :  com.v2ray.ang.ui.MainActivity
+[source] :  com.v2ray.ang.ui.PerAppProxyActivity
+[source] :  com.v2ray.ang.ui.Server4Activity
+[source] :  com.v2ray.ang.ui.SubSettingActivity
+[source] :  com.v2ray.ang.ui.ScScannerActivity
+[source] :  com.v2ray.ang.ui.ServerActivity
+[source] :  com.v2ray.ang.ui.SettingsActivity
+[source] :  com.v2ray.ang.receiver.TaskerReceiver
+[source] :  com.v2ray.ang.ui.TaskerActivity
+[source] :  com.v2ray.ang.ui.LogcatActivity
+[source] :  com.v2ray.ang.ui.ScSwitchActivity
+[source] :  com.v2ray.ang.ui.SubEditActivity
+[source] :  com.v2ray.ang.service.V2RayVpnService
+[source] :  com.v2ray.ang.service.QSTileService
+{'com.v2ray.ang.ui.Server3Activity': [], 'com.v2ray.ang.ui.RoutingSettingsActivity': [], 'com.v2ray.ang.ui.ScannerActivity': [{'name': 'interICC_android.intent.action.GET_CONTENT, android.intent.category.OPENABLE', 'type': 'image/*', 'method': '<com.v2ray.ang.ui.ScannerActivity: void showFileChooser()>', 'action': 'android.intent.action.GET_CONTENT', 'category': 'android.intent.category.OPENABLE', 'extras': '', 'flags': ''}], 'com.v2ray.ang.ui.Server2Activity': [], 'com.v2ray.ang.InappBuyActivity': [], 'com.v2ray.ang.ui.MainActivity': [{'name': 'com.v2ray.ang.ui.ServerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.ScannerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity$importQRcode$1: void call(java.lang.Boolean)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.Server3Activity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.LogcatActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.SubSettingActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.InappBuyActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.Server4Activity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.SettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'interICC_android.intent.action.GET_CONTENT, android.intent.category.OPENABLE', 'type': '*/*', 'method': '<com.v2ray.ang.ui.MainActivity: void showFileChooser()>', 'action': 'android.intent.action.GET_CONTENT', 'category': 'android.intent.category.OPENABLE', 'extras': '', 'flags': ''}], 'com.v2ray.ang.ui.PerAppProxyActivity': [], 'com.v2ray.ang.ui.Server4Activity': [], 'com.v2ray.ang.ui.SubSettingActivity': [{'name': 'com.v2ray.ang.ui.SubEditActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SubSettingActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}], 'com.v2ray.ang.ui.ScScannerActivity': [{'name': 'com.v2ray.ang.ui.ScannerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.ScScannerActivity$importQRcode$1: void call(java.lang.Boolean)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.ScScannerActivity: void onActivityResult(int,int,android.content.Intent)>', 'extras': '', 'flags': ''}], 'com.v2ray.ang.ui.ServerActivity': [], 'com.v2ray.ang.ui.SettingsActivity': [{'name': 'com.v2ray.ang.ui.RoutingSettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment$onCreate$1: boolean onPreferenceClick(androidx.preference.Preference)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.PerAppProxyActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment$onCreate$2: boolean onPreferenceClick(androidx.preference.Preference)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.SettingsActivity$SettingsFragment', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity: void onCreate(android.os.Bundle)>', 'extras': '', 'flags': ''}], 'com.v2ray.ang.receiver.TaskerReceiver': [], 'com.v2ray.ang.ui.TaskerActivity': [], 'com.v2ray.ang.ui.LogcatActivity': [], 'com.v2ray.ang.ui.ScSwitchActivity': [], 'com.v2ray.ang.ui.SubEditActivity': [], 'com.v2ray.ang.service.V2RayVpnService': [], 'com.v2ray.ang.service.QSTileService': []}
+{'name': 'interICC_android.intent.action.GET_CONTENT, android.intent.category.OPENABLE', 'type': 'image/*', 'method': '<com.v2ray.ang.ui.ScannerActivity: void showFileChooser()>', 'action': 'android.intent.action.GET_CONTENT', 'category': 'android.intent.category.OPENABLE', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.ui.ScannerActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.ui.ScannerActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.ui.ScannerActivity.jimple
+[+] Rid jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.R$id.jimple
+{'name': 'com.v2ray.ang.ui.ServerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[PARSE OPTION ITEM]
+[+] Rid jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.R$id.jimple
+{'name': 'com.v2ray.ang.ui.ScannerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity$importQRcode$1: void call(java.lang.Boolean)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-1000278/iccbot/v2rayNG_1.2.0_armeabi-v7a/SootIRInfo/com.v2ray.ang.ui.MainActivity$importQRcode$1.jimple
+[-] rootIR is not exists

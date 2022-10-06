@@ -155,6 +155,7 @@ class project:
             # 检查Vector
             if v == vector:
                 print("[-] This Screen is alive!")
+                '''
                 print("[V] : ", vector)
                 for obj in self.screenobject:
                     if obj.vector == vector:
@@ -170,9 +171,10 @@ class project:
                             return False
                     else:
                         continue
-                print("[-] This Screen is alive!")
+                print("[-] This Screen is alive!")'''
                 return False
 
+        '''
         # 检查Picture
         for obj in self.screenobject:
             img1 = io.imread(dshot)
@@ -182,7 +184,7 @@ class project:
             if ssim1 >= 0.999:
                 print("[-] This Screen is alive!")
                 print("[V] : ", obj.vector)
-                return False
+                return False'''
 
         print("[-] This Screen is New: ", vector)
         return True

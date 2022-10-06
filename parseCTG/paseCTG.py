@@ -92,7 +92,7 @@ def parseSootIR(jimple, obj):
     # print(rootIR)
     if not os.path.exists(rootIR):
         print("[-] rootIR is not exists")
-        exit(0)
+        return ""
     else:
         print("[+] rootIR is exists: ", rootIR)
     print("[ROOT IR]: ", rootIR)
@@ -142,7 +142,7 @@ def inittrans(project, CTG_xml):
         tree = ET.parse(f)
     for node in tree.iter():
         if node.tag == "source":
-            print("[source] : ", node.attrib["name"])
+            #print("[source] : ", node.attrib["name"])
             source_name = node.attrib["name"]
             for child in node.iter():
                 # des
@@ -152,6 +152,15 @@ def inittrans(project, CTG_xml):
                     trans = source_name + "->" + desname
                     if trans not in project.inittrans:
                         project.inittrans.append(trans)
+
+    iccbottrans = os.path.join(project.res_dir, "iccbot.txt")
+    with open(iccbottrans, 'w') as f:
+        pass
+    print("[iccbot]")
+    for trans in project.inittrans:
+        with open(iccbottrans, 'a') as f:
+            f.writelines(trans + "\n")
+        #print(trans)
 
 
 def parseCTG(project):
@@ -178,7 +187,10 @@ def parseCTG(project):
     print(entrance)
     for key in entrance.keys():
         desobj = parseSootIR_self(key, entrance[key])
-        entrance[key] = desobj
+        if desobj == "":
+            continue
+        else:
+            entrance[key] = desobj
     for key in entrance.keys():
         for obj in entrance[key]:
             obj.putinfo()

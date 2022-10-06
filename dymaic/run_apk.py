@@ -126,14 +126,22 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         # 构建初始Widget Stack
         for widget in device.uiauto(clickable="true"):
             # print(widget.info)
-            new_widwget = mywidget.mywidget(widget)
+            flag = True
+            for twidget in widget_stack:
+                if twidget == widget:
+                    flag = False
+                    break
+            if flag:
+                new_widwget = mywidget.mywidget(widget)
+            else:
+                continue
             widget_stack.append(new_widwget)
             if widget.info['className'] == 'android.widget.EditText':
                 # 检查输入文本框
                 findres.find(project, widget.info, project.tmptxt)
 
         # 生成特征向量
-        screenvector = eigenvector.getVector(widget_stack)
+        screenvector = eigenvector.getVector(dxml, project)
         # 临时截图
         device.uiauto.screenshot(project.tmppng)
         '''
