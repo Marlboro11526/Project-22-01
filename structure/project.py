@@ -79,8 +79,7 @@ class project:
             os.mkdir(self.layout_dir)
         # 模糊测试的日志
         self.fuzzlog = os.path.join(self.res_dir, "fuzzlog.txt")
-        # 持久化目录
-        self.storge = os.path.join(self.res_dir, "project")
+
         # soot目录
         self.sootOutput_dir = ""
         # activity coverage数据保存
@@ -104,6 +103,10 @@ class project:
         if not os.path.exists(self.jadx_res):
             os.mkdir(self.jadx_res)
         self.rjava_res = ""
+        # 持久化目录
+        self.storge = os.path.join(self.res_dir, "entry")
+        if not os.path.exists(self.storge):
+            os.mkdir(self.storge)
 
 
     def setAct(self, actlist):

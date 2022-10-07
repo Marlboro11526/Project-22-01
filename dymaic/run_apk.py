@@ -223,8 +223,8 @@ def run(project, device):
     print("[+] all task kill: ", project.p_id)
     #project.printAll()
     # 卸载并清理环境
-    device.uiauto.app_clear(project.used_name)
-    device.uiauto.app_uninstall(project.used_name)
+    #device.uiauto.app_clear(project.used_name)
+    #device.uiauto.app_uninstall(project.used_name)
     '''
     try:
         project.printscreen()

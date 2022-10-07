@@ -252,15 +252,17 @@ if __name__ == '__main__':
         try:
             run_apk.run(p, phone_list[0])
         except:
+            phone_list[0].uiauto.app_stop(p.used_name)
+            #phone_list[0].uiauto.app_uninstall(p.used_name)
             continue
+        phone_list[0].uiauto.app_stop(p.used_name)
+        #phone_list[0].uiauto.app_uninstall(p.used_name)
         # os.remove(p.apk_path)
         # 卸载并清理环境
 
 
     for p in project_list:
         try:
-            fuzzscreen.init(p)
+            fuzzscreen.init(p, phone_list[0])
         except:
             pass
-        phone_list[0].uiauto.app_clear(p.used_name)
-        phone_list[0].uiauto.app_uninstall(p.used_name)
