@@ -1,0 +1,25 @@
+[+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+[+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+[+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+[+] find 1 : myNav.apk
+[+] Total apks: 1
+------------------------------
+[~] Start Run:  /home/syc/Downloads/DEV/rebuild/apks/myNav.apk
+------------------------------
+[+] get defined pkg name:  com.example.mynav
+[+] get version Code:  1
+[-] don't get launcher
+[+] Get AAPT Info!
+[+] set project id:  com.example.mynav-1
+[+] set project result dir:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1
+[+] creat new project:  com.example.mynav-1
+[+] Build pkg_up_list:  {'com.example.mynav': []}
+[+] Apktools has already performed the unpacking
+========== Repack apk file of 'com.example.mynav-1.apk' ==========
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/AndroidManifest.xml
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[#] repkg cmd:  apktool b /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack --use-aapt2
+b'List of devices attached\n192.168.56.101:5555\toffline\n\n'
+[+] Local:  192.168.56.101:5555

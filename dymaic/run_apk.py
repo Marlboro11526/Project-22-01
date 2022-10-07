@@ -6,12 +6,15 @@ from tools import getshot
 from structure import screen
 from structure import mywidget
 from tools import eigenvector
-from dymaic import startact
+from dymaic import startact, currFrag
 from tools import findres
-from enhance import extras
+from dymaic import extra
+from dymaic import target
+
 
 
 def start(project, device, other_s, activity, component, dcommnd, scess_start_activity):
+    # activity = ""
     print("[START ACTIVITY]: ", activity)
     flag = False
     s = other_s
@@ -23,10 +26,10 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
     if category != '':
         print("[category]: ", category)
     try:
-        myextras = extras.get_act_extra_paras(activity, project.act_paras_file)
+        myextras = extra.get_extra_paras(project, activity)
     except:
-        myextras = ''
-    if myextras != '' and not None:
+        myextras = []
+    if myextras != [] and not None:
         print("[+] GET EXTRAS: ", myextras)
     else:
         print("[-] DON'T GET EXTRAS")
@@ -37,11 +40,10 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         if not category == '':
             cmd = cmd + ' -c ' + category
         # 补充参数
-        if myextras is not None:
-            if myextras != 'None':
-                if myextras != '':
-                    cmd = cmd + ' ' + myextras
+        for ex in myextras:
+            cmd = cmd + ' ' + ex
         # cmd = cmd + ' -W'
+        print("[cmd]: ", cmd)
         result = subprocess.check_output(cmd, shell=True)
         dcommnd.append(cmd)
         print("[cmd]: ", cmd)
@@ -114,20 +116,35 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         if activity not in project.actcoverage:
             project.actcoverage.append(activity)
 
+        # Find Target Widget
+        all_widget = device.uiauto()
+        target_widget = target.getarget(project, activity, all_widget)
+        for widget in target_widget:
+            new_widwget = mywidget.mywidget(widget)
+            widget_stack.append(new_widwget)
+
         # 构建初始Widget Stack
         for widget in device.uiauto(clickable="true"):
             # print(widget.info)
-            new_widwget = mywidget.mywidget(widget)
-            widget_stack.append(new_widwget)
+            flag = True
+            for twidget in widget_stack:
+                if twidget.ui2.info['bounds'] == widget.info['bounds']:
+                    flag = False
+                    break
+            if flag:
+                new_widwget = mywidget.mywidget(widget)
+                widget_stack.append(new_widwget)
+            else:
+                continue
             if widget.info['className'] == 'android.widget.EditText':
                 # 检查输入文本框
                 findres.find(project, widget.info, project.tmptxt)
 
         # 生成特征向量
-        screenvector = eigenvector.getVector(widget_stack)
+        screenvector = eigenvector.getVector(dxml, project)
         # 临时截图
         device.uiauto.screenshot(project.tmppng)
-
+        '''
         # 判断是否为新出现的场景特征
         if project.isAliveScreen(screenvector, dcommnd, act, act, dparentScreen, project.tmppng):
             project.screenlist.append(screenvector)
@@ -139,6 +156,14 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         else:
             os.remove(project.tmppng)
             return
+        '''
+
+        project.screenlist.append(screenvector)
+        xml_dir = os.path.join(project.layout_dir, screenvector + ".xml")
+        # 写入布局文件信息
+        f = open(xml_dir, 'w')
+        f.write(dxml)
+        f.close()
 
         shot_dir = getshot.shot(device.uiauto, project, screenvector)
         dshot = shot_dir
@@ -151,8 +176,18 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
                                    act,
                                    act)
         project.screenobject.append(new_screen)
+
         # 开始深度探索
-        startact.run(project, device, new_screen)
+        currentFra = currFrag.getcurfrag(device, project)
+        if currentFra.name != "":
+            tmptrans = project.used_name + act + "->" + currentFra.name
+            print("[NEW Trans] : ", tmptrans)
+            if tmptrans not in project.inittrans:
+                print("[REAL NEW Trans] : ", tmptrans)
+                project.inittrans.append(tmptrans)
+
+
+        startact.run(project, device, new_screen, currentFra)
         if activity not in scess_start_activity:
             scess_start_activity.append(activity)
             print("[+] success")
@@ -186,10 +221,11 @@ def run(project, device):
                 continue
     print("[+] successful start Activity: ", scess_start_activity)
     print("[+] all task kill: ", project.p_id)
-    project.printAll()
+    #project.printAll()
     # 卸载并清理环境
-    device.uiauto.app_clear(project.used_name)
-    device.uiauto.app_uninstall(project.used_name)
+    #device.uiauto.app_clear(project.used_name)
+    #device.uiauto.app_uninstall(project.used_name)
+    '''
     try:
         project.printscreen()
     except:
@@ -198,8 +234,10 @@ def run(project, device):
         project.coverage()
     except:
         pass
+    '''
     try:
         project.printTrans()
     except:
         pass
+
 

@@ -62,9 +62,12 @@ def sign(project):
     else:
         print("[+] find sign apk success: ", sign_apk_name)
 
+
+
     # 对齐优化
-    align_name = pkg_name.split('.apk')[0] + "_aligned.apk"
+    align_name = pkg_name.split('.apk')[0] + ".apk"
     align_dir = os.path.join(project.unpack_path, "dist", align_name)
+    os.remove(align_dir)
     if not os.path.exists(align_dir):
         print("[#] align apk name: ", align_name)
         cmd = "zipalign -p -f 4 " + sign_apk_dir + " " + align_dir
@@ -76,8 +79,13 @@ def sign(project):
             print("[+] find align apk success: ", align_name)
     else:
         pass
+
+
+
+
     project.apk_path = align_dir
     project.align_name = align_name
+    project.apk_dir = os.path.join(project.unpack_path, "dist")
     print("[+] All PKG repkg work kill!")
 
 

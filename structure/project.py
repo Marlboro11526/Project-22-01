@@ -2,6 +2,7 @@ import os
 from graphviz import Digraph
 from skimage.metrics import structural_similarity as compare_ssim
 from skimage import io
+from structure import iccbot
 
 
 class project:
@@ -41,6 +42,8 @@ class project:
         self.screenlist = []
         # 整个项目存在的场景对象列表
         self.screenobject = []
+        # apk_dir_path
+        self.apk_dir = ""
         # 整个项目的STG图
         self.stg = ""
         # 临时文本文件
@@ -49,12 +52,17 @@ class project:
         self.tmppng = os.path.join(self.res_dir, "tmp.png")
         # 整个项目的Acitivy列表
         self.activity = []
+
+        # 转换关系trans
+        self.inittrans = []
         # 整个项目的Activity转换关系
         self.activitytrans = []
         # 整个项目的Screen转换关系
         self.screentrans = []
         # 整个项目的Pkg转换关系
         self.pkgtrans = []
+
+
         # act转换图
         self.atg_dog = Digraph(comment='Activity Transition Graph')
         # 输出名称
@@ -71,8 +79,7 @@ class project:
             os.mkdir(self.layout_dir)
         # 模糊测试的日志
         self.fuzzlog = os.path.join(self.res_dir, "fuzzlog.txt")
-        # 持久化目录
-        self.storge = os.path.join(self.res_dir, "project")
+
         # soot目录
         self.sootOutput_dir = ""
         # activity coverage数据保存
@@ -86,6 +93,22 @@ class project:
         self.align_name = ""
         self.act_paras_file = ""
         self.static_enhance = ""
+        # iccbot
+        self.iccobj = ""
+        self.icc_res = os.path.join(self.res_dir, "iccbot")
+        if not os.path.exists(self.icc_res):
+            os.mkdir(self.icc_res)
+        self.entrances = []
+        self.jadx_res = os.path.join(self.res_dir, "jadx")
+        if not os.path.exists(self.jadx_res):
+            os.mkdir(self.jadx_res)
+        self.rjava_res = ""
+        # 持久化目录
+        self.storge = os.path.join(self.res_dir, "entry")
+        if not os.path.exists(self.storge):
+            os.mkdir(self.storge)
+
+
     def setAct(self, actlist):
         self.activity = actlist
 
@@ -115,9 +138,12 @@ class project:
         print("[~]p_id: ", self.p_id)
         print("[~]res_dir: ", self.res_dir)
         print("[~]version: ", self.version)
+        print("[~]apk_name: ", self.apk_name)
         print("[~]used_name: ", self.used_name)
         print("[~]apk_path: ", self.apk_path)
         print("[~]unpack_path: ", self.unpack_path)
+        if self.icc_res != "":
+            print("[~]icc result: ", self.icc_res)
         print("[~]activity: ", self.activity)
         print("[~]screenlist: ", self.screenlist)
         print("###################################")
@@ -136,6 +162,7 @@ class project:
             # 检查Vector
             if v == vector:
                 print("[-] This Screen is alive!")
+                '''
                 print("[V] : ", vector)
                 for obj in self.screenobject:
                     if obj.vector == vector:
@@ -151,9 +178,10 @@ class project:
                             return False
                     else:
                         continue
-                print("[-] This Screen is alive!")
+                print("[-] This Screen is alive!")'''
                 return False
 
+        '''
         # 检查Picture
         for obj in self.screenobject:
             img1 = io.imread(dshot)
@@ -163,7 +191,7 @@ class project:
             if ssim1 >= 0.999:
                 print("[-] This Screen is alive!")
                 print("[V] : ", obj.vector)
-                return False
+                return False'''
 
         print("[-] This Screen is New: ", vector)
         return True
@@ -183,6 +211,14 @@ class project:
         pkgxt = os.path.join(self.res_dir, "pkgtrans.txt")
         with open(pkgxt, 'w') as f:
             pass
+        totaltrans = os.path.join(self.res_dir, "trans.txt")
+        with open(totaltrans, 'w') as f:
+            pass
+        print("[Total]")
+        for trans in self.inittrans:
+            with open(totaltrans, 'a') as f:
+                f.writelines(trans + "\n")
+            print(trans)
         print("[Activity]")
         for act in self.activitytrans:
             with open(acttxt, 'a') as f:
@@ -199,94 +235,14 @@ class project:
                 f.writelines(pkg + "\n")
             print(pkg)
 
-    # 从Screen关系增强Activiy 转换关系
-    def stg_enhance_atg(self):
-        print("[+] Start STG Enhance ATG!")
-        for sc_tran in self.screentrans:
-            caller_sc = sc_tran.split('->')[0]
-            callee_sc = sc_tran.split('->')[1]
-            caller_act = ""
-            callee_act = ""
-            for obj in self.screenobject:
-                if obj.vector == caller_sc:
-                    caller_act = obj.act
-                    #caller_act = caller_act.split(self.used_name)[1]
-                if obj.vector == callee_sc:
-                    callee_act = obj.act
-                    #callee_act = callee_act.split(self.used_name)[1]
-                    # 将新的ATG转换关系添加
-            actrans = caller_act + "->" + callee_act
-            print("[ENHACNE STG -> ATG] : ", actrans)
-            if actrans not in self.activitytrans:
-                self.activitytrans.append(actrans)
-                try:
-                    self.atg_dog.node(caller_act, caller_act)
-                except:
-                    pass
-                try:
-                    self.atg_dog.node(callee_act, callee_act)
-                    self.atg_dog.edge(caller_act, callee_act)
-                except:
-                    pass
-        print("[+] Successful STG Enhance ATG!")
-
-    def ic3_enhance_atg(self):
-        if not os.path.exists(self.static_enhance):
-            return
-        with open(self.static_enhance, 'r') as f:
-            print("[+] Start IC3 Enhance ATG!")
-            for line in f:
-                line = line.split('\n')[0]
-                caller_act = line.split('-->')[0]
-                callee_act = line.split('-->')[1]
-
-                if caller_act not in self.actcoverage:
-                    self.actcoverage.append(caller_act)
-                if callee_act not in self.actcoverage:
-                    self.actcoverage.append(callee_act)
-
-                caller_act = caller_act.split(self.used_name)[1]
-                callee_act = callee_act.split(self.used_name)[1]
-                actrans = caller_act + "->" + callee_act
-                print("[ENHACNE IC3 ATG] : ", actrans)
-                if actrans not in self.activitytrans:
-                    self.activitytrans.append(actrans)
-                    try:
-                        self.atg_dog.node(caller_act, caller_act)
-                    except:
-                        pass
-                    try:
-                        self.atg_dog.node(callee_act, callee_act)
-                        self.atg_dog.edge(caller_act, callee_act)
-                    except:
-                        pass
-        print("[+] Successful IC3 Enhance ATG!")
-
-
     # 保存转换关系图
     def savegv(self):
-        try:
-            self.stg_enhance_atg()
-        except:
-            pass
-        try:
-            self.ic3_enhance_atg()
-        except:
-            pass
         self.atg_dog.render(self.atg_gv, view=True)
         self.stg_dog.render(self.stg_gv, view=True)
         self.pkg_dog.render(self.pkg_gv, view=True)
 
     # 计算并保存覆盖率数据
     def coverage(self):
-        try:
-            self.stg_enhance_atg()
-        except:
-            pass
-        try:
-            self.ic3_enhance_atg()
-        except:
-            pass
         cover_path = os.path.join(self.res_dir, 'cover.txt')
         print('Total ACT NUM: ' + str(self.actnum))
         print('Cover ACT NUM: ' + str(len(self.actcoverage)))
@@ -297,3 +253,6 @@ class project:
             f.writelines('Cover ACT NUM: ' + str(len(self.actcoverage)) + '\n')
             f.writelines('Cover SCE NUM: ' + str(len(self.scecoverage)) + '\n')
             f.writelines('Coverage: ' + str(float(float(len(self.actcoverage)) / float(self.actnum))) + '\n')
+
+    def initicc(self):
+        self.iccobj = iccbot.iccbotres(self.icc_res)

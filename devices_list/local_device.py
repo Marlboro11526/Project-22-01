@@ -5,9 +5,6 @@ from structure import phone
 
 phone_list = []
 
-def test():
-    result = subprocess.check_output("ls")
-    print(result)
 
 def scan_devices():
     global phone_list
@@ -31,11 +28,13 @@ def scan_devices():
                 # 注册监听器
                 d.watcher("允许").when(xpath="拒绝").when("允许").click()
                 d.watcher.when("允许").click()
+                d.watcher.when("YES").click()
+                d.watcher.when("ALLOW").click()
                 # 开始后台监控
                 d.watcher.start()
                 # 使用ui2的输入法取代系统输入法
                 d.set_fastinput_ime(True)
-                #devices_list.append(tmp)
+                # devices_list.append(tmp)
 
     cmd = "python3 -m uiautomator2 init"
     result = subprocess.check_output(cmd, shell=True)
@@ -45,10 +44,13 @@ def scan_devices():
         print("[-] Fault init atx-agent!")
         exit(0)
 
+    print(phone_list)
     return phone_list
+
 
 def local_connect():
     pass
+
 
 if __name__ == '__main__':
     scan_devices()

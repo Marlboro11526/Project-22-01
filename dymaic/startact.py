@@ -2,11 +2,12 @@
 import os
 import subprocess
 import time
+from dymaic import target
 from fuzz import intype
 from structure import mywidget
 from tools import getshot, eigenvector, findres
 from structure import screen as myscreen
-
+from dymaic import currFrag
 
 def restartScreen(project, screen, device):
     """
@@ -42,10 +43,10 @@ def restartScreen(project, screen, device):
         try:
             for widget in screen.widget_command:
                 try:
-                    time.sleep(0.3)
+                    time.sleep(0.5)
                     print(widget.info)
                     widget.click()
-                    time.sleep(0.3)
+                    time.sleep(0.5)
                 except:
                     print("[+] Don't widget_command : ")
                     print(widget.info)
@@ -62,7 +63,7 @@ def isNewActivity(project, oldact, device):
     :param oldact: 启动者Activity
     :return: 是否为新的Activity，否为新的Activity
     """
-    time.sleep(0.2)
+    time.sleep(0.5)
     cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
     result = subprocess.check_output(cmd, shell=True)
     check_name = project.used_name + '/' + oldact
@@ -74,7 +75,7 @@ def isNewActivity(project, oldact, device):
         return False
 
 
-def run(project, device, screen):
+def run(project, device, screen, fragment):
     """
     :param project: 项目对象
     :param device: 设备对象
@@ -89,13 +90,11 @@ def run(project, device, screen):
 
     # 设置输入框文本
     # 动态Fuzz
-    for index in range(stack_len):
-        try:
-            widget_stack[index].ui2
-        except:
-            continue
-        widgetu2 = widget_stack[index].ui2
+    all_widget = device.uiauto()
+    for widget in all_widget:
+        widgetu2 = widget
         if widgetu2.info['className'] == 'android.widget.EditText':
+            print("Find Input Widget: ", widgetu2.info)
             # 检查输入文本框
             res = findres.find(project, widgetu2.info, project.tmptxt)
             if res:
@@ -105,14 +104,15 @@ def run(project, device, screen):
             fuzz_str = intype.create(inputType)
             print("[+] Screen fuzz_str: ", fuzz_str)
             try:
-                device.uiauto(bounds=widgetu2.info['bounds']).set_text(fuzz_str)
+                #widgetu2.click()
+                widgetu2.set_text(fuzz_str)
             except:
                 continue
 
     #   逐个组件点击
     for index in range(stack_len):
         restartScreen(project, screen, device)
-        time.sleep(0.3)
+        time.sleep(0.5)
         # 组件丢失的情况
         try:
             widget_stack[index].ui2
@@ -136,7 +136,7 @@ def run(project, device, screen):
         screenvector = str(random.randint(1, 500000))
         shot_dir = getshot.shot(device.uiauto, project, screenvector)
         '''
-        time.sleep(0.3)
+        time.sleep(0.5)
         # 判断是否会进入其它包名
         currentPackageName = device.uiauto.info['currentPackageName']
         if currentPackageName != project.used_name:
@@ -189,7 +189,11 @@ def run(project, device, screen):
             # 将新的ATG转换关系添加
             print("[screen.act] : ", screen.act)
             print("[currentACT] : ", currentACT)
-            actrans = screen.act + "->" + currentACT
+            actrans = project.used_name + screen.act + "->" + project.used_name + currentACT
+
+            if actrans not in project.inittrans:
+                project.inittrans.append(actrans)
+
             if actrans not in project.activitytrans:
                 project.activitytrans.append(actrans)
                 try:
@@ -209,6 +213,28 @@ def run(project, device, screen):
                 flag = True
             else:
                 pass
+
+        currentFra = ""
+        # Is new Fragment?
+        try:
+            currentFra = currFrag.getcurfrag(device, project)
+            print("[Current Fragment] : ", currentFra.name)
+            '''
+            if fragment.id == "":
+                tmptrans = screen.act + "->" + currentFra.name
+                if tmptrans not in project.inittrans:
+                    print("[NEW Trans] : ", tmptrans)
+                    project.inittrans.append(tmptrans)
+            '''
+            if fragment.name != currentFra.name:
+                tmptrans = fragment.name + "->" + currentFra.name
+                print("[NEW Trans] : ", tmptrans)
+                if tmptrans not in project.inittrans:
+                    print("[Real NEW Trans] : ", tmptrans)
+                    project.inittrans.append(tmptrans)
+        except:
+            pass
+
         # 判断当前是否出现了新的Screen
         dxml = device.uiauto.dump_hierarchy(compressed=True)
         if flag:
@@ -221,14 +247,33 @@ def run(project, device, screen):
         f.close()
         # 初始化父ScreenID
         dparentScreen = screen.vector
+
+        # Find Target Widget
+        all_widget = device.uiauto()
+        coveract = project.used_name + currentACT
+        target_widget = target.getarget(project, coveract, all_widget)
+        for widget in target_widget:
+            new_widwget = mywidget.mywidget(widget)
+            widget_stack.append(new_widwget)
+
+
         # 构建初始Widget Stack
         widget_stack = []
         for widget in device.uiauto(clickable="true"):
             # print(widget.info)
-            new_widwget = mywidget.mywidget(widget)
-            widget_stack.append(new_widwget)
+            flag = True
+            for twidget in widget_stack:
+                if twidget.ui2.info['bounds'] == widget.info['bounds']:
+                    flag = False
+                    break
+            if flag:
+                new_widwget = mywidget.mywidget(widget)
+                widget_stack.append(new_widwget)
+            else:
+                continue
+
         # 生成特征向量
-        screenvector = eigenvector.getVector(widget_stack)
+        screenvector = eigenvector.getVector(dxml, project)
         # 初始化ADB操作信息
         dcommnd = screen.command
         # 初始化组件操作信息
@@ -282,6 +327,8 @@ def run(project, device, screen):
         project.screenobject.append(new_screen)
         time.sleep(0.5)
         # 进行递归深度探索
-        run(project, device, new_screen)
+        if currentFra == "":
+            currentFra = fragment
+        run(project, device, new_screen, currentFra)
         # 恢复Screen
         restartScreen(project, screen, device)
