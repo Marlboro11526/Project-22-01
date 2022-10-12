@@ -8,15 +8,28 @@ apks_dir = ""
 apk_name = ""
 androidJar = ""
 outputDir = ""
+<<<<<<< Updated upstream
 time = "30"
 maxPathNumber = "100"
 clients = ["CTGClient", "IROutputClient"]
 #clients = ["CallGraphClient", "ManifestClient", "IROutputClient", "FragmentClient", "CTGClient", "ICCSpecClient"]
+=======
+time = "20"
+maxPathNumber = "1000"
+clients = ["CTGClient", "IROutputClient", "ICCSpecClient"]
+#clients = ["CTGClient", "IROutputClient"]
+
+# clients = ["CallGraphClient", "ManifestClient", "IROutputClient", "FragmentClient", "CTGClient", "ICCSpecClient"]
+>>>>>>> Stashed changes
 
 
 def run():
     global iccbot_dir, iccjar_path, apks_dir, apk_name, androidJar, outputDir, time, maxPathNumber
+<<<<<<< Updated upstream
     cmd = "java -jar " + iccjar_path + " "
+=======
+    cmd = "timeout 15m java -jar -Xmx6g " + iccjar_path + " "
+>>>>>>> Stashed changes
     cmd = cmd + " -path " + apks_dir + " "
     cmd = cmd + " -name " + apk_name + " "
     cmd = cmd + " -androidJar  " + androidJar + " "

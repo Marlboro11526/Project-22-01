@@ -196,8 +196,12 @@ if __name__ == '__main__':
             p.entrances = paseCTG.parseCTG(p)
             print(p.entrances)
         except:
+<<<<<<< Updated upstream
             project_list.remove(p)
 
+=======
+            print("get widget id False")
+>>>>>>> Stashed changes
 
     # parseManifest
     for p in project_list:
@@ -251,6 +255,18 @@ if __name__ == '__main__':
         #run_apk.run(p, phone_list[0])
         try:
             run_apk.run(p, phone_list[0])
+            try:
+                transcreen.parsetrans(p)
+            except:
+                pass
+            try:
+                p.printTrans()
+            except:
+                pass
+            try:
+                p.savegv()
+            except:
+                pass
         except:
             phone_list[0].uiauto.app_stop(p.used_name)
             #phone_list[0].uiauto.app_uninstall(p.used_name)
@@ -259,6 +275,7 @@ if __name__ == '__main__':
         #phone_list[0].uiauto.app_uninstall(p.used_name)
         # os.remove(p.apk_path)
         # 卸载并清理环境
+<<<<<<< Updated upstream
 
 
     for p in project_list:
@@ -266,3 +283,5 @@ if __name__ == '__main__':
             fuzzscreen.init(p, phone_list[0])
         except:
             pass
+=======
+>>>>>>> Stashed changes

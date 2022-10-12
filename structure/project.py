@@ -237,6 +237,41 @@ class project:
 
     # 保存转换关系图
     def savegv(self):
+<<<<<<< Updated upstream
+=======
+        try:
+            for trans in self.inittrans:
+                father = trans.split('->')[0]
+                son = trans.split('->')[-1]
+                self.total_dog.node(father, father)
+                self.total_dog.node(son, son)
+                self.total_dog.edge(father, son)
+            self.total_dog.render(self.total_gv, view=True)
+        except:
+            pass
+
+        try:
+            with open(os.path.join(self.res_dir, "iccbot.txt"), "r") as f:
+                for line in f.readlines():
+                    father = line.split('->')[0]
+                    son = line.split('->')[-1]
+                    self.iccbot_dog.node(father, father)
+                    self.iccbot_dog.node(son, son)
+                    self.iccbot_dog.edge(father, son)
+            self.iccbot_dog.render(self.iccbot_gv, view=True)
+        except:
+            pass
+        '''
+        project.stg_dog.node(screen.vector, screen.vector)
+        except:
+        pass
+
+        try:
+        project.stg_dog.node(screenvector, screenvector)
+        project.stg_dog.edge(screen.vector, screenvector)
+        
+
+>>>>>>> Stashed changes
         self.atg_dog.render(self.atg_gv, view=True)
         self.stg_dog.render(self.stg_gv, view=True)
         self.pkg_dog.render(self.pkg_gv, view=True)

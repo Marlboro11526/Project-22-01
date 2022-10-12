@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2022-10-06 10:15:48 747174 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
 2022-10-06 10:15:48 747455 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
 2022-10-06 10:15:48 747600 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
@@ -13,3 +14,20 @@
 2022-10-06 10:15:52 811663 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
 2022-10-06 10:16:12 998006 java -jar /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/unpack/dist  -name myNav.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  30  -maxPathNumber  100  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.mynav-1/iccbot 
 2022-10-06 10:16:23 150023 [-] ICCSpecification dir is not exists
+=======
+2022-10-11 06:31:29 120430 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+2022-10-11 06:31:29 120702 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+2022-10-11 06:31:29 120878 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+2022-10-11 06:31:29 121022 [+] find 1 : com.simplemobiletools.draw.pro_72.apk
+2022-10-11 06:31:29 121083 [+] Total apks: 1
+2022-10-11 06:31:53 588163 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/iccbot/com.simplemobiletools.draw.pro_72
+2022-10-11 06:31:53 588307 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
+2022-10-11 06:31:53 588354 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/unpack/dist
+2022-10-11 06:31:53 588400 [apk_name] : com.simplemobiletools.draw.pro_72.apk
+2022-10-11 06:31:53 588438 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+2022-10-11 06:31:53 588504 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+2022-10-11 06:31:53 588589 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/iccbot
+2022-10-11 06:31:53 588693 timeout 15m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/unpack/dist  -name com.simplemobiletools.draw.pro_72.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/iccbot 
+2022-10-11 06:34:14 314612 timeout 15m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/unpack/dist  -name com.simplemobiletools.draw.pro_72.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/iccbot 
+2022-10-11 06:34:36 072522 timeout 15m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/unpack/dist  -name com.simplemobiletools.draw.pro_72.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.simplemobiletools.draw.pro-72/iccbot 
+>>>>>>> Stashed changes
