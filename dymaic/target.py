@@ -59,34 +59,31 @@ def onPreferenceClick(tree, entrance, widgets, target):
 
 
 
-def getarget(project, activity, widgets, dxml):
+def getarget(project, activity, widgets):
     target = []
     print("[PARSE TARGET]")
     print("[ACTIVITY] : ", activity)
-   # ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
-    tree = ET.XML(dxml)
-    #with open(project.tmptxt, 'rt') as f:
-        #tree = ET.parse(f)
+    ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
+    # ET.XML()
+    with open(project.tmptxt, 'rt') as f:
+        tree = ET.parse(f)
     entrances = project.entrances
     entrances = entrances[activity]
     #print(entrances)
     for entrance in entrances:
-        try :
-            entrance.putinfo()
-            if entrance.fun == "void onClick(android.view.View)":
-                print("[+] Find onClick(android.view.View)")
-                onClick(tree, entrance, widgets, target)
-            elif entrance.fun == "boolean onOptionsItemSelected(android.view.MenuItem)":
-                print("[+] Find boolean onOptionsItemSelected(android.view.MenuItem)")
-                #onOptionsItem(tree, entrance, widgets, target)
-            elif entrance.fun == "boolean onPreferenceClick(androidx.preference.Preference)":
-                print("[+] Find boolean onPreferenceClick(androidx.preference.Preference)")
-                pass
-            elif entrance.fun == "boolean onNavigationItemSelected(android.view.MenuItem)":
-                print("[+] Find boolean onNavigationItemSelected(android.view.MenuItem)")
-                pass
-            else:
-                pass
-        except:
-            continue
+        entrance.putinfo()
+        if entrance.fun == "void onClick(android.view.View)":
+            print("[+] Find onClick(android.view.View)")
+            onClick(tree, entrance, widgets, target)
+        elif entrance.fun == "boolean onOptionsItemSelected(android.view.MenuItem)":
+            print("[+] Find boolean onOptionsItemSelected(android.view.MenuItem)")
+            #onOptionsItem(tree, entrance, widgets, target)
+        elif entrance.fun == "boolean onPreferenceClick(androidx.preference.Preference)":
+            print("[+] Find boolean onPreferenceClick(androidx.preference.Preference)")
+            pass
+        elif entrance.fun == "boolean onNavigationItemSelected(android.view.MenuItem)":
+            print("[+] Find boolean onNavigationItemSelected(android.view.MenuItem)")
+            pass
+        else:
+            pass
     return target

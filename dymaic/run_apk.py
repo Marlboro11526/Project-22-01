@@ -147,8 +147,11 @@ def fault_start(fault_start_activity, project, device):
     father_obj = ""
     widget = ""
     for screen_obj in project.screenobject:
-        if screen_obj.act == fault_start_activity:
-            father_obj = screen_obj
+        print(screen_obj.nextact)
+        for act in screen_obj.nextact:
+            if act == fault_start_activity:
+                father_obj = screen_obj
+                break
     if father_obj == "":
         return False
     startact.restartScreen(project=project, source_screen=father_obj, device=device)
@@ -252,8 +255,8 @@ def run(project, device):
         for s in other:
             try:
                 flag = start(project, device, s, activity, component, dcommnd)
-                if flag == "Exists":
-                    break
+                #if flag == "Exists":
+                    #break
             except:
                 continue
         if flag == "Fault":
@@ -263,8 +266,11 @@ def run(project, device):
 
     # Try Start Fault start Activity
     for activity in fault_start_activity:
-        res = fault_start(fault_start_activity=activity, project=project, device=device)
-        if res:
-            print("[+] New restart activity: ", activity)
-        else:
-            print("[-] Can't restart activity: ", activity)
+        try:
+            res = fault_start(fault_start_activity=activity, project=project, device=device)
+            if res:
+                print("[+] New restart activity: ", activity)
+            else:
+                print("[-] Can't restart activity: ", activity)
+        except:
+            continue
