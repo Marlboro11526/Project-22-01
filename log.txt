@@ -1,15 +1,15 @@
-2022-10-17 00:26:35 012649 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
-2022-10-17 00:26:35 012852 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
-2022-10-17 00:26:35 012966 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
-2022-10-17 00:26:35 013044 [+] find 1 : com.nononsenseapps.feeder_247.apk
-2022-10-17 00:26:35 013090 [+] Total apks: 1
-2022-10-17 00:27:10 968331 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/iccbot/com.nononsenseapps.feeder_247
-2022-10-17 00:27:10 968472 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
-2022-10-17 00:27:10 968557 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/unpack/dist
-2022-10-17 00:27:10 968647 [apk_name] : com.nononsenseapps.feeder_247.apk
-2022-10-17 00:27:10 968692 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
-2022-10-17 00:27:10 968730 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
-2022-10-17 00:27:10 968799 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/iccbot
-2022-10-17 00:27:10 968956 timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/unpack/dist  -name com.nononsenseapps.feeder_247.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/iccbot 
-2022-10-17 00:37:53 890079 timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/unpack/dist  -name com.nononsenseapps.feeder_247.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/iccbot 
-2022-10-17 00:38:39 735311 timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/unpack/dist  -name com.nononsenseapps.feeder_247.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.nononsenseapps.feeder-247/iccbot 
+2022-10-17 08:56:29 801324 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+2022-10-17 08:56:29 801680 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+2022-10-17 08:56:29 801967 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+2022-10-17 08:56:29 802204 [+] find 1 : com.gaurav.avnc_14.apk
+2022-10-17 08:56:29 802420 [+] Total apks: 1
+2022-10-17 08:56:45 210798 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14
+2022-10-17 08:56:45 210933 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
+2022-10-17 08:56:45 211016 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist
+2022-10-17 08:56:45 211060 [apk_name] : com.gaurav.avnc_14.apk
+2022-10-17 08:56:45 211096 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+2022-10-17 08:56:45 211131 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+2022-10-17 08:56:45 211165 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot
+2022-10-17 08:56:45 211360 timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist  -name com.gaurav.avnc_14.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot 
+2022-10-17 08:59:21 066828 timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist  -name com.gaurav.avnc_14.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot 
+2022-10-17 08:59:43 382944 timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist  -name com.gaurav.avnc_14.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot 

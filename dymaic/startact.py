@@ -116,14 +116,17 @@ def run(project, device, source_screen, fragment):
     # 构建初始Widget Stack
     print("Build init Widget")
     for widget in device.uiauto(clickable="true"):
-        flag = True
-        for t_widget in widget_stack:
-            if t_widget.info == widget.info:
-                flag = False
-                break
-        if flag:
-            widget_stack.append(widget)
-        else:
+        try:
+            flag = True
+            for t_widget in widget_stack:
+                if t_widget.info == widget.info:
+                    flag = False
+                    break
+            if flag:
+                widget_stack.append(widget)
+            else:
+                continue
+        except:
             continue
 
     print("======== wdiget stack ========")
@@ -133,6 +136,7 @@ def run(project, device, source_screen, fragment):
 
     flag = False
     while len(widget_stack) != 0:
+        print("[++++++++++++++++++]")
         restartScreen(project, source_screen, device)
         time.sleep(0.5)
         widget = ""
@@ -242,7 +246,7 @@ def run(project, device, source_screen, fragment):
         # 生成特征向量
         screenvector = eigenvector.getVector(dxml, project)
 
-        if screenvector not in project.screenlist or realnewfrag:
+        if screenvector not in project.screenlist:
             print("[+] find a new screen: ", screenvector)
             project.screenlist.add(screenvector)
             # 将新的Screen转换关系添加到项目中
@@ -291,7 +295,15 @@ def run(project, device, source_screen, fragment):
         # 进行递归深度探索
         if currentFra == "":
             currentFra = fragment
-        run(project, device, new_screen, currentFra)
+        try:
+            run(project, device, new_screen, currentFra)
+        except:
+            print("======================================")
+            print("[-] Run Fault!")
+            print("======================================")
+            restartScreen(project, source_screen, device)
+            continue
+        print("[-------------------]")
         restartScreen(project, source_screen, device)
         print("[+][widget] over a task: ", screenvector, "->", widget.info)
         print(screenvector, "-> widget stack: ", widget_stack)
