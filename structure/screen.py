@@ -1,5 +1,5 @@
 class screen:
-    def __init__(self, xml, vector, typeAct: bool, command: list, parentScreen, shot, widgetstack, act, startact):
+    def __init__(self, vector, sadb, act, stype=False):
         """
         :param xml: 对应的布局XML文件
         :param vector: 对应的特征向量
@@ -8,72 +8,34 @@ class screen:
         :param parentScreen： 父Screen节点ID
         :param act： 所属的Activity
         """
-        # 对应的布局XML内容
-        self.xml = xml
-        # 对应的布局XML保存地址
-        self.xml_dir = ""
-        # 场景特征向量
-        self.vector = vector
-        # 是否为根Activity
-        self.type = typeAct  # True or False
-        # adb操作路径信息
-        self.command = command
-        # 组件操作路径信息
-        self.widget_command = []
-        # 组件操作路径信息
-        self.widget_info = []
-        # 设置截图路径
-        self.shot = shot
-        # 所属的Activity
+        self.fact = ""
+        self.nextact = []
         self.act = act
-        # 启动的所属的Activity
-        self.start = startact
-        # 设置父Screen节点
-        if parentScreen == "":
-            self.parentScreen = "self"
-            self.start = self.act
-        else:
-            self.parentScreen = parentScreen
-        # 组件栈
-        self.widgetstack = widgetstack
-        # 打印构建信息
-        print("====== new screen object create ======")
-        print("[vector] : ", self.vector)
-        print("[parentScreen] : ", self.parentScreen)
-        print("[command] : ", self.command)
-        print("[Activity] : ", self.act)
-        print("[Start Activity] : ", self.start)
-        print("======================================")
-        for widget in self.widgetstack:
-            try:
-                print(widget.ui2.info)
-                self.widget_info.append(widget.ui2.info)
-            except:
-                pass
+        self.vector = vector
+        self.sonScreen = []
+        # 是否为根Activity
+        self.stype = stype  # True or False
+        self.adb = sadb
+        self.rescommand = []
+        self.actrans = []
+        self.newfrag = False
+        self.fragment = ""
+        self.nextfragment = ""
 
     def printAll(self):
         print("============ screen object ============")
         print("[vector] : ", self.vector)
-        print("[parentScreen] : ", self.parentScreen)
+        print("[parentScreen] : ", self.fact)
         print("[Activity] : ", self.act)
-        print("[Start Activity] : ", self.start)
-        print("[command] : ", self.command)
-        print("[widget_command] : ")
+        print("[adb] : ", self.adb)
+        print("[fragment] : ", self.fragment)
+        print("[next-ragment] : ", self.nextfragment)
+        print("[newfrag] : ", self.newfrag)
+        print("[rescommand] : ")
         try:
-            for widegt in self.widget_command:
+            for widegt in self.rescommand:
                 print(widegt.info)
         except:
             pass
         print("=======================================")
 
-    def printWidget(self):
-        print("============ Widget Stack ============")
-        try:
-            for mywidget in self.widgetstack:
-                print("[widget info]")
-                print(mywidget.ui2.info)
-                print("[Next Screen]: ", mywidget.nextscreen)
-                print("[Next Pkg]: ", mywidget.nextpkg)
-                print("[Next Activity]: ", mywidget.nextact)
-        except:
-            pass

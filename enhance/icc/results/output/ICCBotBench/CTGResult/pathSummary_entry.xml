@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <methodSummary source="&lt;com.iccbot.withFrag.Source2WithFrag: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="Source2WithFrag onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withFrag.Source2WithFrag: void setContentView(int)&gt;(2130903065)">
+        <nodeInfo nodeId="1297965719" predsStr="395405070" succsStr="" context=""/>
+        <baseNodePointTo value="1297965719" context=""/>
+        <nodeSetPointToMe value="1297965719," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withFrag.Source1WithFrag$1: void onClick(android.view.View)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onClick(android.view.View)"/>
+      <node type="getFragment" method="Source1WithFrag$1 onClick" unit="$r4 = virtualinvoke $r3.&lt;com.iccbot.withFrag.Source1WithFrag: android.support.v4.app.FragmentManager getSupportFragmentManager()&gt;()">
+        <nodeInfo nodeId="1972597101" predsStr="855715439" succsStr="1082580995" context=""/>
+        <baseNodePointTo value="1972597101" context=""/>
+        <nodeSetPointToMe value="1972597101,1082580995,981198566,3392912," context=""/>
+      </node>
+      <node type="beginTransaction" method="Source1WithFrag$1 onClick" unit="$r5 = virtualinvoke $r4.&lt;android.support.v4.app.FragmentManager: android.support.v4.app.FragmentTransaction beginTransaction()&gt;()">
+        <nodeInfo nodeId="1082580995" predsStr="1972597101" succsStr="981198566" context=""/>
+        <baseNodePointTo value="1972597101" context=""/>
+      </node>
+      <node type="addFunction" method="Source1WithFrag$1 onClick" unit="$r5 = virtualinvoke $r5.&lt;android.support.v4.app.FragmentTransaction: android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment)&gt;(2131296321, $r2)">
+        <nodeInfo nodeId="981198566" predsStr="1082580995" succsStr="3392912" context=""/>
+        <baseNodePointTo value="1972597101" context=""/>
+      </node>
+      <node type="commit" method="Source1WithFrag$1 onClick" unit="virtualinvoke $r5.&lt;android.support.v4.app.FragmentTransaction: int commit()&gt;()">
+        <nodeInfo nodeId="3392912" predsStr="981198566" succsStr="" context=""/>
+        <baseNodePointTo value="1972597101" context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withFragCtx.SourceWithFragCtx$1: void onClick(android.view.View)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onClick(android.view.View)"/>
+      <node type="getFragment" method="SourceWithFragCtx$1 onClick" unit="$r4 = virtualinvoke $r3.&lt;com.iccbot.withFragCtx.SourceWithFragCtx: android.support.v4.app.FragmentManager getSupportFragmentManager()&gt;()">
+        <nodeInfo nodeId="499350863" predsStr="781204585" succsStr="1328090950" context=""/>
+        <baseNodePointTo value="499350863" context=""/>
+        <nodeSetPointToMe value="499350863,1328090950,738081163,77741033," context=""/>
+      </node>
+      <node type="beginTransaction" method="SourceWithFragCtx$1 onClick" unit="$r5 = virtualinvoke $r4.&lt;android.support.v4.app.FragmentManager: android.support.v4.app.FragmentTransaction beginTransaction()&gt;()">
+        <nodeInfo nodeId="1328090950" predsStr="499350863" succsStr="738081163" context=""/>
+        <baseNodePointTo value="499350863" context=""/>
+      </node>
+      <node type="addFunction" method="SourceWithFragCtx$1 onClick" unit="$r5 = virtualinvoke $r5.&lt;android.support.v4.app.FragmentTransaction: android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment)&gt;(2131296321, $r2)">
+        <nodeInfo nodeId="738081163" predsStr="1328090950" succsStr="77741033" context=""/>
+        <baseNodePointTo value="499350863" context=""/>
+      </node>
+      <node type="commit" method="SourceWithFragCtx$1 onClick" unit="virtualinvoke $r5.&lt;android.support.v4.app.FragmentTransaction: int commit()&gt;()">
+        <nodeInfo nodeId="77741033" predsStr="738081163" succsStr="" context=""/>
+        <baseNodePointTo value="499350863" context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withFragCtx.SourceWithFragCtx: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="SourceWithFragCtx onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withFragCtx.SourceWithFragCtx: void setContentView(int)&gt;(2130903063)">
+        <nodeInfo nodeId="2138560569" predsStr="2057629476" succsStr="" context=""/>
+        <baseNodePointTo value="2138560569" context=""/>
+        <nodeSetPointToMe value="2138560569," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withCtx.Source1WithCtx: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="Source1WithCtx onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withCtx.Source1WithCtx: void setContentView(int)&gt;(2130903063)">
+        <nodeInfo nodeId="84725098" predsStr="609943706" succsStr="" context=""/>
+        <baseNodePointTo value="84725098" context=""/>
+        <nodeSetPointToMe value="84725098," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withFrag.Source1WithFrag: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="Source1WithFrag onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withFrag.Source1WithFrag: void setContentView(int)&gt;(2130903063)">
+        <nodeInfo nodeId="715904416" predsStr="2109044070" succsStr="" context=""/>
+        <baseNodePointTo value="715904416" context=""/>
+        <nodeSetPointToMe value="715904416," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withCtx.Source2WithCtx: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="Source2WithCtx onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withCtx.Source2WithCtx: void setContentView(int)&gt;(2130903063)">
+        <nodeInfo nodeId="1871472276" predsStr="936455438" succsStr="" context=""/>
+        <baseNodePointTo value="1871472276" context=""/>
+        <nodeSetPointToMe value="1871472276," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withCtx.Source5WithCtx: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="Source5WithCtx onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withCtx.Source5WithCtx: void setContentView(int)&gt;(2130903063)">
+        <nodeInfo nodeId="741827271" predsStr="254669696" succsStr="" context=""/>
+        <baseNodePointTo value="741827271" context=""/>
+        <nodeSetPointToMe value="741827271," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withCtx.Source4WithCtx: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="Source4WithCtx onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withCtx.Source4WithCtx: void setContentView(int)&gt;(2130903063)">
+        <nodeInfo nodeId="854808377" predsStr="1510410379" succsStr="" context=""/>
+        <baseNodePointTo value="854808377" context=""/>
+        <nodeSetPointToMe value="854808377," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+  <methodSummary source="&lt;com.iccbot.withCtx.Source3WithCtx: void onCreate(android.os.Bundle)&gt;">
+    <pathSummary>
+      <method/>
+      <methodtrace value="void onCreate(android.os.Bundle)"/>
+      <node type="setContentView" method="Source3WithCtx onCreate" unit="virtualinvoke r0.&lt;com.iccbot.withCtx.Source3WithCtx: void setContentView(int)&gt;(2130903063)">
+        <nodeInfo nodeId="530200128" predsStr="1286828407" succsStr="" context=""/>
+        <baseNodePointTo value="530200128" context=""/>
+        <nodeSetPointToMe value="530200128," context=""/>
+      </node>
+    </pathSummary>
+  </methodSummary>
+</root>

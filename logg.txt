@@ -1,0 +1,1074 @@
+[+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+[+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+[+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+[+] find 1 : v2rayNG_1.7.3.apk
+[+] Total apks: 1
+------------------------------
+[~] Start Run:  /home/syc/Downloads/DEV/rebuild/apks/v2rayNG_1.7.3.apk
+------------------------------
+[+] get defined pkg name:  com.v2ray.ang
+[+] get version Code:  448
+[-] don't get launcher
+[+] Get AAPT Info!
+[+] set project id:  com.v2ray.ang-448
+[+] set project result dir:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448
+[+] creat new project:  com.v2ray.ang-448
+[+] Build pkg_up_list:  {'com.v2ray.ang': []}
+b'I: Removing 1.apk framework file...\nI: Using Apktool 2.6.1 on v2rayNG_1.7.3.apk\nI: Loading resource table...\nI: Decoding AndroidManifest.xml with resources...\nI: Loading resource table from file: /home/syc/.local/share/apktool/framework/1.apk\nI: Regular manifest package...\nI: Decoding file-resources...\nI: Decoding values */* XMLs...\nI: Baksmaling classes.dex...\nI: Baksmaling classes2.dex...\nI: Copying assets and libs...\nI: Copying unknown files...\nI: Copying original files...\nI: Copying META-INF/services directory\n'
+[+] Apktools unpack successful
+========== Repack apk file of 'com.v2ray.ang-448.apk' ==========
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/AndroidManifest.xml
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity not add action
+[#] repkg cmd:  apktool b /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack --use-aapt2
+[+] repkg success:  com.v2ray.ang-448
+[+] find key success:  v2rayNG_1.7.3.apk
+/home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist
+/home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack
+/home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist/v2rayNG_1.7.3.apk
+[+] find repkg success:  v2rayNG_1.7.3.apk
+[#] sign apk name:  v2rayNG_1.7.3_sign.apk
+[#] sign cmd:  echo 'sigh987yu' | jarsigner -verbose -keystore  watson.keystore -signedjar /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist/v2rayNG_1.7.3_sign.apk /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist/v2rayNG_1.7.3.apk  watson.keystore  
+[+] find sign apk success:  v2rayNG_1.7.3_sign.apk
+[#] align apk name:  v2rayNG_1.7.3.apk
+[+] find align apk success:  v2rayNG_1.7.3.apk
+[+] All PKG repkg work kill!
+###################################
+[~]p_id:  com.v2ray.ang-448
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448
+[~]version:  448
+[~]apk_name:  v2rayNG_1.7.3.apk
+[~]used_name:  com.v2ray.ang
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist/v2rayNG_1.7.3.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot
+[~]activity:  []
+[~]screenlist:  set()
+###################################
+[new_icc_res]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3
+[iccbot_dir] :  /home/syc/Downloads/DEV/rebuild/enhance/icc
+[apks_dir] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist
+[apk_name] :  v2rayNG_1.7.3.apk
+[iccjar_path] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+[androidJar] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+[outputDir] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot
+timeout 15m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist  -name v2rayNG_1.7.3.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot 
+b'Analyzing v2rayNG_1.7.3.apk\nusing client CTGClient\nSoot Analysis finish.\nSuccessfully analyze with ManifestClient.\nCall Graph Construction finish.\nCall Graph has 47983 edges.\nCall Graph Enhancing finish.\nSuccessfully analyze with CallGraphClient.\nStaticValueAnalyzer finish.\nDynamicIntentFilterAnalyzer finish\n\nSuccessfully analyze with FragmentClient.\nThis is the method #200/16903\nThis is the method #400/16903\nThis is the method #600/16903\nThis is the method #800/16903\nThis is the method #1000/16903\nThis is the method #1200/16903\nThis is the method #1400/16903\nThis is the method #1600/16903\nThis is the method #1800/16903\nThis is the method #2000/16903\nThis is the method #2200/16903\nThis is the method #2400/16903\nThis is the method #2600/16903\nThis is the method #2800/16903\nThis is the method #3000/16903\nThis is the method #3200/16903\nThis is the method #3400/16903\nThis is the method #3600/16903\nThis is the method #3800/16903\nThis is the method #4000/16903\nThis is the method #4200/16903\nThis is the method #4400/16903\nThis is the method #4600/16903\nThis is the method #4800/16903\nThis is the method #5000/16903\nThis is the method #5200/16903\nThis is the method #5400/16903\nThis is the method #5600/16903\nThis is the method #5800/16903\nThis is the method #6000/16903\nThis is the method #6200/16903\nThis is the method #6400/16903\nThis is the method #6600/16903\nThis is the method #6800/16903\nThis is the method #7000/16903\nThis is the method #7200/16903\nThis is the method #7400/16903\nThis is the method #7600/16903\nThis is the method #7800/16903\nThis is the method #8000/16903\nThis is the method #8200/16903\nThis is the method #8400/16903\nThis is the method #8600/16903\nThis is the method #8800/16903\nThis is the method #9000/16903\nThis is the method #9200/16903\nThis is the method #9400/16903\nThis is the method #9600/16903\nThis is the method #9800/16903\nThis is the method #10000/16903\nThis is the method #10200/16903\nThis is the method #10400/16903\nThis is the method #10600/16903\nThis is the method #10800/16903\nThis is the method #11000/16903\nThis is the method #11200/16903\nThis is the method #11400/16903\nThis is the method #11600/16903\nThis is the method #11800/16903\nThis is the method #12000/16903\nThis is the method #12200/16903\nThis is the method #12400/16903\nThis is the method #12600/16903\nThis is the method #12800/16903\nThis is the method #13000/16903\nThis is the method #13200/16903\nThis is the method #13400/16903\nThis is the method #13600/16903\nThis is the method #13800/16903\nThis is the method #14000/16903\nThis is the method #14200/16903\nThis is the method #14400/16903\nThis is the method #14600/16903\nThis is the method #14800/16903\nThis is the method #15000/16903\nThis is the method #15200/16903\nThis is the method #15400/16903\nThis is the method #15600/16903\nThis is the method #15800/16903\nThis is the method #16000/16903\nThis is the method #16200/16903\nThis is the method #16400/16903\nThis is the method #16600/16903\nThis is the method #16800/16903\nSuccessfully analyze with CTGClient.\nwriteComponentModel\nwriteMethodSummaryModel\nwritePathSummaryModel\nwriteIntentSummaryModel\nwriteAtgModeTxtFile\nwriteDotFile\nwriteATGModel\nwriteAtgModeTxtFile2\nwriteDotFile2\nwriteATGModel2\n---------------------------------------\nAnalyzing v2rayNG_1.7.3.apk Finish...\n\nCTGClient time = 320 seconds\nICC Resolution Finish...\n\n'
+timeout 15m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist  -name v2rayNG_1.7.3.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot 
+b'Analyzing v2rayNG_1.7.3.apk\nusing client IROutputClient\nSoot Analysis finish.\nSuccessfully analyze with IROutputClient.\n---------------------------------------\nAnalyzing v2rayNG_1.7.3.apk Finish...\n\nIROutputClient time = 22 seconds\nICC Resolution Finish...\n\n'
+timeout 15m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist  -name v2rayNG_1.7.3.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot 
+b'Analyzing v2rayNG_1.7.3.apk\nusing client ICCSpecClient\nSoot Analysis finish.\nSuccessfully analyze with ManifestClient.\nCall Graph Construction finish.\nCall Graph has 47983 edges.\nCall Graph Enhancing finish.\nSuccessfully analyze with CallGraphClient.\nStaticValueAnalyzer finish.\nDynamicIntentFilterAnalyzer finish\n\nSuccessfully analyze with FragmentClient.\nAnalyzing ICC sending.\nThis is the method #200/16903\nThis is the method #400/16903\nThis is the method #600/16903\nThis is the method #800/16903\nThis is the method #1000/16903\nThis is the method #1200/16903\nThis is the method #1400/16903\nThis is the method #1600/16903\nThis is the method #1800/16903\nThis is the method #2000/16903\nThis is the method #2200/16903\nThis is the method #2400/16903\nThis is the method #2600/16903\nThis is the method #2800/16903\nThis is the method #3000/16903\nThis is the method #3200/16903\nThis is the method #3400/16903\nThis is the method #3600/16903\nThis is the method #3800/16903\nThis is the method #4000/16903\nThis is the method #4200/16903\nThis is the method #4400/16903\nThis is the method #4600/16903\nThis is the method #4800/16903\nThis is the method #5000/16903\nThis is the method #5200/16903\nThis is the method #5400/16903\nThis is the method #5600/16903\nThis is the method #5800/16903\nThis is the method #6000/16903\nThis is the method #6200/16903\nThis is the method #6400/16903\nThis is the method #6600/16903\nThis is the method #6800/16903\nThis is the method #7000/16903\nThis is the method #7200/16903\nThis is the method #7400/16903\nThis is the method #7600/16903\nThis is the method #7800/16903\nThis is the method #8000/16903\nThis is the method #8200/16903\nThis is the method #8400/16903\nThis is the method #8600/16903\nThis is the method #8800/16903\nThis is the method #9000/16903\nThis is the method #9200/16903\nThis is the method #9400/16903\nThis is the method #9600/16903\nThis is the method #9800/16903\nThis is the method #10000/16903\nThis is the method #10200/16903\nThis is the method #10400/16903\nThis is the method #10600/16903\nThis is the method #10800/16903\nThis is the method #11000/16903\nThis is the method #11200/16903\nThis is the method #11400/16903\nThis is the method #11600/16903\nThis is the method #11800/16903\nThis is the method #12000/16903\nThis is the method #12200/16903\nThis is the method #12400/16903\nThis is the method #12600/16903\nThis is the method #12800/16903\nThis is the method #13000/16903\nThis is the method #13200/16903\nThis is the method #13400/16903\nThis is the method #13600/16903\nThis is the method #13800/16903\nThis is the method #14000/16903\nThis is the method #14200/16903\nThis is the method #14400/16903\nThis is the method #14600/16903\nThis is the method #14800/16903\nThis is the method #15000/16903\nThis is the method #15200/16903\nThis is the method #15400/16903\nThis is the method #15600/16903\nThis is the method #15800/16903\nThis is the method #16000/16903\nThis is the method #16200/16903\nThis is the method #16400/16903\nThis is the method #16600/16903\nThis is the method #16800/16903\nAnalyzing ICC receiving.\nThis is the method #200/16903\nThis is the method #400/16903\nThis is the method #600/16903\nThis is the method #800/16903\nThis is the method #1000/16903\nThis is the method #1200/16903\nThis is the method #1400/16903\nThis is the method #1600/16903\nThis is the method #1800/16903\nThis is the method #2000/16903\nThis is the method #2200/16903\nThis is the method #2400/16903\nThis is the method #2600/16903\nThis is the method #2800/16903\nThis is the method #3000/16903\nThis is the method #3200/16903\nThis is the method #3400/16903\nThis is the method #3600/16903\nThis is the method #3800/16903\nThis is the method #4000/16903\nThis is the method #4200/16903\nThis is the method #4400/16903\nThis is the method #4600/16903\nThis is the method #4800/16903\nThis is the method #5000/16903\nThis is the method #5200/16903\nThis is the method #5400/16903\nThis is the method #5600/16903\nThis is the method #5800/16903\nThis is the method #6000/16903\nThis is the method #6200/16903\nThis is the method #6400/16903\nThis is the method #6600/16903\nThis is the method #6800/16903\nThis is the method #7000/16903\nThis is the method #7200/16903\nThis is the method #7400/16903\nThis is the method #7600/16903\nThis is the method #7800/16903\nThis is the method #8000/16903\nThis is the method #8200/16903\nThis is the method #8400/16903\nThis is the method #8600/16903\nThis is the method #8800/16903\nThis is the method #9000/16903\nThis is the method #9200/16903\nThis is the method #9400/16903\nThis is the method #9600/16903\nThis is the method #9800/16903\nThis is the method #10000/16903\nThis is the method #10200/16903\nThis is the method #10400/16903\nThis is the method #10600/16903\nThis is the method #10800/16903\nThis is the method #11000/16903\nThis is the method #11200/16903\nThis is the method #11400/16903\nThis is the method #11600/16903\nThis is the method #11800/16903\nThis is the method #12000/16903\nThis is the method #12200/16903\nThis is the method #12400/16903\nThis is the method #12600/16903\nThis is the method #12800/16903\nThis is the method #13000/16903\nThis is the method #13200/16903\nThis is the method #13400/16903\nThis is the method #13600/16903\nThis is the method #13800/16903\nThis is the method #14000/16903\nThis is the method #14200/16903\nThis is the method #14400/16903\nThis is the method #14600/16903\nThis is the method #14800/16903\nThis is the method #15000/16903\nThis is the method #15200/16903\nThis is the method #15400/16903\nThis is the method #15600/16903\nThis is the method #15800/16903\nThis is the method #16000/16903\nThis is the method #16200/16903\nThis is the method #16400/16903\nThis is the method #16600/16903\nThis is the method #16800/16903\nSuccessfully analyze with ICCSpecClient.\n---------------------------------------\nAnalyzing v2rayNG_1.7.3.apk Finish...\n\nICCSpecClient time = 475 seconds\nICC Resolution Finish...\n\n'
+[#] Start init ICC OBJ
+[icc_res] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3
+[root] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3
+[CallGraphInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/CallGraphInfo
+[CTGResult] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/CTGResult
+[FragmentInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/FragmentInfo
+[ICCSpecification] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/ICCSpecification
+[ManifestInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/ManifestInfo
+[SootIRInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo
+[-] Successfull init ICC OBJ
+###################################
+[~]p_id:  com.v2ray.ang-448
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448
+[~]version:  448
+[~]apk_name:  v2rayNG_1.7.3.apk
+[~]used_name:  com.v2ray.ang
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist/v2rayNG_1.7.3.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3
+[~]activity:  []
+[~]screenlist:  set()
+###################################
+[START JADX]
+R.java exists!
+[+] CTG res is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/CTGResult
+[+] Soot ir is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo
+[+] CTG xml is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/CTGResult/CTGwithFragment.xml
+[init trans]
+[source] :  com.v2ray.ang.ui.RoutingSettingsActivity
+[child] :  {'name': 'com.v2ray.ang.ui.RoutingSettingsActivity'}
+[source] :  com.v2ray.ang.ui.ScannerActivity
+[child] :  {'name': 'com.v2ray.ang.ui.ScannerActivity'}
+[source] :  com.v2ray.ang.ui.MainActivity
+[child] :  {'name': 'com.v2ray.ang.ui.MainActivity'}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayProxyOnlyService', 'type': 'Act2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayVpnService', 'type': 'Act2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.ServerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.UserAssetActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_android.intent.action.VIEW, ', 'type': 'Act2Class', 'method': '<com.v2ray.ang.util.Utils: void openUri(android.content.Context,java.lang.String)>', 'action': 'android.intent.action.VIEW', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayTestService', 'type': 'Act2NonAct', 'method': '<com.v2ray.ang.util.MessageUtil: void sendMsg2TestService(android.content.Context,int,java.io.Serializable)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.LogcatActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.SettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_com.v2ray.ang.action.service, ', 'type': 'Act2Class', 'method': '<com.v2ray.ang.util.MessageUtil: void sendMsg2Service(android.content.Context,int,java.io.Serializable)>', 'action': 'com.v2ray.ang.action.service', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.SubSettingActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.ui.PerAppProxyActivity
+[child] :  {'name': 'com.v2ray.ang.ui.PerAppProxyActivity'}
+[source] :  com.v2ray.ang.service.V2RayProxyOnlyService
+[child] :  {'name': 'com.v2ray.ang.service.V2RayProxyOnlyService'}
+[child] :  {'name': 'interICC_null, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2rayPoint()>', 'action': 'null', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'NonAct2Act', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void showNotification()>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_com.v2ray.ang.action.service, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void showNotification()>', 'action': 'com.v2ray.ang.action.service', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.ui.SubSettingActivity
+[child] :  {'name': 'com.v2ray.ang.ui.SubSettingActivity'}
+[child] :  {'name': 'com.v2ray.ang.ui.SubEditActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SubSettingActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.service.V2RayTestService
+[child] :  {'name': 'com.v2ray.ang.service.V2RayTestService'}
+[child] :  {'name': 'interICC_new com.v2ray.ang.service.V2RayTestService, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.service.V2RayTestService$onStartCommand$1: java.lang.Object invokeSuspend(java.lang.Object)>', 'action': 'new com.v2ray.ang.service.V2RayTestService', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.ui.ScScannerActivity
+[child] :  {'name': 'com.v2ray.ang.ui.ScScannerActivity'}
+[child] :  {'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.ScScannerActivity: void scanQRCode$lambda-1(com.v2ray.ang.ui.ScScannerActivity,androidx.activity.result.ActivityResult)>', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.ui.UserAssetActivity
+[child] :  {'name': 'com.v2ray.ang.ui.UserAssetActivity'}
+[source] :  com.v2ray.ang.ui.ServerActivity
+[child] :  {'name': 'com.v2ray.ang.ui.ServerActivity'}
+[source] :  com.v2ray.ang.ui.SettingsActivity
+[child] :  {'name': 'com.v2ray.ang.ui.SettingsActivity'}
+[child] :  {'name': 'com.v2ray.ang.ui.PerAppProxyActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-1(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_android.intent.action.VIEW, ', 'type': 'Act2Class', 'method': '<com.v2ray.ang.util.Utils: void openUri(android.content.Context,java.lang.String)>', 'action': 'android.intent.action.VIEW', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.RoutingSettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-0(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.SettingsActivity$SettingsFragment', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity: void onCreate(android.os.Bundle)>', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.receiver.TaskerReceiver
+[child] :  {'name': 'com.v2ray.ang.receiver.TaskerReceiver'}
+[child] :  {'name': 'interICC_com.v2ray.ang.action.service, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.util.MessageUtil: void sendMsg2Service(android.content.Context,int,java.io.Serializable)>', 'action': 'com.v2ray.ang.action.service', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayProxyOnlyService', 'type': 'NonAct2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayVpnService', 'type': 'NonAct2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.ui.TaskerActivity
+[child] :  {'name': 'com.v2ray.ang.ui.TaskerActivity'}
+[source] :  com.v2ray.ang.ui.LogcatActivity
+[child] :  {'name': 'com.v2ray.ang.ui.LogcatActivity'}
+[source] :  com.v2ray.ang.ui.ScSwitchActivity
+[child] :  {'name': 'com.v2ray.ang.ui.ScSwitchActivity'}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayVpnService', 'type': 'Act2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayProxyOnlyService', 'type': 'Act2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_com.v2ray.ang.action.service, ', 'type': 'Act2Class', 'method': '<com.v2ray.ang.util.MessageUtil: void sendMsg2Service(android.content.Context,int,java.io.Serializable)>', 'action': 'com.v2ray.ang.action.service', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.ui.SubEditActivity
+[child] :  {'name': 'com.v2ray.ang.ui.SubEditActivity'}
+[source] :  com.v2ray.ang.receiver.WidgetProvider
+[child] :  {'name': 'com.v2ray.ang.receiver.WidgetProvider'}
+[child] :  {'name': 'com.v2ray.ang.receiver.WidgetProvider', 'type': 'NonAct2NonAct', 'method': '<com.v2ray.ang.receiver.WidgetProvider: void updateWidgetBackground(android.content.Context,android.appwidget.AppWidgetManager,int[],boolean)>', 'action': 'com.v2ray.ang.action.widget.click', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayProxyOnlyService', 'type': 'NonAct2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayVpnService', 'type': 'NonAct2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_com.v2ray.ang.action.service, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.util.MessageUtil: void sendMsg2Service(android.content.Context,int,java.io.Serializable)>', 'action': 'com.v2ray.ang.action.service', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.service.V2RayVpnService
+[child] :  {'name': 'com.v2ray.ang.service.V2RayVpnService'}
+[child] :  {'name': 'interICC_com.v2ray.ang.action.service, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void showNotification()>', 'action': 'com.v2ray.ang.action.service', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_null, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void stopV2rayPoint()>', 'action': 'null', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'NonAct2Act', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void showNotification()>', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.service.QSTileService
+[child] :  {'name': 'com.v2ray.ang.service.QSTileService'}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayVpnService', 'type': 'NonAct2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.v2ray.ang.service.V2RayProxyOnlyService', 'type': 'NonAct2NonAct', 'method': '<com.v2ray.ang.service.V2RayServiceManager: void startV2Ray(android.content.Context)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'interICC_com.v2ray.ang.action.service, ', 'type': 'NonAct2Class', 'method': '<com.v2ray.ang.util.MessageUtil: void sendMsg2Service(android.content.Context,int,java.io.Serializable)>', 'action': 'com.v2ray.ang.action.service', 'extras': '', 'flags': ''}
+[source] :  com.v2ray.ang.ui.ServerCustomConfigActivity
+[child] :  {'name': 'com.v2ray.ang.ui.ServerCustomConfigActivity'}
+iccbottrans :  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot.txt
+[iccbot]
+com.v2ray.ang.ui.MainActivity->com.v2ray.ang.ui.UserAssetActivity
+com.v2ray.ang.ui.SettingsActivity->com.v2ray.ang.ui.RoutingSettingsActivity
+com.v2ray.ang.ui.SubSettingActivity->com.v2ray.ang.ui.SubEditActivity
+com.v2ray.ang.ui.MainActivity->com.v2ray.ang.ui.LogcatActivity
+com.v2ray.ang.ui.MainActivity->com.v2ray.ang.ui.SubSettingActivity
+com.v2ray.ang.ui.MainActivity->com.v2ray.ang.ui.ServerActivity
+com.v2ray.ang.ui.SettingsActivity->com.v2ray.ang.ui.SettingsActivity$SettingsFragment
+com.v2ray.ang.ui.MainActivity->com.v2ray.ang.ui.SettingsActivity
+com.v2ray.ang.ui.SettingsActivity->com.v2ray.ang.ui.PerAppProxyActivity
+com.v2ray.ang.ui.ScScannerActivity->com.v2ray.ang.ui.MainActivity
+{'com.v2ray.ang.ui.RoutingSettingsActivity': [], 'com.v2ray.ang.ui.ScannerActivity': [], 'com.v2ray.ang.ui.MainActivity': [{'name': 'com.v2ray.ang.ui.ServerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.UserAssetActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.LogcatActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.SettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.SubSettingActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}], 'com.v2ray.ang.ui.PerAppProxyActivity': [], 'com.v2ray.ang.service.V2RayProxyOnlyService': [], 'com.v2ray.ang.ui.SubSettingActivity': [{'name': 'com.v2ray.ang.ui.SubEditActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SubSettingActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}], 'com.v2ray.ang.service.V2RayTestService': [], 'com.v2ray.ang.ui.ScScannerActivity': [{'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.ScScannerActivity: void scanQRCode$lambda-1(com.v2ray.ang.ui.ScScannerActivity,androidx.activity.result.ActivityResult)>', 'extras': '', 'flags': ''}], 'com.v2ray.ang.ui.UserAssetActivity': [], 'com.v2ray.ang.ui.ServerActivity': [], 'com.v2ray.ang.ui.SettingsActivity': [{'name': 'com.v2ray.ang.ui.PerAppProxyActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-1(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.RoutingSettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-0(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>', 'extras': '', 'flags': ''}, {'name': 'com.v2ray.ang.ui.SettingsActivity$SettingsFragment', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity: void onCreate(android.os.Bundle)>', 'extras': '', 'flags': ''}], 'com.v2ray.ang.receiver.TaskerReceiver': [], 'com.v2ray.ang.ui.TaskerActivity': [], 'com.v2ray.ang.ui.LogcatActivity': [], 'com.v2ray.ang.ui.ScSwitchActivity': [], 'com.v2ray.ang.ui.SubEditActivity': [], 'com.v2ray.ang.receiver.WidgetProvider': [], 'com.v2ray.ang.service.V2RayVpnService': [], 'com.v2ray.ang.service.QSTileService': [], 'com.v2ray.ang.ui.ServerCustomConfigActivity': []}
+{'name': 'com.v2ray.ang.ui.ServerActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+{'name': 'com.v2ray.ang.ui.UserAssetActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+{'name': 'com.v2ray.ang.ui.LogcatActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+{'name': 'com.v2ray.ang.ui.SettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+{'name': 'com.v2ray.ang.ui.SubSettingActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.MainActivity.jimple
+{'name': 'com.v2ray.ang.ui.SubEditActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SubSettingActivity: boolean onOptionsItemSelected(android.view.MenuItem)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SubSettingActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SubSettingActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SubSettingActivity.jimple
+{'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.ScScannerActivity: void scanQRCode$lambda-1(com.v2ray.ang.ui.ScScannerActivity,androidx.activity.result.ActivityResult)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.ScScannerActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.ScScannerActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.ScScannerActivity.jimple
+{'name': 'com.v2ray.ang.ui.PerAppProxyActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-1(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity$SettingsFragment.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity.jimple
+{'name': 'com.v2ray.ang.ui.RoutingSettingsActivity', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-0(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity$SettingsFragment.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity.jimple
+{'name': 'com.v2ray.ang.ui.SettingsActivity$SettingsFragment', 'type': 'Act2Act', 'method': '<com.v2ray.ang.ui.SettingsActivity: void onCreate(android.os.Bundle)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/SootIRInfo/com.v2ray.ang.ui.SettingsActivity.jimple
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.ServerActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onOptionsItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.UserAssetActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.LogcatActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.SettingsActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.SubSettingActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.SubSettingActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.SubEditActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.SubSettingActivity: boolean onOptionsItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.SubSettingActivity
+[fun] :  boolean onOptionsItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.ScScannerActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.MainActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.ScScannerActivity: void scanQRCode$lambda-1(com.v2ray.ang.ui.ScScannerActivity,androidx.activity.result.ActivityResult)>
+[sootir] :  com.v2ray.ang.ui.ScScannerActivity
+[fun] :  void scanQRCode$lambda-1(com.v2ray.ang.ui.ScScannerActivity,androidx.activity.result.ActivityResult)
+[source] :  com.v2ray.ang.ui.SettingsActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.PerAppProxyActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-1(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>
+[sootir] :  com.v2ray.ang.ui.SettingsActivity$SettingsFragment
+[fun] :  boolean onCreatePreferences$lambda-1(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)
+[source] :  com.v2ray.ang.ui.SettingsActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.RoutingSettingsActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.SettingsActivity$SettingsFragment: boolean onCreatePreferences$lambda-0(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)>
+[sootir] :  com.v2ray.ang.ui.SettingsActivity$SettingsFragment
+[fun] :  boolean onCreatePreferences$lambda-0(com.v2ray.ang.ui.SettingsActivity$SettingsFragment,androidx.preference.Preference)
+[source] :  com.v2ray.ang.ui.SettingsActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.SettingsActivity$SettingsFragment
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.SettingsActivity: void onCreate(android.os.Bundle)>
+[sootir] :  com.v2ray.ang.ui.SettingsActivity
+[fun] :  void onCreate(android.os.Bundle)
+{'com.v2ray.ang.ui.RoutingSettingsActivity': [], 'com.v2ray.ang.ui.ScannerActivity': [], 'com.v2ray.ang.ui.MainActivity': [<parseCTG.paseCTG.Destination object at 0x7ff58f84af40>, <parseCTG.paseCTG.Destination object at 0x7ff58f84ad60>, <parseCTG.paseCTG.Destination object at 0x7ff58f84ac70>, <parseCTG.paseCTG.Destination object at 0x7ff58f84ac10>, <parseCTG.paseCTG.Destination object at 0x7ff58f84afd0>], 'com.v2ray.ang.ui.PerAppProxyActivity': [], 'com.v2ray.ang.service.V2RayProxyOnlyService': [], 'com.v2ray.ang.ui.SubSettingActivity': [<parseCTG.paseCTG.Destination object at 0x7ff58f84a640>], 'com.v2ray.ang.service.V2RayTestService': [], 'com.v2ray.ang.ui.ScScannerActivity': [<parseCTG.paseCTG.Destination object at 0x7ff58f84adc0>], 'com.v2ray.ang.ui.UserAssetActivity': [], 'com.v2ray.ang.ui.ServerActivity': [], 'com.v2ray.ang.ui.SettingsActivity': [<parseCTG.paseCTG.Destination object at 0x7ff58f84ae20>, <parseCTG.paseCTG.Destination object at 0x7ff58f84ae80>, <parseCTG.paseCTG.Destination object at 0x7ff58f84ac40>], 'com.v2ray.ang.receiver.TaskerReceiver': [], 'com.v2ray.ang.ui.TaskerActivity': [], 'com.v2ray.ang.ui.LogcatActivity': [], 'com.v2ray.ang.ui.ScSwitchActivity': [], 'com.v2ray.ang.ui.SubEditActivity': [], 'com.v2ray.ang.receiver.WidgetProvider': [], 'com.v2ray.ang.service.V2RayVpnService': [], 'com.v2ray.ang.service.QSTileService': [], 'com.v2ray.ang.ui.ServerCustomConfigActivity': []}
+========== Parsing manifest file of 'com.v2ray.ang-448.apk' ==========
+[+] find the decompiled app: com.v2ray.ang-448
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3/CTGResult/componentInfo.xml
+root {}
+component {'name': 'com.v2ray.ang.ui.RoutingSettingsActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.RoutingSettingsActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.v2ray.ang.ui.ScannerActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.ScannerActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'action': 'android.intent.action.GET_CONTENT', 'category': 'android.intent.category.OPENABLE', 'type': 'image/*'}
+component {'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.MainActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'android.intent.action.MAIN', 'category': 'android.intent.category.LAUNCHER'}
+intent_filter {'action': 'android.intent.action.SEND', 'category': 'android.intent.category.DEFAULT'}
+intent_filter {'action': 'android.service.quicksettings.action.QS_TILE_PREFERENCES'}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.v2ray.ang.ui.UserAssetActivity, com.v2ray.ang.ui.SettingsActivity, com.v2ray.ang.ui.ServerActivity, com.v2ray.ang.ui.LogcatActivity, com.v2ray.ang.service.V2RayVpnService, interICC_android.intent.action.VIEW, , com.v2ray.ang.service.V2RayProxyOnlyService, interICC_com.v2ray.ang.action.service, , com.v2ray.ang.ui.SubSettingActivity, com.v2ray.ang.service.V2RayTestService', 'action': 'android.intent.action.GET_CONTENT, android.intent.action.VIEW, com.v2ray.ang.action.service', 'category': 'android.intent.category.OPENABLE', 'type': '*/*'}
+component {'name': 'com.v2ray.ang.ui.PerAppProxyActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.PerAppProxyActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.v2ray.ang.service.V2RayProxyOnlyService', 'type': 'Service'}
+sender {'destination': 'interICC_null, , com.v2ray.ang.ui.MainActivity, interICC_com.v2ray.ang.action.service, ', 'action': 'null, com.v2ray.ang.action.service'}
+component {'name': 'com.v2ray.ang.ui.SubSettingActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.SubSettingActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.v2ray.ang.ui.SubEditActivity'}
+component {'name': 'com.v2ray.ang.service.V2RayTestService', 'type': 'Service'}
+sender {'destination': 'interICC_new com.v2ray.ang.service.V2RayTestService, ', 'action': 'new com.v2ray.ang.service.V2RayTestService'}
+component {'name': 'com.v2ray.ang.ui.ScScannerActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.ScScannerActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.v2ray.ang.ui.MainActivity'}
+component {'name': 'com.v2ray.ang.ui.UserAssetActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.UserAssetActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'action': 'android.intent.action.GET_CONTENT', 'category': 'android.intent.category.OPENABLE', 'type': '*/*'}
+component {'name': 'com.v2ray.ang.ui.ServerActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.ServerActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.v2ray.ang.ui.SettingsActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.SettingsActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.v2ray.ang.ui.RoutingSettingsActivity, interICC_android.intent.action.VIEW, , com.v2ray.ang.ui.PerAppProxyActivity, com.v2ray.ang.ui.SettingsActivity$SettingsFragment', 'action': 'android.intent.action.VIEW'}
+component {'name': 'com.v2ray.ang.receiver.TaskerReceiver', 'type': 'Receiver', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'com.twofortyfouram.locale.intent.action.FIRE_SETTING'}
+sender {'destination': 'com.v2ray.ang.service.V2RayVpnService, com.v2ray.ang.service.V2RayProxyOnlyService, interICC_com.v2ray.ang.action.service, ', 'action': 'com.v2ray.ang.action.service'}
+component {'name': 'com.v2ray.ang.ui.TaskerActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.TaskerActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'com.twofortyfouram.locale.intent.action.EDIT_SETTING'}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.v2ray.ang.ui.LogcatActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.LogcatActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.v2ray.ang.ui.ScSwitchActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.ScSwitchActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.v2ray.ang.service.V2RayVpnService, com.v2ray.ang.service.V2RayProxyOnlyService, interICC_com.v2ray.ang.action.service, ', 'action': 'com.v2ray.ang.action.service'}
+component {'name': 'com.v2ray.ang.ui.SubEditActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.SubEditActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.v2ray.ang.receiver.WidgetProvider', 'type': 'Receiver'}
+manifest {}
+intent_filter {'action': 'com.v2ray.ang.action.widget.click, com.v2ray.ang.action.activity, android.appwidget.action.APPWIDGET_UPDATE'}
+sender {'destination': 'com.v2ray.ang.receiver.WidgetProvider, com.v2ray.ang.service.V2RayVpnService, com.v2ray.ang.service.V2RayProxyOnlyService, interICC_com.v2ray.ang.action.service, ', 'action': 'com.v2ray.ang.action.widget.click, com.v2ray.ang.action.service'}
+component {'name': 'com.v2ray.ang.service.V2RayVpnService', 'type': 'Service', 'permission': 'android.permission.BIND_VPN_SERVICE'}
+manifest {}
+intent_filter {'action': 'android.net.VpnService'}
+sender {'destination': 'interICC_null, , com.v2ray.ang.ui.MainActivity, interICC_com.v2ray.ang.action.service, ', 'action': 'null, com.v2ray.ang.action.service'}
+component {'name': 'com.v2ray.ang.service.QSTileService', 'type': 'Service', 'exported': 'true', 'permission': 'android.permission.BIND_QUICK_SETTINGS_TILE'}
+manifest {}
+intent_filter {'action': 'android.service.quicksettings.action.QS_TILE'}
+sender {'destination': 'com.v2ray.ang.service.V2RayVpnService, com.v2ray.ang.service.V2RayProxyOnlyService, interICC_com.v2ray.ang.action.service, ', 'action': 'com.v2ray.ang.action.service'}
+component {'name': 'com.v2ray.ang.ui.ServerCustomConfigActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.v2ray.ang.ui.ServerCustomConfigActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+{'com.v2ray.ang.ui.RoutingSettingsActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ScannerActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.MainActivity': [['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['android.intent.action.SEND', 'android.intent.category.DEFAULT'], ['android.service.quicksettings.action.QS_TILE_PREFERENCES', ''], ['zxy', 'zxy']], 'com.v2ray.ang.ui.PerAppProxyActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.SubSettingActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ScScannerActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.UserAssetActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ServerActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.SettingsActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.TaskerActivity': [['com.twofortyfouram.locale.intent.action.EDIT_SETTING', ''], ['zxy', 'zxy']], 'com.v2ray.ang.ui.LogcatActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ScSwitchActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.SubEditActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ServerCustomConfigActivity': [['zxy', 'zxy']]}
+
+[+] get parseManifest!
+###################################
+[~]p_id:  com.v2ray.ang-448
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448
+[~]version:  448
+[~]apk_name:  v2rayNG_1.7.3.apk
+[~]used_name:  com.v2ray.ang
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist/v2rayNG_1.7.3.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/iccbot/v2rayNG_1.7.3
+[~]activity:  ['com.v2ray.ang.ui.RoutingSettingsActivity', 'com.v2ray.ang.ui.ScannerActivity', 'com.v2ray.ang.ui.MainActivity', 'com.v2ray.ang.ui.PerAppProxyActivity', 'com.v2ray.ang.ui.SubSettingActivity', 'com.v2ray.ang.ui.ScScannerActivity', 'com.v2ray.ang.ui.UserAssetActivity', 'com.v2ray.ang.ui.ServerActivity', 'com.v2ray.ang.ui.SettingsActivity', 'com.v2ray.ang.ui.TaskerActivity', 'com.v2ray.ang.ui.LogcatActivity', 'com.v2ray.ang.ui.ScSwitchActivity', 'com.v2ray.ang.ui.SubEditActivity', 'com.v2ray.ang.ui.ServerCustomConfigActivity']
+[~]screenlist:  set()
+###################################
+[+] Write to parseManifest.txt:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/parseManifest.txt
+b'List of devices attached\n86219b420804\tdevice\n\n'
+[+] Local:  86219b420804
+[+] connected to:  86219b420804
+[+] Local:  
+[+] Successfully init atx-agent!
+[<structure.phone.usephone object at 0x7ff58f7847c0>]
+[+] get Phone list:  [<structure.phone.usephone object at 0x7ff58f7847c0>]
+[+] Success install apk:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/unpack/dist/v2rayNG_1.7.3.apk
+[pairs] {'com.v2ray.ang.ui.RoutingSettingsActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ScannerActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.MainActivity': [['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['android.intent.action.SEND', 'android.intent.category.DEFAULT'], ['android.service.quicksettings.action.QS_TILE_PREFERENCES', ''], ['zxy', 'zxy']], 'com.v2ray.ang.ui.PerAppProxyActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.SubSettingActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ScScannerActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.UserAssetActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ServerActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.SettingsActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.TaskerActivity': [['com.twofortyfouram.locale.intent.action.EDIT_SETTING', ''], ['zxy', 'zxy']], 'com.v2ray.ang.ui.LogcatActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ScSwitchActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.SubEditActivity': [['zxy', 'zxy']], 'com.v2ray.ang.ui.ServerCustomConfigActivity': [['zxy', 'zxy']]}
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.RoutingSettingsActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.RoutingSettingsActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[+] GET EXTRAS:  [' --es SCAN_RESULT test']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.RoutingSettingsActivity -a zxy -c zxy  --es SCAN_RESULT test -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.RoutingSettingsActivity -a zxy -c zxy  --es SCAN_RESULT test -W
+[short_act]:  .ui.RoutingSettingsActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.RoutingSettingsActivity
+[+] Now act coverage : set()
+[act]:  .ui.RoutingSettingsActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  f6789ffadd3a07941ec48fbbecab076f.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/f6789ffadd3a07941ec48fbbecab076f.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  f6789ffadd3a07941ec48fbbecab076f
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.RoutingSettingsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.RoutingSettingsActivity -a zxy -c zxy  --es SCAN_RESULT test -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  f6789ffadd3a07941ec48fbbecab076f
+[+] Screen ACT:  com.v2ray.ang.ui.RoutingSettingsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.RoutingSettingsActivity
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '保存', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '更多选项', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 384, 'left': 360, 'right': 720, 'top': 240}, 'childCount': 1, 'className': 'android.widget.LinearLayout', 'contentDescription': '直连的网址或IP', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 384, 'left': 360, 'right': 720, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 384, 'left': 720, 'right': 1080, 'top': 240}, 'childCount': 1, 'className': 'android.widget.LinearLayout', 'contentDescription': '阻止的网址或IP', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 384, 'left': 720, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1834, 'left': 30, 'right': 1050, 'top': 501}, 'childCount': 0, 'className': 'android.widget.EditText', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1834, 'left': 30, 'right': 1050, 'top': 501}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] Start Find Widget:  EditText et_routing_content
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}gravity': 'top', '{http://schemas.android.com/apk/res/android}id': '@id/et_routing_content', '{http://schemas.android.com/apk/res/android}scrollbars': 'vertical', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': 'wrap_content', '{http://schemas.android.com/apk/res/android}layout_marginTop': '10.0dip', '{http://schemas.android.com/apk/res/android}maxLines': '1000', '{http://schemas.android.com/apk/res/android}minLines': '20', '{http://schemas.android.com/apk/res/android}inputType': 'textMultiLine'}
+[+] same_widget:  [<Element 'EditText' at 0x7ff58c204cc0>]
+[-] Don't Find same Widget info!
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '保存', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '更多选项', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 384, 'left': 360, 'right': 720, 'top': 240}, 'childCount': 1, 'className': 'android.widget.LinearLayout', 'contentDescription': '直连的网址或IP', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 384, 'left': 360, 'right': 720, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 384, 'left': 720, 'right': 1080, 'top': 240}, 'childCount': 1, 'className': 'android.widget.LinearLayout', 'contentDescription': '阻止的网址或IP', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 384, 'left': 720, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1834, 'left': 30, 'right': 1050, 'top': 501}, 'childCount': 0, 'className': 'android.widget.EditText', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1834, 'left': 30, 'right': 1050, 'top': 501}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+==============================
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1834, 'left': 30, 'right': 1050, 'top': 501}, 'childCount': 0, 'className': 'android.widget.EditText', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1834, 'left': 30, 'right': 1050, 'top': 501}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.RoutingSettingsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+[Current Fragment] :  
+[-] Screen is old:  f6789ffadd3a07941ec48fbbecab076f
+Success
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.RoutingSettingsActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.RoutingSettingsActivity
+[+] Find component json
+[+] GET EXTRAS:  [' --es SCAN_RESULT test']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.RoutingSettingsActivity  --es SCAN_RESULT test -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.RoutingSettingsActivity  --es SCAN_RESULT test -W
+[short_act]:  .ui.RoutingSettingsActivity
+[+] short act in Run result!
+[act]:  .ui.RoutingSettingsActivity
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.ScannerActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.ScannerActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScannerActivity -a zxy -c zxy -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScannerActivity -a zxy -c zxy -W
+[short_act]:  .ui.ScannerActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.ScannerActivity
+[+] Now act coverage : {'com.v2ray.ang.ui.RoutingSettingsActivity'}
+[act]:  .ui.ScannerActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  736a5a36bf93d4d6dabca653578227f3.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/736a5a36bf93d4d6dabca653578227f3.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  736a5a36bf93d4d6dabca653578227f3
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.ScannerActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScannerActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  736a5a36bf93d4d6dabca653578227f3
+[+] Screen ACT:  com.v2ray.ang.ui.ScannerActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.ScannerActivity
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+[+] jmup to another pkg:  com.lbe.security.miui
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '显示根目录', 'packageName': 'com.android.documentsui', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+[+] jmup to another pkg:  com.android.documentsui
+[+][screen] over a task:  736a5a36bf93d4d6dabca653578227f3
+Success
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.ScannerActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.ScannerActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScannerActivity -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScannerActivity -W
+[short_act]:  .ui.ScannerActivity
+[+] short act in Run result!
+[act]:  .ui.ScannerActivity
+[OTHER]: 
+[['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['android.intent.action.SEND', 'android.intent.category.DEFAULT'], ['android.service.quicksettings.action.QS_TILE_PREFERENCES', ''], ['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.MainActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.MainActivity
+[action]:  android.intent.action.MAIN
+[category]:  android.intent.category.LAUNCHER
+[+] Find component json
+[+] GET EXTRAS:  [' --es SCAN_RESULT test']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER  --es SCAN_RESULT test -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER  --es SCAN_RESULT test -W
+[short_act]:  .ui.MainActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.MainActivity
+[+] Now act coverage : {'com.v2ray.ang.ui.RoutingSettingsActivity', 'com.v2ray.ang.ui.ScannerActivity'}
+[act]:  .ui.MainActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  cee31009036794da92a48ada5f3b8a7e.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/cee31009036794da92a48ada5f3b8a7e.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  cee31009036794da92a48ada5f3b8a7e
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.MainActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER  --es SCAN_RESULT test -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  cee31009036794da92a48ada5f3b8a7e
+[+] Screen ACT:  com.v2ray.ang.ui.MainActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.MainActivity
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.ServerActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onOptionsItemSelected(android.view.MenuItem)
+[+] Find boolean onOptionsItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.UserAssetActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[+] Find boolean onNavigationItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.LogcatActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[+] Find boolean onNavigationItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.SettingsActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[+] Find boolean onNavigationItemSelected(android.view.MenuItem)
+[source] :  com.v2ray.ang.ui.MainActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.SubSettingActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.MainActivity: boolean onNavigationItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.MainActivity
+[fun] :  boolean onNavigationItemSelected(android.view.MenuItem)
+[+] Find boolean onNavigationItemSelected(android.view.MenuItem)
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': 'Open navigation drawer', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '添加配置', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '更多选项', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1740}, 'childCount': 1, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1740}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': False, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1800, 'left': 864, 'right': 1032, 'top': 1632}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1800, 'left': 864, 'right': 1032, 'top': 1632}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': 'Open navigation drawer', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '添加配置', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '更多选项', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1740}, 'childCount': 1, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1740}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': False, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1800, 'left': 864, 'right': 1032, 'top': 1632}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1800, 'left': 864, 'right': 1032, 'top': 1632}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1800, 'left': 864, 'right': 1032, 'top': 1632}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1800, 'left': 864, 'right': 1032, 'top': 1632}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+[+] jmup to another pkg:  com.android.vpndialogs
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1740}, 'childCount': 1, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1740}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': False, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.MainActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+[Current Fragment] :  
+[-] Screen is old:  cee31009036794da92a48ada5f3b8a7e
+Success
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.MainActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.MainActivity
+[action]:  android.intent.action.SEND
+[category]:  android.intent.category.DEFAULT
+[+] Find component json
+[+] GET EXTRAS:  [' --es SCAN_RESULT test']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.MainActivity -a android.intent.action.SEND -c android.intent.category.DEFAULT  --es SCAN_RESULT test -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.MainActivity -a android.intent.action.SEND -c android.intent.category.DEFAULT  --es SCAN_RESULT test -W
+[short_act]:  .ui.MainActivity
+[+] short act in Run result!
+[act]:  .ui.MainActivity
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.PerAppProxyActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.PerAppProxyActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.PerAppProxyActivity -a zxy -c zxy -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.PerAppProxyActivity -a zxy -c zxy -W
+[short_act]:  .ui.PerAppProxyActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.PerAppProxyActivity
+[+] Now act coverage : {'com.v2ray.ang.ui.RoutingSettingsActivity', 'com.v2ray.ang.ui.MainActivity', 'com.v2ray.ang.ui.ScannerActivity'}
+[act]:  .ui.PerAppProxyActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  55c236f73f2561dec87474b75fb914ea.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/55c236f73f2561dec87474b75fb914ea.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  55c236f73f2561dec87474b75fb914ea
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.PerAppProxyActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.PerAppProxyActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  55c236f73f2561dec87474b75fb914ea
+[+] Screen ACT:  com.v2ray.ang.ui.PerAppProxyActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.PerAppProxyActivity
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '搜索', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '更多选项', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 355, 'left': 305, 'right': 505, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '关闭', 'visibleBounds': {'bottom': 355, 'left': 305, 'right': 505, 'top': 274}, 'checkable': True, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '关闭', 'visibleBounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'checkable': True, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '搜索', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '更多选项', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 355, 'left': 305, 'right': 505, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '关闭', 'visibleBounds': {'bottom': 355, 'left': 305, 'right': 505, 'top': 274}, 'checkable': True, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '关闭', 'visibleBounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'checkable': True, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '关闭', 'visibleBounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'checkable': True, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.PerAppProxyActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+[Current Fragment] :  
+[+] find a new screen:  0b17a192d41dc76ca006ad96288def80
+[+] PC get shoot:  0b17a192d41dc76ca006ad96288def80.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/0b17a192d41dc76ca006ad96288def80.png
+Activity Screen
+screen.rescommand []
+rescommand [<uiautomator2._selector.UiObject object at 0x7ff58c1e3f70>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  0b17a192d41dc76ca006ad96288def80
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.PerAppProxyActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.PerAppProxyActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+{'bounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '开启', 'visibleBounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'checkable': True, 'checked': True, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+=======================================
+[+] run :  0b17a192d41dc76ca006ad96288def80
+[+] Screen ACT:  com.v2ray.ang.ui.PerAppProxyActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.PerAppProxyActivity
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '搜索', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 816, 'right': 960, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.ImageView', 'contentDescription': '更多选项', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 960, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 355, 'left': 305, 'right': 505, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '关闭', 'visibleBounds': {'bottom': 355, 'left': 305, 'right': 505, 'top': 274}, 'checkable': True, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'childCount': 0, 'className': 'android.widget.Switch', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '开启', 'visibleBounds': {'bottom': 355, 'left': 764, 'right': 964, 'top': 274}, 'checkable': True, 'checked': True, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 573, 'left': 0, 'right': 1080, 'top': 393}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 573, 'left': 0, 'right': 1080, 'top': 393}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 756, 'left': 0, 'right': 1080, 'top': 576}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 756, 'left': 0, 'right': 1080, 'top': 576}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 939, 'left': 0, 'right': 1080, 'top': 759}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 939, 'left': 0, 'right': 1080, 'top': 759}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1122, 'left': 0, 'right': 1080, 'top': 942}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1122, 'left': 0, 'right': 1080, 'top': 942}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1305, 'left': 0, 'right': 1080, 'top': 1125}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1305, 'left': 0, 'right': 1080, 'top': 1125}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1488, 'left': 0, 'right': 1080, 'top': 1308}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1488, 'left': 0, 'right': 1080, 'top': 1308}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1671, 'left': 0, 'right': 1080, 'top': 1491}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1671, 'left': 0, 'right': 1080, 'top': 1491}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1854, 'left': 0, 'right': 1080, 'top': 1674}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1854, 'left': 0, 'right': 1080, 'top': 1674}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1857}, 'childCount': 3, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1920, 'left': 0, 'right': 1080, 'top': 1857}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.PerAppProxyActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.PerAppProxyActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.PerAppProxyActivity -W
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.SubSettingActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.SubSettingActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.SubSettingActivity -a zxy -c zxy -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.SubSettingActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.SubSettingActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.SubSettingActivity -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.SubSettingActivity -W
+[short_act]:  .ui.SubSettingActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.SubSettingActivity
+[+] Now act coverage : {'com.v2ray.ang.ui.PerAppProxyActivity', 'com.v2ray.ang.ui.RoutingSettingsActivity', 'com.v2ray.ang.ui.MainActivity', 'com.v2ray.ang.ui.ScannerActivity'}
+[act]:  .ui.SubSettingActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  847522d920ee6c0e3e7bf3cd2e53ea7e.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/847522d920ee6c0e3e7bf3cd2e53ea7e.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  847522d920ee6c0e3e7bf3cd2e53ea7e
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.SubSettingActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.SubSettingActivity -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  847522d920ee6c0e3e7bf3cd2e53ea7e
+[+] Screen ACT:  com.v2ray.ang.ui.SubSettingActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.SubSettingActivity
+[source] :  com.v2ray.ang.ui.SubSettingActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.SubEditActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.SubSettingActivity: boolean onOptionsItemSelected(android.view.MenuItem)>
+[sootir] :  com.v2ray.ang.ui.SubSettingActivity
+[fun] :  boolean onOptionsItemSelected(android.view.MenuItem)
+[+] Find boolean onOptionsItemSelected(android.view.MenuItem)
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '添加配置', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '添加配置', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+==============================
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '添加配置', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.SubEditActivity
+A Different Act Name:  .ui.SubEditActivity
+[screen.act] :  com.v2ray.ang.ui.SubSettingActivity
+[currentACT] :  .ui.SubEditActivity
+[NEW ACT] :  com.v2ray.ang.ui.SubEditActivity
+['com.v2ray.ang.ui.SubEditActivity', <uiautomator2._selector.UiObject object at 0x7ff58c1e3f40>]
+[+] TEST actrans:  [['com.v2ray.ang.ui.SubEditActivity', <uiautomator2._selector.UiObject object at 0x7ff58c1e3f40>]]
+[<uiautomator2._selector.UiObject object at 0x7ff58c1e3c70>]
+[+][screen] over a task:  847522d920ee6c0e3e7bf3cd2e53ea7e
+Success
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.ScScannerActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.ScScannerActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[+] GET EXTRAS:  [' --es SCAN_RESULT test']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScScannerActivity -a zxy -c zxy  --es SCAN_RESULT test -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScScannerActivity -a zxy -c zxy  --es SCAN_RESULT test -W
+[short_act]:  .ui.ScScannerActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.ScScannerActivity
+[+] Now act coverage : {'com.v2ray.ang.ui.SubSettingActivity', 'com.v2ray.ang.ui.MainActivity', 'com.v2ray.ang.ui.SubEditActivity', 'com.v2ray.ang.ui.PerAppProxyActivity', 'com.v2ray.ang.ui.RoutingSettingsActivity', 'com.v2ray.ang.ui.ScannerActivity'}
+[act]:  .ui.ScScannerActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  d41d8cd98f00b204e9800998ecf8427e.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/d41d8cd98f00b204e9800998ecf8427e.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  d41d8cd98f00b204e9800998ecf8427e
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.ScScannerActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScScannerActivity -a zxy -c zxy  --es SCAN_RESULT test -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  d41d8cd98f00b204e9800998ecf8427e
+[+] Screen ACT:  com.v2ray.ang.ui.ScScannerActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.ScScannerActivity
+[source] :  com.v2ray.ang.ui.ScScannerActivity
+[destination activity/fragment] :  com.v2ray.ang.ui.MainActivity
+[dtype] :  Act2Act
+[method] :  <com.v2ray.ang.ui.ScScannerActivity: void scanQRCode$lambda-1(com.v2ray.ang.ui.ScScannerActivity,androidx.activity.result.ActivityResult)>
+[sootir] :  com.v2ray.ang.ui.ScScannerActivity
+[fun] :  void scanQRCode$lambda-1(com.v2ray.ang.ui.ScScannerActivity,androidx.activity.result.ActivityResult)
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 1893, 'left': 27, 'right': 540, 'top': 1743}, 'childCount': 0, 'className': 'android.widget.Button', 'contentDescription': '', 'packageName': 'com.lbe.security.miui', 'resourceName': None, 'text': '拒绝', 'visibleBounds': {'bottom': 1893, 'left': 27, 'right': 540, 'top': 1743}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1893, 'left': 540, 'right': 1053, 'top': 1743}, 'childCount': 0, 'className': 'android.widget.Button', 'contentDescription': '', 'packageName': 'com.lbe.security.miui', 'resourceName': None, 'text': '允许', 'visibleBounds': {'bottom': 1893, 'left': 540, 'right': 1053, 'top': 1743}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+======== wdiget stack ========
+{'bounds': {'bottom': 1893, 'left': 27, 'right': 540, 'top': 1743}, 'childCount': 0, 'className': 'android.widget.Button', 'contentDescription': '', 'packageName': 'com.lbe.security.miui', 'resourceName': None, 'text': '拒绝', 'visibleBounds': {'bottom': 1893, 'left': 27, 'right': 540, 'top': 1743}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1893, 'left': 540, 'right': 1053, 'top': 1743}, 'childCount': 0, 'className': 'android.widget.Button', 'contentDescription': '', 'packageName': 'com.lbe.security.miui', 'resourceName': None, 'text': '允许', 'visibleBounds': {'bottom': 1893, 'left': 540, 'right': 1053, 'top': 1743}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+[+] jmup to another pkg:  com.android.documentsui
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] widget click
+[+] jmup to another pkg:  com.miui.home
+[+][screen] over a task:  d41d8cd98f00b204e9800998ecf8427e
+Success
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.ScScannerActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.ScScannerActivity
+[+] Find component json
+[+] GET EXTRAS:  [' --es SCAN_RESULT test']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScScannerActivity  --es SCAN_RESULT test -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ScScannerActivity  --es SCAN_RESULT test -W
+[short_act]:  .ui.ScScannerActivity
+[+] short act in Run result!
+[act]:  .ui.ScScannerActivity
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.UserAssetActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.UserAssetActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.UserAssetActivity -a zxy -c zxy -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.UserAssetActivity -a zxy -c zxy -W
+[short_act]:  .ui.UserAssetActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.UserAssetActivity
+[+] Now act coverage : {'com.v2ray.ang.ui.SubSettingActivity', 'com.v2ray.ang.ui.MainActivity', 'com.v2ray.ang.ui.SubEditActivity', 'com.v2ray.ang.ui.PerAppProxyActivity', 'com.v2ray.ang.ui.RoutingSettingsActivity', 'com.v2ray.ang.ui.ScannerActivity', 'com.v2ray.ang.ui.ScScannerActivity'}
+[act]:  .ui.UserAssetActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  123ab20f5a5e69ac023612fe11084aa9.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/123ab20f5a5e69ac023612fe11084aa9.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  123ab20f5a5e69ac023612fe11084aa9
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.UserAssetActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.UserAssetActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  123ab20f5a5e69ac023612fe11084aa9
+[+] Screen ACT:  com.v2ray.ang.ui.UserAssetActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.UserAssetActivity
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 792, 'right': 936, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '添加文件', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 792, 'right': 936, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '下载文件', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 792, 'right': 936, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '添加文件', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 792, 'right': 936, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '下载文件', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+==============================
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '下载文件', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.UserAssetActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+[Current Fragment] :  
+[-] Screen is old:  123ab20f5a5e69ac023612fe11084aa9
+Success
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.UserAssetActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.UserAssetActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.UserAssetActivity -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.UserAssetActivity -W
+[short_act]:  .ui.UserAssetActivity
+[+] short act in Run result!
+[act]:  .ui.UserAssetActivity
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.v2ray.ang.ui.ServerActivity
+[component]:  com.v2ray.ang/com.v2ray.ang.ui.ServerActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[+] GET EXTRAS:  ['', '', ' --es guid test']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ServerActivity -a zxy -c zxy    --es guid test -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ServerActivity -a zxy -c zxy    --es guid test -W
+[short_act]:  .ui.ServerActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.v2ray.ang.ui.ServerActivity
+[+] Now act coverage : {'com.v2ray.ang.ui.SubSettingActivity', 'com.v2ray.ang.ui.MainActivity', 'com.v2ray.ang.ui.SubEditActivity', 'com.v2ray.ang.ui.PerAppProxyActivity', 'com.v2ray.ang.ui.RoutingSettingsActivity', 'com.v2ray.ang.ui.ScannerActivity', 'com.v2ray.ang.ui.UserAssetActivity', 'com.v2ray.ang.ui.ScScannerActivity'}
+[act]:  .ui.ServerActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  0e50a3bbe155d97b2ae300dea0f79b6d.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.v2ray.ang-448/screenshot/0e50a3bbe155d97b2ae300dea0f79b6d.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  0e50a3bbe155d97b2ae300dea0f79b6d
+[parentScreen] :  
+[Activity] :  com.v2ray.ang.ui.ServerActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.v2ray.ang/com.v2ray.ang.ui.ServerActivity -a zxy -c zxy    --es guid test -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  0e50a3bbe155d97b2ae300dea0f79b6d
+[+] Screen ACT:  com.v2ray.ang.ui.ServerActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.v2ray.ang.ui.ServerActivity
+[Target Widget] :  []
+Build init Widget
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 792, 'right': 936, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '删除配置', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 792, 'right': 936, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'childCount': 0, 'className': 'android.widget.TextView', 'contentDescription': '保存配置', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 228, 'left': 936, 'right': 1080, 'top': 84}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 608, 'left': 48, 'right': 1032, 'top': 458}, 'childCount': 0, 'className': 'android.widget.EditText', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 608, 'left': 48, 'right': 1032, 'top': 458}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': True, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] Start Find Widget:  EditText et_remarks
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_remarks', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_remarks', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_remarks', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_remarks', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_remarks', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_remarks', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_remarks', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] same_widget:  <Element 'EditText' at 0x7ff58c204cc0>
+[-] Don't Find same Widget info!
+{'bounds': {'bottom': 863, 'left': 48, 'right': 1032, 'top': 713}, 'childCount': 0, 'className': 'android.widget.EditText', 'contentDescription': '', 'packageName': 'com.v2ray.ang', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 863, 'left': 48, 'right': 1032, 'top': 713}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] Start Find Widget:  EditText et_address
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_address', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_address', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_address', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_address', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] Find same widget:  {'{http://schemas.android.com/apk/res/android}id': '@id/et_address', '{http://schemas.android.com/apk/res/android}layout_width': 'fill_parent', '{http://schemas.android.com/apk/res/android}layout_height': '@dimen/edit_height', '{http://schemas.android.com/apk/res/android}inputType': 'text'}
+[+] same_widget:  <Element 'EditText' at 0x7ff58f80eae0>
+[-] Don't Find same Widget info!

@@ -1,22 +1,18 @@
-import os
 import subprocess
 import time
-import hashlib
-from tools import getshot
-from structure import screen
-from structure import mywidget
-from tools import eigenvector
-from dymaic import startact, currFrag
-from tools import findres
-from dymaic import extra
-from dymaic import target
+
+from dymaic import extra, currFrag, target, startact
+from structure import mywidget, screen
+from tools import findres, eigenvector, getshot
+
+scess_start_activity = []
+fault_start_activity = []
 
 
-
-def start(project, device, other_s, activity, component, dcommnd, scess_start_activity):
-    # activity = ""
+def start(project, device, other_s, activity, component, dcommnd):
+    global scess_start_activity
+    print("============  NEW START ACTIVITY ============")
     print("[START ACTIVITY]: ", activity)
-    flag = False
     s = other_s
     action = s[0]
     category = s[1]
@@ -25,6 +21,7 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         print("[action]: ", action)
     if category != '':
         print("[category]: ", category)
+    myextras = []
     try:
         myextras = extra.get_extra_paras(project, activity)
     except:
@@ -33,171 +30,209 @@ def start(project, device, other_s, activity, component, dcommnd, scess_start_ac
         print("[+] GET EXTRAS: ", myextras)
     else:
         print("[-] DON'T GET EXTRAS")
-    if action != '' or category != '':
-        cmd = "adb -s " + device.dev_id + " shell am start -S -n " + component
-        if not action == '':
-            cmd = cmd + ' -a ' + action
-        if not category == '':
-            cmd = cmd + ' -c ' + category
-        # 补充参数
+    cmd = "timeout 20s adb -s " + device.dev_id + " shell am start -S -n " + component
+    if not action == '':
+        cmd = cmd + ' -a ' + action
+    if not category == '':
+        cmd = cmd + ' -c ' + category
+    # 补充参数
+    if myextras != [] and not None:
         for ex in myextras:
             cmd = cmd + ' ' + ex
-        # cmd = cmd + ' -W'
-        print("[cmd]: ", cmd)
-        result = subprocess.check_output(cmd, shell=True)
+    cmd = cmd + ' -W'
+    print("[cmd]: ", cmd)
+    with open(project.startActCmd, "a") as f:
+        f.writelines(cmd + "\n")
+    result = subprocess.check_output(cmd, shell=True)
+    with open(project.startActCmdRes, "a") as f:
+        f.writelines(result.decode('utf8') + "\n")
+    if b"Status: ok" in result:
         dcommnd.append(cmd)
         print("[cmd]: ", cmd)
         time.sleep(0.5)
-        if not b"Error" in result:
-            cmd = "adb -s " + device.dev_id + " shell dumpsys activity activities | grep Run #"
-            #print("[cmd]: ", cmd)
-            result = subprocess.check_output(cmd, shell=True).decode('utf8')
-            #print(result)
-            #print("project.used_name", project.used_name)
-            short_act = activity.split(project.used_name)[1]
-            print("[short_act]: ", short_act)
-            if short_act in result:
-                print("[+] short act in Run result!")
-                if activity not in project.actcoverage:
-                    print("[+] successful append new coverage activity: ", activity)
-                    print("[+] Now act coverage :", project.actcoverage)
-                    project.actcoverage.append(activity)
-    else:
-        print("[+] Use uiauto!")
-        device.uiauto.app_start(project.used_name, activity)
-        #device.uiauto.app_start(project.used_name)
-        time.sleep(0.5)
-        cmd = "adb -s " + device.dev_id + " shell dumpsys activity activities | grep Run #"
-        result = subprocess.check_output(cmd, shell=True)
         short_act = activity.split(project.used_name)[1]
         print("[short_act]: ", short_act)
-        if short_act in result:
+        if short_act in result.decode("utf8"):
+            print("[+] short act in Run result!")
             if activity not in project.actcoverage:
                 print("[+] successful append new coverage activity: ", activity)
                 print("[+] Now act coverage :", project.actcoverage)
-                project.actcoverage.append(activity)
+                if activity not in scess_start_activity:
+                    scess_start_activity.append(activity)
+                    project.actcoverage.add(activity)  # activity : com.example.mynav.SettingActivity
+                    with open(project.successact, "a") as f:
+                        f.writelines(activity + "\n")
+    else:
+        return "Fault"
 
-    # 检查是否正确进入我们设定的Activity内
-    num = 0
-    while True:
-        if num == 5:
-            flag = True
-            break
-        try:
-            time.sleep(0.5)
-            cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
-            result = subprocess.check_output(cmd, shell=True)
-            texactivity = activity.split(project.used_name)[1]
-            check_name = project.used_name + '/' + texactivity
-            if check_name in result.decode("utf8"):
-                print("[+] start Act !")
+    # 初始滑建立Screnn对象
+    dxml = device.uiauto.dump_hierarchy(compressed=True)
+    # 临时写入布局文件信息
+    f = open(project.tmptxt, 'w')
+    f.write(dxml)
+    f.close()
+    dtype = True
+    dparentScreen = ""
+    act = activity.split(project.used_name)[1]
+    print("[act]: ", act)  # .MainActivity
+
+    ''''
+    # Find Target Widget
+    all_widget = device.uiauto()
+    target_widget = target.getarget(project, activity, all_widget)
+    for widget in target_widget:
+        new_widwget = mywidget.mywidget(widget)
+        widget_stack.append(new_widwget)
+
+    # 构建初始Widget Stack
+    for widget in device.uiauto(clickable="true"):
+        # print(widget.info)
+        flag = True
+        for twidget in widget_stack:
+            if twidget.ui2.info['bounds'] == widget.info['bounds']:
+                flag = False
                 break
-        except:
-            pass
-        num = num + 1
-
-    if flag:
-        return
-
-    if not b"Error" in result and not flag:
-        if activity not in project.activity:
-            project.activity.append(activity)
-        # 初始滑建立Screnn对象
-        dxml = device.uiauto.dump_hierarchy(compressed=True)
-        # 临时写入布局文件信息
-        f = open(project.tmptxt, 'w')
-        f.write(dxml)
-        f.close()
-        dtype = True
-        dparentScreen = ""
-        widget_stack = []
-        act = activity.split(project.used_name)[1]
-        print("[act]: ", act)
-        if activity not in project.actcoverage:
-            project.actcoverage.append(activity)
-
-        # Find Target Widget
-        all_widget = device.uiauto()
-        target_widget = target.getarget(project, activity, all_widget)
-        for widget in target_widget:
+        if flag:
             new_widwget = mywidget.mywidget(widget)
             widget_stack.append(new_widwget)
-
-        # 构建初始Widget Stack
-        for widget in device.uiauto(clickable="true"):
-            # print(widget.info)
-            flag = True
-            for twidget in widget_stack:
-                if twidget.ui2.info['bounds'] == widget.info['bounds']:
-                    flag = False
-                    break
-            if flag:
-                new_widwget = mywidget.mywidget(widget)
-                widget_stack.append(new_widwget)
-            else:
-                continue
-            if widget.info['className'] == 'android.widget.EditText':
-                # 检查输入文本框
-                findres.find(project, widget.info, project.tmptxt)
-
-        # 生成特征向量
-        screenvector = eigenvector.getVector(dxml, project)
-        # 临时截图
-        device.uiauto.screenshot(project.tmppng)
-        '''
-        # 判断是否为新出现的场景特征
-        if project.isAliveScreen(screenvector, dcommnd, act, act, dparentScreen, project.tmppng):
-            project.screenlist.append(screenvector)
-            xml_dir = os.path.join(project.layout_dir, screenvector + ".xml")
-            # 写入布局文件信息
-            f = open(xml_dir, 'w')
-            f.write(dxml)
-            f.close()
         else:
-            os.remove(project.tmppng)
-            return
-        '''
+            continue
+        if widget.info['className'] == 'android.widget.EditText':
+            # 检查输入文本框
+            findres.find(project, widget.info, project.tmptxt)
+    '''
+    # 生成特征向量
+    screenvector = eigenvector.getVector(dxml, project)
+    # 临时截图
+    device.uiauto.screenshot(project.tmppng)
 
-        project.screenlist.append(screenvector)
-        xml_dir = os.path.join(project.layout_dir, screenvector + ".xml")
-        # 写入布局文件信息
-        f = open(xml_dir, 'w')
-        f.write(dxml)
-        f.close()
-
-        shot_dir = getshot.shot(device.uiauto, project, screenvector)
-        dshot = shot_dir
-
-        if screenvector not in project.scecoverage:
-            project.scecoverage.append(screenvector)
-
-        # 建立新的场景对象
-        new_screen = screen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack,
-                                   act,
-                                   act)
-        project.screenobject.append(new_screen)
-
-        # 开始深度探索
-        currentFra = currFrag.getcurfrag(device, project)
-        if currentFra.name != "":
-            tmptrans = project.used_name + act + "->" + currentFra.name
-            print("[NEW Trans] : ", tmptrans)
-            if tmptrans not in project.inittrans:
-                print("[REAL NEW Trans] : ", tmptrans)
-                project.inittrans.append(tmptrans)
-
-
-        startact.run(project, device, new_screen, currentFra)
-        if activity not in scess_start_activity:
-            scess_start_activity.append(activity)
-            print("[+] success")
+    if screenvector not in project.screenlist:
+        print("[+] New Acr Start Screen")
+        project.screenlist.add(screenvector)
     else:
-        print("[-] Error Start ")
-        return
+        return "Exists"
+
+    shot_dir = getshot.shot(device.uiauto, project, screenvector)
+    print("[+] Get shot: ", shot_dir)
+
+    # 建立新的场景对象
+    print("Activity Screen")
+    new_screen = screen.screen(vector=screenvector, sadb=cmd, act=activity, stype=True)
+    # add screen object
+    project.screenobject.append(new_screen)
+    # add screen vector list
+    project.screenlist.add(screenvector)
+
+    with open(project.actScreen, "a") as f:
+        f.writelines(activity + " : " + screenvector + "\n")
+
+    currentFra = currFrag.getcurfrag(device, project)
+    if currentFra.name != "":
+        tmptrans = project.used_name + act + "->" + currentFra.name
+        print("[NEW Trans] : ", tmptrans)
+        if tmptrans not in project.inittrans:
+            print("[REAL NEW Trans] : ", tmptrans)
+            project.inittrans.add(tmptrans)
+            new_screen.newfrag = True
+            new_screen.stype = False
+        new_screen.fragment = currentFra.name
+
+    new_screen.printAll()
+    startact.run(project, device, new_screen, currentFra)
+    print("Success")
+    return "Success"
+
+
+def fault_start(fault_start_activity, project, device):
+    father_obj = ""
+    widget = ""
+    for screen_obj in project.screenobject:
+        if screen_obj.act == fault_start_activity:
+            father_obj = screen_obj
+    if father_obj == "":
+        return False
+    startact.restartScreen(project=project, source_screen=father_obj, device=device)
+    for w2act in father_obj.actrans:
+        if w2act[0] == fault_start_activity:
+            print("[+] Find True 2act widget : ", w2act[1].info)
+            widget = w2act[1]
+
+    try:
+        widget.click()
+        print("[+] widget click")
+        # project.total_step = project.total_step + 1
+    except:
+        print("[-] widget don't click: ", widget.info)
+        return False
+
+    cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
+    result = subprocess.check_output(cmd, shell=True)
+    # print(result.decode("utf8"))
+    # 获取当前Activity的名称
+    currentACT = result.decode("utf8").split(project.used_name + "/")[1].split(" ")[0]
+    print("[CURRENT ACT]: ", currentACT)  # .MainActivity
+    if project.used_name in currentACT:
+        currentACT = ".activities" + currentACT.split(".activities")[1]
+    coveract = project.used_name + currentACT
+    if fault_start_activity != coveract:
+        return False
+    # 初始滑建立Screnn对象
+    dxml = device.uiauto.dump_hierarchy(compressed=True)
+    # 临时写入布局文件信息
+    f = open(project.tmptxt, 'w')
+    f.write(dxml)
+    f.close()
+    dtype = True
+    dparentScreen = ""
+    act = fault_start_activity.split(project.used_name)[1]
+    print("[act]: ", act)  # .MainActivity
+
+    # 生成特征向量
+    screenvector = eigenvector.getVector(dxml, project)
+    # 临时截图
+    device.uiauto.screenshot(project.tmppng)
+
+    if screenvector not in project.screenlist:
+        print("[+] New Acr Start Screen")
+        project.screenlist.add(screenvector)
+    else:
+        return "Exists"
+
+    shot_dir = getshot.shot(device.uiauto, project, screenvector)
+    print("[+] Get shot: ", shot_dir)
+
+    # 建立新的场景对象
+    print("Activity Screen")
+    new_screen = screen.screen(vector=screenvector, sadb=cmd, act=fault_start_activity, stype=True)
+    # add screen object
+    project.screenobject.append(new_screen)
+    # add screen vector list
+    project.screenlist.add(screenvector)
+
+    with open(project.actScreen, "a") as f:
+        f.writelines(fault_start_activity + " : " + screenvector + "\n")
+
+    currentFra = currFrag.getcurfrag(device, project)
+    if currentFra.name != "":
+        tmptrans = project.used_name + act + "->" + currentFra.name
+        print("[NEW Trans] : ", tmptrans)
+        if tmptrans not in project.inittrans:
+            print("[REAL NEW Trans] : ", tmptrans)
+            project.inittrans.add(tmptrans)
+            new_screen.newfrag = True
+            new_screen.stype = False
+        new_screen.fragment = currentFra.name
+
+    new_screen.printAll()
+    startact.run(project, device, new_screen, currentFra)
+    print("Success")
+    return True
+
 
 
 # 开启动态探索
 def run(project, device):
+    global scess_start_activity, fault_start_activity
     # install apk
     apk_path = project.apk_path
     cmd = "adb -s " + device.dev_id + " install " + apk_path
@@ -206,38 +241,30 @@ def run(project, device):
         print("[+] Success install apk: ", apk_path)
     pairs = project.parseMain
     print("[pairs]", pairs)
-    scess_start_activity = []
     for activity, other in pairs.items():
+        flag = "Fault"
         print("[OTHER]: ")
         print(other)
         # This is the defined format of uiautomator
-        component = project.used_name + '/' + activity
+        component = project.used_name + '/' + activity  # com.example.mynav/com.example.mynav.MainActivity
         dcommnd = []
         other.append(['', ''])
         for s in other:
             try:
-                start(project, device, s, activity, component, dcommnd, scess_start_activity)
+                flag = start(project, device, s, activity, component, dcommnd)
+                if flag == "Exists":
+                    break
             except:
                 continue
-    print("[+] successful start Activity: ", scess_start_activity)
-    print("[+] all task kill: ", project.p_id)
-    #project.printAll()
-    # 卸载并清理环境
-    #device.uiauto.app_clear(project.used_name)
-    #device.uiauto.app_uninstall(project.used_name)
-    '''
-    try:
-        project.printscreen()
-    except:
-        pass
-    try:
-        project.coverage()
-    except:
-        pass
-    '''
-    try:
-        project.printTrans()
-    except:
-        pass
+        if flag == "Fault":
+            fault_start_activity.append(activity)
+    print("[+] Successful start Activity: ", scess_start_activity)
+    print("[-] Fault start Activity: ", fault_start_activity)
 
-
+    # Try Start Fault start Activity
+    for activity in fault_start_activity:
+        res = fault_start(fault_start_activity=activity, project=project, device=device)
+        if res:
+            print("[+] New restart activity: ", activity)
+        else:
+            print("[-] Can't restart activity: ", activity)

@@ -11,12 +11,14 @@ from structure import project
 from pret import apktool
 from repkg import repkg
 from enhance import iccbot, myjadx
-from fuzz import fuzzscreen
+from fuzz import buildscreen
+from tools import transcreen
+
 # config
 result_folder = ""
 apks_folder = ""
 iccbot_dir = ""
-device_model = 0  # 0: remote 1: local
+device_model = 1  # 0: remote 1: local
 
 
 def init_apk(apk_dir, apkname):
@@ -47,8 +49,6 @@ def init_apk(apk_dir, apkname):
     p.root_dir = os.getcwd()
     p.apk_name = apkname
     return p
-
-
 
 
 if __name__ == '__main__':
@@ -148,36 +148,38 @@ if __name__ == '__main__':
         # pass
         try:
             iccbot.init(p, iccbot_dir, pwd_dir)
+            p.initicc()
             if not os.path.exists(p.iccobj.root_dir):
                 print("[-] root dir is not exists")
                 wlog.wlog("[-] root dir is not exists")
-                continue
+                # continue
             if not os.path.exists(p.iccobj.callgraph):
                 print("[-] CallGraphInfo dir is not exists")
                 wlog.wlog("[-] CallGraphInfo dir is not exists")
-                continue
+                # continue
             if not os.path.exists(p.iccobj.ctg):
                 print("[-] CTGResult dir is not exists")
                 wlog.wlog("[-] CTGResult dir is not exists")
-                continue
+                # continue
             if not os.path.exists(p.iccobj.fragment):
                 print("[-] FragmentInfo dir is not exists")
                 wlog.wlog("[-] FragmentInfo dir is not exists")
-                continue
+                # continue
             if not os.path.exists(p.iccobj.iccsep):
                 print("[-] ICCSpecification dir is not exists")
                 wlog.wlog("[-] ICCSpecification dir is not exists")
-                continue
+                # continue
             if not os.path.exists(p.iccobj.manifest):
                 print("[-] ManifestInfo dir is not exists")
                 wlog.wlog("[-] ManifestInfo dir is not exists")
-                continue
+                # continue
             if not os.path.exists(p.iccobj.soot):
                 print("[-] SootIRInfo dir is not exists")
                 wlog.wlog("[-] SootIRInfo dir is not exists")
-                continue
+                # continue
         except:
-            project_list.remove(p)
+            pass
+            # project_list.remove(p)
 
     # check unpack info
     for p in project_list:
@@ -196,17 +198,17 @@ if __name__ == '__main__':
             p.entrances = paseCTG.parseCTG(p)
             print(p.entrances)
         except:
-<<<<<<< Updated upstream
-            project_list.remove(p)
-
-=======
             print("get widget id False")
->>>>>>> Stashed changes
 
     # parseManifest
     for p in project_list:
         try:
             parse_result = parseM.parseManifest(p)
+
+            with open(os.path.join(p.res_dir, "actnum.txt"), "w") as f:
+                f.writelines(str(p.actnum) + "\n")
+
+            print()
             if parse_result != {}:
                 print("[+] get parseManifest!")
             else:
@@ -252,7 +254,7 @@ if __name__ == '__main__':
     # start dynamic
     for p in project_list:
         time.sleep(1)
-        #run_apk.run(p, phone_list[0])
+        # run_apk.run(p, phone_list[0])
         try:
             run_apk.run(p, phone_list[0])
             try:
@@ -269,19 +271,9 @@ if __name__ == '__main__':
                 pass
         except:
             phone_list[0].uiauto.app_stop(p.used_name)
-            #phone_list[0].uiauto.app_uninstall(p.used_name)
+            # phone_list[0].uiauto.app_uninstall(p.used_name)
             continue
         phone_list[0].uiauto.app_stop(p.used_name)
-        #phone_list[0].uiauto.app_uninstall(p.used_name)
+        phone_list[0].uiauto.app_uninstall(p.used_name)
         # os.remove(p.apk_path)
         # 卸载并清理环境
-<<<<<<< Updated upstream
-
-
-    for p in project_list:
-        try:
-            fuzzscreen.init(p, phone_list[0])
-        except:
-            pass
-=======
->>>>>>> Stashed changes

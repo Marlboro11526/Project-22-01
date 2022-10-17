@@ -96,12 +96,15 @@ def parseSootIR(jimple, obj, project):
     else:
         print("[+] rootIR is exists: ", rootIR)
     print("[ROOT IR]: ", rootIR)
+    flag = False
     if obj.fun == "void onClick(android.view.View)":
         onClick.clickparse(rootIR, obj)
+        flag = True
     elif obj.fun == "void onClick(android.content.DialogInterface,int)":
         pass
     elif obj.fun == "boolean onOptionsItemSelected(android.view.MenuItem)":
-        opitem.opitemparse(rootIR, obj)
+        #opitem.opitemparse(rootIR, obj)
+        pass
     elif obj.fun == "boolean onNavigationItemSelected(android.view.MenuItem)":
         pass
     elif obj.fun == "boolean onPreferenceClick(androidx.preference.Preference)":
@@ -111,7 +114,8 @@ def parseSootIR(jimple, obj, project):
     else:
         pass
     # obj.putinfo()
-    findViewId(obj, Soot_ir, used_name, project)
+    if flag:
+        findViewId(obj, Soot_ir, used_name, project)
 
 
 def findViewId(obj, Soot_ir, used_name, project):
@@ -142,25 +146,25 @@ def inittrans(project, CTG_xml):
         tree = ET.parse(f)
     for node in tree.iter():
         if node.tag == "source":
-            #print("[source] : ", node.attrib["name"])
+            print("[source] : ", node.attrib["name"])
             source_name = node.attrib["name"]
             for child in node.iter():
-                # des
-                # Act2Act
+                print("[child] : ", child.attrib)
                 if child.tag != "source" and "NonAct" not in child.attrib["type"] and "Class" not in child.attrib["type"]:
                     desname = child.attrib["name"]
                     trans = source_name + "->" + desname
                     if trans not in project.inittrans:
-                        project.inittrans.append(trans)
+                        project.inittrans.add(trans)
 
     iccbottrans = os.path.join(project.res_dir, "iccbot.txt")
+    print("iccbottrans : ", iccbottrans)
     with open(iccbottrans, 'w') as f:
-        pass
+        f.writelines("")
     print("[iccbot]")
     for trans in project.inittrans:
         with open(iccbottrans, 'a') as f:
             f.writelines(trans + "\n")
-        #print(trans)
+        print(trans)
 
 
 def parseCTG(project):

@@ -12,42 +12,28 @@ def extract_activity_action(manifestPath, project):
     # new format: {activity: [[action1, category1],[action2, category2]]}
     actnum = 0
     d = {}
-    ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
+    #ET.register_namespace('android', 'http://schemas.android.com/apk/res/android')
     # 读取Manifest文件
     with open(manifestPath, 'rt') as f:
         tree = ET.parse(f)
         # 逐个修个node
     for node in tree.iter():
-        if node.tag == "activity":
+        print(node.tag, node.attrib)
+        if node.tag == "component" and node.attrib['type'] == "Activity" :
             actnum = actnum + 1
-            print("[+] Find a Activity Node!")
-            activity = node.attrib['{http://schemas.android.com/apk/res/android}name']
-            if activity not in d:
-                d[activity] = []
-            for child in node.iter():
-                if child.tag == 'intent-filter':
-                    action_category_pair = ['', '']
-                    for item in child.iter():
-                        if item.tag == 'action':
-                            action_category_pair[0] = item.attrib['{http://schemas.android.com/apk/res/android}name']
-                        if item.tag == 'category':
-                            action_category_pair[1] = item.attrib['{http://schemas.android.com/apk/res/android}name']
-                    d[activity].append(action_category_pair)
-        if node.tag == "activity-alias":
-            print("[+] Find a Activity alias Node!")
-            target_act = node.attrib['{http://schemas.android.com/apk/res/android}targetActivity']
-            if target_act not in d:
-                d[target_act] = []
-            for child in node.iter():
-                if child.tag == 'intent-filter':
-                    action_category_pair = ['', '']
-                    for item in child.iter():
-                        if item.tag == 'action':
-                            action_category_pair[0] = item.attrib['{http://schemas.android.com/apk/res/android}name']
-                        if item.tag == 'category':
-                            action_category_pair[1] = item.attrib['{http://schemas.android.com/apk/res/android}name']
-                    d[target_act].append(action_category_pair)
-
+            d[node.attrib['name']] = []
+            print(node.tag, node.attrib)
+            for child1 in node.iter():
+                if child1.tag == "intent_filter":
+                    action_category_pair = ["", ""]
+                    if 'action' in child1.attrib:
+                        if child1.attrib['action']:
+                            action_category_pair[0] = child1.attrib['action']
+                    if 'category' in child1.attrib:
+                        if child1.attrib['category']:
+                            action_category_pair[1] = child1.attrib['category']
+                    # action_category_pair = [child1.attrib['action'], child1.attrib['category']]
+                    d[node.attrib['name']].append(action_category_pair)
     project.actnum = actnum
     return d
 
@@ -55,17 +41,20 @@ def extract_activity_action(manifestPath, project):
 def parseManifest(p):
     print("========== Parsing manifest file of '%s.apk' ==========" % p.p_id)
     if not os.path.exists(p.unpack_path):
-        print("cannot find the decompiled app: " + p.p_id)
+        print("[-] cannot find the decompiled app: " + p.p_id)
         return
-    manifestPath = os.path.join(p.unpack_path, "AndroidManifest.xml")
+    else:
+        print("[+] find the decompiled app: " + p.p_id)
+    manifestPath = os.path.join(p.iccobj.ctg, "componentInfo.xml")
     print("[+] manifestPath: ", manifestPath)
     pairs = extract_activity_action(manifestPath, p)
+    print(pairs)
     # format of pairs: {activity1: {actions: action1, category: cate1 }} -----discard
     # new format: {activity: [[action1, category1],[action2, category2]]}
     ##get all activity and their attributes
     return pairs
 
-
+'''
 if __name__ == '__main__':
     test = "com.gaurav.avnc"
     path = "../testfile/AndroidManifest.xml"
@@ -77,3 +66,4 @@ if __name__ == '__main__':
         if act.split(test)[1] not in actlist:
             actlist.append(act.split(test)[1])
     print(actlist)
+'''

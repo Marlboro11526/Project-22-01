@@ -1,21 +1,22 @@
-# 开始以一个ACT为起点进行深度优先探索
+import copy
 import os
 import subprocess
 import time
-from dymaic import target
-from fuzz import intype
-from structure import mywidget
-from tools import getshot, eigenvector, findres
-from structure import screen as myscreen
-from dymaic import currFrag
 
-def restartScreen(project, screen, device):
+from fuzz import intype
+from structure import mywidget, screen
+from dymaic import target, currFrag
+from tools import findres, eigenvector, getshot
+
+
+def restartScreen(project, source_screen, device):
     """
     :param device:
     :param project: 项目对象
     :param screen: 场景对象
     :return: True or False 表示是否成功
     """
+    print("restartScreen")
     # 恢复初始场景
     num = 0
     while True:
@@ -23,25 +24,29 @@ def restartScreen(project, screen, device):
         # 如果一直重启场景失败，选择强制关闭Activity
         if num == 3:
             device.uiauto.app_stop(project.used_name)
+            return False
         time.sleep(0.5)
-        cmd = screen.command[0]
-        print(cmd)
+        cmd = source_screen.adb
+        # print(cmd)
         result = subprocess.check_output(cmd, shell=True)
-        print(result)
+        # print(result)
         time.sleep(0.5)
+        '''
         cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
-        result = subprocess.check_output(cmd, shell=True)
-        texactivity = screen.start
-        check_name = project.used_name + '/' + texactivity
-        if check_name in result.decode("utf8"):
+        result = subprocess.check_output(cmd, shell=True)'''
+        texactivity = source_screen.act.split(project.used_name)[-1]
+        # print("texactivity: ", texactivity)
+        # print("result: ", result.decode("utf8"))
+        # check_name = project.used_name + '/' + texactivity
+        if texactivity in result.decode("utf8"):
             print("[+] start Act !")
             break
         else:
-            print("[-] can't start: ", check_name)
+            print("[-] can't start: ", texactivity)
         num = num + 1
-    if screen.widget_command != []:
+    if source_screen.rescommand:
         try:
-            for widget in screen.widget_command:
+            for widget in source_screen.rescommand:
                 try:
                     time.sleep(0.5)
                     print(widget.info)
@@ -55,51 +60,44 @@ def restartScreen(project, screen, device):
         except:
             pass
         print("[+] start widget_command !")
+    return True
 
 
-def isNewActivity(project, oldact, device):
-    """
-    :param project: 项目对象
-    :param oldact: 启动者Activity
-    :return: 是否为新的Activity，否为新的Activity
-    """
-    time.sleep(0.5)
-    cmd = "adb " + " -s " + device.dev_id + " shell dumpsys activity activities " + " | grep mResumedActivity"
-    result = subprocess.check_output(cmd, shell=True)
-    check_name = project.used_name + '/' + oldact
-    if check_name in result.decode("utf8"):
-        print("[+] is alive old activity")
-        return True
-    else:
-        # print("[+] A new Activity: ", result.decode("utf8"))
-        return False
-
-
-def run(project, device, screen, fragment):
+def run(project, device, source_screen, fragment):
     """
     :param project: 项目对象
     :param device: 设备对象
     :param screen: 场景对象
     :return:
     """
-    print("[TST-NODE]")
+    print("[+] run : ", source_screen.vector)
     widget_stack = []
-    for widget in screen.widgetstack:
-        widget_stack.append(widget)
-    stack_len = len(widget_stack)
+    activity = source_screen.act
+    print("[+] Screen ACT: ", activity)
+    # 初始滑建立Screnn对象
+    dxml = device.uiauto.dump_hierarchy(compressed=True)
+    # 临时写入布局文件信息
+    f = open(project.tmptxt, 'w')
+    f.write(dxml)
+    f.close()
 
-    # 设置输入框文本
-    # 动态Fuzz
+    # Find Target Widget
+    print("Find Target Widget")
     all_widget = device.uiauto()
+
     for widget in all_widget:
         widgetu2 = widget
         if widgetu2.info['className'] == 'android.widget.EditText':
             print("Find Input Widget: ", widgetu2.info)
-            # 检查输入文本框
-            res = findres.find(project, widgetu2.info, project.tmptxt)
-            if res:
-                inputType = res[0]
-            else:
+            inputType = 'none'
+            try:
+                # 检查输入文本框
+                res = findres.find(project, widgetu2.info, project.tmptxt)
+                if res:
+                    inputType = res[0]
+                else:
+                    inputType = 'none'
+            except:
                 inputType = 'none'
             fuzz_str = intype.create(inputType)
             print("[+] Screen fuzz_str: ", fuzz_str)
@@ -109,33 +107,59 @@ def run(project, device, screen, fragment):
             except:
                 continue
 
-    #   逐个组件点击
-    for index in range(stack_len):
-        restartScreen(project, screen, device)
+    try:
+        target_widget = target.getarget(project, activity, all_widget, dxml)
+        for widget in target_widget:
+            widget_stack.append(widget)
+    except:
+        pass
+    print("[Target Widget] : ", widget_stack)
+
+    # 构建初始Widget Stack
+    print("Build init Widget")
+    for widget in device.uiauto(clickable="true"):
+        try:
+            print(widget.info)
+        except:
+            continue
+        flag = True
+        for twidget in widget_stack:
+            if twidget.info['bounds'] == widget.info['bounds']:
+                flag = False
+                break
+        if flag:
+            widget_stack.append(widget)
+        else:
+            pass
+
+    print("======== wdiget stack ========")
+    for widget in widget_stack:
+        print(widget.info)
+    print("==============================")
+
+    flag = False
+    while len(widget_stack) != 0:
+        restartScreen(project, source_screen, device)
         time.sleep(0.5)
+        widget = ""
         # 组件丢失的情况
         try:
-            widget_stack[index].ui2
+            widget = widget_stack.pop()
+            print(widget.info)
         except:
             # 重启场景
             print("[-] This widget break")
             # 测下一个组件
             continue
-        if not widget_stack[index].ui2:
-            print("[-] widget not exists: ")
-            continue
-        widgetu2 = widget_stack[index].ui2
-        print(widgetu2.info)
+
         try:
-            widgetu2.click()
+            widget.click()
+            print("[+] widget click")
+            # project.total_step = project.total_step + 1
         except:
-            print("[-] widget don't click: ", widgetu2.info)
+            print("[-] widget don't click: ", widget.info)
             continue
-        '''
-        time.sleep(0.5)
-        screenvector = str(random.randint(1, 500000))
-        shot_dir = getshot.shot(device.uiauto, project, screenvector)
-        '''
+
         time.sleep(0.5)
         # 判断是否会进入其它包名
         currentPackageName = device.uiauto.info['currentPackageName']
@@ -153,12 +177,9 @@ def run(project, device, screen, fragment):
                 project.pkg_dog.edge(project.used_name, currentPackageName)
             except:
                 pass
-
             if pkgtrans not in project.pkgtrans:
                 project.pkgtrans.append(pkgtrans)
             flag = True
-            # 将可以跳转到新PKG更新到widget中
-            screen.widgetstack[index].updatePkg(currentPackageName)
             device.uiauto.app_stop(currentPackageName)
             continue
         else:
@@ -173,48 +194,61 @@ def run(project, device, screen, fragment):
         # 获取当前Activity的名称
         currentACT = result.decode("utf8").split(project.used_name + "/")[1].split(" ")[0]
 
-        print("[CURRENT ACT]: ", currentACT)
+        print("[CURRENT ACT]: ", currentACT)  # .MainActivity
 
         if project.used_name in currentACT:
             currentACT = ".activities" + currentACT.split(".activities")[1]
 
         coveract = project.used_name + currentACT
         if coveract not in project.actcoverage:
-            project.actcoverage.append(coveract)
+            project.actcoverage.add(coveract)
 
-        flag = False
-        if not isNewActivity(project, screen.act, device):
+        if source_screen.act != coveract:
             print("A Different Act Name: ", currentACT)
-            screen.widgetstack[index].updateAct(currentACT)
             # 将新的ATG转换关系添加
-            print("[screen.act] : ", screen.act)
+            print("[screen.act] : ", source_screen.act)
             print("[currentACT] : ", currentACT)
-            actrans = project.used_name + screen.act + "->" + project.used_name + currentACT
-
-            if actrans not in project.inittrans:
-                project.inittrans.append(actrans)
-
+            #actrans = source_screen.act + "->" + project.used_name + currentACT
+            #print("[actrans] : ", actrans)
+            #if actrans not in project.inittrans:
+            #project.inittrans.add(actrans)
+            '''
             if actrans not in project.activitytrans:
                 project.activitytrans.append(actrans)
                 try:
-                    project.atg_dog.node(screen.act, screen.act)
+                    project.atg_dog.node(source_screen.act, source_screen.act)
                 except:
                     pass
                 try:
                     project.atg_dog.node(currentACT, currentACT)
-                    project.atg_dog.edge(screen.act, currentACT)
+                    project.atg_dog.edge(source_screen.act, currentACT)
                 except:
                     pass
-            # 判断是否为全新的Activity
-            coveract = project.used_name + currentACT
-            if coveract not in project.activity:
-                print("A New Act Name: ", coveract)
-                project.activity.append(coveract)
-                flag = True
-            else:
-                pass
+            '''
+            # build new screen
+            new_act = project.used_name + currentACT
+            print("[NEW ACT] : ", new_act)
+            #source_screen.actrans[new_act] = ""
+            #print("step1")
+            w2act = []
+            w2act.append(new_act)
+            w2act.append(widget)
+            print(w2act)
+            source_screen.actrans.append(w2act)
+            #print("step2")
+            print("[+] TEST actrans: ", source_screen.actrans)
+            print(widget_stack)
+            source_screen.nextact.append(new_act)
+            flag = True
+            break
+        else:
+            pass
+
+        # parse fragment
 
         currentFra = ""
+        NewFrag = False
+        realnewfrag = False
         # Is new Fragment?
         try:
             currentFra = currFrag.getcurfrag(device, project)
@@ -227,73 +261,31 @@ def run(project, device, screen, fragment):
                     project.inittrans.append(tmptrans)
             '''
             if fragment.name != currentFra.name:
-                tmptrans = fragment.name + "->" + currentFra.name
-                print("[NEW Trans] : ", tmptrans)
-                if tmptrans not in project.inittrans:
-                    print("[Real NEW Trans] : ", tmptrans)
-                    project.inittrans.append(tmptrans)
+                #tmptrans = fragment.name + "->" + currentFra.name
+                #print("[NEW Trans] : ", tmptrans)
+                NewFrag = True
+                #if tmptrans not in project.inittrans:
+                    #project.inittrans.add(tmptrans)
+                realnewfrag = True
         except:
             pass
 
         # 判断当前是否出现了新的Screen
         dxml = device.uiauto.dump_hierarchy(compressed=True)
-        if flag:
-            dtype = True
-        else:
-            dtype = False
         # 临时写入布局文件信息
         f = open(project.tmptxt, 'w')
         f.write(dxml)
         f.close()
-        # 初始化父ScreenID
-        dparentScreen = screen.vector
-
-        # Find Target Widget
-        all_widget = device.uiauto()
-        coveract = project.used_name + currentACT
-        target_widget = target.getarget(project, coveract, all_widget)
-        for widget in target_widget:
-            new_widwget = mywidget.mywidget(widget)
-            widget_stack.append(new_widwget)
-
-
-        # 构建初始Widget Stack
-        widget_stack = []
-        for widget in device.uiauto(clickable="true"):
-            # print(widget.info)
-            flag = True
-            for twidget in widget_stack:
-                if twidget.ui2.info['bounds'] == widget.info['bounds']:
-                    flag = False
-                    break
-            if flag:
-                new_widwget = mywidget.mywidget(widget)
-                widget_stack.append(new_widwget)
-            else:
-                continue
-
         # 生成特征向量
         screenvector = eigenvector.getVector(dxml, project)
-        # 初始化ADB操作信息
-        dcommnd = screen.command
-        # 初始化组件操作信息
-        dw_commd = []
-        for widget in screen.widget_command:
-            dw_commd.append(widget)
-        dw_commd.append(widgetu2)
 
-        act = currentACT
-        # 临时截图
-        device.uiauto.screenshot(project.tmppng)
-        startact = screen.start
-        # 判断是否为新出现的场景特征
-        # if project.isAliveScreen(screenvector):
-        if project.isAliveScreen(screenvector, dw_commd, act, startact, dparentScreen, project.tmppng):
+        if screenvector not in project.screenlist or realnewfrag:
             print("[+] find a new screen: ", screenvector)
-            project.screenlist.append(screenvector)
+            project.screenlist.add(screenvector)
             # 将新的Screen转换关系添加到项目中
-            screentrans = screen.vector + "->" + screenvector
+            screentrans = source_screen.vector + "->" + screenvector
             xml_dir = os.path.join(project.layout_dir, screenvector + ".xml")
+            source_screen.svector = screenvector
             # 写入布局文件信息
             f = open(xml_dir, 'w')
             f.write(dxml)
@@ -302,33 +294,67 @@ def run(project, device, screen, fragment):
             if screentrans not in project.screentrans:
                 project.screentrans.append(screentrans)
                 try:
-                    project.stg_dog.node(screen.vector, screen.vector)
+                    project.stg_dog.node(source_screen.vector, source_screen.vector)
                 except:
                     pass
                 try:
                     project.stg_dog.node(screenvector, screenvector)
-                    project.stg_dog.edge(screen.vector, screenvector)
+                    project.stg_dog.edge(source_screen.vector, screenvector)
                 except:
                     pass
         else:
-            os.remove(project.tmppng)
-            continue
-        #   场景覆盖率统计
-        if screenvector not in project.scecoverage:
-            project.scecoverage.append(screenvector)
+            print("[-] Screen is old: ", screenvector)
+            # os.remove(project.tmppng)
+            return
 
+        # 初始化ADB操作信息
+        sadb = source_screen.adb
         # 对新的Screen进行截图
-        dshot = getshot.shot(device.uiauto, project, screenvector)
+        shot_dir = getshot.shot(device.uiauto, project, screenvector)
+        print("[+] get shot: ", shot_dir)
         # 建立新的场景对象
-        new_screen = myscreen.screen(dxml, screenvector, dtype, dcommnd, dparentScreen, dshot, widget_stack, act,
-                                     startact)
-        new_screen.widget_command = dw_commd
-        # 将新的Screen对象加入
+        print("Activity Screen")
+        rescommand = []
+        print("screen.rescommand", source_screen.rescommand)
+        for sourcewidget in source_screen.rescommand:
+            rescommand.append(sourcewidget)
+        #print("rescommand", rescommand)
+        rescommand.append(widget)
+        print("rescommand", rescommand)
+        new_screen = screen.screen(vector=screenvector, sadb=source_screen.adb, act=source_screen.act)
+        print("[+] Build New Screen Successful!")
+        #new_screen.fvector = source_screen.vector
+        new_screen.rescommand = rescommand
+        new_screen.printAll()
         project.screenobject.append(new_screen)
-        time.sleep(0.5)
+        # add new son screen
+        source_screen.sonScreen.append(new_screen)
+
+
+        if realnewfrag:
+            new_screen.newfrag = True
+            new_screen.fragment = currentFra.name
+
+        ''''
+        #new_screen.fatfragment = fragment.name
+            #source_screen.nextfragment = currentFra.name
+        else:
+            if source_screen.newfrag == True:
+                new_screen.fatfragment = fragment.name
+       
+        if currentFra != "":
+            new_screen.fragment = currentFra.name
+        if fragment.name != "":
+            new_screen.fatfragment = fragment.name
+        if realnewfrag:
+            new_screen.newfrag = True'''
         # 进行递归深度探索
         if currentFra == "":
             currentFra = fragment
         run(project, device, new_screen, currentFra)
-        # 恢复Screen
-        restartScreen(project, screen, device)
+        restartScreen(project, source_screen, device)
+        print("[+][widget] over a task: ", screenvector, "->", widget.info)
+        print(screenvector, "-> widget stack: ", widget_stack)
+        #continue
+    print("[+][screen] over a task: ", source_screen.vector)
+    return

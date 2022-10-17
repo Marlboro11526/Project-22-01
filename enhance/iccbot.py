@@ -1,6 +1,7 @@
 import os
 import subprocess
 from mylog import wlog
+
 # config
 iccbot_dir = ""
 iccjar_path = ""
@@ -8,28 +9,17 @@ apks_dir = ""
 apk_name = ""
 androidJar = ""
 outputDir = ""
-<<<<<<< Updated upstream
-time = "30"
-maxPathNumber = "100"
-clients = ["CTGClient", "IROutputClient"]
-#clients = ["CallGraphClient", "ManifestClient", "IROutputClient", "FragmentClient", "CTGClient", "ICCSpecClient"]
-=======
 time = "20"
 maxPathNumber = "1000"
 clients = ["CTGClient", "IROutputClient", "ICCSpecClient"]
 #clients = ["CTGClient", "IROutputClient"]
 
 # clients = ["CallGraphClient", "ManifestClient", "IROutputClient", "FragmentClient", "CTGClient", "ICCSpecClient"]
->>>>>>> Stashed changes
 
 
 def run():
     global iccbot_dir, iccjar_path, apks_dir, apk_name, androidJar, outputDir, time, maxPathNumber
-<<<<<<< Updated upstream
-    cmd = "java -jar " + iccjar_path + " "
-=======
-    cmd = "timeout 15m java -jar -Xmx6g " + iccjar_path + " "
->>>>>>> Stashed changes
+    cmd = "timeout 20m java -jar -Xmx6g " + iccjar_path + " "
     cmd = cmd + " -path " + apks_dir + " "
     cmd = cmd + " -name " + apk_name + " "
     cmd = cmd + " -androidJar  " + androidJar + " "
@@ -40,10 +30,14 @@ def run():
         cmdt = cmdt + " -outputDir " + outputDir + " "
         print(cmdt)
         wlog.wlog(cmdt)
-        apkt_result = subprocess.check_output(cmdt, shell=True)
-        while not "ICC Resolution Finish..." in apkt_result.decode('utf8'):
+        try:
+            apkt_result = subprocess.check_output(cmdt, shell=True)
+            while not "ICC Resolution Finish..." in apkt_result.decode('utf8'):
+                continue
+            print(apkt_result)
+        except:
             continue
-        print(apkt_result)
+
 
 def init(project, iccbotdir, pwd_dir):
     global iccbot_dir, iccjar_path, apks_dir, apk_name, androidJar, outputDir
@@ -71,4 +65,4 @@ def init(project, iccbotdir, pwd_dir):
     wlog.wlog("[androidJar] : " + androidJar)
     wlog.wlog("[outputDir] : " + outputDir)
     run()
-    project.initicc()
+

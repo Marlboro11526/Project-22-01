@@ -135,7 +135,7 @@ def pretreat(project):
         tree = ET.parse(f)
     # 逐个修个node
     for node in tree.iter():
-        if node.tag == "activity":
+        if "activity" in node.tag:
             print("[+] Find a Activity Node!")
             if "{http://schemas.android.com/apk/res/android}exported" in node.attrib:
                 print("[+] This act have attr exported")
