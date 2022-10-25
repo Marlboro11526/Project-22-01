@@ -1,6 +1,7 @@
 import os
 import subprocess
 from mylog import wlog
+from multiprocessing import Process, Manager
 
 # config
 iccbot_dir = ""
@@ -9,7 +10,7 @@ apks_dir = ""
 apk_name = ""
 androidJar = ""
 outputDir = ""
-time = "20"
+time = "10"
 maxPathNumber = "1000"
 clients = ["CTGClient", "IROutputClient", "ICCSpecClient"]
 #clients = ["CTGClient", "IROutputClient"]
@@ -17,26 +18,23 @@ clients = ["CTGClient", "IROutputClient", "ICCSpecClient"]
 # clients = ["CallGraphClient", "ManifestClient", "IROutputClient", "FragmentClient", "CTGClient", "ICCSpecClient"]
 
 
-def run():
+def run(client):
     global iccbot_dir, iccjar_path, apks_dir, apk_name, androidJar, outputDir, time, maxPathNumber
-    cmd = "timeout 20m java -jar -Xmx6g " + iccjar_path + " "
+    cmd = "timeout 13m java -jar -Xmx6g " + iccjar_path + " "
     cmd = cmd + " -path " + apks_dir + " "
     cmd = cmd + " -name " + apk_name + " "
     cmd = cmd + " -androidJar  " + androidJar + " "
     cmd = cmd + " -time  " + time + " "
     cmd = cmd + " -maxPathNumber  " + maxPathNumber + " "
-    for client in clients:
-        cmdt = cmd + " -client " + client + " "
-        cmdt = cmdt + " -outputDir " + outputDir + " "
-        print(cmdt)
-        wlog.wlog(cmdt)
-        try:
-            apkt_result = subprocess.check_output(cmdt, shell=True)
-            while not "ICC Resolution Finish..." in apkt_result.decode('utf8'):
-                continue
-            print(apkt_result)
-        except:
-            continue
+    cmdt = cmd + " -client " + client + " "
+    cmdt = cmdt + " -outputDir " + outputDir + " "
+    print(cmdt)
+    wlog.wlog(cmdt)
+    apkt_result = subprocess.check_output(cmdt, shell=True)
+    while not "ICC Resolution Finish..." in apkt_result.decode('utf8'):
+        return False
+    print(apkt_result)
+    return True
 
 
 def init(project, iccbotdir, pwd_dir):
@@ -64,5 +62,10 @@ def init(project, iccbotdir, pwd_dir):
     wlog.wlog("[iccjar_path] : " + iccjar_path)
     wlog.wlog("[androidJar] : " + androidJar)
     wlog.wlog("[outputDir] : " + outputDir)
-    run()
-
+    process_list = []
+    for client in clients:
+        p = Process(target=run, args=(client,))  # 实例化进程对象
+        p.start()
+        process_list.append(p)
+    for p in process_list:
+        p.join()

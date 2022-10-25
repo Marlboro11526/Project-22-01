@@ -10,8 +10,8 @@
     <destination name="com.iccbot.withCtx.Des2WithCtx" type="Act2Act" method="&lt;com.iccbot.withCtx.Source1WithCtx: void doWithAction(java.lang.String)&gt;" category="category.ctx" extras="" flags=""/>
   </source>
   <source name="com.iccbot.withCtx.Source2WithCtx">
-    <destination name="com.iccbot.withCtx.Des2WithCtx" type="Act2Act" method="&lt;com.iccbot.withCtx.Source2WithCtx: void doWithAction(java.lang.String)&gt;" category="category.ctx" extras="" flags=""/>
     <destination name="com.iccbot.withCtx.Des1WithCtx" type="Act2Act" method="&lt;com.iccbot.withCtx.Source2WithCtx: void doWithAction(java.lang.String)&gt;" category="category.ctx" extras="" flags=""/>
+    <destination name="com.iccbot.withCtx.Des2WithCtx" type="Act2Act" method="&lt;com.iccbot.withCtx.Source2WithCtx: void doWithAction(java.lang.String)&gt;" category="category.ctx" extras="" flags=""/>
   </source>
   <source name="com.iccbot.withCtx.Source4WithCtx">
     <destination name="com.iccbot.withCtx.Des2WithCtx" type="Act2Act" method="&lt;com.iccbot.withCtx.Source4WithCtx$1: void onClick(android.view.View)&gt;" action="action.second.ctx" category="category.ctx" extras="" flags=""/>
