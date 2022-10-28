@@ -239,9 +239,14 @@ def run(project, device):
     # install apk
     apk_path = project.apk_path
     cmd = "adb -s " + device.dev_id + " install " + apk_path
-    result = subprocess.check_output(cmd, shell=True)
-    if b"Success" in result:
-        print("[+] Success install apk: ", apk_path)
+    try:
+        result = subprocess.check_output(cmd, shell=True)
+        if b"Success" in result:
+            print("[+] Success install apk: ", apk_path)
+        else:
+            return
+    except:
+        return
     pairs = project.parseMain
     print("[pairs]", pairs)
     for activity, other in pairs.items():
