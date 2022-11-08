@@ -101,10 +101,20 @@ def start(project, device, other_s, activity, component, dcommnd):
             # 检查输入文本框
             findres.find(project, widget.info, project.tmptxt)
     '''
+    screenvector = ""
     # 生成特征向量
-    screenvector = eigenvector.getVector(dxml, project)
+    try:
+        screenvector = eigenvector.getVector(dxml, project)
+        print("[screenvector] : ", screenvector)
+    except:
+        print("[-] Fault screenvector")
+        print(dxml)
     # 临时截图
-    device.uiauto.screenshot(project.tmppng)
+    try:
+        device.uiauto.screenshot(project.tmppng)
+        print("[+] Successfull get screenshot")
+    except:
+        pass
 
     if screenvector not in project.screenlist:
         print("[+] New Acr Start Screen")
@@ -112,8 +122,11 @@ def start(project, device, other_s, activity, component, dcommnd):
     else:
         return "Exists"
 
-    shot_dir = getshot.shot(device.uiauto, project, screenvector)
-    print("[+] Get shot: ", shot_dir)
+    try:
+        shot_dir = getshot.shot(device.uiauto, project, screenvector)
+        print("[+] Get shot: ", shot_dir)
+    except:
+        pass
 
     # 建立新的场景对象
     print("Activity Screen")
@@ -155,6 +168,10 @@ def fault_start(fault_start_activity, project, device):
     if father_obj == "":
         return False
     startact.restartScreen(project=project, source_screen=father_obj, device=device)
+
+    with open(project.SecondStart, "a") as f:
+        f.writelines(fault_start_activity + "\n")
+
     for w2act in father_obj.actrans:
         if w2act[0] == fault_start_activity:
             print("[+] Find True 2act widget : ", w2act[1].info)

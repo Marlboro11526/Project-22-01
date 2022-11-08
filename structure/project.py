@@ -139,6 +139,12 @@ class project:
         self.NoneactScreenlist = set()
         self.totalstep = 0
 
+        #
+        self.SecondStart = os.path.join(self.res_dir, "SecondStart.txt")
+        if not os.path.exists(self.SecondStart):
+            with open(self.SecondStart, "w") as f:
+                f.writelines("")
+
     def setAct(self, actlist):
         self.activity = actlist
 

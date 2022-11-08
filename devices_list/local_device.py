@@ -30,6 +30,7 @@ def scan_devices():
                 d.watcher.when("允许").click()
                 d.watcher.when("YES").click()
                 d.watcher.when("ALLOW").click()
+                d.watcher.when("OK").click()
                 # 开始后台监控
                 d.watcher.start()
                 # 使用ui2的输入法取代系统输入法

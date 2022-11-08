@@ -220,6 +220,8 @@ def run(project, device, source_screen, fragment):
             print("[+] TEST actrans: ", source_screen.actrans)
             print(widget_stack)
             source_screen.nextact.append(new_act)
+            with open(project.SecondStart, "a") as f:
+                f.writelines(coveract + "\n")
             flag = True
             continue
         else:

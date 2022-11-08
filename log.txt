@@ -1,48 +1,15 @@
-2022-10-19 19:03:06 883070 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
-2022-10-19 19:03:06 883298 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
-2022-10-19 19:03:06 883384 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
-2022-10-19 19:03:06 883491 [+] find 1 : com.inspiredandroid.linuxcommandbibliotheca_75.apk
-2022-10-19 19:03:06 883585 [+] find 2 : com.nunti_12.apk
-2022-10-19 19:03:06 883688 [+] find 3 : com.jiaqifeng.hacki_75.apk
-2022-10-19 19:03:06 883790 [+] find 4 : com.madlonkay.orgro_58.apk
-2022-10-19 19:03:06 883952 [+] Total apks: 4
-2022-10-19 19:05:13 248308 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/iccbot/com.inspiredandroid.linuxcommandbibliotheca_75
-2022-10-19 19:05:13 248463 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
-2022-10-19 19:05:13 248512 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/unpack/dist
-2022-10-19 19:05:13 248601 [apk_name] : com.inspiredandroid.linuxcommandbibliotheca_75.apk
-2022-10-19 19:05:13 249132 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
-2022-10-19 19:05:13 249250 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
-2022-10-19 19:05:13 249343 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/iccbot
-2022-10-19 19:05:13 269015 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/unpack/dist  -name com.inspiredandroid.linuxcommandbibliotheca_75.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/iccbot 
-2022-10-19 19:05:13 271939 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/unpack/dist  -name com.inspiredandroid.linuxcommandbibliotheca_75.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/iccbot 
-2022-10-19 19:05:13 275042 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/unpack/dist  -name com.inspiredandroid.linuxcommandbibliotheca_75.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.inspiredandroid.linuxcommandbibliotheca-75/iccbot 
-2022-10-19 19:11:09 893414 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/iccbot/com.nunti_12
-2022-10-19 19:11:09 893891 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
-2022-10-19 19:11:09 893948 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/unpack/dist
-2022-10-19 19:11:09 893987 [apk_name] : com.nunti_12.apk
-2022-10-19 19:11:09 894055 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
-2022-10-19 19:11:09 894096 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
-2022-10-19 19:11:09 894130 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/iccbot
-2022-10-19 19:11:09 899402 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/unpack/dist  -name com.nunti_12.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/iccbot 
-2022-10-19 19:11:09 901898 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/unpack/dist  -name com.nunti_12.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/iccbot 
-2022-10-19 19:11:09 904965 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/unpack/dist  -name com.nunti_12.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.nunti-12/iccbot 
-2022-10-19 19:21:15 229647 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/iccbot/com.jiaqifeng.hacki_75
-2022-10-19 19:21:15 231405 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
-2022-10-19 19:21:15 231461 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/unpack/dist
-2022-10-19 19:21:15 231501 [apk_name] : com.jiaqifeng.hacki_75.apk
-2022-10-19 19:21:15 231537 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
-2022-10-19 19:21:15 231571 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
-2022-10-19 19:21:15 231605 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/iccbot
-2022-10-19 19:21:15 245503 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/unpack/dist  -name com.jiaqifeng.hacki_75.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/iccbot 
-2022-10-19 19:21:15 245503 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/unpack/dist  -name com.jiaqifeng.hacki_75.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/iccbot 
-2022-10-19 19:21:15 248118 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/unpack/dist  -name com.jiaqifeng.hacki_75.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.jiaqifeng.hacki-75/iccbot 
-2022-10-19 19:28:18 637678 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/iccbot/com.madlonkay.orgro_58
-2022-10-19 19:28:18 637837 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
-2022-10-19 19:28:18 637885 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/unpack/dist
-2022-10-19 19:28:18 637924 [apk_name] : com.madlonkay.orgro_58.apk
-2022-10-19 19:28:18 637961 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
-2022-10-19 19:28:18 637996 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
-2022-10-19 19:28:18 638031 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/iccbot
-2022-10-19 19:28:18 641753 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/unpack/dist  -name com.madlonkay.orgro_58.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/iccbot 
-2022-10-19 19:28:18 644043 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/unpack/dist  -name com.madlonkay.orgro_58.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/iccbot 
-2022-10-19 19:28:18 646069 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/unpack/dist  -name com.madlonkay.orgro_58.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.madlonkay.orgro-58/iccbot 
+2022-11-02 22:07:47 182115 [+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+2022-11-02 22:07:47 182356 [+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+2022-11-02 22:07:47 182453 [+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+2022-11-02 22:07:47 182617 [+] find 1 : BasicActivity_Fragment_2.apk
+2022-11-02 22:07:47 182805 [+] Total apks: 1
+2022-11-02 22:08:15 571470 [new_icc_res] : /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/iccbot/BasicActivity_Fragment_2
+2022-11-02 22:08:15 571625 [iccbot_dir] : /home/syc/Downloads/DEV/rebuild/enhance/icc
+2022-11-02 22:08:15 571678 [apks_dir] : /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/unpack/dist
+2022-11-02 22:08:15 571716 [apk_name] : BasicActivity_Fragment_2.apk
+2022-11-02 22:08:15 571753 [iccjar_path] : /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+2022-11-02 22:08:15 571790 [androidJar] : /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+2022-11-02 22:08:15 571859 [outputDir] : /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/iccbot
+2022-11-02 22:08:15 580212 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/unpack/dist  -name BasicActivity_Fragment_2.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/iccbot 
+2022-11-02 22:08:15 582151 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/unpack/dist  -name BasicActivity_Fragment_2.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/iccbot 
+2022-11-02 22:08:15 586603 timeout 13m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/unpack/dist  -name BasicActivity_Fragment_2.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.example.basicactivity_frg_2-1/iccbot 
